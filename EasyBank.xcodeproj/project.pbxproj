@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,15 @@
 		DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215226D6D2FB001E6685 /* EasyBankTests.swift */; };
 		DE46215E26D6D2FB001E6685 /* EasyBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */; };
 		DE46216C26D6D405001E6685 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE46216B26D6D405001E6685 /* GoogleService-Info.plist */; };
+		DE46217526D6D996001E6685 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217426D6D996001E6685 /* PlayerViewModel.swift */; };
+		DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217626D6D9F1001E6685 /* StartViewController.swift */; };
+		DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217726D6D9F1001E6685 /* StartViewController.xib */; };
+		DE46217F26D6DAD7001E6685 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217D26D6DAD7001E6685 /* PlayerViewController.swift */; };
+		DE46218026D6DAD7001E6685 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217E26D6DAD7001E6685 /* PlayerViewController.xib */; };
+		DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218126D6DB83001E6685 /* StartCoordinator.swift */; };
+		DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218326D6DB93001E6685 /* StartViewModel.swift */; };
+		DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218626D6DBA9001E6685 /* Coordinator.swift */; };
+		DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */; };
 		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +71,15 @@
 		DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyBankUITests.swift; sourceTree = "<group>"; };
 		DE46215F26D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE46216B26D6D405001E6685 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE46217426D6D996001E6685 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		DE46217626D6D9F1001E6685 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		DE46217726D6D9F1001E6685 /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		DE46217D26D6DAD7001E6685 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		DE46217E26D6DAD7001E6685 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		DE46218126D6DB83001E6685 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
+		DE46218326D6DB93001E6685 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		DE46218626D6DBA9001E6685 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,7 +121,6 @@
 				BEF78D447E5816E63DE57D1C /* Pods-EasyBankTests.debug.xcconfig */,
 				3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,6 +159,8 @@
 		DE46213A26D6D2F5001E6685 /* EasyBank */ = {
 			isa = PBXGroup;
 			children = (
+				DE46218526D6DB97001E6685 /* Protocols */,
+				DE46216D26D6D869001E6685 /* Scenes */,
 				DE46213B26D6D2F5001E6685 /* AppDelegate.swift */,
 				DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */,
 				DE46213F26D6D2F5001E6685 /* ViewController.swift */,
@@ -170,6 +189,53 @@
 				DE46215F26D6D2FB001E6685 /* Info.plist */,
 			);
 			path = EasyBankUITests;
+			sourceTree = "<group>";
+		};
+		DE46216D26D6D869001E6685 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DE46217A26D6DA05001E6685 /* Banker */,
+				DE46216F26D6D911001E6685 /* Player */,
+				DE46216E26D6D87A001E6685 /* Start */,
+				DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DE46216E26D6D87A001E6685 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				DE46217626D6D9F1001E6685 /* StartViewController.swift */,
+				DE46217726D6D9F1001E6685 /* StartViewController.xib */,
+				DE46218126D6DB83001E6685 /* StartCoordinator.swift */,
+				DE46218326D6DB93001E6685 /* StartViewModel.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		DE46216F26D6D911001E6685 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				DE46217426D6D996001E6685 /* PlayerViewModel.swift */,
+				DE46217D26D6DAD7001E6685 /* PlayerViewController.swift */,
+				DE46217E26D6DAD7001E6685 /* PlayerViewController.xib */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		DE46217A26D6DA05001E6685 /* Banker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Banker;
+			sourceTree = "<group>";
+		};
+		DE46218526D6DB97001E6685 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DE46218626D6DBA9001E6685 /* Coordinator.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +350,8 @@
 				DE46216C26D6D405001E6685 /* GoogleService-Info.plist in Resources */,
 				DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */,
 				DE46214326D6D2F5001E6685 /* Main.storyboard in Resources */,
+				DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */,
+				DE46218026D6DAD7001E6685 /* PlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,8 +480,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */,
+				DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */,
 				DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */,
 				DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */,
+				DE46217526D6D996001E6685 /* PlayerViewModel.swift in Sources */,
+				DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */,
+				DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */,
+				DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */,
+				DE46217F26D6DAD7001E6685 /* PlayerViewController.swift in Sources */,
+				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
