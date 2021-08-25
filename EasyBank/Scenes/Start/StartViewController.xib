@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="EasyBank" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQA-9u-yac">
+                    <rect key="frame" x="183" y="244" width="48" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="t86-DS-ueO"/>
+                    </constraints>
+                    <state key="normal" title="Banker"/>
+                    <connections>
+                        <action selector="didTapBankerButton:" destination="-1" eventType="touchUpInside" id="6IO-di-aNi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvO-8e-W0P">
+                    <rect key="frame" x="185.5" y="374" width="43" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="43" id="lw7-R9-Gxn"/>
+                    </constraints>
+                    <state key="normal" title="Player"/>
+                    <connections>
+                        <action selector="didTapPlayerButton:" destination="-1" eventType="touchUpInside" id="zbG-lk-bBF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="RvO-8e-W0P" firstAttribute="top" secondItem="VQA-9u-yac" secondAttribute="bottom" constant="100" id="VKA-0d-lWO"/>
+                <constraint firstItem="VQA-9u-yac" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="Z0e-Mk-BfY"/>
+                <constraint firstItem="RvO-8e-W0P" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jNZ-BG-cZa"/>
+                <constraint firstItem="VQA-9u-yac" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pnh-oa-srw"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="95"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
