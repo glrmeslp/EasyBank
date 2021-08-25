@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="EasyBank" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BankerViewController" customModule="EasyBank" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,8 +18,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8J-ZJ-Ib1">
-                    <rect key="frame" x="154.5" y="437.5" width="105" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banker Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-1z-VoJ">
+                    <rect key="frame" x="151.5" y="437.5" width="111" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -28,8 +28,8 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Y8J-ZJ-Ib1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1jw-uC-yVn"/>
-                <constraint firstItem="Y8J-ZJ-Ib1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="HUu-5w-Kj1"/>
+                <constraint firstItem="tbO-1z-VoJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EhJ-RW-tHy"/>
+                <constraint firstItem="tbO-1z-VoJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J26-6O-7Td"/>
             </constraints>
             <point key="canvasLocation" x="139" y="90"/>
         </view>

@@ -18,18 +18,34 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dY-vv-rk7">
-                    <rect key="frame" x="159" y="437.5" width="96" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQA-9u-yac">
+                    <rect key="frame" x="183" y="244" width="48" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="t86-DS-ueO"/>
+                    </constraints>
+                    <state key="normal" title="Banker"/>
+                    <connections>
+                        <action selector="didTapBankerButton:" destination="-1" eventType="touchUpInside" id="6IO-di-aNi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvO-8e-W0P">
+                    <rect key="frame" x="185.5" y="374" width="43" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="43" id="lw7-R9-Gxn"/>
+                    </constraints>
+                    <state key="normal" title="Player"/>
+                    <connections>
+                        <action selector="didTapPlayerButton:" destination="-1" eventType="touchUpInside" id="zbG-lk-bBF"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="5dY-vv-rk7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="PVG-up-kTA"/>
-                <constraint firstItem="5dY-vv-rk7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hhB-Md-uZd"/>
+                <constraint firstItem="RvO-8e-W0P" firstAttribute="top" secondItem="VQA-9u-yac" secondAttribute="bottom" constant="100" id="VKA-0d-lWO"/>
+                <constraint firstItem="VQA-9u-yac" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="Z0e-Mk-BfY"/>
+                <constraint firstItem="RvO-8e-W0P" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jNZ-BG-cZa"/>
+                <constraint firstItem="VQA-9u-yac" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pnh-oa-srw"/>
             </constraints>
             <point key="canvasLocation" x="139" y="95"/>
         </view>

@@ -26,6 +26,8 @@
 		DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218326D6DB93001E6685 /* StartViewModel.swift */; };
 		DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218626D6DBA9001E6685 /* Coordinator.swift */; };
 		DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */; };
+		DE46218C26D6E22F001E6685 /* BankerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218A26D6E22F001E6685 /* BankerViewController.swift */; };
+		DE46218D26D6E22F001E6685 /* BankerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46218B26D6E22F001E6685 /* BankerViewController.xib */; };
 		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		DE46218326D6DB93001E6685 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		DE46218626D6DBA9001E6685 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		DE46218A26D6E22F001E6685 /* BankerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankerViewController.swift; sourceTree = "<group>"; };
+		DE46218B26D6E22F001E6685 /* BankerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankerViewController.xib; sourceTree = "<group>"; };
 		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -226,6 +230,8 @@
 		DE46217A26D6DA05001E6685 /* Banker */ = {
 			isa = PBXGroup;
 			children = (
+				DE46218A26D6E22F001E6685 /* BankerViewController.swift */,
+				DE46218B26D6E22F001E6685 /* BankerViewController.xib */,
 			);
 			path = Banker;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 				DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */,
 				DE46216C26D6D405001E6685 /* GoogleService-Info.plist in Resources */,
 				DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */,
+				DE46218D26D6E22F001E6685 /* BankerViewController.xib in Resources */,
 				DE46214326D6D2F5001E6685 /* Main.storyboard in Resources */,
 				DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */,
 				DE46218026D6DAD7001E6685 /* PlayerViewController.xib in Resources */,
@@ -484,6 +491,7 @@
 				DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */,
 				DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */,
 				DE46217526D6D996001E6685 /* PlayerViewModel.swift in Sources */,
+				DE46218C26D6E22F001E6685 /* BankerViewController.swift in Sources */,
 				DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */,
 				DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */,
 				DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */,

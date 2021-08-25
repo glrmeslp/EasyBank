@@ -17,5 +17,13 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    @IBAction private func didTapBankerButton(_ sender: Any) {
+        viewModel?.showBankerViewController()
+    }
 
+    @IBAction private func didTapPlayerButton(_ sender: Any) {
+        viewModel?.showPlayerViewController()
+    }
+    
 }
