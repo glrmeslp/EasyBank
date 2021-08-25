@@ -1,0 +1,751 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
+		DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213B26D6D2F5001E6685 /* AppDelegate.swift */; };
+		DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */; };
+		DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213F26D6D2F5001E6685 /* ViewController.swift */; };
+		DE46214326D6D2F5001E6685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE46214126D6D2F5001E6685 /* Main.storyboard */; };
+		DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE46214426D6D2FB001E6685 /* Assets.xcassets */; };
+		DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */; };
+		DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215226D6D2FB001E6685 /* EasyBankTests.swift */; };
+		DE46215E26D6D2FB001E6685 /* EasyBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */; };
+		DE46216C26D6D405001E6685 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE46216B26D6D405001E6685 /* GoogleService-Info.plist */; };
+		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
+		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE46214F26D6D2FB001E6685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE46213026D6D2F5001E6685 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE46213726D6D2F5001E6685;
+			remoteInfo = EasyBank;
+		};
+		DE46215A26D6D2FB001E6685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE46213026D6D2F5001E6685 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE46213726D6D2F5001E6685;
+			remoteInfo = EasyBank;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBankTests.release.xcconfig"; path = "Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests.release.xcconfig"; sourceTree = "<group>"; };
+		87F1038D9DB1EE76AEC9202F /* Pods-EasyBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.release.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.release.xcconfig"; sourceTree = "<group>"; };
+		8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF78D447E5816E63DE57D1C /* Pods-EasyBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBankTests.debug.xcconfig"; path = "Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C55EF69C2D2F836C52CE1A8B /* Pods-EasyBank-EasyBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.release.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBank_EasyBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D378C316181EED5ED3B89481 /* Pods-EasyBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.debug.xcconfig"; sourceTree = "<group>"; };
+		DE46213826D6D2F5001E6685 /* EasyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE46213B26D6D2F5001E6685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DE46213F26D6D2F5001E6685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE46214226D6D2F5001E6685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE46214426D6D2FB001E6685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE46214726D6D2FB001E6685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE46214926D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE46214E26D6D2FB001E6685 /* EasyBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE46215226D6D2FB001E6685 /* EasyBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyBankTests.swift; sourceTree = "<group>"; };
+		DE46215426D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyBankUITests.swift; sourceTree = "<group>"; };
+		DE46215F26D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE46216B26D6D405001E6685 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE46213526D6D2F5001E6685 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE46214B26D6D2FB001E6685 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE46215626D6D2FB001E6685 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3078D4D234647692C2A31BFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D378C316181EED5ED3B89481 /* Pods-EasyBank.debug.xcconfig */,
+				87F1038D9DB1EE76AEC9202F /* Pods-EasyBank.release.xcconfig */,
+				8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */,
+				C55EF69C2D2F836C52CE1A8B /* Pods-EasyBank-EasyBankUITests.release.xcconfig */,
+				BEF78D447E5816E63DE57D1C /* Pods-EasyBankTests.debug.xcconfig */,
+				3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		85DE9B3B34E95869B536D2F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */,
+				CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */,
+				EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE46212F26D6D2F5001E6685 = {
+			isa = PBXGroup;
+			children = (
+				DE46213A26D6D2F5001E6685 /* EasyBank */,
+				DE46215126D6D2FB001E6685 /* EasyBankTests */,
+				DE46215C26D6D2FB001E6685 /* EasyBankUITests */,
+				DE46213926D6D2F5001E6685 /* Products */,
+				3078D4D234647692C2A31BFF /* Pods */,
+				85DE9B3B34E95869B536D2F1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DE46213926D6D2F5001E6685 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE46213826D6D2F5001E6685 /* EasyBank.app */,
+				DE46214E26D6D2FB001E6685 /* EasyBankTests.xctest */,
+				DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE46213A26D6D2F5001E6685 /* EasyBank */ = {
+			isa = PBXGroup;
+			children = (
+				DE46213B26D6D2F5001E6685 /* AppDelegate.swift */,
+				DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */,
+				DE46213F26D6D2F5001E6685 /* ViewController.swift */,
+				DE46214126D6D2F5001E6685 /* Main.storyboard */,
+				DE46214426D6D2FB001E6685 /* Assets.xcassets */,
+				DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */,
+				DE46214926D6D2FB001E6685 /* Info.plist */,
+				DE46216B26D6D405001E6685 /* GoogleService-Info.plist */,
+			);
+			path = EasyBank;
+			sourceTree = "<group>";
+		};
+		DE46215126D6D2FB001E6685 /* EasyBankTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE46215226D6D2FB001E6685 /* EasyBankTests.swift */,
+				DE46215426D6D2FB001E6685 /* Info.plist */,
+			);
+			path = EasyBankTests;
+			sourceTree = "<group>";
+		};
+		DE46215C26D6D2FB001E6685 /* EasyBankUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */,
+				DE46215F26D6D2FB001E6685 /* Info.plist */,
+			);
+			path = EasyBankUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE46213726D6D2F5001E6685 /* EasyBank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE46216226D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBank" */;
+			buildPhases = (
+				8230BC8256EBAC047ED6DECF /* [CP] Check Pods Manifest.lock */,
+				DE46213426D6D2F5001E6685 /* Sources */,
+				DE46213526D6D2F5001E6685 /* Frameworks */,
+				DE46213626D6D2F5001E6685 /* Resources */,
+				C0B1FD3F62D1A1BDC8916EC0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyBank;
+			productName = EasyBank;
+			productReference = DE46213826D6D2F5001E6685 /* EasyBank.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE46214D26D6D2FB001E6685 /* EasyBankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE46216526D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankTests" */;
+			buildPhases = (
+				9A10338762B2803719DE76F0 /* [CP] Check Pods Manifest.lock */,
+				DE46214A26D6D2FB001E6685 /* Sources */,
+				DE46214B26D6D2FB001E6685 /* Frameworks */,
+				DE46214C26D6D2FB001E6685 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE46215026D6D2FB001E6685 /* PBXTargetDependency */,
+			);
+			name = EasyBankTests;
+			productName = EasyBankTests;
+			productReference = DE46214E26D6D2FB001E6685 /* EasyBankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE46215826D6D2FB001E6685 /* EasyBankUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE46216826D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankUITests" */;
+			buildPhases = (
+				D51DC6C907864E538E92565E /* [CP] Check Pods Manifest.lock */,
+				DE46215526D6D2FB001E6685 /* Sources */,
+				DE46215626D6D2FB001E6685 /* Frameworks */,
+				DE46215726D6D2FB001E6685 /* Resources */,
+				C29EFBF57485167D3E690A40 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE46215B26D6D2FB001E6685 /* PBXTargetDependency */,
+			);
+			name = EasyBankUITests;
+			productName = EasyBankUITests;
+			productReference = DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE46213026D6D2F5001E6685 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					DE46213726D6D2F5001E6685 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					DE46214D26D6D2FB001E6685 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = DE46213726D6D2F5001E6685;
+					};
+					DE46215826D6D2FB001E6685 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = DE46213726D6D2F5001E6685;
+					};
+				};
+			};
+			buildConfigurationList = DE46213326D6D2F5001E6685 /* Build configuration list for PBXProject "EasyBank" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE46212F26D6D2F5001E6685;
+			productRefGroup = DE46213926D6D2F5001E6685 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE46213726D6D2F5001E6685 /* EasyBank */,
+				DE46214D26D6D2FB001E6685 /* EasyBankTests */,
+				DE46215826D6D2FB001E6685 /* EasyBankUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE46213626D6D2F5001E6685 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */,
+				DE46216C26D6D405001E6685 /* GoogleService-Info.plist in Resources */,
+				DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */,
+				DE46214326D6D2F5001E6685 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE46214C26D6D2FB001E6685 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE46215726D6D2FB001E6685 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8230BC8256EBAC047ED6DECF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A10338762B2803719DE76F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyBankTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0B1FD3F62D1A1BDC8916EC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C29EFBF57485167D3E690A40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D51DC6C907864E538E92565E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyBank-EasyBankUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE46213426D6D2F5001E6685 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */,
+				DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */,
+				DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE46214A26D6D2FB001E6685 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE46215526D6D2FB001E6685 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE46215E26D6D2FB001E6685 /* EasyBankUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE46215026D6D2FB001E6685 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE46213726D6D2F5001E6685 /* EasyBank */;
+			targetProxy = DE46214F26D6D2FB001E6685 /* PBXContainerItemProxy */;
+		};
+		DE46215B26D6D2FB001E6685 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE46213726D6D2F5001E6685 /* EasyBank */;
+			targetProxy = DE46215A26D6D2FB001E6685 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE46214126D6D2F5001E6685 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE46214226D6D2F5001E6685 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE46214726D6D2FB001E6685 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE46216026D6D2FB001E6685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE46216126D6D2FB001E6685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE46216326D6D2FB001E6685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D378C316181EED5ED3B89481 /* Pods-EasyBank.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EasyBank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE46216426D6D2FB001E6685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87F1038D9DB1EE76AEC9202F /* Pods-EasyBank.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EasyBank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE46216626D6D2FB001E6685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEF78D447E5816E63DE57D1C /* Pods-EasyBankTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EasyBankTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyBank.app/EasyBank";
+			};
+			name = Debug;
+		};
+		DE46216726D6D2FB001E6685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EasyBankTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyBank.app/EasyBank";
+			};
+			name = Release;
+		};
+		DE46216926D6D2FB001E6685 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EasyBankUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyBank;
+			};
+			name = Debug;
+		};
+		DE46216A26D6D2FB001E6685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C55EF69C2D2F836C52CE1A8B /* Pods-EasyBank-EasyBankUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EasyBankUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyBank;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE46213326D6D2F5001E6685 /* Build configuration list for PBXProject "EasyBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE46216026D6D2FB001E6685 /* Debug */,
+				DE46216126D6D2FB001E6685 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE46216226D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE46216326D6D2FB001E6685 /* Debug */,
+				DE46216426D6D2FB001E6685 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE46216526D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE46216626D6D2FB001E6685 /* Debug */,
+				DE46216726D6D2FB001E6685 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE46216826D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE46216926D6D2FB001E6685 /* Debug */,
+				DE46216A26D6D2FB001E6685 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE46213026D6D2F5001E6685 /* Project object */;
+}
