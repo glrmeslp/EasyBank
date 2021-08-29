@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BankerViewController" customModule="EasyBank" customModuleProvider="target">
             <connections>
+                <outlet property="roomNameTextField" destination="rlh-Se-8v6" id="Bqz-aa-d8N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,18 +19,29 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banker Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-1z-VoJ">
-                    <rect key="frame" x="151.5" y="437.5" width="111" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rlh-Se-8v6">
+                    <rect key="frame" x="157" y="431" width="100" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="KoV-80-wtm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUN-iv-MiE">
+                    <rect key="frame" x="188.5" y="505" width="37" height="30"/>
+                    <state key="normal" title="Done"/>
+                    <connections>
+                        <action selector="didTapDoneButton:" destination="-1" eventType="touchUpInside" id="KxW-nD-Oxb"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="tbO-1z-VoJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EhJ-RW-tHy"/>
-                <constraint firstItem="tbO-1z-VoJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J26-6O-7Td"/>
+                <constraint firstItem="rlh-Se-8v6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0I8-3D-KVR"/>
+                <constraint firstItem="rlh-Se-8v6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1rB-lF-mjb"/>
+                <constraint firstItem="QUN-iv-MiE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="O1b-qi-Iu9"/>
+                <constraint firstItem="QUN-iv-MiE" firstAttribute="top" secondItem="rlh-Se-8v6" secondAttribute="bottom" constant="40" id="RI5-C3-GyY"/>
             </constraints>
             <point key="canvasLocation" x="139" y="90"/>
         </view>
