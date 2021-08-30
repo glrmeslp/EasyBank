@@ -10,7 +10,6 @@ final class ApplicationCoordinator: Coordinator {
         self.window = window
 
         navigationController = UINavigationController()
-        navigationController.navigationBar.prefersLargeTitles = true
 
         startCoordinator = StartCoordinator(navigationController: navigationController)
     }

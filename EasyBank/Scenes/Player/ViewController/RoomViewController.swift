@@ -1,22 +1,18 @@
 import UIKit
 
-class BankerViewController: UIViewController {
-
-    private var viewModel: BankerViewModel? {
-        didSet {
-            viewModel?.viewDelegate = self
-        }
-    }
-
-    @IBOutlet private weak var roomNameTextField: UITextField! {
-        didSet { roomNameTextField.delegate = self}}
-    @IBOutlet private weak var createButton: UIButton!
+class RoomViewController: UIViewController {
     
-    init(viewModel: BankerViewModel) {
+    private var viewModel: RoomViewModel?
+
+    @IBOutlet weak var roomNameTextField: UITextField! {
+        didSet { roomNameTextField.delegate = self }}
+    @IBOutlet weak var continueButton: UIButton!
+    
+    init(viewModel: RoomViewModel) {
+        super.init(nibName: "RoomViewController", bundle: nil)
         self.viewModel = viewModel
-        super.init(nibName: "BankerView", bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -26,55 +22,45 @@ class BankerViewController: UIViewController {
         setup()
     }
 
-    @IBAction func didTapCreateButton(_ sender: Any) {
+    @IBAction func didTapContinueButton(_ sender: Any) {
         guard let roomName = roomNameTextField.text else { return }
-        viewModel?.isThereThisRoom(with: roomName) { [weak self] message in
-            if let message = message {
-                self?.presentAlert(with: message)
-            } else {
-                self?.viewModel?.createRoom(with: roomName)
-            }
+        viewModel?.enterToRoom(roomName) { [weak self] error in
+            guard let error = error else { return }
+            self?.presentAlert(with: error)
         }
     }
 
     private func enableContinueButton() {
-        createButton.isEnabled = true
-        createButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        continueButton.isEnabled = true
+        continueButton.layer.backgroundColor = UIColor.systemBlue.cgColor
     }
 
     private func disableContinueButton() {
-        createButton.isEnabled = false
-        createButton.layer.backgroundColor = UIColor.systemGray6.cgColor
+        continueButton.isEnabled = false
+        continueButton.layer.backgroundColor = UIColor.systemGray6.cgColor
     }
 
     private func setup() {
         let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         view.addGestureRecognizer(tapGestureReconizer)
         
-        createButton.layer.cornerRadius = 20
+        continueButton.layer.cornerRadius = 20
         disableContinueButton()
 
         roomNameTextField.becomeFirstResponder()
-        
+    
         navigationController?.navigationBar.isHidden = false
     }
 
     @objc private func didTapView(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-    
 }
 
-extension BankerViewController: BankerViewModelDelegate {
-    func showErrorMessage(with message: String) {
-        presentAlert(with: message)
-    }
-}
-
-extension BankerViewController: UITextFieldDelegate {
+extension RoomViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if createButton.isEnabled {
-            didTapCreateButton(self)
+        if continueButton.isEnabled {
+            didTapContinueButton(self)
         }
         return true
     }

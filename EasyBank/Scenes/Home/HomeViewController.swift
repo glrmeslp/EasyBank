@@ -23,10 +23,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLabels()
+        setup()
     }
     
-    func setupLabels() {
+    func setup() {
         viewModel?.getAccountInformation { [weak self] account in
             self?.userNameLabel.text = account.userName
             self?.balanceLabel.text = "\(account.balance)"
@@ -34,6 +34,8 @@ class HomeViewController: UIViewController {
         viewModel?.getRoomNameAndUserId { [weak self] roomName, _ in
             self?.roomNameLabel.text = roomName
         }
+        
+        navigationController?.navigationBar.isHidden = true
     }
 }
 

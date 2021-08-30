@@ -27,16 +27,26 @@ extension StartCoordinator: StartViewModelCoordinatorDelegate {
         navigationController.pushViewController(bankerViewController, animated: true)
     }
 
-    func pushToPlayerViewController(uid: String) {
-        let playerViewController = PlayerViewController()
-        navigationController.pushViewController(playerViewController, animated: true)
+    func pushToRoomViewController(uid: String) {
+        let roomViewModel = RoomViewModel()
+        roomViewModel.coordinatorDelegate = self
+        let roomViewController = RoomViewController(viewModel: roomViewModel)
+        navigationController.pushViewController(roomViewController, animated: true)
     }
 }
 
-extension StartCoordinator: BankerViewModelCoordinatorDelegate {
+extension StartCoordinator: BankerViewModelCoordinatorDelegate, RoomViewModelCoordinatorDelegate, PlayerViewModelCoordinatorDelegate {
+    
     func pushToHomeViewController(with roomName: String, and uid: String) {
         let homeViewModel = HomeViewModel(with: roomName, and: uid)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
         navigationController.pushViewController(homeViewController, animated: true)
+    }
+    
+    func pushToPlayerViewController(with roomName: String) {
+        let playerViewModel = PlayerViewModel(roomName: roomName)
+        playerViewModel.coordinatorDelegate = self
+        let playerViewController = PlayerViewController(viewModel: playerViewModel)
+        navigationController.pushViewController(playerViewController, animated: true)
     }
 }
