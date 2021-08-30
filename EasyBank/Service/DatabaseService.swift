@@ -8,26 +8,27 @@ class DatabaseService {
     private let COLLECTION_ROOM = "rooms"
     private let COLLECTION_ACCOUNTS = "accounts"
     
-    func createRoom(_ roomName: String, _ userId: String, completion: @escaping (String?) -> Void) {
-        do {
-            let account = Account(balance: 100000.0, userName: "The Banker")
-            try firestore.collection(COLLECTION_ROOM).document(roomName)
-                .collection(COLLECTION_ACCOUNTS)
-                .document(userId)
-                .setData(from: account)
-            completion(nil)
-        } catch let error {
-            completion(error.localizedDescription)
+    func createRoom(_ roomName: String, completion: @escaping (String?) -> Void) {
+        firestore.collection(COLLECTION_ROOM).document(roomName).setData(["createDate": Timestamp(date: Date())]) { error in
+            if let error = error {
+                completion(error.localizedDescription)
+            } else {
+                completion(nil)
+            }
         }
     }
     
-    func isRoomExists(roomName: String, completion: @escaping (String?) -> Void) {
+    func getRoom(roomName: String, completion: @escaping (Bool?, String?) -> Void) {
         let roomRef = firestore.collection(COLLECTION_ROOM).document(roomName)
-        roomRef.getDocument { document, error in
+        roomRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                return
+                completion(true, nil)
             } else {
-                completion(error.debugDescription)
+                guard let error = error else {
+                    completion(false,"This room does not exist")
+                    return
+                }
+                completion(false,error.localizedDescription)
             }
         }
     }
@@ -48,6 +49,19 @@ class DatabaseService {
             } else {
                 completion(nil, error?.localizedDescription)
             }
+        }
+    }
+
+    func createAccount(with uid: String, _ account: Account, and roomName: String, completion: @escaping (String?) -> Void) {
+        do {
+            try firestore.collection(COLLECTION_ROOM)
+                .document(roomName)
+                .collection(COLLECTION_ACCOUNTS)
+                .document(uid)
+                .setData(from: account)
+            completion(nil)
+        } catch let error {
+            completion(error.localizedDescription)
         }
     }
     

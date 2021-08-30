@@ -1,6 +1,6 @@
 protocol StartViewModelCoordinatorDelegate: AnyObject {
     func pushToBankerViewController(uid: String)
-    func pushToPlayerViewController(uid: String)
+    func pushToRoomViewController(uid: String)
     func pushToAuthViewController()
 }
 
@@ -20,7 +20,7 @@ final class StartViewModel {
 
     func showPlayerViewController() {
         guard let uid = uid else { return }
-        coordinatorDelegate?.pushToPlayerViewController(uid: uid)
+        coordinatorDelegate?.pushToRoomViewController(uid: uid)
     }
 
     func detectAuthenticationStatus() {

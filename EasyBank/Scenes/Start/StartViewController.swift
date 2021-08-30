@@ -3,6 +3,8 @@ import UIKit
 class StartViewController: UIViewController {
 
     private var viewModel: StartViewModel?
+    @IBOutlet private weak var bankerButton: UIButton!
+    @IBOutlet private weak var playerButton: UIButton!
     
     init(viewModel: StartViewModel) {
         self.viewModel = viewModel
@@ -15,11 +17,12 @@ class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         viewModel?.detectAuthenticationStatus()
-        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -33,6 +36,16 @@ class StartViewController: UIViewController {
 
     @IBAction private func didTapPlayerButton(_ sender: Any) {
         viewModel?.showPlayerViewController()
+    }
+    
+    func setup() {
+        bankerButton.layer.cornerRadius = 20
+
+        playerButton.layer.cornerRadius = 20
+        playerButton.layer.borderWidth = 1
+        playerButton.layer.borderColor = UIColor.systemBlue.cgColor
+        
+        navigationController?.navigationBar.isHidden = true
     }
     
 }
