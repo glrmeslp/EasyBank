@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,31 +16,7 @@
 		DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */; };
 		DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215226D6D2FB001E6685 /* EasyBankTests.swift */; };
 		DE46215E26D6D2FB001E6685 /* EasyBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */; };
-		DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217426D6D996001E6685 /* RoomViewModel.swift */; };
-		DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217626D6D9F1001E6685 /* StartViewController.swift */; };
-		DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217726D6D9F1001E6685 /* StartViewController.xib */; };
-		DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217D26D6DAD7001E6685 /* RoomViewController.swift */; };
-		DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217E26D6DAD7001E6685 /* RoomViewController.xib */; };
-		DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218126D6DB83001E6685 /* StartCoordinator.swift */; };
-		DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218326D6DB93001E6685 /* StartViewModel.swift */; };
-		DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218626D6DBA9001E6685 /* Coordinator.swift */; };
-		DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */; };
-		DE46218C26D6E22F001E6685 /* BankerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218A26D6E22F001E6685 /* BankerViewController.swift */; };
-		DE46218D26D6E22F001E6685 /* BankerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46218B26D6E22F001E6685 /* BankerView.xib */; };
-		DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */; };
-		DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8D26D9698B00240B70 /* HomeViewController.swift */; };
-		DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE75DD8E26D9698B00240B70 /* HomeViewController.xib */; };
-		DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD9126D96BEE00240B70 /* HomeViewModel.swift */; };
-		DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE93484826D8034700680E63 /* GoogleService-Info.plist */; };
-		DE93484B26D8041900680E63 /* BankerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484A26D8041900680E63 /* BankerViewModel.swift */; };
-		DE93485026D8075200680E63 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484F26D8075100680E63 /* Account.swift */; };
-		DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485226D80A5600680E63 /* DatabaseService.swift */; };
-		DE93485526D82BB500680E63 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485426D82BB500680E63 /* AuthService.swift */; };
-		DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */; };
-		DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */; };
-		DEE8FB9A26DC1CB7005547CA /* TextFieldWithErrorLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */; };
-		DEE8FB9C26DC1EAC005547CA /* TextFieldWithErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9B26DC1EAC005547CA /* TextFieldWithErrorLabel.swift */; };
-		DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */; };
+		DE46216C26D6D405001E6685 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE46216B26D6D405001E6685 /* GoogleService-Info.plist */; };
 		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
 /* End PBXBuildFile section */
@@ -85,31 +61,7 @@
 		DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyBankUITests.swift; sourceTree = "<group>"; };
 		DE46215F26D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE46217426D6D996001E6685 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
-		DE46217626D6D9F1001E6685 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		DE46217726D6D9F1001E6685 /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
-		DE46217D26D6DAD7001E6685 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
-		DE46217E26D6DAD7001E6685 /* RoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
-		DE46218126D6DB83001E6685 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
-		DE46218326D6DB93001E6685 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
-		DE46218626D6DBA9001E6685 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
-		DE46218A26D6E22F001E6685 /* BankerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankerViewController.swift; sourceTree = "<group>"; };
-		DE46218B26D6E22F001E6685 /* BankerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankerView.xib; sourceTree = "<group>"; };
-		DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		DE75DD8D26D9698B00240B70 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		DE75DD8E26D9698B00240B70 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		DE75DD9126D96BEE00240B70 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		DE93484826D8034700680E63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DE93484A26D8041900680E63 /* BankerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankerViewModel.swift; sourceTree = "<group>"; };
-		DE93484F26D8075100680E63 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		DE93485226D80A5600680E63 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
-		DE93485426D82BB500680E63 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
-		DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldWithErrorLabelView.xib; sourceTree = "<group>"; };
-		DEE8FB9B26DC1EAC005547CA /* TextFieldWithErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithErrorLabel.swift; sourceTree = "<group>"; };
-		DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		DE46216B26D6D405001E6685 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,6 +103,7 @@
 				BEF78D447E5816E63DE57D1C /* Pods-EasyBankTests.debug.xcconfig */,
 				3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */,
 			);
+			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -189,12 +142,6 @@
 		DE46213A26D6D2F5001E6685 /* EasyBank */ = {
 			isa = PBXGroup;
 			children = (
-				DE8A0D3126DB129000D0175F /* Components */,
-				DE75DD8926D9686800240B70 /* Extensions */,
-				DE93485126D80A3D00680E63 /* Service */,
-				DE93484C26D8066C00680E63 /* Models */,
-				DE46218526D6DB97001E6685 /* Protocols */,
-				DE46216D26D6D869001E6685 /* Scenes */,
 				DE46213B26D6D2F5001E6685 /* AppDelegate.swift */,
 				DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */,
 				DE46213F26D6D2F5001E6685 /* ViewController.swift */,
@@ -202,7 +149,7 @@
 				DE46214426D6D2FB001E6685 /* Assets.xcassets */,
 				DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */,
 				DE46214926D6D2FB001E6685 /* Info.plist */,
-				DE93484826D8034700680E63 /* GoogleService-Info.plist */,
+				DE46216B26D6D405001E6685 /* GoogleService-Info.plist */,
 			);
 			path = EasyBank;
 			sourceTree = "<group>";
@@ -225,128 +172,6 @@
 			path = EasyBankUITests;
 			sourceTree = "<group>";
 		};
-		DE46216D26D6D869001E6685 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				DE75DD8C26D9697200240B70 /* Home */,
-				DE46217A26D6DA05001E6685 /* Banker */,
-				DE46216F26D6D911001E6685 /* Player */,
-				DE46216E26D6D87A001E6685 /* Start */,
-				DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		DE46216E26D6D87A001E6685 /* Start */ = {
-			isa = PBXGroup;
-			children = (
-				DE46217626D6D9F1001E6685 /* StartViewController.swift */,
-				DE46217726D6D9F1001E6685 /* StartViewController.xib */,
-				DE46218126D6DB83001E6685 /* StartCoordinator.swift */,
-				DE46218326D6DB93001E6685 /* StartViewModel.swift */,
-			);
-			path = Start;
-			sourceTree = "<group>";
-		};
-		DE46216F26D6D911001E6685 /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				DEE8FB9826DC1A1F005547CA /* ViewModel */,
-				DEE8FB9226DC192D005547CA /* Views */,
-				DEE8FB9126DC1904005547CA /* ViewController */,
-			);
-			path = Player;
-			sourceTree = "<group>";
-		};
-		DE46217A26D6DA05001E6685 /* Banker */ = {
-			isa = PBXGroup;
-			children = (
-				DE46218A26D6E22F001E6685 /* BankerViewController.swift */,
-				DE46218B26D6E22F001E6685 /* BankerView.xib */,
-				DE93484A26D8041900680E63 /* BankerViewModel.swift */,
-			);
-			path = Banker;
-			sourceTree = "<group>";
-		};
-		DE46218526D6DB97001E6685 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				DE46218626D6DBA9001E6685 /* Coordinator.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		DE75DD8926D9686800240B70 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		DE75DD8C26D9697200240B70 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				DE75DD8D26D9698B00240B70 /* HomeViewController.swift */,
-				DE75DD8E26D9698B00240B70 /* HomeViewController.xib */,
-				DE75DD9126D96BEE00240B70 /* HomeViewModel.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		DE8A0D3126DB129000D0175F /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */,
-				DEE8FB9B26DC1EAC005547CA /* TextFieldWithErrorLabel.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		DE93484C26D8066C00680E63 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DE93484F26D8075100680E63 /* Account.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		DE93485126D80A3D00680E63 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				DE93485226D80A5600680E63 /* DatabaseService.swift */,
-				DE93485426D82BB500680E63 /* AuthService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		DEE8FB9126DC1904005547CA /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DE46217D26D6DAD7001E6685 /* RoomViewController.swift */,
-				DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		DEE8FB9226DC192D005547CA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DE46217E26D6DAD7001E6685 /* RoomViewController.xib */,
-				DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		DEE8FB9826DC1A1F005547CA /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				DE46217426D6D996001E6685 /* RoomViewModel.swift */,
-				DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,7 +184,6 @@
 				DE46213526D6D2F5001E6685 /* Frameworks */,
 				DE46213626D6D2F5001E6685 /* Resources */,
 				C0B1FD3F62D1A1BDC8916EC0 /* [CP] Embed Pods Frameworks */,
-				130F45CDD86931E2657D378C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -398,7 +222,6 @@
 				DE46215626D6D2FB001E6685 /* Frameworks */,
 				DE46215726D6D2FB001E6685 /* Resources */,
 				C29EFBF57485167D3E690A40 /* [CP] Embed Pods Frameworks */,
-				D8C9CD0C8A6A9D36448CDE25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -458,15 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */,
+				DE46216C26D6D405001E6685 /* GoogleService-Info.plist in Resources */,
 				DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */,
-				DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */,
-				DE46218D26D6E22F001E6685 /* BankerView.xib in Resources */,
 				DE46214326D6D2F5001E6685 /* Main.storyboard in Resources */,
-				DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */,
-				DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */,
-				DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */,
-				DEE8FB9A26DC1CB7005547CA /* TextFieldWithErrorLabelView.xib in Resources */,
-				DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,23 +304,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		130F45CDD86931E2657D378C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8230BC8256EBAC047ED6DECF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -604,23 +404,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D8C9CD0C8A6A9D36448CDE25 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -628,27 +411,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */,
-				DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */,
 				DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */,
-				DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */,
-				DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */,
 				DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */,
 				DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */,
-				DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */,
-				DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */,
-				DE46218C26D6E22F001E6685 /* BankerViewController.swift in Sources */,
-				DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */,
-				DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */,
-				DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */,
-				DE93484B26D8041900680E63 /* BankerViewModel.swift in Sources */,
-				DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */,
-				DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */,
-				DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */,
-				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,
-				DE93485026D8075200680E63 /* Account.swift in Sources */,
-				DE93485526D82BB500680E63 /* AuthService.swift in Sources */,
-				DEE8FB9C26DC1EAC005547CA /* TextFieldWithErrorLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
