@@ -70,7 +70,7 @@ final class HomeViewController: UIViewController {
         menuTransferCollection.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionCell")
     }
 
-    func setupRightBarButton() {
+    private func setupRightBarButton() {
         let rightBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "icons8-menu-2-30"),
             style: .plain,
