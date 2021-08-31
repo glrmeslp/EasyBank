@@ -79,7 +79,7 @@ final class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
-    func fetchData() {
+    private func fetchData() {
         viewModel?.getTransferMenu { [weak self] menu in
             self?.transferMenu = menu
         }
