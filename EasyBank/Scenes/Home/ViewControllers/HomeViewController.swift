@@ -48,7 +48,7 @@ final class HomeViewController: UIViewController {
         }
     }
 
-    func setup() {
+    private func setup() {
         viewModel?.getAccountInformation { [weak self] account in
             self?.userNameLabel.text = account.userName
             self?.balanceLabel.text = "\(account.balance)"
