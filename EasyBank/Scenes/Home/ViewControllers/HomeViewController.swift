@@ -124,9 +124,3 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
-//extension HomeViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-////        let width = collectionView.bounds.width / 3 - 100
-//        return CGSize(width: 40, height: 40)
-//    }
-//}
