@@ -41,8 +41,6 @@ extension StartCoordinator: BankerViewModelCoordinatorDelegate, RoomViewModelCoo
     func pushToHomeViewController(with roomName: String, and uid: String) {
         let homeViewModel = HomeViewModel(with: roomName, and: uid)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
-//        navigationController.show(homeViewController, sender: nil)
-//        navigationController.present(homeViewController, animated: true, completion: nil)
         navigationController.pushViewController(homeViewController, animated: false)
     }
     
