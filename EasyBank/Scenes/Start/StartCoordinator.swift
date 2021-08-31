@@ -11,6 +11,7 @@ final class StartCoordinator: Coordinator {
         let viewModel = StartViewModel(coordinator: self)
         let startViewController = StartViewController(viewModel: viewModel)
         navigationController.pushViewController(startViewController, animated: false)
+//        pushToHomeViewController(with: "test05", and: "swY5HaPQ1Edbs4kVPIHndNoWhc93")
     }
 }
 
@@ -40,7 +41,9 @@ extension StartCoordinator: BankerViewModelCoordinatorDelegate, RoomViewModelCoo
     func pushToHomeViewController(with roomName: String, and uid: String) {
         let homeViewModel = HomeViewModel(with: roomName, and: uid)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
-        navigationController.pushViewController(homeViewController, animated: true)
+//        navigationController.show(homeViewController, sender: nil)
+//        navigationController.present(homeViewController, animated: true, completion: nil)
+        navigationController.pushViewController(homeViewController, animated: false)
     }
     
     func pushToPlayerViewController(with roomName: String) {

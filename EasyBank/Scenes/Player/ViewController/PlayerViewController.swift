@@ -42,7 +42,7 @@ final class PlayerViewController: UIViewController {
     
     private func enableContinueButton() {
         continueButton.isEnabled = true
-        continueButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        continueButton.layer.backgroundColor = UIColor(named: "BlueColor")!.cgColor
     }
 
     private func disableContinueButton() {

@@ -39,7 +39,7 @@ class BankerViewController: UIViewController {
 
     private func enableContinueButton() {
         createButton.isEnabled = true
-        createButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        createButton.layer.backgroundColor = UIColor(named: "BlueColor")!.cgColor
     }
 
     private func disableContinueButton() {

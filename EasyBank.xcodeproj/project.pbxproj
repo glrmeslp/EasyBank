@@ -11,7 +11,6 @@
 		DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213B26D6D2F5001E6685 /* AppDelegate.swift */; };
 		DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */; };
 		DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213F26D6D2F5001E6685 /* ViewController.swift */; };
-		DE46214326D6D2F5001E6685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE46214126D6D2F5001E6685 /* Main.storyboard */; };
 		DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE46214426D6D2FB001E6685 /* Assets.xcassets */; };
 		DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */; };
 		DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215226D6D2FB001E6685 /* EasyBankTests.swift */; };
@@ -27,6 +26,8 @@
 		DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */; };
 		DE46218C26D6E22F001E6685 /* BankerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218A26D6E22F001E6685 /* BankerViewController.swift */; };
 		DE46218D26D6E22F001E6685 /* BankerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46218B26D6E22F001E6685 /* BankerView.xib */; };
+		DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */; };
+		DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */; };
 		DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */; };
 		DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8D26D9698B00240B70 /* HomeViewController.swift */; };
 		DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE75DD8E26D9698B00240B70 /* HomeViewController.xib */; };
@@ -75,7 +76,6 @@
 		DE46213B26D6D2F5001E6685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE46213F26D6D2F5001E6685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DE46214226D6D2F5001E6685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE46214426D6D2FB001E6685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE46214726D6D2FB001E6685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE46214926D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +96,8 @@
 		DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		DE46218A26D6E22F001E6685 /* BankerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankerViewController.swift; sourceTree = "<group>"; };
 		DE46218B26D6E22F001E6685 /* BankerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankerView.xib; sourceTree = "<group>"; };
+		DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DE75DD8D26D9698B00240B70 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE75DD8E26D9698B00240B70 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -198,7 +200,6 @@
 				DE46213B26D6D2F5001E6685 /* AppDelegate.swift */,
 				DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */,
 				DE46213F26D6D2F5001E6685 /* ViewController.swift */,
-				DE46214126D6D2F5001E6685 /* Main.storyboard */,
 				DE46214426D6D2FB001E6685 /* Assets.xcassets */,
 				DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */,
 				DE46214926D6D2FB001E6685 /* Info.plist */,
@@ -276,6 +277,24 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		DE4C430626DEB3B10019410A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE75DD8D26D9698B00240B70 /* HomeViewController.swift */,
+				DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DE4C430726DEB3D80019410A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE75DD8E26D9698B00240B70 /* HomeViewController.xib */,
+				DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DE75DD8926D9686800240B70 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,8 +306,8 @@
 		DE75DD8C26D9697200240B70 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DE75DD8D26D9698B00240B70 /* HomeViewController.swift */,
-				DE75DD8E26D9698B00240B70 /* HomeViewController.xib */,
+				DE4C430726DEB3D80019410A /* Views */,
+				DE4C430626DEB3B10019410A /* ViewControllers */,
 				DE75DD9126D96BEE00240B70 /* HomeViewModel.swift */,
 			);
 			path = Home;
@@ -461,10 +480,10 @@
 				DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */,
 				DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */,
 				DE46218D26D6E22F001E6685 /* BankerView.xib in Resources */,
-				DE46214326D6D2F5001E6685 /* Main.storyboard in Resources */,
 				DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */,
 				DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */,
 				DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */,
+				DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */,
 				DEE8FB9A26DC1CB7005547CA /* TextFieldWithErrorLabelView.xib in Resources */,
 				DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */,
 			);
@@ -649,6 +668,7 @@
 				DE93485026D8075200680E63 /* Account.swift in Sources */,
 				DE93485526D82BB500680E63 /* AuthService.swift in Sources */,
 				DEE8FB9C26DC1EAC005547CA /* TextFieldWithErrorLabel.swift in Sources */,
+				DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,14 +704,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DE46214126D6D2F5001E6685 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE46214226D6D2F5001E6685 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
