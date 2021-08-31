@@ -4,7 +4,7 @@ protocol HomeCollectionViewCellDelegate {
     func configure(with data: HomeCollectionViewCell.ViewModel, and view: UICollectionViewCell)
 }
 
-class HomeCollectionViewCell: UICollectionViewCell {
+final class HomeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
