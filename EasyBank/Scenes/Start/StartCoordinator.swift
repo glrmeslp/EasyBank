@@ -11,7 +11,6 @@ final class StartCoordinator: Coordinator {
         let viewModel = StartViewModel(coordinator: self)
         let startViewController = StartViewController(viewModel: viewModel)
         navigationController.pushViewController(startViewController, animated: false)
-//        pushToHomeViewController(with: "test05", and: "swY5HaPQ1Edbs4kVPIHndNoWhc93")
     }
 }
 
