@@ -5,6 +5,11 @@ protocol HomeViewModelDelegate: AnyObject {
 final class HomeViewModel {
     private var roomName: String?
     private var uid: String?
+    private let transferMenu: [[String]] = [
+        ["Pay QR Code","qrcode"],
+        ["Transfer","transferIcon"],
+        ["Receive","receiveIcon"]
+    ]
 
     weak var viewDelegate: HomeViewModelDelegate?
 
@@ -25,4 +30,9 @@ final class HomeViewModel {
         guard let roomName = roomName, let uid = uid else { return }
         completion(roomName, uid)
     }
+    
+    func getTransferMenu(completion: @escaping ([[String]]) -> Void) {
+        completion(transferMenu)
+    }
 }
+

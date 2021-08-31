@@ -43,9 +43,14 @@ class StartViewController: UIViewController {
 
         playerButton.layer.cornerRadius = 20
         playerButton.layer.borderWidth = 1
-        playerButton.layer.borderColor = UIColor.systemBlue.cgColor
+        playerButton.layer.borderColor = UIColor(named: "BlueColor")!.cgColor
         
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = UIColor(named: "BlueColor")
         navigationController?.navigationBar.isHidden = true
+        
+        let backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
     }
     
 }

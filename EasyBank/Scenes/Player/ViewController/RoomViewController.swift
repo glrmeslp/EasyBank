@@ -32,7 +32,7 @@ class RoomViewController: UIViewController {
 
     private func enableContinueButton() {
         continueButton.isEnabled = true
-        continueButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        continueButton.layer.backgroundColor = UIColor(named: "BlueColor")!.cgColor
     }
 
     private func disableContinueButton() {
@@ -50,6 +50,9 @@ class RoomViewController: UIViewController {
         roomNameTextField.becomeFirstResponder()
     
         navigationController?.navigationBar.isHidden = false
+
+        let backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
     }
 
     @objc private func didTapView(_ sender: UITapGestureRecognizer) {
