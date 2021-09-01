@@ -1,5 +1,6 @@
 protocol HomeViewModelCoordinatorDelegate: AnyObject {
     func pushToReceiveViewController(uid: String)
+    func pushToScannerViewController()
 }
 
 final class HomeViewModel {
@@ -37,6 +38,10 @@ final class HomeViewModel {
     func showReceiveViewController() {
         guard let uid = uid else { return }
         coordinatorDelegate?.pushToReceiveViewController(uid: uid)
+    }
+
+    func showPayViewController() {
+        coordinatorDelegate?.pushToScannerViewController()
     }
 }
 

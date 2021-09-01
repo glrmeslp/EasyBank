@@ -53,6 +53,12 @@ extension StartCoordinator: BankerViewModelCoordinatorDelegate, RoomViewModelCoo
 }
 
 extension StartCoordinator: HomeViewModelCoordinatorDelegate {
+    func pushToScannerViewController() {
+        let scannerViewModel = ScannerViewModel(coordinator: self)
+        let scannerViewController = ScannerViewController(viewModel: scannerViewModel)
+        navigationController.pushViewController(scannerViewController, animated: true)
+    }
+    
     func pushToReceiveViewController(uid: String) {
         let receiveViewModel = ReceiveViewModel(uid: uid, coordinator: self)
         let receiveViewController = ReceiveViewController(viewModel: receiveViewModel)
@@ -63,5 +69,11 @@ extension StartCoordinator: HomeViewModelCoordinatorDelegate {
 extension StartCoordinator: ReceiveViewModelCoordinatorDelegate {
     func didFinisih() {
         navigationController.popViewController(animated: true)
+    }
+}
+
+extension StartCoordinator: ScannerViewModelCoordinatorDelegate {
+    func pushToPayViewController(with code: String) {
+        print(code)
     }
 }

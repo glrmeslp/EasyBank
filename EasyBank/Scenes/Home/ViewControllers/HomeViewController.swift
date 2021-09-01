@@ -56,6 +56,15 @@ final class HomeViewController: UIViewController {
         extractView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
         menuTransferCollection.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionCell")
+        
+        let size = menuTransferCollection.bounds.width / 2 - 20
+        let collectionViewFlowLayout = UICollectionViewFlowLayout()
+        collectionViewFlowLayout.itemSize = CGSize(width: size, height: 100)
+//        collectionViewFlowLayout.scrollDirection = .horizontal
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        menuTransferCollection.showsHorizontalScrollIndicator = false
+        
+        menuTransferCollection.collectionViewLayout = collectionViewFlowLayout
 
         let backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
@@ -106,7 +115,7 @@ extension HomeViewController: UICollectionViewDelegate {
         guard let menu = transferMenu?[indexPath.row] else { return }
         switch menu[0] {
         case "Pay QR Code":
-            print(menu[0])
+            viewModel?.showPayViewController()
         case "Receive":
             viewModel?.showReceiveViewController()
         default:
