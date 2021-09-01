@@ -1,5 +1,5 @@
-protocol HomeViewModelDelegate: AnyObject {
-    func showErrorMessage(with message: String)
+protocol HomeViewModelCoordinatorDelegate: AnyObject {
+    func pushToReceiveViewController(uid: String)
 }
 
 final class HomeViewModel {
@@ -7,11 +7,10 @@ final class HomeViewModel {
     private var uid: String?
     private let transferMenu: [[String]] = [
         ["Pay QR Code","qrcode"],
-        ["Transfer","transferIcon"],
-        ["Receive","receiveIcon"]
+        ["Receive","ReceiveIcon"]
     ]
 
-    weak var viewDelegate: HomeViewModelDelegate?
+    weak var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
 
     init(with roomName: String, and uid: String) {
         self.roomName = roomName
@@ -33,6 +32,11 @@ final class HomeViewModel {
     
     func getTransferMenu(completion: @escaping ([[String]]) -> Void) {
         completion(transferMenu)
+    }
+
+    func showReceiveViewController() {
+        guard let uid = uid else { return }
+        coordinatorDelegate?.pushToReceiveViewController(uid: uid)
     }
 }
 

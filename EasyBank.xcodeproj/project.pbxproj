@@ -28,6 +28,10 @@
 		DE46218D26D6E22F001E6685 /* BankerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46218B26D6E22F001E6685 /* BankerView.xib */; };
 		DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */; };
 		DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */; };
+		DE4C430B26DEC0170019410A /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430926DEC0170019410A /* ReceiveViewController.swift */; };
+		DE4C430C26DEC0170019410A /* ReceiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C430A26DEC0170019410A /* ReceiveView.xib */; };
+		DE4C430E26DEC0520019410A /* ReceiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430D26DEC0520019410A /* ReceiveViewModel.swift */; };
+		DE4C431026DFC4500019410A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430F26DFC4500019410A /* UIImage+Extension.swift */; };
 		DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */; };
 		DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8D26D9698B00240B70 /* HomeViewController.swift */; };
 		DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE75DD8E26D9698B00240B70 /* HomeViewController.xib */; };
@@ -98,6 +102,10 @@
 		DE46218B26D6E22F001E6685 /* BankerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankerView.xib; sourceTree = "<group>"; };
 		DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		DE4C430926DEC0170019410A /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
+		DE4C430A26DEC0170019410A /* ReceiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveView.xib; sourceTree = "<group>"; };
+		DE4C430D26DEC0520019410A /* ReceiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewModel.swift; sourceTree = "<group>"; };
+		DE4C430F26DFC4500019410A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DE75DD8D26D9698B00240B70 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE75DD8E26D9698B00240B70 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 		DE46216D26D6D869001E6685 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DE4C430826DEBFEE0019410A /* Receive */,
 				DE75DD8C26D9697200240B70 /* Home */,
 				DE46217A26D6DA05001E6685 /* Banker */,
 				DE46216F26D6D911001E6685 /* Player */,
@@ -295,10 +304,21 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DE4C430826DEBFEE0019410A /* Receive */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C430926DEC0170019410A /* ReceiveViewController.swift */,
+				DE4C430A26DEC0170019410A /* ReceiveView.xib */,
+				DE4C430D26DEC0520019410A /* ReceiveViewModel.swift */,
+			);
+			path = Receive;
+			sourceTree = "<group>";
+		};
 		DE75DD8926D9686800240B70 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */,
+				DE4C430F26DFC4500019410A /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -484,6 +504,7 @@
 				DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */,
 				DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */,
 				DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */,
+				DE4C430C26DEC0170019410A /* ReceiveView.xib in Resources */,
 				DEE8FB9A26DC1CB7005547CA /* TextFieldWithErrorLabelView.xib in Resources */,
 				DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */,
 			);
@@ -647,6 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4C430E26DEC0520019410A /* ReceiveViewModel.swift in Sources */,
 				DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */,
 				DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */,
 				DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */,
@@ -661,7 +683,9 @@
 				DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */,
 				DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */,
 				DE93484B26D8041900680E63 /* BankerViewModel.swift in Sources */,
+				DE4C430B26DEC0170019410A /* ReceiveViewController.swift in Sources */,
 				DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */,
+				DE4C431026DFC4500019410A /* UIImage+Extension.swift in Sources */,
 				DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */,
 				DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */,
 				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,

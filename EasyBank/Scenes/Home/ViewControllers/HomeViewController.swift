@@ -2,11 +2,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    private var viewModel: HomeViewModel? {
-        didSet {
-            viewModel?.viewDelegate = self
-        }
-    }
+    private var viewModel: HomeViewModel?
     private var transferMenu: [[String]]?
 
     @IBOutlet private weak var roomNameLabel: UILabel!
@@ -49,14 +45,6 @@ final class HomeViewController: UIViewController {
     }
 
     private func setup() {
-        viewModel?.getAccountInformation { [weak self] account in
-            self?.userNameLabel.text = account.userName
-            self?.balanceLabel.text = "\(account.balance)"
-        }
-        viewModel?.getRoomNameAndUserId { [weak self] roomName, _ in
-            self?.roomNameLabel.text = roomName
-        }
-        
         navigationController?.hidesBarsOnSwipe = true
         navigationItem.setHidesBackButton(true, animated: true)
         title = "Easy Banker"
@@ -68,6 +56,9 @@ final class HomeViewController: UIViewController {
         extractView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
         menuTransferCollection.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionCell")
+
+        let backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
     }
 
     private func setupRightBarButton() {
@@ -80,16 +71,18 @@ final class HomeViewController: UIViewController {
     }
 
     private func fetchData() {
+        viewModel?.getAccountInformation { [weak self] account in
+            self?.userNameLabel.text = account.userName
+            self?.balanceLabel.text = "\(account.balance)"
+        }
+
+        viewModel?.getRoomNameAndUserId { [weak self] roomName, _ in
+            self?.roomNameLabel.text = roomName
+        }
+
         viewModel?.getTransferMenu { [weak self] menu in
             self?.transferMenu = menu
         }
-    }
-}
-
-extension HomeViewController: HomeViewModelDelegate {
-    
-    func showErrorMessage(with message: String) {
-        presentAlert(with: message)
     }
 }
 
@@ -115,9 +108,7 @@ extension HomeViewController: UICollectionViewDelegate {
         case "Pay QR Code":
             print(menu[0])
         case "Receive":
-            print(menu[0])
-        case "Transfer":
-            print(menu[0])
+            viewModel?.showReceiveViewController()
         default:
             print("")
         }

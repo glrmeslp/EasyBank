@@ -39,6 +39,7 @@ extension StartCoordinator: BankerViewModelCoordinatorDelegate, RoomViewModelCoo
     
     func pushToHomeViewController(with roomName: String, and uid: String) {
         let homeViewModel = HomeViewModel(with: roomName, and: uid)
+        homeViewModel.coordinatorDelegate = self
         let homeViewController = HomeViewController(viewModel: homeViewModel)
         navigationController.pushViewController(homeViewController, animated: false)
     }
@@ -48,5 +49,19 @@ extension StartCoordinator: BankerViewModelCoordinatorDelegate, RoomViewModelCoo
         playerViewModel.coordinatorDelegate = self
         let playerViewController = PlayerViewController(viewModel: playerViewModel)
         navigationController.pushViewController(playerViewController, animated: true)
+    }
+}
+
+extension StartCoordinator: HomeViewModelCoordinatorDelegate {
+    func pushToReceiveViewController(uid: String) {
+        let receiveViewModel = ReceiveViewModel(uid: uid, coordinator: self)
+        let receiveViewController = ReceiveViewController(viewModel: receiveViewModel)
+        navigationController.pushViewController(receiveViewController, animated: true)
+    }
+}
+
+extension StartCoordinator: ReceiveViewModelCoordinatorDelegate {
+    func didFinisih() {
+        navigationController.popViewController(animated: true)
     }
 }
