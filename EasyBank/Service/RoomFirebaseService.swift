@@ -1,15 +1,30 @@
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class DatabaseService {
+protocol RoomService {
+    func createRoom(roomName: String, completion: @escaping (String?) -> Void)
+    func getRoom(roomName: String, completion: @escaping (Bool?, String?) -> Void)
+    func createAccount(roomName: String, uid: String, account: Account, completion: @escaping (String?) -> Void)
+    func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void)
+}
 
-    static let shared = DatabaseService()
-    private let firestore = Firestore.firestore()
+class RoomFirebaseService {
+
+    private let firestore: Firestore
     private let COLLECTION_ROOM = "rooms"
     private let COLLECTION_ACCOUNTS = "accounts"
-    
-    func createRoom(_ roomName: String, completion: @escaping (String?) -> Void) {
-        firestore.collection(COLLECTION_ROOM).document(roomName).setData(["createDate": Timestamp(date: Date())]) { error in
+
+    init(firestore: Firestore) {
+        self.firestore = firestore
+    }
+}
+
+extension RoomFirebaseService: RoomService {
+
+    func createRoom(roomName: String, completion: @escaping (String?) -> Void) {
+        firestore.collection(COLLECTION_ROOM)
+            .document(roomName)
+            .setData(["createDate": Timestamp(date: Date())]) { error in
             if let error = error {
                 completion(error.localizedDescription)
             } else {
@@ -17,7 +32,7 @@ class DatabaseService {
             }
         }
     }
-    
+
     func getRoom(roomName: String, completion: @escaping (Bool?, String?) -> Void) {
         let roomRef = firestore.collection(COLLECTION_ROOM).document(roomName)
         roomRef.getDocument { (document, error) in
@@ -33,7 +48,7 @@ class DatabaseService {
         }
     }
 
-    func getAccount(_ roomName: String, _ uid: String, completion: @escaping (Account?, String?) -> Void) {
+    func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void) {
         let accountRef = firestore.collection(COLLECTION_ROOM)
             .document(roomName)
             .collection(COLLECTION_ACCOUNTS)
@@ -52,7 +67,7 @@ class DatabaseService {
         }
     }
 
-    func createAccount(with uid: String, _ account: Account, and roomName: String, completion: @escaping (String?) -> Void) {
+    func createAccount(roomName: String, uid: String, account: Account, completion: @escaping (String?) -> Void) {
         do {
             try firestore.collection(COLLECTION_ROOM)
                 .document(roomName)
@@ -64,6 +79,4 @@ class DatabaseService {
             completion(error.localizedDescription)
         }
     }
-    
-
 }
