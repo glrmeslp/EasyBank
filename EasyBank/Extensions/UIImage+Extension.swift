@@ -6,7 +6,7 @@ extension UIImage {
 
             if let filter = CIFilter(name: "CIQRCodeGenerator") {
                 filter.setValue(data, forKey: "inputMessage")
-                let transform = CGAffineTransform(scaleX: 3, y: 3)
+                let transform = CGAffineTransform(scaleX: 4, y: 4)
 
                 if let output = filter.outputImage?.transformed(by: transform) {
                     return UIImage(ciImage: output)

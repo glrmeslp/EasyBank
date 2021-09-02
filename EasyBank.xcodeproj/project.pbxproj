@@ -42,8 +42,8 @@
 		DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE93484826D8034700680E63 /* GoogleService-Info.plist */; };
 		DE93484B26D8041900680E63 /* BankerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484A26D8041900680E63 /* BankerViewModel.swift */; };
 		DE93485026D8075200680E63 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484F26D8075100680E63 /* Account.swift */; };
-		DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485226D80A5600680E63 /* DatabaseService.swift */; };
-		DE93485526D82BB500680E63 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485426D82BB500680E63 /* AuthService.swift */; };
+		DE93485326D80A5600680E63 /* RoomFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485226D80A5600680E63 /* RoomFirebaseService.swift */; };
+		DE93485526D82BB500680E63 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485426D82BB500680E63 /* FirebaseAuthService.swift */; };
 		DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */; };
 		DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */; };
 		DEE8FB9A26DC1CB7005547CA /* TextFieldWithErrorLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */; };
@@ -119,8 +119,8 @@
 		DE93484826D8034700680E63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE93484A26D8041900680E63 /* BankerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankerViewModel.swift; sourceTree = "<group>"; };
 		DE93484F26D8075100680E63 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		DE93485226D80A5600680E63 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
-		DE93485426D82BB500680E63 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DE93485226D80A5600680E63 /* RoomFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomFirebaseService.swift; sourceTree = "<group>"; };
+		DE93485426D82BB500680E63 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldWithErrorLabelView.xib; sourceTree = "<group>"; };
@@ -370,8 +370,8 @@
 		DE93485126D80A3D00680E63 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				DE93485226D80A5600680E63 /* DatabaseService.swift */,
-				DE93485426D82BB500680E63 /* AuthService.swift */,
+				DE93485226D80A5600680E63 /* RoomFirebaseService.swift */,
+				DE93485426D82BB500680E63 /* FirebaseAuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -697,7 +697,7 @@
 				DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */,
 				DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */,
 				DE46218C26D6E22F001E6685 /* BankerViewController.swift in Sources */,
-				DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */,
+				DE93485326D80A5600680E63 /* RoomFirebaseService.swift in Sources */,
 				DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */,
 				DE4C431B26E007C00019410A /* ScannerViewModel.swift in Sources */,
 				DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */,
@@ -710,7 +710,7 @@
 				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,
 				DE93485026D8075200680E63 /* Account.swift in Sources */,
 				DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */,
-				DE93485526D82BB500680E63 /* AuthService.swift in Sources */,
+				DE93485526D82BB500680E63 /* FirebaseAuthService.swift in Sources */,
 				DEE8FB9C26DC1EAC005547CA /* TextFieldWithErrorLabel.swift in Sources */,
 				DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */,
 			);

@@ -6,8 +6,8 @@ target 'EasyBank' do
   use_frameworks!
 
   # Pods for EasyBank
-  pod 'FirebaseUI'
-  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Email'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
 

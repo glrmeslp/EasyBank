@@ -8,7 +8,7 @@ protocol RoomService {
     func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void)
 }
 
-class RoomFirebaseService {
+final class RoomFirebaseService {
 
     private let firestore: Firestore
     private let COLLECTION_ROOM = "rooms"

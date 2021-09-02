@@ -1,23 +1,33 @@
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 final class StartCoordinator: Coordinator {
     var navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
+    let firestore: Firestore
+    let auth: Auth
+
+    private var startViewModel: StartViewModel {
+        let authService = FirebaseAuthService(auth: auth)
+        let viewModel = StartViewModel(authService: authService, coordinator: self)
+        return viewModel
+    }
+
+    init(navigationController: UINavigationController, firestore: Firestore, auth: Auth) {
         self.navigationController = navigationController
+        self.firestore = firestore
+        self.auth = auth
     }
     
     func start() {
-        let viewModel = StartViewModel(coordinator: self)
-        let startViewController = StartViewController(viewModel: viewModel)
+        let startViewController = StartViewController(viewModel: startViewModel)
         navigationController.pushViewController(startViewController, animated: false)
     }
 }
 
 extension StartCoordinator: StartViewModelCoordinatorDelegate {
-    func pushToAuthViewController() {
-        let auth = AuthService.shared.auth
-        navigationController.present(auth.authViewController(), animated: true)
+    func pushToAuthViewController(view: UIViewController) {
+        navigationController.present(view, animated: true, completion: nil)
     }
 
     func pushToBankerViewController(uid: String) {
@@ -59,8 +69,8 @@ extension StartCoordinator: HomeViewModelCoordinatorDelegate {
         navigationController.pushViewController(scannerViewController, animated: true)
     }
     
-    func pushToReceiveViewController(uid: String) {
-        let receiveViewModel = ReceiveViewModel(uid: uid, coordinator: self)
+    func pushToReceiveViewController(uid: String, roomName: String) {
+        let receiveViewModel = ReceiveViewModel(uid: uid, roomName: roomName, coordinator: self)
         let receiveViewController = ReceiveViewController(viewModel: receiveViewModel)
         navigationController.pushViewController(receiveViewController, animated: true)
     }
