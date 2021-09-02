@@ -13,7 +13,7 @@ extension UIViewController {
         navigationItem.backBarButtonItem = backBarButtonItem
 
         navigationController?.navigationBar.isHidden = isHidden
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.backgroundColor = UIColor.systemBackground
         navigationController?.navigationBar.tintColor = UIColor(named: "BlueColor")
     }
     

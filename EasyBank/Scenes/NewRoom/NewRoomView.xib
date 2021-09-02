@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BankerViewController" customModule="EasyBank" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewRoomViewController" customModule="EasyBank" customModuleProvider="target">
             <connections>
                 <outlet property="createButton" destination="QUN-iv-MiE" id="epg-xA-h5Q"/>
                 <outlet property="roomNameTextField" destination="rlh-Se-8v6" id="Bqz-aa-d8N"/>
