@@ -60,7 +60,6 @@ final class HomeViewController: UIViewController {
         let size = menuTransferCollection.bounds.width / 2 - 20
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.itemSize = CGSize(width: size, height: 100)
-//        collectionViewFlowLayout.scrollDirection = .horizontal
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         menuTransferCollection.showsHorizontalScrollIndicator = false
         

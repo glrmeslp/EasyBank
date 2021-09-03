@@ -2,7 +2,13 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
+protocol HomeViewModelCoordinatorDelegate: AnyObject {
+    func pushToReceiveViewController(roomName: String)
+    func pushToScannerViewController()
+}
+
 final class HomeCoordinator: Coordinator {
+    
     var navigationController: UINavigationController
     
     private let roomName: String
@@ -10,7 +16,12 @@ final class HomeCoordinator: Coordinator {
     private let auth: Auth
 
     private var homeViewModel: HomeViewModel {
-        let viewModel = HomeViewModel(with: roomName)
+        let roomService = DatabaseService(firestore: firestore)
+        let authService = AuthenticationService(auth: auth)
+        let viewModel = HomeViewModel(with: roomName,
+                                      roomService: roomService,
+                                      authService: authService,
+                                      coordinator: self)
         return viewModel
     }
 
@@ -27,28 +38,27 @@ final class HomeCoordinator: Coordinator {
     }
 }
 
-//extension StartCoordinator: HomeViewModelCoordinatorDelegate {
-//    func pushToScannerViewController() {
-//        let scannerViewModel = ScannerViewModel(coordinator: self)
-//        let scannerViewController = ScannerViewController(viewModel: scannerViewModel)
-//        navigationController.pushViewController(scannerViewController, animated: true)
-//    }
-//
-//    func pushToReceiveViewController(uid: String, roomName: String) {
-//        let receiveViewModel = ReceiveViewModel(uid: uid, roomName: roomName, coordinator: self)
-//        let receiveViewController = ReceiveViewController(viewModel: receiveViewModel)
-//        navigationController.pushViewController(receiveViewController, animated: true)
-//    }
-//}
-//
+extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
+    func pushToScannerViewController() {
+        print("Scanner")
+        let scannerViewModel = ScannerViewModel(coordinator: self)
+        let scannerViewController = ScannerViewController(viewModel: scannerViewModel)
+        navigationController.pushViewController(scannerViewController, animated: true)
+    }
+    
+    func pushToReceiveViewController(roomName: String) {
+        print("Receive")
+    }
+}
+
 //extension StartCoordinator: ReceiveViewModelCoordinatorDelegate {
 //    func didFinisih() {
 //        navigationController.popViewController(animated: true)
 //    }
 //}
-//
-//extension StartCoordinator: ScannerViewModelCoordinatorDelegate {
-//    func pushToPayViewController(with code: String) {
-//        print(code)
-//    }
-//}
+
+extension HomeCoordinator: ScannerViewModelCoordinatorDelegate {
+    func pushToPayViewController(with code: String) {
+        print(code)
+    }
+}

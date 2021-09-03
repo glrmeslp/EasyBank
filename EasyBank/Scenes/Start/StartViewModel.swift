@@ -32,7 +32,7 @@ final class StartViewModel {
     
     func showAuthViewController() {
         authService.getAuthViewController { [weak self] viewController in
-            self?.coordinatorDelegate?.pushToAuthViewController(view: viewController)
+            self?.coordinatorDelegate?.pushToAuthViewController(controller: viewController)
         }
     }
 
