@@ -3,7 +3,7 @@ import FirebaseFirestoreSwift
 
 protocol RoomService {
     func createRoom(roomName: String, completion: @escaping (String?) -> Void)
-    func getRoom(roomName: String, completion: @escaping (Bool?, String?) -> Void)
+    func getRoom(roomName: String, completion: @escaping (Bool, String?) -> Void)
     func createAccount(roomName: String, uid: String, account: Account, completion: @escaping (String?) -> Void)
     func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void)
 }
@@ -33,7 +33,7 @@ extension DatabaseService: RoomService {
         }
     }
 
-    func getRoom(roomName: String, completion: @escaping (Bool?, String?) -> Void) {
+    func getRoom(roomName: String, completion: @escaping (Bool, String?) -> Void) {
         let roomRef = firestore.collection(COLLECTION_ROOM).document(roomName)
         roomRef.getDocument { (document, error) in
             if let document = document, document.exists {

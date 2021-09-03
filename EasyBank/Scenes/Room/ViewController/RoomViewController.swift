@@ -24,10 +24,7 @@ class RoomViewController: UIViewController {
 
     @IBAction func didTapContinueButton(_ sender: Any) {
         guard let roomName = roomNameTextField.text else { return }
-        viewModel?.enterToRoom(roomName) { [weak self] error in
-            guard let error = error else { return }
-            self?.presentAlert(with: error)
-        }
+        viewModel?.enterToRoom(roomName, from: self)
     }
 
     private func enableContinueButton() {
