@@ -5,15 +5,23 @@ import FirebaseAuth
 protocol StartViewModelCoordinatorDelegate: AnyObject {
     func pushToNewRoomViewController()
     func pushToRoomViewController()
-    func pushToAuthViewController(view: UIViewController)
+    func pushToAuthViewController(controller: UIViewController)
 }
 
 protocol NewRoomViewModelCoordinatorDelegate: AnyObject {
-    func pushToHomeViewController(with roomName: String, and uid: String)
+    func pushToHomeViewController(with roomName: String)
+    func presentAlert(with message: String, from controller: UIViewController)
 }
 
 protocol RoomViewModelCoordinatorDelegate: AnyObject {
     func pushToPlayerViewController(with roomName: String)
+    func presentAlert(with message: String, from controller: UIViewController)
+    func presentAlertAndPushToHome(with message: String, from controller: UIViewController, and roomName: String)
+}
+
+protocol PlayerViewModelCoordinatorDelegate: AnyObject {
+    func pushToHomeViewController(with roomName: String)
+    func presentAlert(with message: String, from controller: UIViewController)
 }
 
 final class StartCoordinator: Coordinator {
@@ -36,7 +44,8 @@ final class StartCoordinator: Coordinator {
 
     private var roomViewModel: RoomViewModel {
         let roomService = DatabaseService(firestore: firestore)
-        let viewModel = RoomViewModel(coordinator: self, roomService: roomService)
+        let authService = AuthenticationService(auth: auth)
+        let viewModel = RoomViewModel(coordinator: self, roomService: roomService, authService: authService)
         return viewModel
     }
 
@@ -53,8 +62,8 @@ final class StartCoordinator: Coordinator {
 }
 
 extension StartCoordinator: StartViewModelCoordinatorDelegate {
-    func pushToAuthViewController(view: UIViewController) {
-        navigationController.present(view, animated: true, completion: nil)
+    func pushToAuthViewController(controller: UIViewController) {
+        navigationController.present(controller, animated: true, completion: nil)
     }
 
     func pushToNewRoomViewController() {
@@ -69,44 +78,28 @@ extension StartCoordinator: StartViewModelCoordinatorDelegate {
 }
 
 extension StartCoordinator: NewRoomViewModelCoordinatorDelegate, RoomViewModelCoordinatorDelegate, PlayerViewModelCoordinatorDelegate {
+    func presentAlert(with message: String, from controller: UIViewController) {
+        controller.presentAlert(with: message)
+    }
     
-    func pushToHomeViewController(with roomName: String, and uid: String) {
-        let homeViewModel = HomeViewModel(with: roomName, and: uid)
-        homeViewModel.coordinatorDelegate = self
-        let homeViewController = HomeViewController(viewModel: homeViewModel)
-        navigationController.pushViewController(homeViewController, animated: false)
+    func presentAlertAndPushToHome(with message: String, from controller: UIViewController, and roomName: String) {
+        controller.presentAlert(with: message) { _ in
+            self.pushToHomeViewController(with: roomName)
+        }
+    }
+
+    func pushToHomeViewController(with roomName: String) {
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController, roomName: roomName, firestore: firestore, auth: auth)
+        homeCoordinator.start()
     }
     
     func pushToPlayerViewController(with roomName: String) {
-        let playerViewModel = PlayerViewModel(roomName: roomName)
-        playerViewModel.coordinatorDelegate = self
+        let authService = AuthenticationService(auth: auth)
+        let roomService = DatabaseService(firestore: firestore)
+        let playerViewModel = PlayerViewModel(roomName: roomName, coordinator: self, authService: authService, roomService: roomService)
         let playerViewController = PlayerViewController(viewModel: playerViewModel)
         navigationController.pushViewController(playerViewController, animated: true)
     }
 }
 
-extension StartCoordinator: HomeViewModelCoordinatorDelegate {
-    func pushToScannerViewController() {
-        let scannerViewModel = ScannerViewModel(coordinator: self)
-        let scannerViewController = ScannerViewController(viewModel: scannerViewModel)
-        navigationController.pushViewController(scannerViewController, animated: true)
-    }
-    
-    func pushToReceiveViewController(uid: String, roomName: String) {
-        let receiveViewModel = ReceiveViewModel(uid: uid, roomName: roomName, coordinator: self)
-        let receiveViewController = ReceiveViewController(viewModel: receiveViewModel)
-        navigationController.pushViewController(receiveViewController, animated: true)
-    }
-}
 
-extension StartCoordinator: ReceiveViewModelCoordinatorDelegate {
-    func didFinisih() {
-        navigationController.popViewController(animated: true)
-    }
-}
-
-extension StartCoordinator: ScannerViewModelCoordinatorDelegate {
-    func pushToPayViewController(with code: String) {
-        print(code)
-    }
-}
