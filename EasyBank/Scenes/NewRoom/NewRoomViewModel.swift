@@ -16,35 +16,37 @@ final class NewRoomViewModel {
         getUserID()
     }
 
-    func createRoom(with roomName: String, completion: @escaping (String?) -> Void) {
+    private func createRoom(with roomName: String, from controller: UIViewController) {
         self.roomName = roomName
         roomService.createRoom(roomName: roomName) { [weak self] error in
             guard let error = error else {
-                self?.createTheGameBankerAccount()
+                self?.createTheGameBankerAccount(from: controller)
                 return
             }
-            completion(error)
+            self?.coordinatorDelegate?.presentAlert(with: error, from: controller)
         }
     }
     
-    func validateRoom(with roomName: String, completion: @escaping (String?) -> Void) {
-        roomService.getRoom(roomName: roomName) { roomExists, _ in
-            if let roomExists = roomExists, roomExists == true {
-                completion("The room exists, please enter another room name")
+    func validateRoom(with roomName: String, from controller: UIViewController) {
+        roomService.getRoom(roomName: roomName) { [weak self] roomExists, _ in
+            if roomExists == true {
+                let message = "The room exists, please enter another room name"
+                self?.coordinatorDelegate?.presentAlert(with: message, from: controller)
             } else {
-                completion(nil)
+                self?.createRoom(with: roomName, from: controller)
             }
         }
     }
     
-    func createTheGameBankerAccount() {
+    private func createTheGameBankerAccount(from controller: UIViewController) {
         guard let roomName = roomName, let uid = userId else { return }
         let account = Account(balance: 10000000000, userName: "The Banker")
         roomService.createAccount(roomName: roomName, uid: uid, account: account) { [weak self] error in
-            guard error != nil else {
-                self?.coordinatorDelegate?.pushToHomeViewController(with: roomName, and: uid)
+            guard let error = error else {
+                self?.coordinatorDelegate?.pushToHomeViewController(with: roomName)
                 return
             }
+            self?.coordinatorDelegate?.presentAlert(with: error, from: controller)
         }
     }
     

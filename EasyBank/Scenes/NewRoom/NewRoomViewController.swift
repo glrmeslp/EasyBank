@@ -24,24 +24,7 @@ class NewRoomViewController: UIViewController {
 
     @IBAction func didTapCreateButton(_ sender: Any) {
         guard let roomName = roomNameTextField.text else { return }
-        validateRoom(roomName)
-    }
-    
-    private func validateRoom(_ roomName: String) {
-        viewModel?.validateRoom(with: roomName) { [weak self] message in
-            if let message = message {
-                self?.presentAlert(with: message)
-            } else {
-                self?.createRoom(roomName)
-            }
-        }
-    }
-
-    private func createRoom(_ roomName: String) {
-        viewModel?.createRoom(with: roomName) { [weak self] error in
-            guard let error = error else { return }
-            self?.presentAlert(with: error)
-        }
+        viewModel?.validateRoom(with: roomName, from: self)
     }
 
     private func enableContinueButton() {
