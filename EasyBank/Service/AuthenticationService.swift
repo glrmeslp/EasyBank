@@ -2,12 +2,13 @@ import FirebaseAuth
 import FirebaseUI
 
 protocol AuthService {
-    func detectAuthenticationStatus(completion: @escaping (String?) -> Void)
+    func detectAuthenticationStatus(completion: @escaping ( Bool) -> Void)
     func removeStateDidChangeListener()
     func getAuthViewController(completion: @escaping (UIViewController) -> Void)
+    func getUser(completion: @escaping (User?) -> Void)
 }
 
-final class FirebaseAuthService {
+final class AuthenticationService {
 
     private let auth: Auth
     private weak var handle: AuthStateDidChangeListenerHandle?
@@ -29,14 +30,19 @@ final class FirebaseAuthService {
     }
 }
 
-extension FirebaseAuthService: AuthService {
-    func detectAuthenticationStatus(completion: @escaping (String?) -> Void) {
+extension AuthenticationService: AuthService {
+    func getUser(completion: @escaping (User?) -> Void) {
+        let user = auth.currentUser
+        completion(user)
+    }
+    
+    func detectAuthenticationStatus(completion: @escaping (Bool) -> Void) {
         handle = auth.addStateDidChangeListener { _, user in
-            guard let user = user else {
-                completion(nil)
+            guard user != nil else {
+                completion(false)
                 return
             }
-            completion(user.uid)
+            completion(true)
         }
     }
 

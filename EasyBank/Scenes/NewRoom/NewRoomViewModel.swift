@@ -1,9 +1,5 @@
 import UIKit
 
-protocol NewRoomViewModelCoordinatorDelegate: AnyObject {
-    func pushToHomeViewController(with roomName: String, and uid: String)
-}
-
 final class NewRoomViewModel {
 
     private weak var coordinatorDelegate: NewRoomViewModelCoordinatorDelegate?
@@ -17,6 +13,7 @@ final class NewRoomViewModel {
         self.coordinatorDelegate = coordinator
         self.roomService = roomService
         self.authService = authService
+        getUserID()
     }
 
     func createRoom(with roomName: String, completion: @escaping (String?) -> Void) {
@@ -34,13 +31,13 @@ final class NewRoomViewModel {
         roomService.getRoom(roomName: roomName) { roomExists, _ in
             if let roomExists = roomExists, roomExists == true {
                 completion("The room exists, please enter another room name")
+            } else {
+                completion(nil)
             }
-            completion(nil)
         }
     }
     
     func createTheGameBankerAccount() {
-        getUserID()
         guard let roomName = roomName, let uid = userId else { return }
         let account = Account(balance: 10000000000, userName: "The Banker")
         roomService.createAccount(roomName: roomName, uid: uid, account: account) { [weak self] error in

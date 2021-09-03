@@ -1,15 +1,8 @@
 import UIKit
 
-protocol StartViewModelCoordinatorDelegate: AnyObject {
-    func pushToBankerViewController(uid: String)
-    func pushToRoomViewController(uid: String)
-    func pushToAuthViewController(view: UIViewController)
-}
-
 final class StartViewModel {
     
     private weak var coordinatorDelegate: StartViewModelCoordinatorDelegate?
-    private var uid: String?
     private let authService: AuthService
     
     init(authService: AuthService, coordinator: StartViewModelCoordinatorDelegate) {
@@ -17,23 +10,19 @@ final class StartViewModel {
         self.authService = authService
     }
 
-    func showBankerViewController() {
-        guard let uid = uid else { return }
-        coordinatorDelegate?.pushToBankerViewController(uid: uid)
+    func showNewRoomViewController() {
+        coordinatorDelegate?.pushToNewRoomViewController()
     }
 
-    func showPlayerViewController() {
-        guard let uid = uid else { return }
-        coordinatorDelegate?.pushToRoomViewController(uid: uid)
+    func showRoomViewController() {
+        coordinatorDelegate?.pushToRoomViewController()
     }
 
     func detectAuthenticationStatus() {
-        authService.detectAuthenticationStatus { [weak self] uid in
-            if let uid = uid {
-                self?.uid = uid
-                return
+        authService.detectAuthenticationStatus { [weak self] userLogged in
+            if userLogged == false {
+                self?.showAuthViewController()
             }
-            self?.showAuthViewController()
         }
     }
     

@@ -8,7 +8,7 @@ protocol RoomService {
     func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void)
 }
 
-final class RoomFirebaseService {
+final class DatabaseService {
 
     private let firestore: Firestore
     private let COLLECTION_ROOM = "rooms"
@@ -19,7 +19,7 @@ final class RoomFirebaseService {
     }
 }
 
-extension RoomFirebaseService: RoomService {
+extension DatabaseService: RoomService {
 
     func createRoom(roomName: String, completion: @escaping (String?) -> Void) {
         firestore.collection(COLLECTION_ROOM)

@@ -2,14 +2,41 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
+protocol StartViewModelCoordinatorDelegate: AnyObject {
+    func pushToNewRoomViewController()
+    func pushToRoomViewController()
+    func pushToAuthViewController(view: UIViewController)
+}
+
+protocol NewRoomViewModelCoordinatorDelegate: AnyObject {
+    func pushToHomeViewController(with roomName: String, and uid: String)
+}
+
+protocol RoomViewModelCoordinatorDelegate: AnyObject {
+    func pushToPlayerViewController(with roomName: String)
+}
+
 final class StartCoordinator: Coordinator {
     var navigationController: UINavigationController
     let firestore: Firestore
     let auth: Auth
 
     private var startViewModel: StartViewModel {
-        let authService = FirebaseAuthService(auth: auth)
+        let authService = AuthenticationService(auth: auth)
         let viewModel = StartViewModel(authService: authService, coordinator: self)
+        return viewModel
+    }
+
+    private var newRoomViewModel: NewRoomViewModel {
+        let roomService = DatabaseService(firestore: firestore)
+        let authService = AuthenticationService(auth: auth)
+        let viewModel = NewRoomViewModel(coordinator: self, roomService: roomService, authService: authService)
+        return viewModel
+    }
+
+    private var roomViewModel: RoomViewModel {
+        let roomService = DatabaseService(firestore: firestore)
+        let viewModel = RoomViewModel(coordinator: self, roomService: roomService)
         return viewModel
     }
 
@@ -30,22 +57,18 @@ extension StartCoordinator: StartViewModelCoordinatorDelegate {
         navigationController.present(view, animated: true, completion: nil)
     }
 
-    func pushToBankerViewController(uid: String) {
-        let bankerViewModel = BankerViewModel(uid: uid)
-        bankerViewModel.coordinatorDelegate = self
-        let bankerViewController = BankerViewController(viewModel: bankerViewModel)
-        navigationController.pushViewController(bankerViewController, animated: true)
+    func pushToNewRoomViewController() {
+        let newRoomViewController = NewRoomViewController(viewModel: newRoomViewModel)
+        navigationController.pushViewController(newRoomViewController, animated: true)
     }
 
-    func pushToRoomViewController(uid: String) {
-        let roomViewModel = RoomViewModel()
-        roomViewModel.coordinatorDelegate = self
+    func pushToRoomViewController() {
         let roomViewController = RoomViewController(viewModel: roomViewModel)
         navigationController.pushViewController(roomViewController, animated: true)
     }
 }
 
-extension StartCoordinator: BankerViewModelCoordinatorDelegate, RoomViewModelCoordinatorDelegate, PlayerViewModelCoordinatorDelegate {
+extension StartCoordinator: NewRoomViewModelCoordinatorDelegate, RoomViewModelCoordinatorDelegate, PlayerViewModelCoordinatorDelegate {
     
     func pushToHomeViewController(with roomName: String, and uid: String) {
         let homeViewModel = HomeViewModel(with: roomName, and: uid)

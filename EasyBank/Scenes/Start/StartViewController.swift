@@ -4,8 +4,8 @@ final class StartViewController: UIViewController {
 
     private var viewModel: StartViewModel?
 
-    @IBOutlet private weak var bankerButton: UIButton!
-    @IBOutlet private weak var playerButton: UIButton!
+    @IBOutlet private weak var createButton: UIButton!
+    @IBOutlet private weak var joinButton: UIButton!
 
     init(viewModel: StartViewModel) {
         self.viewModel = viewModel
@@ -24,6 +24,7 @@ final class StartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel?.detectAuthenticationStatus()
         setupNavigationController(isHidden: true)
+        super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -31,20 +32,20 @@ final class StartViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
 
-    @IBAction private func didTapBankerButton(_ sender: Any) {
-        viewModel?.showBankerViewController()
+    @IBAction private func didTapCreateButton(_ sender: Any) {
+        viewModel?.showNewRoomViewController()
     }
 
-    @IBAction private func didTapPlayerButton(_ sender: Any) {
-        viewModel?.showPlayerViewController()
+    @IBAction private func didTapJoinButton(_ sender: Any) {
+        viewModel?.showRoomViewController()
     }
 
     func setup() {
-        bankerButton.layer.cornerRadius = 20
+        createButton.layer.cornerRadius = 20
 
-        playerButton.layer.cornerRadius = 20
-        playerButton.layer.borderWidth = 1
-        playerButton.layer.borderColor = UIColor(named: "BlueColor")!.cgColor
+        joinButton.layer.cornerRadius = 20
+        joinButton.layer.borderWidth = 1
+        joinButton.layer.borderColor = UIColor(named: "BlueColor")!.cgColor
 
         setupNavigationController(isHidden: true)
     }

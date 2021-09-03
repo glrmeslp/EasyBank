@@ -49,10 +49,7 @@ class RoomViewController: UIViewController {
 
         roomNameTextField.becomeFirstResponder()
     
-        navigationController?.navigationBar.isHidden = false
-
-        let backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        navigationItem.backBarButtonItem = backBarButtonItem
+        setupNavigationController(isHidden: false)
     }
 
     @objc private func didTapView(_ sender: UITapGestureRecognizer) {

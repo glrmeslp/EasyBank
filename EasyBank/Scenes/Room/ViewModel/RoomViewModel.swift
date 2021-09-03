@@ -1,17 +1,21 @@
-protocol RoomViewModelCoordinatorDelegate: AnyObject {
-    func pushToPlayerViewController(with roomName: String)
-}
 
 final class RoomViewModel {
-    weak var coordinatorDelegate: RoomViewModelCoordinatorDelegate?
+    private weak var coordinatorDelegate: RoomViewModelCoordinatorDelegate?
+    private let roomService: RoomService
+    
+    init(coordinator: RoomViewModelCoordinatorDelegate, roomService: RoomService) {
+        self.coordinatorDelegate = coordinator
+        self.roomService = roomService
+    }
     
     func enterToRoom(_ roomName: String, completion: @escaping (String?) -> Void) {
-//        RoomFirebaseService.shared.getRoom(roomName: roomName) { [weak self] _, error in
-//            guard let error = error else {
-//                self?.coordinatorDelegate?.pushToPlayerViewController(with: roomName)
-//                return
-//            }
-//            completion(error)
-//        }
+        roomService.getRoom(roomName: roomName) { [weak self] _, error in
+            guard let error = error else {
+                completion(nil)
+                self?.coordinatorDelegate?.pushToPlayerViewController(with: roomName)
+                return
+            }
+            completion(error)
+        }
     }
 }
