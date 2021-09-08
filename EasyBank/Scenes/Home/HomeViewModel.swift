@@ -7,7 +7,7 @@ final class HomeViewModel: BaseViewModel {
     ]
     private let roomService: RoomService
 
-    private weak var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
+    private var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
 
     init(with roomName: String, roomService: RoomService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
         self.roomName = roomName
@@ -35,7 +35,6 @@ final class HomeViewModel: BaseViewModel {
 
     func showReceiveViewController() {
         coordinatorDelegate?.pushToReceiveViewController(roomName: roomName)
-        
     }
 
     func showPayViewController() {
