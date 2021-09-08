@@ -7,6 +7,10 @@ protocol HomeViewModelCoordinatorDelegate: AnyObject {
     func pushToScannerViewController()
 }
 
+protocol ReceiveViewCoordinatorDelegate: AnyObject {
+    func pushToQRCodeViewController(value: Double)
+}
+
 final class HomeCoordinator: Coordinator {
     
     var navigationController: UINavigationController
@@ -41,21 +45,13 @@ final class HomeCoordinator: Coordinator {
 extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     func pushToScannerViewController() {
         print("Scanner")
-        let scannerViewModel = ScannerViewModel(coordinator: self)
-        let scannerViewController = ScannerViewController(viewModel: scannerViewModel)
-        navigationController.pushViewController(scannerViewController, animated: true)
     }
     
     func pushToReceiveViewController(roomName: String) {
-        print("Receive")
+        let receiveCoordinator = ReceiveCoordinator(navigationController: navigationController, roomName: roomName, auth: auth)
+        receiveCoordinator.start()
     }
 }
-
-//extension StartCoordinator: ReceiveViewModelCoordinatorDelegate {
-//    func didFinisih() {
-//        navigationController.popViewController(animated: true)
-//    }
-//}
 
 extension HomeCoordinator: ScannerViewModelCoordinatorDelegate {
     func pushToPayViewController(with code: String) {
