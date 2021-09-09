@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+final class ScannerViewController: UIViewController {
     private var captureSession: AVCaptureSession!
     private var previewLayer: AVCaptureVideoPreviewLayer!
     private var viewModel: ScannerViewModel?
@@ -31,19 +31,6 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         isCaptureSessionRunning()
-    }
-
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        captureSession.stopRunning()
-
-        if let metadataObject = metadataObjects.first {
-            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
-            guard let stringValue = readableObject.stringValue else { return }
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
-        }
-
-        dismiss(animated: true)
     }
 
     private func isCaptureSessionRunning() {
@@ -98,12 +85,32 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     }
 
     private func found(code: String) {
-        viewModel?.showPayViewController(with: code)
+        captureSession.stopRunning()
+        viewModel?.validateQRCode(with: code, from: self) { [weak self] isValid in
+            if !isValid {
+                self?.presentAlert(with: "Oops! Something went wrong",
+                                   mesage: "This payment has not been completed because this QR code is invalid.") { _ in
+                    self?.captureSession.startRunning()
+                }
+            }
+        }
     }
 
     private func failed() {
         presentAlert(with: "Scanning not supported",
                      mesage: "Your device does not support scanning a code from an item. Please use a device with a camera.")
         captureSession = nil
+    }
+}
+
+extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+
+        if let metadataObject = metadataObjects.first {
+            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
+            guard let stringValue = readableObject.stringValue else { return }
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            found(code: stringValue)
+        }
     }
 }
