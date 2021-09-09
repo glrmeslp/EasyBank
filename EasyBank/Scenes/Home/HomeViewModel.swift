@@ -1,6 +1,5 @@
 
 final class HomeViewModel: BaseViewModel {
-    private var roomName: String
     private let transferMenu: [[String]] = [
         ["Pay QR Code","qrcode"],
         ["Receive","ReceiveIcon"]
@@ -10,10 +9,9 @@ final class HomeViewModel: BaseViewModel {
     private var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
 
     init(with roomName: String, roomService: RoomService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
-        self.roomName = roomName
         self.roomService = roomService
         self.coordinatorDelegate = coordinator
-        super.init(authService: authService)
+        super.init(roomName: roomName, authService: authService, roomService: roomService)
     }
 
     func getAccountInformation(completion: @escaping (Account) -> Void) {
@@ -34,7 +32,7 @@ final class HomeViewModel: BaseViewModel {
     }
 
     func showReceiveViewController() {
-        coordinatorDelegate?.pushToReceiveViewController(roomName: roomName)
+        coordinatorDelegate?.pushToReceiveViewController()
     }
 
     func showPayViewController() {
