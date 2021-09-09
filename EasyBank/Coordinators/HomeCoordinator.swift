@@ -3,12 +3,8 @@ import FirebaseFirestore
 import FirebaseAuth
 
 protocol HomeViewModelCoordinatorDelegate: AnyObject {
-    func pushToReceiveViewController(roomName: String)
+    func pushToReceiveViewController()
     func pushToScannerViewController()
-}
-
-protocol ReceiveViewCoordinatorDelegate: AnyObject {
-    func pushToQRCodeViewController(value: Double)
 }
 
 final class HomeCoordinator: Coordinator {
@@ -44,17 +40,13 @@ final class HomeCoordinator: Coordinator {
 
 extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     func pushToScannerViewController() {
-        print("Scanner")
+        let payCoordinator = PayCoordinator(navigationController: navigationController, firestore: firestore, roomName: roomName, auth: auth)
+        payCoordinator.start()
     }
     
-    func pushToReceiveViewController(roomName: String) {
-        let receiveCoordinator = ReceiveCoordinator(navigationController: navigationController, roomName: roomName, auth: auth)
+    func pushToReceiveViewController() {
+        let receiveCoordinator = ReceiveCoordinator(navigationController: navigationController, roomName: roomName, auth: auth, firestore: firestore)
         receiveCoordinator.start()
     }
 }
 
-extension HomeCoordinator: ScannerViewModelCoordinatorDelegate {
-    func pushToPayViewController(with code: String) {
-        print(code)
-    }
-}
