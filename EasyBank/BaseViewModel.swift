@@ -1,9 +1,9 @@
 class BaseViewModel {
     private let authService: AuthService
     private let roomService: RoomService
-    internal var userID: String?
-    internal let roomName: String
-    internal var userName: String?
+    var userID: String?
+    let roomName: String
+    var userName: String?
 
     init(roomName: String, authService: AuthService, roomService: RoomService) {
         self.roomName = roomName
