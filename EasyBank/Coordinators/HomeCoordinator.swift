@@ -10,7 +10,8 @@ protocol HomeViewModelCoordinatorDelegate: AnyObject {
 final class HomeCoordinator: Coordinator {
     
     var navigationController: UINavigationController
-    
+    var childCoordinators = [Coordinator]()
+
     private let roomName: String
     private let firestore: Firestore
     private let auth: Auth
@@ -34,13 +35,24 @@ final class HomeCoordinator: Coordinator {
 
     func start() {
         let homeViewController = HomeViewController(viewModel: homeViewModel)
-        navigationController.pushViewController(homeViewController, animated: true)
+        navigationController.setViewControllers([homeViewController], animated: true)
+    }
+
+    func childDidFinish(_ child: Coordinator) {
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === child {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
     }
 }
 
 extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     func pushToScannerViewController() {
         let payCoordinator = PayCoordinator(navigationController: navigationController, firestore: firestore, roomName: roomName, auth: auth)
+        payCoordinator.parentCoordinator = self
+        childCoordinators.append(payCoordinator)
         payCoordinator.start()
     }
     
@@ -49,4 +61,6 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         receiveCoordinator.start()
     }
 }
+
+
 
