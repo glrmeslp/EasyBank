@@ -6,10 +6,10 @@ final class CompleteTransactionViewController: UIViewController {
 
     @IBOutlet private weak var homeButton: UIButton!
     @IBOutlet private weak var transactionIDLabel: UILabel!
-    @IBOutlet weak var payDayLabel: UILabel!
-    @IBOutlet weak var hourLabel: UILabel!
-    @IBOutlet weak var receiverNameLabel: UILabel!
-    @IBOutlet weak var payerNameLabel: UILabel!
+    @IBOutlet private weak var payDayLabel: UILabel!
+    @IBOutlet private weak var hourLabel: UILabel!
+    @IBOutlet private weak var receiverNameLabel: UILabel!
+    @IBOutlet private weak var payerNameLabel: UILabel!
 
     init(viewModel: CompleteTransactionViewModel) {
         self.viewModel = viewModel
