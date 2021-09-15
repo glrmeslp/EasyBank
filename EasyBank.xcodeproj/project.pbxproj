@@ -11,12 +11,13 @@
 		DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C426EA41E100416164 /* PayViewController.swift */; };
 		DE1BA3C726EA41E100416164 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1BA3C526EA41E100416164 /* PayView.xib */; };
 		DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */; };
+		DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3CA26EAA44B00416164 /* Transfer.swift */; };
+		DE3774A426F22705005719E3 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774A326F22705005719E3 /* Formatter+Extension.swift */; };
 		DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44BB4B26E27A550083B354 /* HomeCoordinator.swift */; };
 		DE44BB4E26E297300083B354 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44BB4D26E297300083B354 /* BaseViewModel.swift */; };
 		DE44BB5026E2B2750083B354 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44BB4F26E2B2750083B354 /* String+Extension.swift */; };
 		DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213B26D6D2F5001E6685 /* AppDelegate.swift */; };
 		DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */; };
-		DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213F26D6D2F5001E6685 /* ViewController.swift */; };
 		DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE46214426D6D2FB001E6685 /* Assets.xcassets */; };
 		DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */; };
 		DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215226D6D2FB001E6685 /* EasyBankTests.swift */; };
@@ -45,6 +46,9 @@
 		DE52A77D26E9049C00EC3521 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77C26E9049C00EC3521 /* Double+Extension.swift */; };
 		DE52A77F26E90CC300EC3521 /* TransferMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77E26E90CC300EC3521 /* TransferMenu.swift */; };
 		DE52A78126E933C200EC3521 /* PayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A78026E933C200EC3521 /* PayCoordinator.swift */; };
+		DE70738326F0CE6B00E34C44 /* CompleteTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */; };
+		DE70738426F0CE6B00E34C44 /* CompleteTransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */; };
+		DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */; };
 		DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */; };
 		DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8D26D9698B00240B70 /* HomeViewController.swift */; };
 		DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE75DD8E26D9698B00240B70 /* HomeViewController.xib */; };
@@ -59,8 +63,6 @@
 		DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3858026E651E5008D9409 /* CurrencyTextField.swift */; };
 		DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */; };
 		DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */; };
-		DEE8FB9A26DC1CB7005547CA /* TextFieldWithErrorLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */; };
-		DEE8FB9C26DC1EAC005547CA /* TextFieldWithErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9B26DC1EAC005547CA /* TextFieldWithErrorLabel.swift */; };
 		DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */; };
 		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
@@ -95,13 +97,14 @@
 		DE1BA3C426EA41E100416164 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		DE1BA3C526EA41E100416164 /* PayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayView.xib; sourceTree = "<group>"; };
 		DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewModel.swift; sourceTree = "<group>"; };
+		DE1BA3CA26EAA44B00416164 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		DE3774A326F22705005719E3 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
 		DE44BB4B26E27A550083B354 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		DE44BB4D26E297300083B354 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		DE44BB4F26E2B2750083B354 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DE46213826D6D2F5001E6685 /* EasyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE46213B26D6D2F5001E6685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE46213F26D6D2F5001E6685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE46214426D6D2FB001E6685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE46214726D6D2FB001E6685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE46214926D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +138,9 @@
 		DE52A77C26E9049C00EC3521 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		DE52A77E26E90CC300EC3521 /* TransferMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMenu.swift; sourceTree = "<group>"; };
 		DE52A78026E933C200EC3521 /* PayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCoordinator.swift; sourceTree = "<group>"; };
+		DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewController.swift; sourceTree = "<group>"; };
+		DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTransactionView.xib; sourceTree = "<group>"; };
+		DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewModel.swift; sourceTree = "<group>"; };
 		DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DE75DD8D26D9698B00240B70 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE75DD8E26D9698B00240B70 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -149,8 +155,6 @@
 		DEE3858026E651E5008D9409 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
-		DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldWithErrorLabelView.xib; sourceTree = "<group>"; };
-		DEE8FB9B26DC1EAC005547CA /* TextFieldWithErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithErrorLabel.swift; sourceTree = "<group>"; };
 		DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -262,7 +266,6 @@
 				DE46216D26D6D869001E6685 /* Scenes */,
 				DE46213B26D6D2F5001E6685 /* AppDelegate.swift */,
 				DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */,
-				DE46213F26D6D2F5001E6685 /* ViewController.swift */,
 				DE46214426D6D2FB001E6685 /* Assets.xcassets */,
 				DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */,
 				DE46214926D6D2FB001E6685 /* Info.plist */,
@@ -293,6 +296,7 @@
 		DE46216D26D6D869001E6685 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DE70738026F0CE2E00E34C44 /* CompleteTransaction */,
 				DE1BA3C326EA41C800416164 /* Pay */,
 				DEE3857B26E646E9008D9409 /* Receive */,
 				DE4C431126DFDB660019410A /* Scanner */,
@@ -381,6 +385,16 @@
 			path = Scanner;
 			sourceTree = "<group>";
 		};
+		DE70738026F0CE2E00E34C44 /* CompleteTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */,
+				DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */,
+				DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */,
+			);
+			path = CompleteTransaction;
+			sourceTree = "<group>";
+		};
 		DE75DD8926D9686800240B70 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +402,7 @@
 				DE4C430F26DFC4500019410A /* UIImage+Extension.swift */,
 				DE44BB4F26E2B2750083B354 /* String+Extension.swift */,
 				DE52A77C26E9049C00EC3521 /* Double+Extension.swift */,
+				DE3774A326F22705005719E3 /* Formatter+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -405,8 +420,6 @@
 		DE8A0D3126DB129000D0175F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */,
-				DEE8FB9B26DC1EAC005547CA /* TextFieldWithErrorLabel.swift */,
 				DEE3858026E651E5008D9409 /* CurrencyTextField.swift */,
 			);
 			path = Components;
@@ -417,6 +430,7 @@
 			children = (
 				DE93484F26D8075100680E63 /* Account.swift */,
 				DE52A77E26E90CC300EC3521 /* TransferMenu.swift */,
+				DE1BA3CA26EAA44B00416164 /* Transfer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -587,8 +601,8 @@
 				DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */,
 				DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */,
 				DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */,
+				DE70738426F0CE6B00E34C44 /* CompleteTransactionView.xib in Resources */,
 				DE4C431926DFFBB50019410A /* ScannerView.xib in Resources */,
-				DEE8FB9A26DC1CB7005547CA /* TextFieldWithErrorLabelView.xib in Resources */,
 				DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -751,10 +765,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3774A426F22705005719E3 /* Formatter+Extension.swift in Sources */,
 				DE4C430E26DEC0520019410A /* QRCodeViewModel.swift in Sources */,
 				DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */,
 				DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */,
-				DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */,
 				DE52A77D26E9049C00EC3521 /* Double+Extension.swift in Sources */,
 				DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */,
 				DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */,
@@ -764,9 +778,11 @@
 				DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */,
 				DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */,
 				DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */,
+				DE70738326F0CE6B00E34C44 /* CompleteTransactionViewController.swift in Sources */,
 				DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */,
 				DE46218C26D6E22F001E6685 /* NewRoomViewController.swift in Sources */,
 				DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */,
+				DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */,
 				DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */,
 				DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */,
 				DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */,
@@ -784,9 +800,9 @@
 				DE44BB4E26E297300083B354 /* BaseViewModel.swift in Sources */,
 				DE93485026D8075200680E63 /* Account.swift in Sources */,
 				DE52A77726E8FC3E00EC3521 /* ReceiveCoordinator.swift in Sources */,
+				DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */,
 				DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */,
 				DE93485526D82BB500680E63 /* AuthenticationService.swift in Sources */,
-				DEE8FB9C26DC1EAC005547CA /* TextFieldWithErrorLabel.swift in Sources */,
 				DE44BB5026E2B2750083B354 /* String+Extension.swift in Sources */,
 				DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */,
 			);
@@ -960,6 +976,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C9FXM5UU24;
 				INFOPLIST_FILE = EasyBank/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -980,6 +997,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C9FXM5UU24;
 				INFOPLIST_FILE = EasyBank/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

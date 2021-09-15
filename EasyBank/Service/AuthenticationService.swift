@@ -27,6 +27,7 @@ final class AuthenticationService {
 
     init(auth: Auth) {
         self.auth = auth
+        auth.useAppLanguage()
     }
 }
 
@@ -35,7 +36,7 @@ extension AuthenticationService: AuthService {
         let user = auth.currentUser
         completion(user)
     }
-    
+
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void) {
         handle = auth.addStateDidChangeListener { _, user in
             guard user != nil else {
