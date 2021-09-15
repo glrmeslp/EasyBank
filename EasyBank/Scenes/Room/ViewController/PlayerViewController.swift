@@ -23,21 +23,16 @@ final class PlayerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel?.detectAuthenticationStatus()
         super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        viewModel?.undetectAuthenticationStatus()
         super.viewWillDisappear(animated)
     }
 
     @IBAction func didTapContinueButton(_ sender: Any) {
         guard let name = nameTextField.text else { return }
-        viewModel?.createAccount(with: name) { [weak self] error in
-            guard let error = error else { return }
-            self?.presentAlert(with: error)
-        }
+        viewModel?.createAccount(with: name, from: self)
     }
     
     private func enableContinueButton() {

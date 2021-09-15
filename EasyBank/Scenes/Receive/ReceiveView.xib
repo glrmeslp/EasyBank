@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReceiveViewController" customModule="EasyBank" customModuleProvider="target">
             <connections>
-                <outlet property="homeButton" destination="uvO-c0-hl6" id="e7D-CF-1p7"/>
-                <outlet property="qrCodeImage" destination="DJD-Lx-kmd" id="A9K-7F-73f"/>
+                <outlet property="createQRCodeButton" destination="rMQ-eb-aUd" id="KXf-NE-Mje"/>
+                <outlet property="valueTextField" destination="2v9-to-bXB" id="PnM-0L-HGl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,59 +21,60 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BlS-Ai-0Gv">
-                    <rect key="frame" x="20" y="84" width="374" height="263"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount to be received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lL-i3-aJg">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" systemColor="systemGrayColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will be defined by who will pay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzp-NF-VA0">
-                            <rect key="frame" x="0.0" y="28.5" width="374" height="26.5"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                            <color key="textColor" name="BlueColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DJD-Lx-kmd">
-                            <rect key="frame" x="0.0" y="64" width="374" height="197.5"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="200" id="ZLD-Bs-f1H"/>
-                            </constraints>
-                        </imageView>
-                    </subviews>
-                </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvO-c0-hl6">
-                    <rect key="frame" x="20" y="397" width="374" height="40"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to add value?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGX-26-kjb">
+                    <rect key="frame" x="20" y="94" width="212" height="20.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2v9-to-bXB" customClass="CurrencyTextField" customModule="EasyBank" customModuleProvider="target">
+                    <rect key="frame" x="20" y="144.5" width="374" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="f9M-rt-J6f"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can also create a QR Code with no value attached. In this case, the person making the payment enters the amount." lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14Z-ES-760">
+                    <rect key="frame" x="20" y="214.5" width="374" height="50.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" systemColor="systemGrayColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMQ-eb-aUd">
+                    <rect key="frame" x="20" y="792" width="374" height="40"/>
                     <color key="backgroundColor" name="BlueColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="sgU-Ha-Um2"/>
+                        <constraint firstAttribute="height" constant="40" id="R7y-Rc-mr2"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Home">
+                    <state key="normal" title="Create QR Code">
                         <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                     </state>
                     <connections>
-                        <action selector="didTapHomeButton:" destination="-1" eventType="touchUpInside" id="VvL-xF-QpU"/>
+                        <action selector="didTapCreateQRCodeButton:" destination="-1" eventType="touchUpInside" id="7Jy-5z-Gcj"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="uvO-c0-hl6" firstAttribute="top" secondItem="BlS-Ai-0Gv" secondAttribute="bottom" constant="50" id="2LO-Ze-HUA"/>
-                <constraint firstItem="BlS-Ai-0Gv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="5gq-HN-aoY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uvO-c0-hl6" secondAttribute="trailing" constant="20" id="L9i-x4-NJc"/>
-                <constraint firstItem="BlS-Ai-0Gv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cTD-SX-Bdn"/>
-                <constraint firstItem="uvO-c0-hl6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="mIG-h6-H4Q"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BlS-Ai-0Gv" secondAttribute="trailing" constant="20" id="rlj-ex-YBU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rMQ-eb-aUd" secondAttribute="bottom" constant="30" id="0wn-AR-oaW"/>
+                <constraint firstItem="2v9-to-bXB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FSq-Zs-Wcy"/>
+                <constraint firstItem="fGX-26-kjb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="JUk-8O-Non"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rMQ-eb-aUd" secondAttribute="trailing" constant="20" id="KaP-dt-4hD"/>
+                <constraint firstItem="rMQ-eb-aUd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Q6G-Df-vbV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="14Z-ES-760" secondAttribute="trailing" constant="20" id="Tge-GX-q82"/>
+                <constraint firstItem="14Z-ES-760" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ahD-QI-ilc"/>
+                <constraint firstItem="fGX-26-kjb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ga3-zq-T4b"/>
+                <constraint firstItem="14Z-ES-760" firstAttribute="top" secondItem="2v9-to-bXB" secondAttribute="bottom" constant="30" id="igP-yt-vmC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2v9-to-bXB" secondAttribute="trailing" constant="20" id="kAQ-K4-8ry"/>
+                <constraint firstItem="2v9-to-bXB" firstAttribute="top" secondItem="fGX-26-kjb" secondAttribute="bottom" constant="30" id="sgd-qT-O4P"/>
             </constraints>
-            <point key="canvasLocation" x="69.565217391304358" y="77.678571428571431"/>
+            <point key="canvasLocation" x="105.79710144927537" y="103.79464285714285"/>
         </view>
     </objects>
     <resources>
-        <image name="qrcode" catalog="system" width="128" height="114"/>
         <namedColor name="BlueColor">
             <color red="0.0078431372549019607" green="0.29411764705882354" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

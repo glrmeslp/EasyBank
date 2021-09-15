@@ -1,32 +1,29 @@
-protocol HomeViewModelCoordinatorDelegate: AnyObject {
-    func pushToReceiveViewController(uid: String)
-}
 
-final class HomeViewModel {
-    private var roomName: String?
-    private var uid: String?
+final class HomeViewModel: BaseViewModel {
     private let transferMenu: [[String]] = [
         ["Pay QR Code","qrcode"],
         ["Receive","ReceiveIcon"]
     ]
+    private let roomService: RoomService
 
-    weak var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
+    private var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
 
-    init(with roomName: String, and uid: String) {
-        self.roomName = roomName
-        self.uid = uid
+    init(with roomName: String, roomService: RoomService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
+        self.roomService = roomService
+        self.coordinatorDelegate = coordinator
+        super.init(roomName: roomName, authService: authService, roomService: roomService)
     }
 
     func getAccountInformation(completion: @escaping (Account) -> Void) {
-        guard let roomName = roomName, let uid = uid else { return }
-        DatabaseService.shared.getAccount(roomName, uid) { account, _ in
+        guard let uid = userID else { return }
+        roomService.getAccount(roomName: roomName, uid: uid) { account, _ in
             guard let account = account else { return }
             completion(account)
         }
     }
     
     func getRoomNameAndUserId(completion: @escaping (String, String) -> Void) {
-        guard let roomName = roomName, let uid = uid else { return }
+        guard let uid = userID else { return }
         completion(roomName, uid)
     }
     
@@ -35,8 +32,11 @@ final class HomeViewModel {
     }
 
     func showReceiveViewController() {
-        guard let uid = uid else { return }
-        coordinatorDelegate?.pushToReceiveViewController(uid: uid)
+        coordinatorDelegate?.pushToReceiveViewController()
+    }
+
+    func showPayViewController() {
+        coordinatorDelegate?.pushToScannerViewController()
     }
 }
 

@@ -1,20 +1,16 @@
 import UIKit
 
-class BankerViewController: UIViewController {
+class NewRoomViewController: UIViewController {
 
-    private var viewModel: BankerViewModel? {
-        didSet {
-            viewModel?.viewDelegate = self
-        }
-    }
+    private var viewModel: NewRoomViewModel? 
 
     @IBOutlet private weak var roomNameTextField: UITextField! {
         didSet { roomNameTextField.delegate = self}}
     @IBOutlet private weak var createButton: UIButton!
     
-    init(viewModel: BankerViewModel) {
+    init(viewModel: NewRoomViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: "BankerView", bundle: nil)
+        super.init(nibName: "NewRoomView", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -28,13 +24,7 @@ class BankerViewController: UIViewController {
 
     @IBAction func didTapCreateButton(_ sender: Any) {
         guard let roomName = roomNameTextField.text else { return }
-        viewModel?.isThereThisRoom(with: roomName) { [weak self] message in
-            if let message = message {
-                self?.presentAlert(with: message)
-            } else {
-                self?.viewModel?.createRoom(with: roomName)
-            }
-        }
+        viewModel?.validateRoom(with: roomName, from: self)
     }
 
     private func enableContinueButton() {
@@ -56,7 +46,7 @@ class BankerViewController: UIViewController {
 
         roomNameTextField.becomeFirstResponder()
         
-        navigationController?.navigationBar.isHidden = false
+        setupNavigationController(isHidden: false)
     }
 
     @objc private func didTapView(_ sender: UITapGestureRecognizer) {
@@ -65,13 +55,7 @@ class BankerViewController: UIViewController {
     
 }
 
-extension BankerViewController: BankerViewModelDelegate {
-    func showErrorMessage(with message: String) {
-        presentAlert(with: message)
-    }
-}
-
-extension BankerViewController: UITextFieldDelegate {
+extension NewRoomViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if createButton.isEnabled {
             didTapCreateButton(self)

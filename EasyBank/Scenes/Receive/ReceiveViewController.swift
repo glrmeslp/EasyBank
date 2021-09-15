@@ -1,38 +1,42 @@
 import UIKit
 
-final class ReceiveViewController: UIViewController {
+class ReceiveViewController: UIViewController {
 
-    private var viewModel: ReceiveViewModel?
-    @IBOutlet private weak var qrCodeImage: UIImageView!
-    @IBOutlet private weak var homeButton: UIButton!
+    private var coordinator: ReceiveViewCoordinatorDelegate?
+
+    @IBOutlet private weak var valueTextField: UITextField!
+    @IBOutlet private weak var createQRCodeButton: UIButton!
     
-    init(viewModel: ReceiveViewModel) {
-        self.viewModel = viewModel
+    init(coordinator: ReceiveViewCoordinatorDelegate) {
+        self.coordinator = coordinator
         super.init(nibName: "ReceiveView", bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupNavigationController(isHidden: false)
     }
 
-    @IBAction func didTapHomeButton(_ sender: Any) {
-        viewModel?.didFinish()
+    @IBAction func didTapCreateQRCodeButton(_ sender: Any) {
+        if let value = valueTextField.text?.asDouble() {
+            coordinator?.pushToQRCodeViewController(value: value)
+        }
     }
 
     private func setup() {
-        homeButton.layer.cornerRadius = 20
-        generateQRcode()
-        title = "My QR Code"
+        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
+        view.addGestureRecognizer(tapGestureReconizer)
+        createQRCodeButton.layer.cornerRadius = 20
+        title = "Receive"
     }
+    
 
-    private func generateQRcode() {
-        viewModel?.getUid { [weak self] uid in
-            self?.qrCodeImage.image = UIImage().generateQRCode(from: uid)
-        }
+    @objc private func didTapView(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }

@@ -24,10 +24,7 @@ class RoomViewController: UIViewController {
 
     @IBAction func didTapContinueButton(_ sender: Any) {
         guard let roomName = roomNameTextField.text else { return }
-        viewModel?.enterToRoom(roomName) { [weak self] error in
-            guard let error = error else { return }
-            self?.presentAlert(with: error)
-        }
+        viewModel?.enterToRoom(roomName, from: self)
     }
 
     private func enableContinueButton() {
@@ -49,10 +46,7 @@ class RoomViewController: UIViewController {
 
         roomNameTextField.becomeFirstResponder()
     
-        navigationController?.navigationBar.isHidden = false
-
-        let backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        navigationItem.backBarButtonItem = backBarButtonItem
+        setupNavigationController(isHidden: false)
     }
 
     @objc private func didTapView(_ sender: UITapGestureRecognizer) {
