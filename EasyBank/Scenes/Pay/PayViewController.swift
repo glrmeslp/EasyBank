@@ -12,6 +12,7 @@ final class PayViewController: UIViewController {
     @IBOutlet private weak var valueLabel: UILabel!
     @IBOutlet private weak var balanceLabel: UILabel!
     @IBOutlet private weak var showBalanceButton: UIButton!
+    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var valueTextField: CurrencyTextField! {
         didSet { valueTextField.delegate = self}
     }
@@ -31,7 +32,13 @@ final class PayViewController: UIViewController {
         fetchData()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        disableActivityIndicatorView()
+        super.viewWillDisappear(animated)
+    }
+
     @IBAction func didTapConfirmButton(_ sender: Any) {
+        createConfirmAlert()
     }
 
     @IBAction func didTapShowBalanceButton(_ sender: Any) {
@@ -48,6 +55,7 @@ final class PayViewController: UIViewController {
 
     private func setup() {
         confirmButton.layer.cornerRadius = 20
+        activityIndicatorView.isHidden = true
     }
     
     private func fetchData() {
@@ -88,6 +96,41 @@ final class PayViewController: UIViewController {
     private func disableConfirmButton() {
         confirmButton.isEnabled = false
         confirmButton.layer.backgroundColor = UIColor.systemGray6.cgColor
+    }
+    
+    private func createConfirmAlert() {
+        let alert = UIAlertController(title: "Do you want to confirm the transaction?", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in self.disableActivityIndicatorView() })
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default) { _ in self.transfer() })
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func transfer() {
+        enableActivityIndicatorView()
+        var value: String
+        if valueLabel.isHidden {
+            guard let text = valueTextField.text else { return }
+            value = text
+        } else {
+            guard let text = valueLabel.text else { return }
+            value = text
+        }
+        viewModel?.transfer(value: value) { [weak self] error in
+            self?.disableActivityIndicatorView()
+            self?.presentAlert(with: error) 
+        }
+    }
+
+    private func enableActivityIndicatorView() {
+        confirmButton.setTitle("", for: .normal)
+        activityIndicatorView.isHidden = false
+        activityIndicatorView.startAnimating()
+    }
+    
+    private func disableActivityIndicatorView() {
+        activityIndicatorView.stopAnimating()
+        activityIndicatorView.isHidden = true
+        confirmButton.setTitle("Confirm", for: .normal)
     }
 
     @objc private func didTapView(_ sender: UITapGestureRecognizer) {
