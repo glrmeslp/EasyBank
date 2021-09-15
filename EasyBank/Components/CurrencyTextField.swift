@@ -3,9 +3,7 @@ import UIKit
 final class CurrencyTextField: UITextField {
 
     private var enteredNumbers = ""
-
     private var didBackspace = false
-
     private var locale: Locale = .current
 
     override init(frame: CGRect) {
@@ -18,6 +16,13 @@ final class CurrencyTextField: UITextField {
         setup()
     }
 
+    override func deleteBackward() {
+        enteredNumbers = String(enteredNumbers.dropLast())
+        text = enteredNumbers.asCurrency()
+        didBackspace = true
+        super.deleteBackward()
+    }
+
     private func setup() {
         textColor = UIColor(named: "BlueColor")
         text = enteredNumbers.asCurrency()
@@ -25,13 +30,6 @@ final class CurrencyTextField: UITextField {
         addDoneButtonOnKeyboard()
     }
 
-    override func deleteBackward() {
-        enteredNumbers = String(enteredNumbers.dropLast())
-        text = enteredNumbers.asCurrency()
-        didBackspace = true
-        super.deleteBackward()
-    }
-    
     private func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         doneToolbar.barStyle = .default
@@ -60,12 +58,6 @@ final class CurrencyTextField: UITextField {
     }
 }
 
-extension Formatter {
-    static let currency: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }()
-}
+
 
 
