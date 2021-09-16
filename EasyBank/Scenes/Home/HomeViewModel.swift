@@ -38,5 +38,9 @@ final class HomeViewModel: BaseViewModel {
     func showPayViewController() {
         coordinatorDelegate?.pushToScannerViewController()
     }
+
+    func showHomeMenuViewController() {
+        coordinatorDelegate?.presentHomeMenuViewController()
+    }
 }
 

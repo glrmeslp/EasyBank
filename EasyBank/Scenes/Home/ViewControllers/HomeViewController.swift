@@ -78,8 +78,12 @@ final class HomeViewController: UIViewController {
             image: UIImage(named: "icons8-menu-2-30"),
             style: .plain,
             target: self,
-            action: nil)
+            action: #selector(showHomeMenu))
         navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+
+    @objc private func showHomeMenu() {
+        viewModel?.showHomeMenuViewController()
     }
 
     private func fetchData() {
