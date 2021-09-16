@@ -1,6 +1,6 @@
 final class HomeMenuViewModel {
     private let authService: AuthService
-    private var coordinatorDelegate: HomeMenuViewModelCoordinatorDelegate?
+    private weak var coordinatorDelegate: HomeMenuViewModelCoordinatorDelegate?
 
     init(authService: AuthService, coordinator: HomeMenuViewModelCoordinatorDelegate) {
         self.authService = authService
