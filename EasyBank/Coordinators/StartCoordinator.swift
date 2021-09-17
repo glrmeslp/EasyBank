@@ -57,7 +57,7 @@ final class StartCoordinator: Coordinator {
     
     func start() {
         let startViewController = StartViewController(viewModel: startViewModel)
-        navigationController.setViewControllers([startViewController], animated: true)
+        navigationController.setViewControllers([startViewController], animated: false)
     }
 }
 
