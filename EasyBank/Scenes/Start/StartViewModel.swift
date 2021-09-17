@@ -2,7 +2,7 @@ import UIKit
 
 final class StartViewModel {
     
-    private weak var coordinatorDelegate: StartViewModelCoordinatorDelegate?
+    private var coordinatorDelegate: StartViewModelCoordinatorDelegate?
     private let authService: AuthService
     
     init(authService: AuthService, coordinator: StartViewModelCoordinatorDelegate) {

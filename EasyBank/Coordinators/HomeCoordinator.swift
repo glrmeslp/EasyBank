@@ -5,6 +5,11 @@ import FirebaseAuth
 protocol HomeViewModelCoordinatorDelegate: AnyObject {
     func pushToReceiveViewController()
     func pushToScannerViewController()
+    func presentHomeMenuViewController()
+}
+
+protocol HomeMenuViewModelCoordinatorDelegate: AnyObject {
+    func pushToStartViewController()
 }
 
 final class HomeCoordinator: Coordinator {
@@ -49,6 +54,19 @@ final class HomeCoordinator: Coordinator {
 }
 
 extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
+    func presentHomeMenuViewController() {
+        let authService = AuthenticationService(auth: auth)
+        let viewModel = HomeMenuViewModel(authService: authService, coordinator: self)
+        let homeMenuViewController = HomeMenuViewController(viewModel: viewModel)
+        if #available(iOS 15.0, *) {
+            if let sheet = homeMenuViewController.sheetPresentationController {
+                sheet.detents = [.medium()]
+                sheet.prefersGrabberVisible = true
+            }
+        }
+        navigationController.present(homeMenuViewController, animated: true)
+    }
+    
     func pushToScannerViewController() {
         let payCoordinator = PayCoordinator(navigationController: navigationController, firestore: firestore, roomName: roomName, auth: auth)
         payCoordinator.parentCoordinator = self
@@ -59,6 +77,13 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     func pushToReceiveViewController() {
         let receiveCoordinator = ReceiveCoordinator(navigationController: navigationController, roomName: roomName, auth: auth, firestore: firestore)
         receiveCoordinator.start()
+    }
+}
+
+extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
+    func pushToStartViewController() {
+        let startCoordinator = StartCoordinator(navigationController: navigationController, firestore: firestore, auth: auth)
+        startCoordinator.start()
     }
 }
 

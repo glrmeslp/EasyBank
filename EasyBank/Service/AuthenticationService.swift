@@ -6,6 +6,7 @@ protocol AuthService {
     func removeStateDidChangeListener()
     func getAuthViewController(completion: @escaping (UIViewController) -> Void)
     func getUser(completion: @escaping (User?) -> Void)
+    func signOut()
 }
 
 final class AuthenticationService {
@@ -32,6 +33,15 @@ final class AuthenticationService {
 }
 
 extension AuthenticationService: AuthService {
+    func signOut() {
+        do {
+            try auth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+        
+    }
+    
     func getUser(completion: @escaping (User?) -> Void) {
         let user = auth.currentUser
         completion(user)

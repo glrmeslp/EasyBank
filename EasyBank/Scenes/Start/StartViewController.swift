@@ -48,6 +48,7 @@ final class StartViewController: UIViewController {
         joinButton.layer.borderColor = UIColor(named: "BlueColor")!.cgColor
 
         setupNavigationController(isHidden: true)
+        navigationController?.hidesBarsOnSwipe = false
     }
 
 }
