@@ -22,11 +22,11 @@ final class HomeMenuViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func didTapPassordButton(_ sender: Any) {
+    @IBAction private func didTapPassordButton(_ sender: Any) {
         viewModel?.updatePassword()
     }
 
-    @IBAction func didTapRoomButton(_ sender: Any) {
+    @IBAction private func didTapRoomButton(_ sender: Any) {
         let alert = UIAlertController(title: "Do you want to leave the room?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alert.addAction(UIAlertAction(title: "Leave", style: .destructive) { _ in
@@ -36,11 +36,11 @@ final class HomeMenuViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func didTapAccountButton(_ sender: Any) {
+    @IBAction private func didTapAccountButton(_ sender: Any) {
         viewModel?.showAccount()
     }
 
-    @IBAction func didTapSignOutButton(_ sender: Any) {
+    @IBAction private func didTapSignOutButton(_ sender: Any) {
         let alert = UIAlertController(title: "Sign Out", message: "Do you really want to leave?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive) { _ in
