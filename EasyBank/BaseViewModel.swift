@@ -1,14 +1,15 @@
 class BaseViewModel {
     private let authService: AuthService
-    private let roomService: RoomService
+    let roomService: RoomService
     var userID: String?
     let roomName: String
     var userName: String?
+    var account: Account?
 
-    init(roomName: String, authService: AuthService, roomService: RoomService) {
+    init(roomName: String, authService: AuthService, databaseService: DatabaseService) {
         self.roomName = roomName
         self.authService = authService
-        self.roomService = roomService
+        self.roomService = databaseService
         getUserID()
     }
 
@@ -23,7 +24,17 @@ class BaseViewModel {
         guard let uid = userID else { return }
         roomService.getAccount(roomName: roomName, uid: uid) { account, _ in
             guard let account = account else { return }
+            self.userName = account.userName
             completion(account.userName)
+        }
+    }
+
+    func getAccount(completion: @escaping (Account) -> Void) {
+        guard let uid = userID else { return }
+        roomService.getAccount(roomName: roomName, uid: uid) { account, _ in
+            guard let account = account else { return }
+            self.account = account
+            completion(account)
         }
     }
 }
