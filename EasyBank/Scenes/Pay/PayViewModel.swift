@@ -1,6 +1,5 @@
 final class PayViewModel: BaseViewModel {
 
-    private let roomService: RoomService
     private var value: Double?
     private var receiverName: String?
     private var receiverID: String?
@@ -8,10 +7,9 @@ final class PayViewModel: BaseViewModel {
     private var payer: Account?
     private var coordiantorDelegate: PayViewModelCoordinatorDelegate?
 
-    init(data: [String], roomName: String, authService: AuthService, roomService: RoomService, coordinator: PayViewModelCoordinatorDelegate) {
-        self.roomService = roomService
+    init(data: [String], roomName: String, authService: AuthService, databaseService: DatabaseService, coordinator: PayViewModelCoordinatorDelegate) {
         self.coordiantorDelegate = coordinator
-        super.init(roomName: roomName, authService: authService, roomService: roomService)
+        super.init(roomName: roomName, authService: authService, databaseService: databaseService)
         setup(data: data)
     }
     

@@ -28,8 +28,8 @@ final class ReceiveCoordinator: Coordinator {
 extension ReceiveCoordinator: ReceiveViewCoordinatorDelegate {
     func pushToQRCodeViewController(value: Double) {
         let authService = AuthenticationService(auth: auth)
-        let roomService = DatabaseService(firestore: firestore)
-        let qrCodeViewModel = QRCodeViewModel(roomName: roomName, value: value, coordinator: self, authService: authService, roomService: roomService)
+        let databaseService = DatabaseService(firestore: firestore)
+        let qrCodeViewModel = QRCodeViewModel(roomName: roomName, value: value, coordinator: self, authService: authService, databaseService: databaseService)
         let qrCodeViewController = QRCodeViewController(viewModel: qrCodeViewModel)
         navigationController.pushViewController(qrCodeViewController, animated: true)
     }

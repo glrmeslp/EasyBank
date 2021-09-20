@@ -1,21 +1,13 @@
 import UIKit
 
-final class PlayerViewModel {
-
-    private var roomName: String
-    private var userID: String?
+final class PlayerViewModel: BaseViewModel {
 
     private weak var coordinatorDelegate: PlayerViewModelCoordinatorDelegate?
-    private let authService: AuthService
-    private let roomService: RoomService
 
     init(roomName: String, coordinator: PlayerViewModelCoordinatorDelegate,
-         authService: AuthService, roomService: RoomService) {
-        self.roomName = roomName
+         authService: AuthService, databaseService: DatabaseService) {
         self.coordinatorDelegate = coordinator
-        self.authService = authService
-        self.roomService = roomService
-        getUserID()
+        super.init(roomName: roomName, authService: authService, databaseService: databaseService)
     }
 
     func createAccount(with name: String, from controller: UIViewController) {
@@ -28,17 +20,6 @@ final class PlayerViewModel {
                 return
             }
             self?.coordinatorDelegate?.presentAlert(with: error, from: controller)
-        }
-    }
-    
-    func showHomeViewController() {
-        coordinatorDelegate?.pushToHomeViewController(with: roomName)
-    }
-
-    private func getUserID() {
-        authService.getUser { [weak self] user in
-            guard let user = user else { return }
-            self?.userID = user.uid
         }
     }
 }

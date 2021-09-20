@@ -48,9 +48,9 @@ extension PayCoordinator: ScannerViewModelCoordinatorDelegate {
     }
     
     func pushToPayViewController(with code: [String]) {
-        let roomService = DatabaseService(firestore: firestore)
+        let databaseService = DatabaseService(firestore: firestore)
         let authService = AuthenticationService(auth: auth)
-        let payViewModel = PayViewModel(data: code, roomName: roomName, authService: authService, roomService: roomService, coordinator: self)
+        let payViewModel = PayViewModel(data: code, roomName: roomName, authService: authService, databaseService: databaseService, coordinator: self)
         let payViewController = PayViewController(viewModel: payViewModel)
         navigationController.pushViewController(payViewController, animated: true)
     }

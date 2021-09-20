@@ -21,14 +21,6 @@ final class PlayerViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
 
     @IBAction func didTapContinueButton(_ sender: Any) {
         guard let name = nameTextField.text else { return }

@@ -9,8 +9,9 @@ protocol RoomService {
     func transfer(_ roomName: String, value: Double, payerID: String, _ payer: Account, receiverID: String, _ receiver: Account, completion: @escaping (String?, String?) -> Void)
 }
 
-protocol TransferService {
+protocol TransferDatabaseService {
     func getTransfer(roomName: String, documentId: String, completion: @escaping (Transfer?, String?) -> Void )
+    func getAllTransfers(roomName: String, name: String, completion: @escaping ([Transfer]) -> Void)
 }
 
 final class DatabaseService {
@@ -129,7 +130,40 @@ extension DatabaseService: RoomService {
     }
 }
 
-extension DatabaseService: TransferService {
+extension DatabaseService: TransferDatabaseService {
+    func getAllTransfers(roomName: String, name: String, completion: @escaping ([Transfer]) -> Void) {
+        let transferRef = firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_TRANSFERS)
+        var transfers: [Transfer] = []
+        getAllTransferWhereField("receiverName", isEqualTo: name, with: transferRef) { datas in
+            transfers.append(contentsOf: datas)
+            self.getAllTransferWhereField("payerName", isEqualTo: name, with: transferRef) { datas in
+                transfers.append(contentsOf: datas)
+                completion(transfers)
+            }
+        }
+    }
+
+    private func getAllTransferWhereField(_ fieldName: String, isEqualTo name: String, with transferRef: CollectionReference, completion: @escaping ([Transfer]) -> Void) {
+        var transfers: [Transfer] = []
+        transferRef.whereField(fieldName, isEqualTo: name).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err.localizedDescription)")
+            } else {
+                guard let querySnapshot = querySnapshot else { return }
+                for document in querySnapshot.documents {
+                    do {
+                        let transfer = try document.data(as: Transfer.self)
+                        guard let transfer = transfer else { return }
+                        transfers.append(transfer)
+                    } catch let error {
+                        print("Error decoding document: \(error.localizedDescription)")
+                    }
+                }
+                completion(transfers)
+            }
+        }
+    }
+    
     func getTransfer(roomName: String, documentId: String, completion: @escaping (Transfer?, String?) -> Void) {
         let accountRef = firestore.collection(COLLECTION_ROOM)
             .document(roomName)
