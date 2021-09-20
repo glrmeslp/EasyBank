@@ -36,7 +36,7 @@ final class HomeViewController: UIViewController {
         setupRightBarButton()
     }
 
-    @IBAction func didTapShowBalanceButton(_ sender: Any) {
+    @IBAction private func didTapShowBalanceButton(_ sender: Any) {
         if showBalance {
             showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
             balanceLabel.text = value
@@ -47,11 +47,14 @@ final class HomeViewController: UIViewController {
             showBalance = true
         }
     }
-
+    @IBAction private func didTapExtractButton(_ sender: Any) {
+        viewModel?.showExtractViewController()
+    }
+    
     private func setup() {
         navigationController?.hidesBarsOnSwipe = true
         navigationItem.setHidesBackButton(true, animated: true)
-        title = "Easy Banker"
+        title = "Easy Bank"
         
         balanceView.layer.cornerRadius = 20
         balanceView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]

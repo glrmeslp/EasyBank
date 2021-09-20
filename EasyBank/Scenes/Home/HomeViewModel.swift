@@ -4,20 +4,16 @@ final class HomeViewModel: BaseViewModel {
         ["Pay QR Code","qrcode"],
         ["Receive","ReceiveIcon"]
     ]
-    private let roomService: RoomService
 
     private var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
 
-    init(with roomName: String, roomService: RoomService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
-        self.roomService = roomService
+    init(with roomName: String, databaseService: DatabaseService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
         self.coordinatorDelegate = coordinator
-        super.init(roomName: roomName, authService: authService, roomService: roomService)
+        super.init(roomName: roomName, authService: authService, databaseService: databaseService)
     }
 
     func getAccountInformation(completion: @escaping (Account) -> Void) {
-        guard let uid = userID else { return }
-        roomService.getAccount(roomName: roomName, uid: uid) { account, _ in
-            guard let account = account else { return }
+        getAccount { account in
             completion(account)
         }
     }
@@ -41,6 +37,11 @@ final class HomeViewModel: BaseViewModel {
 
     func showHomeMenuViewController() {
         coordinatorDelegate?.presentHomeMenuViewController()
+    }
+
+    func showExtractViewController() {
+        guard let account = account else { return }
+        coordinatorDelegate?.pushToExtractViewController(with: account.userName)
     }
 }
 
