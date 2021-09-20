@@ -43,6 +43,11 @@
 		DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C431626DFFBB50019410A /* ScannerViewController.swift */; };
 		DE4C431926DFFBB50019410A /* ScannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C431726DFFBB50019410A /* ScannerView.xib */; };
 		DE4C431B26E007C00019410A /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C431A26E007C00019410A /* ScannerViewModel.swift */; };
+		DE4F07BA26F4D1F000CA595C /* ExtractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4F07B826F4D1F000CA595C /* ExtractViewController.swift */; };
+		DE4F07BB26F4D1F000CA595C /* ExtractView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4F07B926F4D1F000CA595C /* ExtractView.xib */; };
+		DE4F07C426F4DB3600CA595C /* ExtractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4F07C226F4DB3600CA595C /* ExtractTableViewCell.swift */; };
+		DE4F07C526F4DB3600CA595C /* ExtractTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4F07C326F4DB3600CA595C /* ExtractTableViewCell.xib */; };
+		DE4F07C926F503BA00CA595C /* ExtractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4F07C826F503BA00CA595C /* ExtractViewModel.swift */; };
 		DE52A77726E8FC3E00EC3521 /* ReceiveCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77626E8FC3E00EC3521 /* ReceiveCoordinator.swift */; };
 		DE52A77A26E8FDE500EC3521 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77826E8FDE500EC3521 /* QRCodeViewController.swift */; };
 		DE52A77B26E8FDE500EC3521 /* QRCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE52A77926E8FDE500EC3521 /* QRCodeView.xib */; };
@@ -61,12 +66,14 @@
 		DE93485026D8075200680E63 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484F26D8075100680E63 /* Account.swift */; };
 		DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485226D80A5600680E63 /* DatabaseService.swift */; };
 		DE93485526D82BB500680E63 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485426D82BB500680E63 /* AuthenticationService.swift */; };
+		DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */; };
 		DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3857C26E64702008D9409 /* ReceiveViewController.swift */; };
 		DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE3857D26E64702008D9409 /* ReceiveView.xib */; };
 		DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3858026E651E5008D9409 /* CurrencyTextField.swift */; };
 		DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */; };
 		DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */; };
 		DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */; };
+		DEF0DB1F26F80CFF00498CD2 /* ShowBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */; };
 		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
 /* End PBXBuildFile section */
@@ -138,6 +145,11 @@
 		DE4C431626DFFBB50019410A /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		DE4C431726DFFBB50019410A /* ScannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerView.xib; sourceTree = "<group>"; };
 		DE4C431A26E007C00019410A /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		DE4F07B826F4D1F000CA595C /* ExtractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewController.swift; sourceTree = "<group>"; };
+		DE4F07B926F4D1F000CA595C /* ExtractView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtractView.xib; sourceTree = "<group>"; };
+		DE4F07C226F4DB3600CA595C /* ExtractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractTableViewCell.swift; sourceTree = "<group>"; };
+		DE4F07C326F4DB3600CA595C /* ExtractTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtractTableViewCell.xib; sourceTree = "<group>"; };
+		DE4F07C826F503BA00CA595C /* ExtractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewModel.swift; sourceTree = "<group>"; };
 		DE52A77626E8FC3E00EC3521 /* ReceiveCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveCoordinator.swift; sourceTree = "<group>"; };
 		DE52A77826E8FDE500EC3521 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRCodeViewController.swift; path = EasyBank/Scenes/QRCode/QRCodeViewController.swift; sourceTree = SOURCE_ROOT; };
 		DE52A77926E8FDE500EC3521 /* QRCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QRCodeView.xib; path = EasyBank/Scenes/QRCode/QRCodeView.xib; sourceTree = SOURCE_ROOT; };
@@ -156,12 +168,14 @@
 		DE93484F26D8075100680E63 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		DE93485226D80A5600680E63 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		DE93485426D82BB500680E63 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractEnum.swift; sourceTree = "<group>"; };
 		DEE3857C26E64702008D9409 /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		DEE3857D26E64702008D9409 /* ReceiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveView.xib; sourceTree = "<group>"; };
 		DEE3858026E651E5008D9409 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBalance.swift; sourceTree = "<group>"; };
 		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -312,13 +326,14 @@
 		DE46216D26D6D869001E6685 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DE4F07B726F4D1C100CA595C /* Extract */,
+				DE75DD8C26D9697200240B70 /* Home */,
 				DE3774A526F23B6A005719E3 /* HomeMenu */,
 				DE70738026F0CE2E00E34C44 /* CompleteTransaction */,
 				DE1BA3C326EA41C800416164 /* Pay */,
 				DEE3857B26E646E9008D9409 /* Receive */,
 				DE4C431126DFDB660019410A /* Scanner */,
 				DE4C430826DEBFEE0019410A /* QRcode */,
-				DE75DD8C26D9697200240B70 /* Home */,
 				DE46217A26D6DA05001E6685 /* NewRoom */,
 				DE46216F26D6D911001E6685 /* Room */,
 				DE46216E26D6D87A001E6685 /* Start */,
@@ -402,6 +417,50 @@
 			path = Scanner;
 			sourceTree = "<group>";
 		};
+		DE4F07B726F4D1C100CA595C /* Extract */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07C626F4DB4300CA595C /* Controllers */,
+				DE4F07C026F4DB0300CA595C /* Views */,
+				DE4F07C826F503BA00CA595C /* ExtractViewModel.swift */,
+			);
+			path = Extract;
+			sourceTree = "<group>";
+		};
+		DE4F07C026F4DB0300CA595C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07B926F4D1F000CA595C /* ExtractView.xib */,
+				DE4F07C126F4DB0C00CA595C /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE4F07C126F4DB0C00CA595C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07C326F4DB3600CA595C /* ExtractTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE4F07C626F4DB4300CA595C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07B826F4D1F000CA595C /* ExtractViewController.swift */,
+				DE4F07C726F4DB5D00CA595C /* Cells */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DE4F07C726F4DB5D00CA595C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07C226F4DB3600CA595C /* ExtractTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DE70738026F0CE2E00E34C44 /* CompleteTransaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +507,8 @@
 				DE93484F26D8075100680E63 /* Account.swift */,
 				DE52A77E26E90CC300EC3521 /* TransferMenu.swift */,
 				DE1BA3CA26EAA44B00416164 /* Transfer.swift */,
+				DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */,
+				DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -611,10 +672,12 @@
 				DE52A77B26E8FDE500EC3521 /* QRCodeView.xib in Resources */,
 				DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */,
 				DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */,
+				DE4F07BB26F4D1F000CA595C /* ExtractView.xib in Resources */,
 				DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */,
 				DE46218D26D6E22F001E6685 /* NewRoomView.xib in Resources */,
 				DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */,
 				DE1BA3C726EA41E100416164 /* PayView.xib in Resources */,
+				DE4F07C526F4DB3600CA595C /* ExtractTableViewCell.xib in Resources */,
 				DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */,
 				DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */,
 				DE3774A926F23B82005719E3 /* HomeMenuView.xib in Resources */,
@@ -788,8 +851,10 @@
 				DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */,
 				DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */,
 				DE52A77D26E9049C00EC3521 /* Double+Extension.swift in Sources */,
+				DE4F07C926F503BA00CA595C /* ExtractViewModel.swift in Sources */,
 				DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */,
 				DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */,
+				DE4F07C426F4DB3600CA595C /* ExtractTableViewCell.swift in Sources */,
 				DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */,
 				DE52A77F26E90CC300EC3521 /* TransferMenu.swift in Sources */,
 				DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */,
@@ -812,10 +877,13 @@
 				DE93484B26D8041900680E63 /* NewRoomViewModel.swift in Sources */,
 				DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */,
 				DE4C431026DFC4500019410A /* UIImage+Extension.swift in Sources */,
+				DE4F07BA26F4D1F000CA595C /* ExtractViewController.swift in Sources */,
 				DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */,
 				DE3774AB26F23E22005719E3 /* HomeMenuViewModel.swift in Sources */,
 				DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */,
+				DEF0DB1F26F80CFF00498CD2 /* ShowBalance.swift in Sources */,
 				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,
+				DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */,
 				DE52A77A26E8FDE500EC3521 /* QRCodeViewController.swift in Sources */,
 				DE44BB4E26E297300083B354 /* BaseViewModel.swift in Sources */,
 				DE93485026D8075200680E63 /* Account.swift in Sources */,

@@ -6,6 +6,7 @@ protocol HomeViewModelCoordinatorDelegate: AnyObject {
     func pushToReceiveViewController()
     func pushToScannerViewController()
     func presentHomeMenuViewController()
+    func pushToExtractViewController(with userName: String)
 }
 
 protocol HomeMenuViewModelCoordinatorDelegate: AnyObject {
@@ -22,12 +23,9 @@ final class HomeCoordinator: Coordinator {
     private let auth: Auth
 
     private var homeViewModel: HomeViewModel {
-        let roomService = DatabaseService(firestore: firestore)
+        let databaseService = DatabaseService(firestore: firestore)
         let authService = AuthenticationService(auth: auth)
-        let viewModel = HomeViewModel(with: roomName,
-                                      roomService: roomService,
-                                      authService: authService,
-                                      coordinator: self)
+        let viewModel = HomeViewModel(with: roomName, databaseService: databaseService, authService: authService, coordinator: self)
         return viewModel
     }
 
@@ -54,6 +52,14 @@ final class HomeCoordinator: Coordinator {
 }
 
 extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
+    func pushToExtractViewController(with userName: String) {
+        let databaseService = DatabaseService(firestore: firestore)
+        let authService = AuthenticationService(auth: auth)
+        let extractViewModel = ExtractViewModel(databaseService: databaseService, authService: authService, roomName: roomName)
+        let extractViewController = ExtractViewController(viewModel: extractViewModel)
+        navigationController.pushViewController(extractViewController, animated: true)
+    }
+    
     func presentHomeMenuViewController() {
         let authService = AuthenticationService(auth: auth)
         let viewModel = HomeMenuViewModel(authService: authService, coordinator: self)
