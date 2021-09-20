@@ -6,10 +6,10 @@ final class QRCodeViewModel: BaseViewModel {
     private let value: Double
     private weak var coordinatorDelegate: QRcodeViewModelCoordinatorDelegate?
 
-    init(roomName: String, value: Double, coordinator: QRcodeViewModelCoordinatorDelegate, authService: AuthService, roomService: RoomService) {
+    init(roomName: String, value: Double, coordinator: QRcodeViewModelCoordinatorDelegate, authService: AuthService, databaseService: DatabaseService) {
         self.value = value
         self.coordinatorDelegate = coordinator
-        super.init(roomName: roomName, authService: authService, roomService: roomService)
+        super.init(roomName: roomName, authService: authService, databaseService: databaseService)
     }
 
     func generateStringForQRcode(completion: @escaping (String) -> Void) {

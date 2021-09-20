@@ -2,12 +2,12 @@ import UIKit
 
 final class CompleteTransactionViewModel {
 
-    private let transferService: TransferService
+    private let transferService: TransferDatabaseService
     private let transferId: String
     private let roomName: String
     private var coordinatorDelegate: CompleteTransactionViewModelCoordinatorDelegate?
 
-    init(transferService: TransferService, transferId: String, roomName: String, coordinator: CompleteTransactionViewModelCoordinatorDelegate) {
+    init(transferService: TransferDatabaseService, transferId: String, roomName: String, coordinator: CompleteTransactionViewModelCoordinatorDelegate) {
         self.transferService = transferService
         self.transferId = transferId
         self.roomName = roomName
