@@ -2,11 +2,13 @@ import FirebaseAuth
 import FirebaseUI
 
 protocol AuthService {
-    func detectAuthenticationStatus(completion: @escaping ( Bool) -> Void)
+    func detectAuthenticationStatus(completion: @escaping (Bool) -> Void)
     func removeStateDidChangeListener()
     func getAuthViewController(completion: @escaping (UIViewController) -> Void)
     func getUser(completion: @escaping (User?) -> Void)
     func signOut()
+    func reauthenticate(with password: String, completion: @escaping (String?) -> Void)
+    func updatePassword(with password: String, completion: @escaping (String?) -> Void)
 }
 
 final class AuthenticationService {
@@ -33,6 +35,27 @@ final class AuthenticationService {
 }
 
 extension AuthenticationService: AuthService {
+    func updatePassword(with password: String, completion: @escaping (String?) -> Void) {
+        auth.currentUser?.updatePassword(to: password) { error in
+            guard let error = error else {
+                completion(nil)
+                return }
+            completion(error.localizedDescription)
+        }
+    }
+    
+    func reauthenticate(with password: String, completion: @escaping (String?) -> Void) {
+        guard let user = auth.currentUser, let email = user.email else { return }
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        user.reauthenticate(with: credential) { _, error  in
+            guard let error = error else {
+                completion(nil)
+                return
+            }
+            completion(error.localizedDescription)
+        }
+    }
+    
     func signOut() {
         do {
             try auth.signOut()

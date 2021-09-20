@@ -22,7 +22,8 @@ final class HomeMenuViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction private func didTapPassordButton(_ sender: Any) {
+    @IBAction private func didTapPasswordButton(_ sender: Any) {
+        dismiss(animated: true)
         viewModel?.updatePassword()
     }
 

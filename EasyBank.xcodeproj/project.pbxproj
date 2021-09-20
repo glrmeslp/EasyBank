@@ -67,6 +67,10 @@
 		DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485226D80A5600680E63 /* DatabaseService.swift */; };
 		DE93485526D82BB500680E63 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485426D82BB500680E63 /* AuthenticationService.swift */; };
 		DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */; };
+		DEA3B37F26F8BD6D003E09FC /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */; };
+		DEA3B38026F8BD6D003E09FC /* PasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */; };
+		DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */; };
+		DEA3B38426F8D044003E09FC /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */; };
 		DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3857C26E64702008D9409 /* ReceiveViewController.swift */; };
 		DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE3857D26E64702008D9409 /* ReceiveView.xib */; };
 		DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3858026E651E5008D9409 /* CurrencyTextField.swift */; };
@@ -169,6 +173,10 @@
 		DE93485226D80A5600680E63 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		DE93485426D82BB500680E63 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractEnum.swift; sourceTree = "<group>"; };
+		DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordView.xib; sourceTree = "<group>"; };
+		DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordEnum.swift; sourceTree = "<group>"; };
+		DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		DEE3857C26E64702008D9409 /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		DEE3857D26E64702008D9409 /* ReceiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveView.xib; sourceTree = "<group>"; };
 		DEE3858026E651E5008D9409 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
@@ -326,6 +334,7 @@
 		DE46216D26D6D869001E6685 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DEA3B37C26F8BCC8003E09FC /* Password */,
 				DE4F07B726F4D1C100CA595C /* Extract */,
 				DE75DD8C26D9697200240B70 /* Home */,
 				DE3774A526F23B6A005719E3 /* HomeMenu */,
@@ -509,6 +518,7 @@
 				DE1BA3CA26EAA44B00416164 /* Transfer.swift */,
 				DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */,
 				DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */,
+				DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -520,6 +530,16 @@
 				DE93485426D82BB500680E63 /* AuthenticationService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		DEA3B37C26F8BCC8003E09FC /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */,
+				DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */,
+				DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */,
+			);
+			path = Password;
 			sourceTree = "<group>";
 		};
 		DEE3857B26E646E9008D9409 /* Receive */ = {
@@ -675,6 +695,7 @@
 				DE4F07BB26F4D1F000CA595C /* ExtractView.xib in Resources */,
 				DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */,
 				DE46218D26D6E22F001E6685 /* NewRoomView.xib in Resources */,
+				DEA3B38026F8BD6D003E09FC /* PasswordView.xib in Resources */,
 				DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */,
 				DE1BA3C726EA41E100416164 /* PayView.xib in Resources */,
 				DE4F07C526F4DB3600CA595C /* ExtractTableViewCell.xib in Resources */,
@@ -866,6 +887,7 @@
 				DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */,
 				DE46218C26D6E22F001E6685 /* NewRoomViewController.swift in Sources */,
 				DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */,
+				DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */,
 				DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */,
 				DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */,
 				DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */,
@@ -874,6 +896,7 @@
 				DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */,
 				DE4C431B26E007C00019410A /* ScannerViewModel.swift in Sources */,
 				DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */,
+				DEA3B38426F8D044003E09FC /* PasswordViewModel.swift in Sources */,
 				DE93484B26D8041900680E63 /* NewRoomViewModel.swift in Sources */,
 				DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */,
 				DE4C431026DFC4500019410A /* UIImage+Extension.swift in Sources */,
@@ -887,6 +910,7 @@
 				DE52A77A26E8FDE500EC3521 /* QRCodeViewController.swift in Sources */,
 				DE44BB4E26E297300083B354 /* BaseViewModel.swift in Sources */,
 				DE93485026D8075200680E63 /* Account.swift in Sources */,
+				DEA3B37F26F8BD6D003E09FC /* PasswordViewController.swift in Sources */,
 				DE52A77726E8FC3E00EC3521 /* ReceiveCoordinator.swift in Sources */,
 				DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */,
 				DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */,

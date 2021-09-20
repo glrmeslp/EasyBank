@@ -8,7 +8,7 @@ final class HomeMenuViewModel {
     }
 
     func updatePassword() {
-        print("Password Button Tapped")
+        coordinatorDelegate?.pushToPasswordViewController()
     }
 
     func leaveRoom() {
