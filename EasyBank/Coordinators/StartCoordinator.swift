@@ -95,8 +95,8 @@ extension StartCoordinator: NewRoomViewModelCoordinatorDelegate, RoomViewModelCo
     
     func pushToPlayerViewController(with roomName: String) {
         let authService = AuthenticationService(auth: auth)
-        let roomService = DatabaseService(firestore: firestore)
-        let playerViewModel = PlayerViewModel(roomName: roomName, coordinator: self, authService: authService, roomService: roomService)
+        let databaseService = DatabaseService(firestore: firestore)
+        let playerViewModel = PlayerViewModel(roomName: roomName, coordinator: self, authService: authService, databaseService: databaseService)
         let playerViewController = PlayerViewController(viewModel: playerViewModel)
         navigationController.pushViewController(playerViewController, animated: true)
     }
