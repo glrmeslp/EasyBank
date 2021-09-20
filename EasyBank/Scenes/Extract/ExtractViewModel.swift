@@ -8,7 +8,6 @@ final class ExtractViewModel: BaseViewModel {
     }
 
     func getAllTransfers(completion: @escaping ([Transfer]) -> Void){
-//        guard let userName = account?.userName else { return }
         getUserName { [weak self] userName in
             guard let roomName = self?.roomName else { return }
             self?.transferService.getAllTransfers(roomName: roomName, name: userName ) { tranfers in
