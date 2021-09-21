@@ -61,7 +61,7 @@ final class PasswordViewController: UIViewController {
     }
     
     @IBAction private func didTapForgotPassword(_ sender: Any) {
-        viewModel?.showForgotPasswordViewController()
+        viewModel?.showRecoverPasswordViewController()
     }
 
     private func setup() {

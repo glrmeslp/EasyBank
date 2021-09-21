@@ -14,11 +14,6 @@ protocol HomeMenuViewModelCoordinatorDelegate: AnyObject {
     func pushToPasswordViewController()
 }
 
-protocol PasswordViewModelCoordinatorDelegate: AnyObject {
-    func popToHomeViewController()
-    func pushToForgotPasswordViewController()
-}
-
 final class HomeCoordinator: Coordinator {
     
     var navigationController: UINavigationController
@@ -94,27 +89,14 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
 
 extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
     func pushToPasswordViewController() {
-        let authService = AuthenticationService(auth: auth)
-        let passwordViewModel = PasswordViewModel(authService: authService, coordinator: self)
-        let passwordViewController = PasswordViewController(viewModel: passwordViewModel)
-        navigationController.pushViewController(passwordViewController, animated: true)
+        let passwordCoordinator = PasswordCoordinator(navigationController: navigationController, auth: auth)
+        passwordCoordinator.start()
     }
     
     func pushToStartViewController() {
         let startCoordinator = StartCoordinator(navigationController: navigationController, firestore: firestore, auth: auth)
         startCoordinator.start()
     }
-}
-
-extension HomeCoordinator: PasswordViewModelCoordinatorDelegate {
-    func pushToForgotPasswordViewController() {
-        print("ForgotPasswordViewController not implemented")
-    }
-    
-    func popToHomeViewController() {
-        navigationController.popViewController(animated: true)
-    }
-    
 }
 
 

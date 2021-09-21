@@ -2,7 +2,7 @@ final class PasswordViewModel {
 
     private var newPassword: String?
     private let authService: AuthService
-    private weak var coordinatorDelegate: PasswordViewModelCoordinatorDelegate?
+    private let coordinatorDelegate: PasswordViewModelCoordinatorDelegate
 
     init(authService: AuthService, coordinator: PasswordViewModelCoordinatorDelegate) {
         self.authService = authService
@@ -38,10 +38,10 @@ final class PasswordViewModel {
     }
 
     func didFinish(){
-        coordinatorDelegate?.popToHomeViewController()
+        coordinatorDelegate.popToHomeViewController()
     }
 
-    func showForgotPasswordViewController() {
-        coordinatorDelegate?.pushToForgotPasswordViewController()
+    func showRecoverPasswordViewController() {
+        coordinatorDelegate.pushToRecoverPasswordViewController()
     }
 }

@@ -77,6 +77,10 @@
 		DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */; };
 		DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */; };
 		DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */; };
+		DEEBC0CF26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBC0CD26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift */; };
+		DEEBC0D026FA1B3C00A21AC4 /* RecoverPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEEBC0CE26FA1B3C00A21AC4 /* RecoverPasswordView.xib */; };
+		DEEBC0D226FA1C7400A21AC4 /* PasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBC0D126FA1C7400A21AC4 /* PasswordCoordinator.swift */; };
+		DEEBC0D426FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */; };
 		DEF0DB1F26F80CFF00498CD2 /* ShowBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */; };
 		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
@@ -183,6 +187,10 @@
 		DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		DEEBC0CD26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		DEEBC0CE26FA1B3C00A21AC4 /* RecoverPasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecoverPasswordView.xib; sourceTree = "<group>"; };
+		DEEBC0D126FA1C7400A21AC4 /* PasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinator.swift; sourceTree = "<group>"; };
+		DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModel.swift; sourceTree = "<group>"; };
 		DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBalance.swift; sourceTree = "<group>"; };
 		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -266,6 +274,7 @@
 				DE44BB4B26E27A550083B354 /* HomeCoordinator.swift */,
 				DE52A77626E8FC3E00EC3521 /* ReceiveCoordinator.swift */,
 				DE52A78026E933C200EC3521 /* PayCoordinator.swift */,
+				DEEBC0D126FA1C7400A21AC4 /* PasswordCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 		DE46216D26D6D869001E6685 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DEEBC0CC26FA1AF700A21AC4 /* RecoverPassword */,
 				DEA3B37C26F8BCC8003E09FC /* Password */,
 				DE4F07B726F4D1C100CA595C /* Extract */,
 				DE75DD8C26D9697200240B70 /* Home */,
@@ -578,6 +588,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DEEBC0CC26FA1AF700A21AC4 /* RecoverPassword */ = {
+			isa = PBXGroup;
+			children = (
+				DEEBC0CD26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift */,
+				DEEBC0CE26FA1B3C00A21AC4 /* RecoverPasswordView.xib */,
+				DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */,
+			);
+			path = RecoverPassword;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -689,6 +709,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */,
+				DEEBC0D026FA1B3C00A21AC4 /* RecoverPasswordView.xib in Resources */,
 				DE52A77B26E8FDE500EC3521 /* QRCodeView.xib in Resources */,
 				DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */,
 				DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */,
@@ -878,6 +899,7 @@
 				DE4F07C426F4DB3600CA595C /* ExtractTableViewCell.swift in Sources */,
 				DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */,
 				DE52A77F26E90CC300EC3521 /* TransferMenu.swift in Sources */,
+				DEEBC0D226FA1C7400A21AC4 /* PasswordCoordinator.swift in Sources */,
 				DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */,
 				DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */,
 				DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */,
@@ -894,6 +916,7 @@
 				DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */,
 				DE52A78126E933C200EC3521 /* PayCoordinator.swift in Sources */,
 				DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */,
+				DEEBC0CF26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift in Sources */,
 				DE4C431B26E007C00019410A /* ScannerViewModel.swift in Sources */,
 				DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */,
 				DEA3B38426F8D044003E09FC /* PasswordViewModel.swift in Sources */,
@@ -903,6 +926,7 @@
 				DE4F07BA26F4D1F000CA595C /* ExtractViewController.swift in Sources */,
 				DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */,
 				DE3774AB26F23E22005719E3 /* HomeMenuViewModel.swift in Sources */,
+				DEEBC0D426FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift in Sources */,
 				DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */,
 				DEF0DB1F26F80CFF00498CD2 /* ShowBalance.swift in Sources */,
 				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,
