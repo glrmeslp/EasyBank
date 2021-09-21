@@ -3,11 +3,11 @@
 > Project Status: under development :warning:
 
 ### Topics
-  * Project description (#project-description)
-  * What the platform is capable of doing (#what-the-app-is-able-to-do)
-  * Getting Started (#getting-started)
-  * Dependencies (#dependencies)
-  * License (#license)
+  * [Project description](#project-description)
+  * [What the platform is capable of doing](#what-the-app-is-able-to-do)
+  * [Getting Started](#getting-started)
+  * [Dependencies](#dependencies)
+  * [License](#license)
   
 ## Project description
 
