@@ -12,6 +12,7 @@
 		DE1BA3C726EA41E100416164 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1BA3C526EA41E100416164 /* PayView.xib */; };
 		DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */; };
 		DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3CA26EAA44B00416164 /* Transfer.swift */; };
+		DE2EA69126FBB5D600C22D7C /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */; };
 		DE3774A426F22705005719E3 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774A326F22705005719E3 /* Formatter+Extension.swift */; };
 		DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774A626F23B82005719E3 /* HomeMenuViewController.swift */; };
 		DE3774A926F23B82005719E3 /* HomeMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE3774A726F23B82005719E3 /* HomeMenuView.xib */; };
@@ -54,6 +55,9 @@
 		DE52A77D26E9049C00EC3521 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77C26E9049C00EC3521 /* Double+Extension.swift */; };
 		DE52A77F26E90CC300EC3521 /* TransferMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77E26E90CC300EC3521 /* TransferMenu.swift */; };
 		DE52A78126E933C200EC3521 /* PayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A78026E933C200EC3521 /* PayCoordinator.swift */; };
+		DE64A4E426FB756E004E95F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64A4E226FB756E004E95F7 /* AccountViewController.swift */; };
+		DE64A4E526FB756E004E95F7 /* AccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE64A4E326FB756E004E95F7 /* AccountView.xib */; };
+		DE64A4E726FB7614004E95F7 /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64A4E626FB7614004E95F7 /* AccountCoordinator.swift */; };
 		DE70738326F0CE6B00E34C44 /* CompleteTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */; };
 		DE70738426F0CE6B00E34C44 /* CompleteTransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */; };
 		DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */; };
@@ -116,6 +120,7 @@
 		DE1BA3C526EA41E100416164 /* PayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayView.xib; sourceTree = "<group>"; };
 		DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewModel.swift; sourceTree = "<group>"; };
 		DE1BA3CA26EAA44B00416164 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		DE3774A326F22705005719E3 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
 		DE3774A626F23B82005719E3 /* HomeMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewController.swift; sourceTree = "<group>"; };
 		DE3774A726F23B82005719E3 /* HomeMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMenuView.xib; sourceTree = "<group>"; };
@@ -164,6 +169,9 @@
 		DE52A77C26E9049C00EC3521 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		DE52A77E26E90CC300EC3521 /* TransferMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMenu.swift; sourceTree = "<group>"; };
 		DE52A78026E933C200EC3521 /* PayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCoordinator.swift; sourceTree = "<group>"; };
+		DE64A4E226FB756E004E95F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		DE64A4E326FB756E004E95F7 /* AccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountView.xib; sourceTree = "<group>"; };
+		DE64A4E626FB7614004E95F7 /* AccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
 		DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewController.swift; sourceTree = "<group>"; };
 		DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTransactionView.xib; sourceTree = "<group>"; };
 		DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewModel.swift; sourceTree = "<group>"; };
@@ -275,6 +283,7 @@
 				DE52A77626E8FC3E00EC3521 /* ReceiveCoordinator.swift */,
 				DE52A78026E933C200EC3521 /* PayCoordinator.swift */,
 				DEEBC0D126FA1C7400A21AC4 /* PasswordCoordinator.swift */,
+				DE64A4E626FB7614004E95F7 /* AccountCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -343,6 +352,7 @@
 		DE46216D26D6D869001E6685 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DE64A4E126FB754B004E95F7 /* Account */,
 				DEEBC0CC26FA1AF700A21AC4 /* RecoverPassword */,
 				DEA3B37C26F8BCC8003E09FC /* Password */,
 				DE4F07B726F4D1C100CA595C /* Extract */,
@@ -478,6 +488,16 @@
 				DE4F07C226F4DB3600CA595C /* ExtractTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE64A4E126FB754B004E95F7 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				DE64A4E226FB756E004E95F7 /* AccountViewController.swift */,
+				DE64A4E326FB756E004E95F7 /* AccountView.xib */,
+				DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		DE70738026F0CE2E00E34C44 /* CompleteTransaction */ = {
@@ -722,6 +742,7 @@
 				DE4F07C526F4DB3600CA595C /* ExtractTableViewCell.xib in Resources */,
 				DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */,
 				DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */,
+				DE64A4E526FB756E004E95F7 /* AccountView.xib in Resources */,
 				DE3774A926F23B82005719E3 /* HomeMenuView.xib in Resources */,
 				DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */,
 				DE70738426F0CE6B00E34C44 /* CompleteTransactionView.xib in Resources */,
@@ -896,6 +917,7 @@
 				DE4F07C926F503BA00CA595C /* ExtractViewModel.swift in Sources */,
 				DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */,
 				DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */,
+				DE64A4E426FB756E004E95F7 /* AccountViewController.swift in Sources */,
 				DE4F07C426F4DB3600CA595C /* ExtractTableViewCell.swift in Sources */,
 				DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */,
 				DE52A77F26E90CC300EC3521 /* TransferMenu.swift in Sources */,
@@ -916,6 +938,7 @@
 				DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */,
 				DE52A78126E933C200EC3521 /* PayCoordinator.swift in Sources */,
 				DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */,
+				DE64A4E726FB7614004E95F7 /* AccountCoordinator.swift in Sources */,
 				DEEBC0CF26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift in Sources */,
 				DE4C431B26E007C00019410A /* ScannerViewModel.swift in Sources */,
 				DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */,
@@ -936,6 +959,7 @@
 				DE93485026D8075200680E63 /* Account.swift in Sources */,
 				DEA3B37F26F8BD6D003E09FC /* PasswordViewController.swift in Sources */,
 				DE52A77726E8FC3E00EC3521 /* ReceiveCoordinator.swift in Sources */,
+				DE2EA69126FBB5D600C22D7C /* AccountViewModel.swift in Sources */,
 				DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */,
 				DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */,
 				DE93485526D82BB500680E63 /* AuthenticationService.swift in Sources */,
@@ -1112,7 +1136,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C9FXM5UU24;
 				INFOPLIST_FILE = EasyBank/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1133,7 +1157,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C9FXM5UU24;
 				INFOPLIST_FILE = EasyBank/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

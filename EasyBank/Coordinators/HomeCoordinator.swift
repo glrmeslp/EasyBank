@@ -12,6 +12,7 @@ protocol HomeViewModelCoordinatorDelegate: AnyObject {
 protocol HomeMenuViewModelCoordinatorDelegate: AnyObject {
     func pushToStartViewController()
     func pushToPasswordViewController()
+    func pushToAccountViewController()
 }
 
 final class HomeCoordinator: Coordinator {
@@ -65,11 +66,9 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         let authService = AuthenticationService(auth: auth)
         let viewModel = HomeMenuViewModel(authService: authService, coordinator: self)
         let homeMenuViewController = HomeMenuViewController(viewModel: viewModel)
-        if #available(iOS 15.0, *) {
-            if let sheet = homeMenuViewController.sheetPresentationController {
-                sheet.detents = [.medium()]
-                sheet.prefersGrabberVisible = true
-            }
+        if let sheet = homeMenuViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
         }
         navigationController.present(homeMenuViewController, animated: true)
     }
@@ -88,6 +87,11 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
 }
 
 extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
+    func pushToAccountViewController() {
+        let accountCoordinator = AccountCoordinator(navigationController: navigationController, roomName: roomName, auth: auth, firestore: firestore)
+        accountCoordinator.start()
+    }
+    
     func pushToPasswordViewController() {
         let passwordCoordinator = PasswordCoordinator(navigationController: navigationController, auth: auth)
         passwordCoordinator.start()
