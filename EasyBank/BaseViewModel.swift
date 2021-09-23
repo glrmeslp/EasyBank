@@ -1,22 +1,24 @@
 class BaseViewModel {
-    private let authService: AuthService
+    let authService: AuthService
     let roomService: RoomService
-    var userID: String?
     let roomName: String
-    var userName: String?
-    var account: Account?
+    private(set) var userID: String?
+    private(set) var email: String?
+    private(set) var userName: String?
+    private(set) var account: Account?
 
     init(roomName: String, authService: AuthService, databaseService: DatabaseService) {
         self.roomName = roomName
         self.authService = authService
         self.roomService = databaseService
-        getUserID()
+        getUser()
     }
 
-    private func getUserID() {
+    private func getUser() {
         authService.getUser { [weak self] user in
             guard let user = user else { return }
             self?.userID = user.uid
+            self?.email = user.email
         }
     }
 

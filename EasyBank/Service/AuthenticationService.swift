@@ -10,6 +10,7 @@ protocol AuthService {
     func reauthenticate(with password: String, completion: @escaping (String?) -> Void)
     func updatePassword(with password: String, completion: @escaping (String?) -> Void)
     func sendPasswordReset(with email: String, completion: @escaping (String?) -> Void)
+    func deleteUser(completion: @escaping (String?) -> Void)
 }
 
 final class AuthenticationService {
@@ -36,6 +37,17 @@ final class AuthenticationService {
 }
 
 extension AuthenticationService: AuthService {
+    func deleteUser(completion: @escaping (String?) -> Void) {
+        let user = auth.currentUser
+        user?.delete { error in
+            if let error = error {
+                completion(error.localizedDescription)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
     func sendPasswordReset(with email: String, completion: @escaping (String?) -> Void) {
         auth.sendPasswordReset(withEmail: email) { error in
             guard let error = error else {

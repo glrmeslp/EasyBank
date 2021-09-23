@@ -16,7 +16,7 @@ final class HomeMenuViewModel {
     }
 
     func showAccount() {
-        print("Account Button Tapped")
+        coordinatorDelegate?.pushToAccountViewController()
     }
 
     func signOut() {

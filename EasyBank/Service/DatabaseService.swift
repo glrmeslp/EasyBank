@@ -7,6 +7,7 @@ protocol RoomService {
     func createAccount(roomName: String, uid: String, account: Account, completion: @escaping (String?) -> Void)
     func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void)
     func transfer(_ roomName: String, value: Double, payerID: String, _ payer: Account, receiverID: String, _ receiver: Account, completion: @escaping (String?, String?) -> Void)
+    func deleteAccount(roomName: String, uid: String, completion: @escaping (String?) -> Void)
 }
 
 protocol TransferDatabaseService {
@@ -27,6 +28,15 @@ final class DatabaseService {
 }
 
 extension DatabaseService: RoomService {
+    func deleteAccount(roomName: String, uid: String, completion: @escaping (String?) -> Void) {
+        firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_ACCOUNTS).document(uid).delete() { error in
+            guard let error = error else {
+                completion(nil)
+                return
+            }
+            completion(error.localizedDescription)
+        }
+    }
 
     func createRoom(roomName: String, completion: @escaping (String?) -> Void) {
         firestore.collection(COLLECTION_ROOM)
