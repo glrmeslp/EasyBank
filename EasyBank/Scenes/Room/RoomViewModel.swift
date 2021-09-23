@@ -5,7 +5,7 @@ final class RoomViewModel: BaseViewModel {
     
     init(coordinator: RoomViewModelCoordinatorDelegate, roomService: RoomService, authService: AuthService) {
         self.coordinatorDelegate = coordinator
-        super.init(roomName: "", authService: authService, databaseService: roomService)
+        super.init(roomName: "", authService: authService, roomService: roomService)
     }
     
     func enterToRoom(_ roomName: String, from controller: UIViewController) {
@@ -33,10 +33,11 @@ final class RoomViewModel: BaseViewModel {
     }
 
     private func createAccount(with roomName: String, from controller: UIViewController) {
-        guard let uid = userID else { return }
-        roomService.createAccount(roomName: roomName, uid: uid) { [weak self] error in
+        guard let user = user else { return }
+        roomService.createAccount(roomName: roomName, user: user) { [weak self] error in
             guard let error = error else {
-                self?.coordinatorDelegate?.pushToHomeViewController(with: roomName)
+                let message = "You don't have an account in the room yet. A new account will be created"
+                self?.coordinatorDelegate?.presentAlertAndPushToHome(with: message, from: controller, and: roomName)
                 return
             }
             self?.coordinatorDelegate?.presentAlert(with: error, from: controller)

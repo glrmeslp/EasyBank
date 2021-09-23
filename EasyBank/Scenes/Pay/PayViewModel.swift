@@ -9,10 +9,10 @@ final class PayViewModel: BaseViewModel {
 
     init(data: [String], roomName: String, authService: AuthService, databaseService: DatabaseService, coordinator: PayViewModelCoordinatorDelegate) {
         self.coordiantorDelegate = coordinator
-        super.init(roomName: roomName, authService: authService, databaseService: databaseService)
+        super.init(roomName: roomName, authService: authService, roomService: databaseService)
         setup(data: data)
     }
-    
+
     private func setup(data: [String]) {
         var newData = data
         newData.removeFirst()
@@ -24,13 +24,6 @@ final class PayViewModel: BaseViewModel {
         receiverID = uid
         getAccount(uid: uid) { [weak self] account in
             self?.receiver = account
-        }
-    }
-    
-    private func getAccount(uid: String, completion: @escaping (Account) -> Void ) {
-        roomService.getAccount(roomName: roomName, uid: uid) { account, _ in
-            guard let account = account else { return }
-            completion(account)
         }
     }
     

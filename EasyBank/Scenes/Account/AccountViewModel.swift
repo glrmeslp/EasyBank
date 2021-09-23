@@ -4,7 +4,7 @@ final class AccountViewModel: BaseViewModel {
 
     init(roomName: String, authService: AuthService, databaseService: DatabaseService, coordinator: AccountViewModelCoordinatorDelegate) {
         self.coordinatorDelegate = coordinator
-        super.init(roomName: roomName, authService: authService, databaseService: databaseService)
+        super.init(roomName: roomName, authService: authService, roomService: databaseService)
     }
 
     func leaveRoom() {

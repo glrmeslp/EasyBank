@@ -91,13 +91,11 @@ final class HomeViewController: UIViewController {
 
     private func fetchData() {
         viewModel?.getAccountInformation { [weak self] account in
-            self?.userNameLabel.text = account.userName
             self?.value = account.balance.asCurrency()
         }
 
-        viewModel?.getRoomNameAndUserId { [weak self] roomName, _ in
-            self?.roomNameLabel.text = roomName
-        }
+        roomNameLabel.text = viewModel?.roomName
+        userNameLabel.text = viewModel?.userName
 
         viewModel?.getTransferMenu { [weak self] menu in
             self?.transferMenu = menu
