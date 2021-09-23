@@ -38,6 +38,7 @@ final class HomeMenuViewController: UIViewController {
     }
 
     @IBAction private func didTapAccountButton(_ sender: Any) {
+        dismiss(animated: true)
         viewModel?.showAccount()
     }
 
