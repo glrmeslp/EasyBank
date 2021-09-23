@@ -320,7 +320,6 @@
 				DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */,
 				DE46214926D6D2FB001E6685 /* Info.plist */,
 				DE93484826D8034700680E63 /* GoogleService-Info.plist */,
-				DE44BB4D26E297300083B354 /* BaseViewModel.swift */,
 			);
 			path = EasyBank;
 			sourceTree = "<group>";
@@ -529,6 +528,7 @@
 		DE8A0D3126DB129000D0175F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE44BB4D26E297300083B354 /* BaseViewModel.swift */,
 				DEE3858026E651E5008D9409 /* CurrencyTextField.swift */,
 			);
 			path = Components;
