@@ -32,11 +32,9 @@ extension PasswordCoordinator: PasswordViewModelCoordinatorDelegate {
         let authService = AuthenticationService(auth: auth)
         let viewModel = RecoverPasswordViewModel(authService: authService )
         let recoverPassword = RecoverPasswordViewController(viewModel: viewModel)
-        if #available(iOS 15.0, *) {
-            if let sheet = recoverPassword.sheetPresentationController {
-                sheet.detents = [.medium()]
-                sheet.prefersGrabberVisible = true
-            }
+        if let sheet = recoverPassword.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
         }
         navigationController.present(recoverPassword, animated: true)
     }
