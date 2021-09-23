@@ -55,9 +55,7 @@ final class AccountViewController: UIViewController {
 
     private func fetchData() {
         roomNameLabel.text = viewModel?.roomName
-        viewModel?.getUserName { [weak self] name in
-            self?.userNameLabel.text = name
-        }
+        userNameLabel.text = viewModel?.userName
         emailLabel.text = viewModel?.email
     }
     

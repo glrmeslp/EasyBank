@@ -13,15 +13,9 @@ protocol NewRoomViewModelCoordinatorDelegate: AnyObject {
     func presentAlert(with message: String, from controller: UIViewController)
 }
 
-protocol RoomViewModelCoordinatorDelegate: AnyObject {
-    func pushToPlayerViewController(with roomName: String)
+protocol RoomViewModelCoordinatorDelegate: AnyObject {func pushToHomeViewController(with roomName: String)
     func presentAlert(with message: String, from controller: UIViewController)
     func presentAlertAndPushToHome(with message: String, from controller: UIViewController, and roomName: String)
-}
-
-protocol PlayerViewModelCoordinatorDelegate: AnyObject {
-    func pushToHomeViewController(with roomName: String)
-    func presentAlert(with message: String, from controller: UIViewController)
 }
 
 final class StartCoordinator: Coordinator {
@@ -77,11 +71,11 @@ extension StartCoordinator: StartViewModelCoordinatorDelegate {
     }
 }
 
-extension StartCoordinator: NewRoomViewModelCoordinatorDelegate, RoomViewModelCoordinatorDelegate, PlayerViewModelCoordinatorDelegate {
+extension StartCoordinator: NewRoomViewModelCoordinatorDelegate, RoomViewModelCoordinatorDelegate {
     func presentAlert(with message: String, from controller: UIViewController) {
         controller.presentAlert(with: message)
     }
-    
+
     func presentAlertAndPushToHome(with message: String, from controller: UIViewController, and roomName: String) {
         controller.presentAlert(with: message) { _ in
             self.pushToHomeViewController(with: roomName)
@@ -91,14 +85,6 @@ extension StartCoordinator: NewRoomViewModelCoordinatorDelegate, RoomViewModelCo
     func pushToHomeViewController(with roomName: String) {
         let homeCoordinator = HomeCoordinator(navigationController: navigationController, roomName: roomName, firestore: firestore, auth: auth)
         homeCoordinator.start()
-    }
-    
-    func pushToPlayerViewController(with roomName: String) {
-        let authService = AuthenticationService(auth: auth)
-        let databaseService = DatabaseService(firestore: firestore)
-        let playerViewModel = PlayerViewModel(roomName: roomName, coordinator: self, authService: authService, databaseService: databaseService)
-        let playerViewController = PlayerViewController(viewModel: playerViewModel)
-        navigationController.pushViewController(playerViewController, animated: true)
     }
 }
 

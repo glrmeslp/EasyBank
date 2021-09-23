@@ -9,20 +9,16 @@ final class HomeViewModel: BaseViewModel {
 
     init(with roomName: String, databaseService: DatabaseService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
         self.coordinatorDelegate = coordinator
-        super.init(roomName: roomName, authService: authService, databaseService: databaseService)
+        super.init(roomName: roomName, authService: authService, roomService: databaseService)
     }
 
     func getAccountInformation(completion: @escaping (Account) -> Void) {
-        getAccount { account in
+        guard let uid = userID else { return }
+        getAccount(uid: uid) { account in
             completion(account)
         }
     }
-    
-    func getRoomNameAndUserId(completion: @escaping (String, String) -> Void) {
-        guard let uid = userID else { return }
-        completion(roomName, uid)
-    }
-    
+
     func getTransferMenu(completion: @escaping ([[String]]) -> Void) {
         completion(transferMenu)
     }
@@ -40,8 +36,7 @@ final class HomeViewModel: BaseViewModel {
     }
 
     func showExtractViewController() {
-        guard let account = account else { return }
-        coordinatorDelegate?.pushToExtractViewController(with: account.userName)
+        coordinatorDelegate?.pushToExtractViewController()
     }
 }
 

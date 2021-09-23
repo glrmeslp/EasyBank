@@ -4,21 +4,20 @@ final class ExtractViewModel: BaseViewModel {
 
     init(databaseService: DatabaseService, authService: AuthService, roomName: String) {
         self.transferService = databaseService
-        super.init(roomName: roomName, authService: authService, databaseService: databaseService)
+        super.init(roomName: roomName, authService: authService, roomService: databaseService)
     }
 
     func getAllTransfers(completion: @escaping ([Transfer]) -> Void){
-        getUserName { [weak self] userName in
-            guard let roomName = self?.roomName else { return }
-            self?.transferService.getAllTransfers(roomName: roomName, name: userName ) { tranfers in
-                let sortedTranfers = tranfers.sorted { $0.payDate.dateValue() > $1.payDate.dateValue() }
-                completion(sortedTranfers)
-            }
+        guard let name = userName else { return }
+        transferService.getAllTransfers(roomName: roomName, name: name ) { tranfers in
+            let sortedTranfers = tranfers.sorted { $0.payDate.dateValue() > $1.payDate.dateValue() }
+            completion(sortedTranfers)
         }
     }
 
     func getBalance(completion: @escaping (String) -> Void) {
-        getAccount { account in
+        guard let uid = userID else { return }
+        getAccount(uid: uid) { account in
             guard let value = account.balance.asCurrency() else { return }
             completion(value)
         }

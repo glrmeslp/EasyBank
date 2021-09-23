@@ -1,24 +1,17 @@
 import UIKit
 
-final class RoomViewModel {
+final class RoomViewModel: BaseViewModel {
     private weak var coordinatorDelegate: RoomViewModelCoordinatorDelegate?
-    private let roomService: RoomService
-    private let authService: AuthService
-    private var userID: String?
-    private var roomName: String?
     
     init(coordinator: RoomViewModelCoordinatorDelegate, roomService: RoomService, authService: AuthService) {
         self.coordinatorDelegate = coordinator
-        self.roomService = roomService
-        self.authService = authService
-        getUserID()
+        super.init(roomName: "", authService: authService, roomService: roomService)
     }
     
     func enterToRoom(_ roomName: String, from controller: UIViewController) {
-        self.roomName = roomName
         roomService.getRoom(roomName: roomName) { [weak self] roomExists, error in
             if roomExists == true {
-                self?.userHasAnAccountInThisRoom(controller: controller)
+                self?.userHasAnAccountInThisRoom(roomName: roomName, controller: controller)
             } else {
                 guard let error = error else { return }
                 self?.coordinatorDelegate?.presentAlert(with: error, from: controller)
@@ -26,11 +19,11 @@ final class RoomViewModel {
         }
     }
 
-    func userHasAnAccountInThisRoom(controller: UIViewController) {
-        guard let roomName = roomName, let uid = userID else { return }
+    private func userHasAnAccountInThisRoom(roomName: String, controller: UIViewController) {
+        guard let uid = userID else { return }
         roomService.getAccount(roomName: roomName, uid: uid) { [weak self] account, _ in
             if account == nil {
-                self?.coordinatorDelegate?.pushToPlayerViewController(with: roomName)
+                self?.createAccount(with: roomName, from: controller)
             } else {
                 let message = "You already have an account in this room. A new account will not be created"
                 self?.coordinatorDelegate?.presentAlertAndPushToHome(with: message, from: controller, and: roomName)
@@ -39,10 +32,15 @@ final class RoomViewModel {
         }
     }
 
-    private func getUserID() {
-        authService.getUser { [weak self] user in
-            guard let user = user else { return }
-            self?.userID = user.uid
+    private func createAccount(with roomName: String, from controller: UIViewController) {
+        guard let user = user else { return }
+        roomService.createAccount(roomName: roomName, user: user) { [weak self] error in
+            guard let error = error else {
+                let message = "You don't have an account in the room yet. A new account will be created"
+                self?.coordinatorDelegate?.presentAlertAndPushToHome(with: message, from: controller, and: roomName)
+                return
+            }
+            self?.coordinatorDelegate?.presentAlert(with: error, from: controller)
         }
     }
 }
