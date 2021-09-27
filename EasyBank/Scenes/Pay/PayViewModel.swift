@@ -3,12 +3,12 @@ final class PayViewModel: BaseViewModel {
     private var value: Double?
     private var receiverName: String?
     private var receiverID: String?
-    private var receiver: Account?
-    private var payer: Account?
     private var coordiantorDelegate: PayViewModelCoordinatorDelegate?
+    private let transferService: TransferDatabaseService
 
     init(data: [String], roomName: String, authService: AuthService, databaseService: DatabaseService, coordinator: PayViewModelCoordinatorDelegate) {
         self.coordiantorDelegate = coordinator
+        self.transferService = databaseService
         super.init(roomName: roomName, authService: authService, roomService: databaseService)
         setup(data: data)
     }
@@ -22,33 +22,30 @@ final class PayViewModel: BaseViewModel {
         newData.removeLast()
         guard let uid = newData.last else { return }
         receiverID = uid
-        getAccount(uid: uid) { [weak self] account in
-            self?.receiver = account
-        }
     }
-    
-    func getPayerAccount(completion: @escaping (Account) -> Void) {
+
+    func getBalance(completion: @escaping (String) -> Void) {
         guard let uid = userID else { return }
-        getAccount(uid: uid) { [weak self] account in
-            self?.payer = account
-            completion(account)
+        getAccount(uid: uid) { account in
+            guard let value = account.balance.asCurrency() else { return }
+            completion(value)
         }
     }
-    
+
     func getInformation(completion: @escaping (String, Double) -> Void) {
         guard let receiverName = receiverName, let value = value else { return }
         completion(receiverName, value)
     }
-    
+
     func transfer(value: String, completion: @escaping (String) -> Void) {
-        guard let receiver = receiver, let payer = payer, let value = value.asDouble(), let payerID = userID, let receiverID = receiverID else { return }
-        roomService.transfer(roomName, value: value, payerID: payerID, payer, receiverID: receiverID, receiver) { [weak self] error, transferId in
-            if let error = error {
-                completion(error)
-            } else {
-                guard let transferId = transferId else { return }
-                self?.coordiantorDelegate?.pushToCompleteTransaction(with: transferId)
+        guard let receiverName = receiverName, let payerName = userName, let value = value.asDouble(), let payerID = userID, let receiverID = receiverID else { return }
+        transferService.transfer(roomName, value: value, payerID: payerID, payerName: payerName, receiverID: receiverID, receiverName: receiverName) { [weak self] error, documentID in
+            guard let error = error else {
+                guard let documentID = documentID else { return }
+                self?.coordiantorDelegate?.pushToCompleteTransaction(with: documentID)
+                return
             }
+            completion(error.localizedDescription)
         }
     }
 }

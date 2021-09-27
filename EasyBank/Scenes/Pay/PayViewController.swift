@@ -4,8 +4,6 @@ import UIKit
 final class PayViewController: UIViewController {
 
     private var viewModel: PayViewModel?
-    private var showBalance = true
-    private var balance: String?
 
     @IBOutlet private weak var confirmButton: UIButton!
     @IBOutlet private weak var nameLabel: UILabel!
@@ -42,19 +40,21 @@ final class PayViewController: UIViewController {
     }
 
     @IBAction func didTapShowBalanceButton(_ sender: Any) {
-        if showBalance {
+        guard let value = balanceLabel.text else { return }
+        switch ShowBalance(rawValue: value) {
+        case .disabled:
             showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-            balanceLabel.text = balance
-            showBalance = false
-        } else {
+            viewModel?.getBalance { [weak self] value in
+                self?.balanceLabel.text = value
+            }
+        case .none:
             showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-            balanceLabel.text = "•••••"
-            showBalance = true
+            balanceLabel.text = ShowBalance.disabled.rawValue
         }
     }
 
     private func setup() {
-        confirmButton.layer.cornerRadius = 20
+        confirmButton.layer.cornerRadius = 25
         activityIndicatorView.isHidden = true
     }
     
@@ -66,10 +66,6 @@ final class PayViewController: UIViewController {
             } else {
                 self?.showValueTextField()
             }
-        }
-        
-        viewModel?.getPayerAccount { [weak self] account in
-            self?.balance = account.balance.asCurrency()
         }
     }
     

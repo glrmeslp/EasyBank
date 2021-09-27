@@ -27,7 +27,7 @@ final class CompleteTransactionViewController: UIViewController {
     }
 
     private func setup() {
-        homeButton.layer.cornerRadius = 20
+        homeButton.layer.cornerRadius = 25
     }
 
     private func fetchData() {

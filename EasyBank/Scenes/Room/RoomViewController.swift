@@ -41,9 +41,10 @@ class RoomViewController: UIViewController {
         let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         view.addGestureRecognizer(tapGestureReconizer)
         
-        continueButton.layer.cornerRadius = 20
+        continueButton.layer.cornerRadius = 25
+        continueButton.setTitleColor(UIColor.gray, for: .disabled)
         disableContinueButton()
-
+        
         roomNameTextField.becomeFirstResponder()
     
         setupNavigationController(isHidden: false)

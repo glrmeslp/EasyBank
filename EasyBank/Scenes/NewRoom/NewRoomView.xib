@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PKK-hg-9n9">
-                    <rect key="frame" x="20" y="94" width="374" height="207.5"/>
+                    <rect key="frame" x="20" y="74" width="374" height="217.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter new room name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW9-lg-KDF">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -46,14 +45,14 @@
                             <textInputTraits key="textInputTraits" returnKeyType="go" textContentType="name"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUN-iv-MiE">
-                            <rect key="frame" x="0.0" y="167.5" width="374" height="40"/>
+                            <rect key="frame" x="0.0" y="167.5" width="374" height="50"/>
                             <color key="backgroundColor" name="BlueColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="AmS-TZ-K9Z"/>
+                                <constraint firstAttribute="height" constant="50" id="AmS-TZ-K9Z"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Create a new room">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                             </state>
                             <connections>
                                 <action selector="didTapCreateButton:" destination="-1" eventType="touchUpInside" id="KxW-nD-Oxb"/>
@@ -65,7 +64,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="PKK-hg-9n9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="fbh-sD-0yA"/>
+                <constraint firstItem="PKK-hg-9n9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="fbh-sD-0yA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PKK-hg-9n9" secondAttribute="trailing" constant="20" id="ucc-n8-JcP"/>
                 <constraint firstItem="PKK-hg-9n9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vFP-ph-3Hj"/>
             </constraints>
@@ -76,6 +75,9 @@
         <namedColor name="BlueColor">
             <color red="0.0078431372549019607" green="0.29411764705882354" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -31,7 +31,7 @@ class ReceiveViewController: UIViewController {
     private func setup() {
         let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         view.addGestureRecognizer(tapGestureReconizer)
-        createQRCodeButton.layer.cornerRadius = 20
+        createQRCodeButton.layer.cornerRadius = 25
         title = "Receive"
     }
     

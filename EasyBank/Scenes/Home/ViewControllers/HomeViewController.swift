@@ -4,8 +4,6 @@ final class HomeViewController: UIViewController {
 
     private var viewModel: HomeViewModel?
     private var transferMenu: [[String]]?
-    private var value: String?
-    private var showBalance = true
 
     @IBOutlet private weak var roomNameLabel: UILabel!
     @IBOutlet private weak var userNameLabel: UILabel!
@@ -36,17 +34,25 @@ final class HomeViewController: UIViewController {
         setupRightBarButton()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnSwipe = true
+        super.viewWillAppear(animated)
+    }
+
     @IBAction private func didTapShowBalanceButton(_ sender: Any) {
-        if showBalance {
+        guard let value = balanceLabel.text else { return }
+        switch ShowBalance(rawValue: value) {
+        case .disabled:
             showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-            balanceLabel.text = value
-            showBalance = false
-        } else {
+            viewModel?.getBalance { [weak self] value in
+                self?.balanceLabel.text = value
+            }
+        case .none:
             showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-            balanceLabel.text = "•••••"
-            showBalance = true
+            balanceLabel.text = ShowBalance.disabled.rawValue
         }
     }
+
     @IBAction private func didTapExtractButton(_ sender: Any) {
         viewModel?.showExtractViewController()
     }
@@ -55,21 +61,19 @@ final class HomeViewController: UIViewController {
         navigationController?.hidesBarsOnSwipe = true
         navigationItem.setHidesBackButton(true, animated: true)
         title = "Easy Bank"
-        
+
         balanceView.layer.cornerRadius = 20
         balanceView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-        
+
         extractView.layer.cornerRadius = 20
         extractView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        
+
         menuTransferCollection.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionCell")
-        
-        let size = menuTransferCollection.bounds.width / 2 - 20
+
+        let size = view.bounds.width / 2 - 30
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.itemSize = CGSize(width: size, height: 100)
-        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-        menuTransferCollection.showsHorizontalScrollIndicator = false
-        
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         menuTransferCollection.collectionViewLayout = collectionViewFlowLayout
 
         let backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
@@ -90,10 +94,6 @@ final class HomeViewController: UIViewController {
     }
 
     private func fetchData() {
-        viewModel?.getAccountInformation { [weak self] account in
-            self?.value = account.balance.asCurrency()
-        }
-
         roomNameLabel.text = viewModel?.roomName
         userNameLabel.text = viewModel?.userName
 
