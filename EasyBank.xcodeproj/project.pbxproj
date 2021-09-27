@@ -40,7 +40,6 @@
 		DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */; };
 		DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */; };
 		DE4C430E26DEC0520019410A /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */; };
-		DE4C431026DFC4500019410A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430F26DFC4500019410A /* UIImage+Extension.swift */; };
 		DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C431626DFFBB50019410A /* ScannerViewController.swift */; };
 		DE4C431926DFFBB50019410A /* ScannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C431726DFFBB50019410A /* ScannerView.xib */; };
 		DE4C431B26E007C00019410A /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C431A26E007C00019410A /* ScannerViewModel.swift */; };
@@ -83,6 +82,7 @@
 		DEEBC0D226FA1C7400A21AC4 /* PasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBC0D126FA1C7400A21AC4 /* PasswordCoordinator.swift */; };
 		DEEBC0D426FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */; };
 		DEF0DB1F26F80CFF00498CD2 /* ShowBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */; };
+		DEFFA32A2702015B00A70B2E /* QRCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA3292702015B00A70B2E /* QRCodeHelper.swift */; };
 		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
 /* End PBXBuildFile section */
@@ -151,7 +151,6 @@
 		DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
-		DE4C430F26DFC4500019410A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		DE4C431626DFFBB50019410A /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		DE4C431726DFFBB50019410A /* ScannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerView.xib; sourceTree = "<group>"; };
 		DE4C431A26E007C00019410A /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
@@ -194,6 +193,7 @@
 		DEEBC0D126FA1C7400A21AC4 /* PasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinator.swift; sourceTree = "<group>"; };
 		DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModel.swift; sourceTree = "<group>"; };
 		DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBalance.swift; sourceTree = "<group>"; };
+		DEFFA3292702015B00A70B2E /* QRCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeHelper.swift; sourceTree = "<group>"; };
 		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -307,6 +307,7 @@
 		DE46213A26D6D2F5001E6685 /* EasyBank */ = {
 			isa = PBXGroup;
 			children = (
+				DE60801E26FE0B0800813C5B /* Helpers */,
 				DE44BB4A26E25B8F0083B354 /* Coordinators */,
 				DE8A0D3126DB129000D0175F /* Components */,
 				DE75DD8926D9686800240B70 /* Extensions */,
@@ -483,6 +484,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DE60801E26FE0B0800813C5B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DEFFA3292702015B00A70B2E /* QRCodeHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		DE64A4E126FB754B004E95F7 /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,7 +516,6 @@
 			isa = PBXGroup;
 			children = (
 				DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */,
-				DE4C430F26DFC4500019410A /* UIImage+Extension.swift */,
 				DE44BB4F26E2B2750083B354 /* String+Extension.swift */,
 				DE52A77C26E9049C00EC3521 /* Double+Extension.swift */,
 				DE3774A326F22705005719E3 /* Formatter+Extension.swift */,
@@ -898,6 +906,7 @@
 				DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */,
 				DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */,
 				DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */,
+				DEFFA32A2702015B00A70B2E /* QRCodeHelper.swift in Sources */,
 				DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */,
 				DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */,
 				DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */,
@@ -909,7 +918,6 @@
 				DEA3B38426F8D044003E09FC /* PasswordViewModel.swift in Sources */,
 				DE93484B26D8041900680E63 /* NewRoomViewModel.swift in Sources */,
 				DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */,
-				DE4C431026DFC4500019410A /* UIImage+Extension.swift in Sources */,
 				DE4F07BA26F4D1F000CA595C /* ExtractViewController.swift in Sources */,
 				DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */,
 				DE3774AB26F23E22005719E3 /* HomeMenuViewModel.swift in Sources */,

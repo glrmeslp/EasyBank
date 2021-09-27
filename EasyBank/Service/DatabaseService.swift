@@ -7,11 +7,14 @@ protocol RoomService {
     func getRoom(roomName: String, completion: @escaping (Bool, String?) -> Void)
     func createAccount(roomName: String, user: User, completion: @escaping (String?) -> Void)
     func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void)
-    func transfer(_ roomName: String, value: Double, payerID: String, _ payer: Account, receiverID: String, _ receiver: Account, completion: @escaping (String?, String?) -> Void)
     func deleteAccount(roomName: String, uid: String, completion: @escaping (String?) -> Void)
 }
 
 protocol TransferDatabaseService {
+    func transfer(_ roomName: String, value: Double,
+                  payerID: String, payerName: String,
+                  receiverID: String, receiverName: String,
+                  completion: @escaping (Error?, String?) -> Void)
     func getTransfer(roomName: String, documentId: String, completion: @escaping (Transfer?, String?) -> Void )
     func getAllTransfers(roomName: String, name: String, completion: @escaping ([Transfer]) -> Void)
 }
@@ -85,48 +88,6 @@ extension DatabaseService: RoomService {
         }
     }
 
-    func transfer(_ roomName: String, value: Double, payerID: String, _ payer: Account, receiverID: String, _ receiver: Account, completion: @escaping (String?, String?) -> Void) {
-        var payer = payer
-        var receiver = receiver
-        payer.transfer(account: &receiver, value: value) { error in
-            guard let error = error else { return }
-            completion(error, nil)
-        }
-        updateBalance(roomName: roomName, uid: payerID, account: payer) { error in
-            guard let error = error else { return }
-            completion(error, nil)
-        }
-        updateBalance(roomName: roomName, uid: receiverID, account: receiver) { error in
-            guard let error = error else { return }
-            completion(error, nil)
-        }
-        var ref: DocumentReference? = nil
-        let transfer = Transfer(payDate: Timestamp(date: Date()), value: value, receiverName: receiver.userName, payerName: payer.userName)
-        do {
-            ref = try firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_TRANSFERS).addDocument(from: transfer)
-            completion(nil, ref!.documentID)
-        } catch let error {
-            completion(error.localizedDescription, nil)
-        }
-    }
-
-    private func updateBalance(roomName: String, uid: String, account: Account, completion: @escaping (String?) -> Void) {
-        let accountRef = firestore.collection(COLLECTION_ROOM)
-            .document(roomName)
-            .collection(COLLECTION_ACCOUNTS)
-            .document(uid)
-        
-        accountRef.updateData([
-            "balance": account.balance
-        ]) { error in
-            if let error = error {
-                completion(error.localizedDescription)
-            } else {
-                completion(nil)
-            }
-        }
-    }
-
     func createAccount(roomName: String, user: User, completion: @escaping (String?) -> Void) {
         let account =  Account(balance: 0, userName: user.displayName ?? "No name")
         do {
@@ -188,6 +149,73 @@ extension DatabaseService: TransferDatabaseService {
             } else {
                 completion(nil, error?.localizedDescription)
             }
+        }
+    }
+
+    func transfer(_ roomName: String, value: Double,
+                  payerID: String, payerName: String,
+                  receiverID: String, receiverName: String,
+                  completion: @escaping (Error?, String?) -> Void) {
+        let payerReference = firestore.collection(COLLECTION_ROOM).document(roomName)
+            .collection(COLLECTION_ACCOUNTS).document(payerID)
+        let receiverReference = firestore.collection(COLLECTION_ROOM).document(roomName)
+            .collection(COLLECTION_ACCOUNTS).document(receiverID)
+        firestore.runTransaction({ (transaction, errorPointer) -> Any? in
+            let payerDocument: DocumentSnapshot
+            do {
+                try payerDocument = transaction.getDocument(payerReference)
+            } catch let error as NSError {
+                errorPointer?.pointee = error
+                return nil
+            }
+
+            let receiverDocument: DocumentSnapshot
+            do {
+                try receiverDocument = transaction.getDocument(receiverReference)
+            } catch let error as NSError {
+                errorPointer?.pointee = error
+                return nil
+            }
+
+            guard let oldPayerBalance = payerDocument.data()?["balance"] as? Double else {
+                errorPointer?.pointee = NSError(domain: "AppErrorDomain", code: -1,
+                                                userInfo: [NSLocalizedDescriptionKey: "Unable to retrieve balance from snapshot \(payerDocument)"])
+                return nil
+            }
+
+            guard oldPayerBalance >= value else {
+                errorPointer?.pointee = NSError(domain: "AppErrorDomain", code: -2,
+                                                userInfo: [NSLocalizedDescriptionKey: "Insufficient balance to transfer"])
+                return nil
+            }
+
+            guard let oldReceiverBalance = receiverDocument.data()?["balance"] as? Double else {
+                errorPointer?.pointee = NSError(domain: "AppErrorDomain", code: -1,
+                                                userInfo: [NSLocalizedDescriptionKey: "Unable to retrieve balance from snapshot \(receiverDocument)"])
+                return nil
+            }
+            
+            transaction.updateData(["balance": oldPayerBalance - value], forDocument: payerReference)
+            transaction.updateData(["balance": oldReceiverBalance + value], forDocument: receiverReference)
+            return nil
+        }) { (object, error) in
+            guard let error = error else {
+                self.createTransferDocument(roomName, value: value, payerName: payerName, receiverName: receiverName) { error, documentID in
+                    completion(error,documentID)
+                }
+                return
+            }
+            completion(error, nil)
+        }
+    }
+
+    private func createTransferDocument(_ roomName: String, value: Double, payerName: String, receiverName: String, completion: @escaping (Error? ,String?) -> Void) {
+        let transfer = Transfer(payDate: Timestamp(date: Date()), value: value, receiverName: receiverName, payerName: payerName)
+        do {
+            let reference = try firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_TRANSFERS).addDocument(from: transfer)
+            completion(nil, reference.documentID)
+        } catch let error {
+            completion(error, nil)
         }
     }
 }
