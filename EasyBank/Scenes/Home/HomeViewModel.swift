@@ -12,10 +12,11 @@ final class HomeViewModel: BaseViewModel {
         super.init(roomName: roomName, authService: authService, roomService: databaseService)
     }
 
-    func getAccountInformation(completion: @escaping (Account) -> Void) {
+    func getBalance(completion: @escaping (String) -> Void) {
         guard let uid = userID else { return }
         getAccount(uid: uid) { account in
-            completion(account)
+            guard let value = account.balance.asCurrency() else { return }
+            completion(value)
         }
     }
 

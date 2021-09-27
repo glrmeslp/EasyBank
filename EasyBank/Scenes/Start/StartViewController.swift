@@ -41,12 +41,10 @@ final class StartViewController: UIViewController {
     }
 
     func setup() {
-        createButton.layer.cornerRadius = 20
-
-        joinButton.layer.cornerRadius = 20
+        createButton.layer.cornerRadius = 25
+        joinButton.layer.cornerRadius = 25
         joinButton.layer.borderWidth = 1
         joinButton.layer.borderColor = UIColor(named: "BlueColor")!.cgColor
-
         setupNavigationController(isHidden: true)
         navigationController?.hidesBarsOnSwipe = false
     }

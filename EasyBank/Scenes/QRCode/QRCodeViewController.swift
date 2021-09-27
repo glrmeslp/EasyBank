@@ -27,7 +27,7 @@ class QRCodeViewController: UIViewController {
     }
 
     private func setup() {
-        homeButton.layer.cornerRadius = 20
+        homeButton.layer.cornerRadius = 25
     
         title = "My QR Code"
         
@@ -36,7 +36,7 @@ class QRCodeViewController: UIViewController {
         }
         
         viewModel?.generateStringForQRcode { [weak self] string in
-            self?.qrCodeImageView.image = UIImage().generateQRCode(from: string)
+            self?.qrCodeImageView.image = QRCodeHelper().generateQRCode(from: string)
         }
     }
 }

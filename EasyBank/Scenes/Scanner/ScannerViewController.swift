@@ -41,7 +41,6 @@ final class ScannerViewController: UIViewController {
         qrCodeSafeAreaView.layer.cornerRadius = 5
         qrCodeSafeAreaView.layer.borderColor = UIColor(named: "BlueColor")!.cgColor
         qrCodeSafeAreaView.layer.borderWidth = 2
-
         captureSession = AVCaptureSession()
 
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }

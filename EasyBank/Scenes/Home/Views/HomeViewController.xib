@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -28,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vex-Qt-ywS">
-                    <rect key="frame" x="20" y="64" width="350" height="310.33333333333331"/>
+                    <rect key="frame" x="20" y="74" width="350" height="310.33333333333331"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qRm-Ja-Ysb">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="17"/>
@@ -90,13 +89,13 @@
                                                     <rect key="frame" x="0.0" y="25" width="318" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•••••" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kt9-ET-KjB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="289" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="264.66666666666669" height="24"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-Rw-qHC">
-                                                            <rect key="frame" x="295" y="1" width="23" height="22"/>
+                                                            <rect key="frame" x="270.66666666666669" y="1" width="47.333333333333314" height="22"/>
                                                             <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                                             <state key="normal" image="eye.slash.fill" catalog="system"/>
                                                             <connections>
@@ -157,11 +156,8 @@
                     </subviews>
                 </stackView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wsK-7K-JO9">
-                    <rect key="frame" x="15" y="382.33333333333331" width="360" height="100"/>
+                    <rect key="frame" x="10" y="392.33333333333326" width="370" height="417.66666666666674"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="eEX-15-uEP"/>
-                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="wZ7-Gp-eXW">
                         <size key="itemSize" width="100" height="100"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -173,11 +169,12 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="wsK-7K-JO9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Dn2-sN-JEi"/>
+                <constraint firstItem="wsK-7K-JO9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Dn2-sN-JEi"/>
                 <constraint firstItem="wsK-7K-JO9" firstAttribute="top" secondItem="Vex-Qt-ywS" secondAttribute="bottom" constant="8" id="E6q-yg-rp3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wsK-7K-JO9" secondAttribute="trailing" constant="15" id="dLr-hQ-ZPW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wsK-7K-JO9" secondAttribute="bottom" id="b8q-ja-3tN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wsK-7K-JO9" secondAttribute="trailing" constant="10" id="dLr-hQ-ZPW"/>
                 <constraint firstItem="Vex-Qt-ywS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="k7j-Pl-0ja"/>
-                <constraint firstItem="Vex-Qt-ywS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="moZ-vJ-RN2"/>
+                <constraint firstItem="Vex-Qt-ywS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="moZ-vJ-RN2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vex-Qt-ywS" secondAttribute="trailing" constant="20" id="sNZ-Pu-FbU"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="68.973214285714278"/>

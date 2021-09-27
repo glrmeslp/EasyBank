@@ -41,7 +41,8 @@ class NewRoomViewController: UIViewController {
         let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         view.addGestureRecognizer(tapGestureReconizer)
         
-        createButton.layer.cornerRadius = 20
+        createButton.layer.cornerRadius = 25
+        createButton.setTitleColor(UIColor.gray, for: .disabled)
         disableContinueButton()
 
         roomNameTextField.becomeFirstResponder()

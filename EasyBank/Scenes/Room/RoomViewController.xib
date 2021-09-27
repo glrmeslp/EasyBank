@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7f5-9I-Sx9">
-                    <rect key="frame" x="20" y="94" width="374" height="207.5"/>
+                    <rect key="frame" x="20" y="74" width="374" height="217.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter room name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dj-fi-ycS">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -45,14 +45,14 @@
                             <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="name"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNY-vA-Nqf">
-                            <rect key="frame" x="0.0" y="167.5" width="374" height="40"/>
+                            <rect key="frame" x="0.0" y="167.5" width="374" height="50"/>
                             <color key="backgroundColor" name="BlueColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="EPa-PD-KKe"/>
+                                <constraint firstAttribute="height" constant="50" id="EPa-PD-KKe"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Continue">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                             </state>
                             <connections>
                                 <action selector="didTapContinueButton:" destination="-1" eventType="touchUpInside" id="gsZ-NC-0Dh"/>
@@ -66,7 +66,7 @@
             <constraints>
                 <constraint firstItem="7f5-9I-Sx9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1vO-xB-hP2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7f5-9I-Sx9" secondAttribute="trailing" constant="20" id="c1Z-oL-dxJ"/>
-                <constraint firstItem="7f5-9I-Sx9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="cv4-0W-Rcd"/>
+                <constraint firstItem="7f5-9I-Sx9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="cv4-0W-Rcd"/>
             </constraints>
             <point key="canvasLocation" x="139" y="90"/>
         </view>
@@ -75,6 +75,9 @@
         <namedColor name="BlueColor">
             <color red="0.0078431372549019607" green="0.29411764705882354" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

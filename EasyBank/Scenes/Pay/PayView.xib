@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EGV-1h-IvW">
-                    <rect key="frame" x="20" y="64" width="374" height="184.5"/>
+                    <rect key="frame" x="20" y="74" width="374" height="184.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ODm-21-Xvn">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="22"/>
@@ -110,21 +110,21 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAA-Mk-5Mj">
-                    <rect key="frame" x="20" y="792" width="374" height="40"/>
+                    <rect key="frame" x="20" y="782" width="374" height="50"/>
                     <color key="backgroundColor" name="BlueColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="k2p-QD-sRP"/>
+                        <constraint firstAttribute="height" constant="50" id="k2p-QD-sRP"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Confirm">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                     </state>
                     <connections>
                         <action selector="didTapConfirmButton:" destination="-1" eventType="touchUpInside" id="Hdc-8l-RNZ"/>
                     </connections>
                 </button>
                 <activityIndicatorView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="G8k-XL-ycb">
-                    <rect key="frame" x="197" y="792" width="20" height="40"/>
+                    <rect key="frame" x="197" y="782" width="20" height="50"/>
                     <color key="color" systemColor="secondarySystemBackgroundColor"/>
                 </activityIndicatorView>
             </subviews>
@@ -132,7 +132,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="G8k-XL-ycb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Awp-DE-oxX"/>
-                <constraint firstItem="EGV-1h-IvW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="BqS-go-pRW"/>
+                <constraint firstItem="EGV-1h-IvW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="BqS-go-pRW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JAA-Mk-5Mj" secondAttribute="trailing" constant="20" id="J0h-CH-9vH"/>
                 <constraint firstItem="G8k-XL-ycb" firstAttribute="bottom" secondItem="JAA-Mk-5Mj" secondAttribute="bottom" id="Lkt-dO-Dwe"/>
                 <constraint firstItem="G8k-XL-ycb" firstAttribute="top" secondItem="JAA-Mk-5Mj" secondAttribute="top" id="Y3g-Iv-pK8"/>

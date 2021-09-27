@@ -11,12 +11,12 @@ final class ScannerViewModel {
     }
 
     func validateQRCode(with code: String, from controller: UIViewController, completion: @escaping (Bool) -> Void) {
-        var splittedCode = code.split
+        var splittedCode = code.components(separatedBy: "00X00")
         splittedCode.removeFirst()
         let data = splittedCode
         var accountInformations = data
         accountInformations.removeLast()
-        if code.isQRCodeValid {
+        if QRCodeHelper().isQRCodeValid(value: code) {
             isAccountExists(split: accountInformations) { [weak self] value in
                 completion(value)
                 if value {
