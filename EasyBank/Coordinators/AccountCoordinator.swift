@@ -4,8 +4,13 @@ import FirebaseFirestore
 
 protocol AccountViewModelCoordinatorDelegate: AnyObject {
     func pushToStartViewController()
-    func pushToDeleteUserViewController()
+    func presentReauthenticateViewController(for motive: Reautheticate)
+}
+
+protocol ReauthenticateViewModelCoordinatorDelegate: AnyObject {
     func pushToProfileViewController()
+    func presentDeleteUserActionSheet(with handler: @escaping ((UIAlertAction) -> Void))
+    func pushToStartViewController()
 }
 
 final class AccountCoordinator: Coordinator {
@@ -33,16 +38,36 @@ final class AccountCoordinator: Coordinator {
 }
 
 extension AccountCoordinator: AccountViewModelCoordinatorDelegate {
-    func pushToProfileViewController() {
-        print("Profile View Controller")
-    }
-    
-    func pushToDeleteUserViewController() {
-        print("Delete View Controller")
+    func presentReauthenticateViewController(for motive: Reautheticate) {
+        let reauthenticateViewModel = ReauthenticateViewModel(coordinator: self, authService: AuthenticationService(auth: auth), motive: motive)
+        let reauthenticateViewController = ReauthenticateViewController(viewModel: reauthenticateViewModel)
+        if let sheet = reauthenticateViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
+        }
+        navigationController.present(reauthenticateViewController, animated: true)
     }
 
     func pushToStartViewController() {
         let startCoordinator = StartCoordinator(navigationController: navigationController, firestore: firestore, auth: auth)
         startCoordinator.start()
+    }
+}
+
+extension AccountCoordinator: ReauthenticateViewModelCoordinatorDelegate {
+    func presentDeleteUserActionSheet(with handler: @escaping ((UIAlertAction) -> Void)) {
+        navigationController.presentActionSheet(title: "Do you want to delete your EasyBank account?",
+                                                buttonTitle: "Delete",
+                                                message: "This operation cannot be undone.",
+                                                style: .destructive,
+                                                handler: handler)
+    }
+
+    func pushToProfileViewController() {
+        let profileViewModel = ProfileViewModel(roomName: roomName,
+                                                authService: AuthenticationService(auth: auth),
+                                                roomService: DatabaseService(firestore: firestore))
+        let profileViewController = ProfileViewController(viewModel: profileViewModel)
+        navigationController.pushViewController(profileViewController, animated: true)
     }
 }
