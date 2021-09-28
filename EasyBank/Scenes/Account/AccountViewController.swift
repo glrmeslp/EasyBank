@@ -24,6 +24,13 @@ final class AccountViewController: UIViewController {
         super.viewDidLoad()
         setup()
         fetchData()
+        setupNavigationController(isHidden: false)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel?.getUser()
+        fetchData()
+        super.viewWillAppear(animated)
     }
 
     @IBAction private func didTapDeleteAccountButton(_ sender: Any) {
