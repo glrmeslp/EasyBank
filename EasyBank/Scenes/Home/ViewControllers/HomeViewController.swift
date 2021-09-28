@@ -36,6 +36,8 @@ final class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = true
+        viewModel?.getUser()
+        fetchData()
         super.viewWillAppear(animated)
     }
 
@@ -100,6 +102,9 @@ final class HomeViewController: UIViewController {
         viewModel?.getTransferMenu { [weak self] menu in
             self?.transferMenu = menu
         }
+
+        showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        balanceLabel.text = ShowBalance.disabled.rawValue
     }
 }
 

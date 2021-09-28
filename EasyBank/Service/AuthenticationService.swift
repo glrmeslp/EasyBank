@@ -11,6 +11,8 @@ protocol AuthService {
     func updatePassword(with password: String, completion: @escaping (String?) -> Void)
     func sendPasswordReset(with email: String, completion: @escaping (String?) -> Void)
     func deleteUser(completion: @escaping (String?) -> Void)
+    func updateDisplayName(with newName: String, completion: @escaping (String?) -> Void)
+    func updateEmailAddress(with newEmail: String, completion: @escaping (String?) -> Void)
 }
 
 final class AuthenticationService {
@@ -37,44 +39,44 @@ final class AuthenticationService {
 }
 
 extension AuthenticationService: AuthService {
+    func updateDisplayName(with newName: String, completion: @escaping (String?) -> Void) {
+        let changeRequest = auth.currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = newName
+        changeRequest?.commitChanges { error in
+            completion(error?.localizedDescription)
+        }
+    }
+    
+    func updateEmailAddress(with newEmail: String, completion: @escaping (String?) -> Void) {
+        auth.currentUser?.updateEmail(to: newEmail) { error in
+            completion(error?.localizedDescription)
+        }
+    }
+    
     func deleteUser(completion: @escaping (String?) -> Void) {
         let user = auth.currentUser
         user?.delete { error in
-            if let error = error {
-                completion(error.localizedDescription)
-            } else {
-                completion(nil)
-            }
+            completion(error?.localizedDescription)
         }
     }
     
     func sendPasswordReset(with email: String, completion: @escaping (String?) -> Void) {
         auth.sendPasswordReset(withEmail: email) { error in
-            guard let error = error else {
-                completion(nil)
-                return }
-            completion(error.localizedDescription)
+            completion(error?.localizedDescription)
         }
     }
     
     func updatePassword(with password: String, completion: @escaping (String?) -> Void) {
         auth.currentUser?.updatePassword(to: password) { error in
-            guard let error = error else {
-                completion(nil)
-                return }
-            completion(error.localizedDescription)
+            completion(error?.localizedDescription)
         }
     }
     
     func reauthenticate(with password: String, completion: @escaping (String?) -> Void) {
         guard let user = auth.currentUser, let email = user.email else { return }
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
-        user.reauthenticate(with: credential) { _, error  in
-            guard let error = error else {
-                completion(nil)
-                return
-            }
-            completion(error.localizedDescription)
+        user.reauthenticate(with: credential) { _, error in
+            completion(error?.localizedDescription)
         }
     }
     

@@ -23,10 +23,10 @@ final class AccountViewModel: BaseViewModel {
     }
 
     func deleteEasyBankAccount() {
-        coordinatorDelegate?.pushToDeleteUserViewController()
+        coordinatorDelegate?.presentReauthenticateViewController(for: .deleteUser)
     }
 
     func manageProfileInformation() {
-        coordinatorDelegate?.pushToProfileViewController()
+        coordinatorDelegate?.presentReauthenticateViewController(for: .updateUserInformation)
     }
 }

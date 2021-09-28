@@ -83,6 +83,13 @@
 		DEEBC0D426FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */; };
 		DEF0DB1F26F80CFF00498CD2 /* ShowBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */; };
 		DEFFA32A2702015B00A70B2E /* QRCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA3292702015B00A70B2E /* QRCodeHelper.swift */; };
+		DEFFA32E2702112000A70B2E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA32C2702112000A70B2E /* ProfileViewController.swift */; };
+		DEFFA32F2702112000A70B2E /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFFA32D2702112000A70B2E /* ProfileView.xib */; };
+		DEFFA3332702138300A70B2E /* ReauthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA3312702138300A70B2E /* ReauthenticateViewController.swift */; };
+		DEFFA3342702138300A70B2E /* ReauthenticateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFFA3322702138300A70B2E /* ReauthenticateView.xib */; };
+		DEFFA336270216EC00A70B2E /* ReauthenticateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA335270216EC00A70B2E /* ReauthenticateViewModel.swift */; };
+		DEFFA338270220ED00A70B2E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA337270220ED00A70B2E /* ProfileViewModel.swift */; };
+		DEFFA33A27035EAD00A70B2E /* Reauthenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA33927035EAC00A70B2E /* Reauthenticate.swift */; };
 		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
 /* End PBXBuildFile section */
@@ -194,6 +201,13 @@
 		DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModel.swift; sourceTree = "<group>"; };
 		DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBalance.swift; sourceTree = "<group>"; };
 		DEFFA3292702015B00A70B2E /* QRCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeHelper.swift; sourceTree = "<group>"; };
+		DEFFA32C2702112000A70B2E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DEFFA32D2702112000A70B2E /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		DEFFA3312702138300A70B2E /* ReauthenticateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewController.swift; sourceTree = "<group>"; };
+		DEFFA3322702138300A70B2E /* ReauthenticateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReauthenticateView.xib; sourceTree = "<group>"; };
+		DEFFA335270216EC00A70B2E /* ReauthenticateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewModel.swift; sourceTree = "<group>"; };
+		DEFFA337270220ED00A70B2E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		DEFFA33927035EAC00A70B2E /* Reauthenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reauthenticate.swift; sourceTree = "<group>"; };
 		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -346,6 +360,8 @@
 		DE46216D26D6D869001E6685 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DEFFA3302702136200A70B2E /* Reauthenticate */,
+				DEFFA32B270210EE00A70B2E /* Profile */,
 				DE64A4E126FB754B004E95F7 /* Account */,
 				DEEBC0CC26FA1AF700A21AC4 /* RecoverPassword */,
 				DEA3B37C26F8BCC8003E09FC /* Password */,
@@ -551,6 +567,7 @@
 				DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */,
 				DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */,
 				DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */,
+				DEFFA33927035EAC00A70B2E /* Reauthenticate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -591,6 +608,26 @@
 				DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */,
 			);
 			path = RecoverPassword;
+			sourceTree = "<group>";
+		};
+		DEFFA32B270210EE00A70B2E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DEFFA32C2702112000A70B2E /* ProfileViewController.swift */,
+				DEFFA32D2702112000A70B2E /* ProfileView.xib */,
+				DEFFA337270220ED00A70B2E /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DEFFA3302702136200A70B2E /* Reauthenticate */ = {
+			isa = PBXGroup;
+			children = (
+				DEFFA3312702138300A70B2E /* ReauthenticateViewController.swift */,
+				DEFFA3322702138300A70B2E /* ReauthenticateView.xib */,
+				DEFFA335270216EC00A70B2E /* ReauthenticateViewModel.swift */,
+			);
+			path = Reauthenticate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -703,6 +740,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFFA3342702138300A70B2E /* ReauthenticateView.xib in Resources */,
 				DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */,
 				DEEBC0D026FA1B3C00A21AC4 /* RecoverPasswordView.xib in Resources */,
 				DE52A77B26E8FDE500EC3521 /* QRCodeView.xib in Resources */,
@@ -721,6 +759,7 @@
 				DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */,
 				DE70738426F0CE6B00E34C44 /* CompleteTransactionView.xib in Resources */,
 				DE4C431926DFFBB50019410A /* ScannerView.xib in Resources */,
+				DEFFA32F2702112000A70B2E /* ProfileView.xib in Resources */,
 				DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,7 +922,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFFA336270216EC00A70B2E /* ReauthenticateViewModel.swift in Sources */,
 				DE3774A426F22705005719E3 /* Formatter+Extension.swift in Sources */,
+				DEFFA338270220ED00A70B2E /* ProfileViewModel.swift in Sources */,
 				DE4C430E26DEC0520019410A /* QRCodeViewModel.swift in Sources */,
 				DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */,
 				DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */,
@@ -900,6 +941,8 @@
 				DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */,
 				DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */,
 				DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */,
+				DEFFA33A27035EAD00A70B2E /* Reauthenticate.swift in Sources */,
+				DEFFA32E2702112000A70B2E /* ProfileViewController.swift in Sources */,
 				DE70738326F0CE6B00E34C44 /* CompleteTransactionViewController.swift in Sources */,
 				DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */,
 				DE46218C26D6E22F001E6685 /* NewRoomViewController.swift in Sources */,
@@ -923,6 +966,7 @@
 				DE3774AB26F23E22005719E3 /* HomeMenuViewModel.swift in Sources */,
 				DEEBC0D426FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift in Sources */,
 				DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */,
+				DEFFA3332702138300A70B2E /* ReauthenticateViewController.swift in Sources */,
 				DEF0DB1F26F80CFF00498CD2 /* ShowBalance.swift in Sources */,
 				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,
 				DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */,

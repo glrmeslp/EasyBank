@@ -17,7 +17,7 @@ class BaseViewModel {
         getUser()
     }
 
-    private func getUser() {
+    func getUser() {
         authService.getUser { [weak self] user in
             guard let user = user else { return }
             self?.user = user
