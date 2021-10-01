@@ -18,7 +18,6 @@ extension UIViewController {
     func setupNavigationController(isHidden: Bool) {
         let backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
-
         navigationController?.navigationBar.isHidden = isHidden
         navigationController?.navigationBar.backgroundColor = UIColor.systemBackground
         navigationController?.navigationBar.tintColor = UIColor(named: "BlueColor")

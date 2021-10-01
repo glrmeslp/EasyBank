@@ -18,8 +18,4 @@ target 'EasyBank' do
     # Pods for testing
   end
 
-  target 'EasyBankUITests' do
-    # Pods for testing
-  end
-
 end

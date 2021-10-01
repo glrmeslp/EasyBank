@@ -5,7 +5,7 @@ import FirebaseAuth
 protocol StartViewModelCoordinatorDelegate: AnyObject {
     func pushToNewRoomViewController()
     func pushToRoomViewController()
-    func pushToAuthViewController(controller: UIViewController)
+    func pushToAuthViewController()
 }
 
 protocol NewRoomViewModelCoordinatorDelegate: AnyObject {
@@ -56,8 +56,11 @@ final class StartCoordinator: Coordinator {
 }
 
 extension StartCoordinator: StartViewModelCoordinatorDelegate {
-    func pushToAuthViewController(controller: UIViewController) {
-        navigationController.present(controller, animated: true, completion: nil)
+    func pushToAuthViewController() {
+        let authService = AuthenticationService(auth: auth)
+        let authViewController = authService.uiAuth.authViewController()
+        authViewController.modalPresentationStyle = .overCurrentContext
+        navigationController.present(authViewController, animated: true)
     }
 
     func pushToNewRoomViewController() {

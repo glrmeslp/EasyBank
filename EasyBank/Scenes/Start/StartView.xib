@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="EasyBank" customModuleProvider="target">
             <connections>
-                <outlet property="createButton" destination="VQA-9u-yac" id="YbP-3y-86h"/>
-                <outlet property="joinButton" destination="RvO-8e-W0P" id="YJB-xL-ACf"/>
+                <outlet property="createButton" destination="VQA-9u-yac" id="F7p-lw-U6Z"/>
+                <outlet property="joinButton" destination="RvO-8e-W0P" id="wIV-FV-fmJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="poc-oX-UTb">
-                    <rect key="frame" x="30" y="549" width="354" height="263"/>
+                    <rect key="frame" x="30" y="553" width="354" height="259"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want create a new room?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucx-Rs-aAm">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
@@ -31,37 +31,35 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQA-9u-yac">
-                            <rect key="frame" x="0.0" y="50.5" width="354" height="50"/>
-                            <color key="backgroundColor" name="BlueColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="wsY-as-uea"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="50.5" width="354" height="48"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Create">
                                 <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                             </state>
+                            <buttonConfiguration key="configuration" style="filled" title="Create" cornerStyle="capsule" buttonSize="large">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="baseBackgroundColor" name="BlueColor"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="didTapCreateButton:" destination="-1" eventType="touchUpInside" id="6IO-di-aNi"/>
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7m4-oT-dMZ">
-                            <rect key="frame" x="0.0" y="130.5" width="354" height="2"/>
+                            <rect key="frame" x="0.0" y="128.5" width="354" height="2"/>
                             <color key="backgroundColor" systemColor="systemGray2Color"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="dxc-0H-oMy"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want join a room?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTo-od-SeT">
-                            <rect key="frame" x="0.0" y="162.5" width="354" height="20.5"/>
+                            <rect key="frame" x="0.0" y="160.5" width="354" height="20.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvO-8e-W0P">
-                            <rect key="frame" x="0.0" y="213" width="354" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Cs9-Wj-6FS"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="211" width="354" height="48"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Join">
@@ -70,6 +68,13 @@
                             <state key="highlighted">
                                 <color key="titleShadowColor" red="0.10141725090000001" green="0.47988539930000002" blue="0.99918466809999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <buttonConfiguration key="configuration" style="plain" title="Join" cornerStyle="capsule" buttonSize="large">
+                                <backgroundConfiguration key="background">
+                                    <color key="strokeColor" name="BlueColor"/>
+                                </backgroundConfiguration>
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="baseForegroundColor" name="BlueColor"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="didTapJoinButton:" destination="-1" eventType="touchUpInside" id="zbG-lk-bBF"/>
                             </connections>

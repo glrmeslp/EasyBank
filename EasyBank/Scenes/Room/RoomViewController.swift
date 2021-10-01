@@ -46,8 +46,6 @@ class RoomViewController: UIViewController {
         disableContinueButton()
         
         roomNameTextField.becomeFirstResponder()
-    
-        setupNavigationController(isHidden: false)
     }
 
     @objc private func didTapView(_ sender: UITapGestureRecognizer) {

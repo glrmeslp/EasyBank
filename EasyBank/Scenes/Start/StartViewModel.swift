@@ -1,6 +1,14 @@
 import UIKit
 
-final class StartViewModel {
+protocol StartViewModelProtocol {
+    func showNewRoomViewController()
+    func showRoomViewController()
+    func detectAuthenticationStatus()
+    func undetectAuthenticationStatus()
+    func showAuthViewController()
+}
+
+final class StartViewModel: StartViewModelProtocol {
     
     private var coordinatorDelegate: StartViewModelCoordinatorDelegate?
     private let authService: AuthService
@@ -18,9 +26,13 @@ final class StartViewModel {
         coordinatorDelegate?.pushToRoomViewController()
     }
 
+    func showAuthViewController() {
+        coordinatorDelegate?.pushToAuthViewController()
+    }
+
     func detectAuthenticationStatus() {
         authService.detectAuthenticationStatus { [weak self] userLogged in
-            if userLogged == false {
+            if !userLogged {
                 self?.showAuthViewController()
             }
         }
@@ -29,11 +41,4 @@ final class StartViewModel {
     func undetectAuthenticationStatus() {
         authService.removeStateDidChangeListener()
     }
-    
-    func showAuthViewController() {
-        authService.getAuthViewController { [weak self] viewController in
-            self?.coordinatorDelegate?.pushToAuthViewController(controller: viewController)
-        }
-    }
-
 }
