@@ -6,30 +6,26 @@ final class StartViewControllerTests: XCTestCase {
     private lazy var sut: StartViewController = StartViewController(viewModel: startViewModelSpy)
 
     func test_viewWillAppear_shouldCallDetectAuthenticationStatus() {
-        sut.viewWillAppear(true)
+        sut.viewWillAppear(false)
         XCTAssertTrue(startViewModelSpy.detectAuthenticationStatusCalled)
     }
 
     func test_viewWillAppear_shouldReturnNavigationControllerHidden() {
+        let navigationController =  UINavigationController(rootViewController: sut)
         sut.viewWillAppear(false)
-        guard let navigationController = sut.navigationController else {
-            XCTFail("Navigation Controller is nil")
-            return
-        }
         XCTAssertTrue(navigationController.isNavigationBarHidden)
     }
 
     func test_viewWillDisappear_shouldCallUndetectAuthenticationStatus() {
-        sut.viewWillDisappear(true)
+        sut.viewWillDisappear(false)
         XCTAssertTrue(startViewModelSpy.undetectAuthenticationStatusCalled)
     }
 
-//    func test_viewWillDisappear_shouldNotReturnNavigationControllerHidden() {
-//        sut.viewWillDisappear(true)
-//        sut.loadViewIfNeeded()
-//        let navigationController = UINavigationController(rootViewController: sut)
-//        XCTAssertFalse(navigationController.navigationBar.isHidden)
-//    }
+    func test_viewWillDisappear_shouldNotReturnNavigationControllerHidden() {
+        let navigationController = UINavigationController(rootViewController: sut)
+        sut.viewWillDisappear(false)
+        XCTAssertFalse(navigationController.isNavigationBarHidden)
+    }
 
     func test_didTapCreateButton_shouldCallShowNewRoomViewController() {
         sut.loadViewIfNeeded()
