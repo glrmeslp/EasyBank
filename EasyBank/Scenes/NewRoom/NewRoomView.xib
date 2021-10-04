@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PKK-hg-9n9">
-                    <rect key="frame" x="20" y="74" width="374" height="217.5"/>
+                    <rect key="frame" x="20" y="74" width="374" height="168.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter new room name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW9-lg-KDF">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -30,14 +30,14 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By creating a new room, you will be the game banker." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAC-CB-pgZ">
-                            <rect key="frame" x="0.0" y="50.5" width="374" height="17"/>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By creating a new room, you will be the game banker." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAC-CB-pgZ">
+                            <rect key="frame" x="0.0" y="35.5" width="374" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" systemColor="systemGrayColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Room Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rlh-Se-8v6">
-                            <rect key="frame" x="0.0" y="97.5" width="374" height="40"/>
+                            <rect key="frame" x="0.0" y="50.5" width="374" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="YoN-6V-qQI"/>
                             </constraints>
@@ -45,15 +45,16 @@
                             <textInputTraits key="textInputTraits" returnKeyType="go" textContentType="name"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUN-iv-MiE">
-                            <rect key="frame" x="0.0" y="167.5" width="374" height="50"/>
-                            <color key="backgroundColor" name="BlueColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="AmS-TZ-K9Z"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="120.5" width="374" height="48"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Create a new room">
                                 <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                             </state>
+                            <buttonConfiguration key="configuration" style="filled" title="Create a new room" cornerStyle="capsule" buttonSize="large">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="baseBackgroundColor" name="BlueColor"/>
+                            </buttonConfiguration>
                             <connections>
                                 <action selector="didTapCreateButton:" destination="-1" eventType="touchUpInside" id="KxW-nD-Oxb"/>
                             </connections>

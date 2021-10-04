@@ -1,14 +1,14 @@
 import UIKit
 
-class NewRoomViewController: UIViewController {
+final class NewRoomViewController: UIViewController {
 
-    private var viewModel: NewRoomViewModel? 
+    private var viewModel: NewRoomViewModelProtocol?
 
     @IBOutlet private weak var roomNameTextField: UITextField! {
         didSet { roomNameTextField.delegate = self}}
     @IBOutlet private weak var createButton: UIButton!
     
-    init(viewModel: NewRoomViewModel) {
+    init(viewModel: NewRoomViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "NewRoomView", bundle: nil)
     }
@@ -24,34 +24,26 @@ class NewRoomViewController: UIViewController {
 
     @IBAction func didTapCreateButton(_ sender: Any) {
         guard let roomName = roomNameTextField.text else { return }
-        viewModel?.validateRoom(with: roomName, from: self)
+        viewModel?.validateRoom(with: roomName)
     }
 
-    private func enableContinueButton() {
+    private func enableCreateButton() {
         createButton.isEnabled = true
-        createButton.layer.backgroundColor = UIColor(named: "BlueColor")!.cgColor
+        createButton.configuration?.baseBackgroundColor = UIColor(named: "BlueColor")
+        createButton.configuration?.baseForegroundColor = UIColor.systemBackground
     }
 
-    private func disableContinueButton() {
+    private func disableCreateButton() {
         createButton.isEnabled = false
-        createButton.layer.backgroundColor = UIColor.systemGray6.cgColor
+        createButton.configuration?.baseBackgroundColor = UIColor.systemGray6
+        createButton.configuration?.baseForegroundColor = UIColor.gray
     }
 
     private func setup() {
-        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
-        view.addGestureRecognizer(tapGestureReconizer)
-        
-        createButton.layer.cornerRadius = 25
-        createButton.setTitleColor(UIColor.gray, for: .disabled)
-        disableContinueButton()
-
+        disableCreateButton()
         roomNameTextField.becomeFirstResponder()
+        addGestureRecognizerForEndEditing()
     }
-
-    @objc private func didTapView(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
-    }
-    
 }
 
 extension NewRoomViewController: UITextFieldDelegate {
@@ -62,19 +54,12 @@ extension NewRoomViewController: UITextFieldDelegate {
         return true
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let value = textField.text else { return }
-        if value.isEmpty {
-            disableContinueButton()
-        }
-    }
-    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let value = textField.text else { return }
         if value.isEmpty {
-            disableContinueButton()
+            disableCreateButton()
         } else {
-            enableContinueButton()
+            enableCreateButton()
         }
     }
 }

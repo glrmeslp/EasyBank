@@ -4,7 +4,7 @@ import FirebaseAuth
 
 protocol RoomService {
     func createRoom(roomName: String, completion: @escaping (String?) -> Void)
-    func getRoom(roomName: String, completion: @escaping (Bool, String?) -> Void)
+    func getRoom(roomName: String, completion: @escaping (String?) -> Void)
     func createAccount(roomName: String, user: User, completion: @escaping (String?) -> Void)
     func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void)
     func deleteAccount(roomName: String, uid: String, completion: @escaping (String?) -> Void)
@@ -54,18 +54,14 @@ extension DatabaseService: RoomService {
         }
     }
 
-    func getRoom(roomName: String, completion: @escaping (Bool, String?) -> Void) {
+    func getRoom(roomName: String, completion: @escaping (String?) -> Void) {
         let roomRef = firestore.collection(COLLECTION_ROOM).document(roomName)
         roomRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                completion(true, nil)
-            } else {
-                guard let error = error else {
-                    completion(false,"This room does not exist")
-                    return
-                }
-                completion(false,error.localizedDescription)
+            guard let document = document, document.exists else {
+                completion("This room does not exist")
+                return
             }
+            completion(nil)
         }
     }
 

@@ -11,10 +11,12 @@ final class StartViewControllerTests: XCTestCase {
     }
 
     func test_viewWillAppear_shouldReturnNavigationControllerHidden() {
-        sut.viewWillAppear(true)
-        sut.loadViewIfNeeded()
-        print(sut.navigationController?.isNavigationBarHidden)
-//        XCTAssertTrue(navigationController.navigationBar.isHidden)
+        sut.viewWillAppear(false)
+        guard let navigationController = sut.navigationController else {
+            XCTFail("Navigation Controller is nil")
+            return
+        }
+        XCTAssertTrue(navigationController.navigationBar.isHidden)
     }
 
     func test_viewWillDisappear_shouldCallUndetectAuthenticationStatus() {
