@@ -1,6 +1,5 @@
 @testable import EasyBank
 import UIKit
-import FirebaseAuth
 
 final class AuthenticationServiceSpy: AuthService {
     private(set) var removeStateDidChangeListenerCalled = false
@@ -19,7 +18,7 @@ final class AuthenticationServiceSpy: AuthService {
         
     }
     
-    func getUser(completion: @escaping (User?) -> Void) {
+    func getUser(completion: @escaping (User) -> Void) {
         
     }
     
