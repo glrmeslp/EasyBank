@@ -62,8 +62,8 @@ final class AccountViewController: UIViewController {
 
     private func fetchData() {
         roomNameLabel.text = viewModel?.roomName
-        userNameLabel.text = viewModel?.userName
-        emailLabel.text = viewModel?.email
+        userNameLabel.text = viewModel?.user?.name
+        emailLabel.text = viewModel?.user?.email
     }
     
     @objc private func didTapRoomStackView(_ sender: UITapGestureRecognizer) {

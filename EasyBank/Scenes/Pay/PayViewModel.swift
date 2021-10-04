@@ -25,7 +25,7 @@ final class PayViewModel: BaseViewModel {
     }
 
     func getBalance(completion: @escaping (String) -> Void) {
-        guard let uid = userID else { return }
+        guard let uid = user?.identifier else { return }
         getAccount(uid: uid) { account in
             guard let value = account.balance.asCurrency() else { return }
             completion(value)
@@ -38,7 +38,7 @@ final class PayViewModel: BaseViewModel {
     }
 
     func transfer(value: String, completion: @escaping (String) -> Void) {
-        guard let receiverName = receiverName, let payerName = userName, let value = value.asDouble(), let payerID = userID, let receiverID = receiverID else { return }
+        guard let receiverName = receiverName, let payerName = user?.name, let value = value.asDouble(), let payerID = user?.identifier, let receiverID = receiverID else { return }
         transferService.transfer(roomName, value: value, payerID: payerID, payerName: payerName, receiverID: receiverID, receiverName: receiverName) { [weak self] error, documentID in
             guard let error = error else {
                 guard let documentID = documentID else { return }

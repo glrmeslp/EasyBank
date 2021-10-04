@@ -5,7 +5,7 @@ protocol AuthService {
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void)
     func removeStateDidChangeListener()
     func getAuthViewController(completion: @escaping (UIViewController) -> Void)
-    func getUser(completion: @escaping (User?) -> Void)
+    func getUser(completion: @escaping (User) -> Void)
     func signOut()
     func reauthenticate(with password: String, completion: @escaping (String?) -> Void)
     func updatePassword(with password: String, completion: @escaping (String?) -> Void)
@@ -89,9 +89,9 @@ extension AuthenticationService: AuthService {
         
     }
     
-    func getUser(completion: @escaping (User?) -> Void) {
-        let user = auth.currentUser
-        completion(user)
+    func getUser(completion: @escaping (User) -> Void) {
+        guard let user = auth.currentUser, let name = user.displayName, let email = user.email else { return }
+        completion(User(identifier: user.uid, name: name, email: email ))
     }
 
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void) {

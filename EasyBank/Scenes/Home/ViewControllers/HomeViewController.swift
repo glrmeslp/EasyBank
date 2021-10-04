@@ -97,7 +97,7 @@ final class HomeViewController: UIViewController {
 
     private func fetchData() {
         roomNameLabel.text = viewModel?.roomName
-        userNameLabel.text = viewModel?.userName
+        userNameLabel.text = viewModel?.user?.name
 
         viewModel?.getTransferMenu { [weak self] menu in
             self?.transferMenu = menu

@@ -12,7 +12,7 @@ final class AccountViewModel: BaseViewModel {
     }
 
     func deleteAccount(completion: @escaping (String) -> Void) {
-        guard let uid = userID else { return }
+        guard let uid = user?.identifier else { return }
         roomService.deleteAccount(roomName: roomName, uid: uid) { [weak self] error in
             guard let error = error else {
                 self?.coordinatorDelegate?.pushToStartViewController()

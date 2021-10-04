@@ -13,7 +13,7 @@ final class QRCodeViewModel: BaseViewModel {
     }
 
     func generateStringForQRcode(completion: @escaping (String) -> Void) {
-        guard let uid = userID, let name = userName else { return }
+        guard let uid = user?.identifier, let name = user?.name else { return }
         let string = "com.glrmeslp.EasyBank00X00\(roomName)00X00\(value)00X00\(uid)00X00\(name)"
         completion(string)
     }
