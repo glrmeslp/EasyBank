@@ -10,12 +10,13 @@ protocol StartViewModelCoordinatorDelegate: AnyObject {
 
 protocol NewRoomViewModelCoordinatorDelegate: AnyObject {
     func pushToHomeViewController(with roomName: String)
-    func presentAlert(with message: String, from controller: UIViewController)
+    func presentAlert(with message: String)
 }
 
-protocol RoomViewModelCoordinatorDelegate: AnyObject {func pushToHomeViewController(with roomName: String)
-    func presentAlert(with message: String, from controller: UIViewController)
-    func presentAlertAndPushToHome(with message: String, from controller: UIViewController, and roomName: String)
+protocol RoomViewModelCoordinatorDelegate: AnyObject {
+    func pushToHomeViewController(with roomName: String)
+    func presentAlert(with message: String)
+    func presentAlertAndPushToHome(with message: String, and roomName: String)
 }
 
 final class StartCoordinator: Coordinator {
@@ -75,12 +76,12 @@ extension StartCoordinator: StartViewModelCoordinatorDelegate {
 }
 
 extension StartCoordinator: NewRoomViewModelCoordinatorDelegate, RoomViewModelCoordinatorDelegate {
-    func presentAlert(with message: String, from controller: UIViewController) {
-        controller.presentAlert(with: message)
+    func presentAlert(with message: String) {
+        navigationController.presentAlert(with: message)
     }
 
-    func presentAlertAndPushToHome(with message: String, from controller: UIViewController, and roomName: String) {
-        controller.presentAlert(with: message) { _ in
+    func presentAlertAndPushToHome(with message: String, and roomName: String) {
+        navigationController.presentAlert(with: message) { _ in
             self.pushToHomeViewController(with: roomName)
         }
     }

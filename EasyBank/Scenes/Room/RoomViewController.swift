@@ -24,7 +24,7 @@ class RoomViewController: UIViewController {
 
     @IBAction func didTapContinueButton(_ sender: Any) {
         guard let roomName = roomNameTextField.text else { return }
-        viewModel?.enterToRoom(roomName, from: self)
+        viewModel?.enterToRoom(roomName)
     }
 
     private func enableContinueButton() {

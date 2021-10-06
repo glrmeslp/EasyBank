@@ -3,11 +3,14 @@ import UIKit
 
 final class AuthenticationServiceSpy: AuthService {
     private(set) var removeStateDidChangeListenerCalled = false
-    var userLogged: Bool?
+    var user: User?
     
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void) {
-        guard let userLogged = userLogged else { return }
-        completion(userLogged)
+        guard user != nil else {
+            completion(false)
+            return
+        }
+        completion(true)
     }
     
     func removeStateDidChangeListener() {
@@ -19,7 +22,8 @@ final class AuthenticationServiceSpy: AuthService {
     }
     
     func getUser(completion: @escaping (User) -> Void) {
-        
+        guard let user = user else { return }
+        completion(user)
     }
     
     func signOut() {

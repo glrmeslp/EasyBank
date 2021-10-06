@@ -18,13 +18,12 @@ final class StartViewModelTests: XCTestCase {
     }
 
     func test_detectAuthenticationStatus_noUserLoggedIn_shouldCallShowAuthViewController() {
-        authServiceSpy.userLogged = false
         sut.detectAuthenticationStatus()
         XCTAssertTrue(coordinatorSpy.pushToAuthViewControllerCalled)
     }
 
     func test_detectAuthenticationStatus_userLoggedIn_shouldNotCallShowAuthViewController() {
-        authServiceSpy.userLogged = true
+        authServiceSpy.user = User(identifier: "", name: "Test", email: "test@test.com")
         sut.detectAuthenticationStatus()
         XCTAssertFalse(coordinatorSpy.pushToAuthViewControllerCalled)
     }

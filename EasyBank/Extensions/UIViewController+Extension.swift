@@ -22,5 +22,14 @@ extension UIViewController {
         navigationController?.navigationBar.backgroundColor = UIColor.systemBackground
         navigationController?.navigationBar.tintColor = UIColor(named: "BlueColor")
     }
-    
+
+    func addGestureRecognizerForEndEditing() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                          action: #selector(didTapView))
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+
+    @objc private func didTapView(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 }
