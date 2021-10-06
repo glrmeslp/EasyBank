@@ -85,9 +85,9 @@ extension DatabaseService: RoomService {
     }
 
     func createAccount(roomName: String, user: User, completion: @escaping (String?) -> Void) {
-        let account =  Account(balance: 0, userName: user.displayName ?? "No name")
+        let account =  Account(balance: 0, userName: user.name)
         do {
-            try firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_ACCOUNTS).document(user.uid).setData(from: account)
+            try firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_ACCOUNTS).document(user.identifier).setData(from: account)
             completion(nil)
         } catch let error {
             completion(error.localizedDescription)

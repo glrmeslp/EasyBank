@@ -21,7 +21,4 @@ final class StartViewModelSpy: StartViewModelProtocol {
     func undetectAuthenticationStatus() {
         undetectAuthenticationStatusCalled = true
     }
-    
-    func showAuthViewController() {
-    }
 }

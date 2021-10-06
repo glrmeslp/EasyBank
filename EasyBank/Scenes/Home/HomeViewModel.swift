@@ -13,7 +13,7 @@ final class HomeViewModel: BaseViewModel {
     }
 
     func getBalance(completion: @escaping (String) -> Void) {
-        guard let uid = userID else { return }
+        guard let uid = user?.identifier else { return }
         getAccount(uid: uid) { account in
             guard let value = account.balance.asCurrency() else { return }
             completion(value)

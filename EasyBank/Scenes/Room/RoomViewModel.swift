@@ -18,8 +18,8 @@ final class RoomViewModel: BaseViewModel {
         }
     }
 
-    private func userHasAnAccountInThisRoom(roomName: String) {
-        guard let uid = userID else { return }
+    private func userHasAnAccountInThisRoom(roomName: String, controller: UIViewController) {
+        guard let uid = user?.identifier else { return }
         roomService.getAccount(roomName: roomName, uid: uid) { [weak self] account, _ in
             if account == nil {
                 self?.createAccount(with: roomName)

@@ -41,8 +41,8 @@ final class ProfileViewController: UIViewController {
     }
 
     private func fetchData() {
-        nameTextField.text = viewModel?.userName
-        emailAddressTextfield.text = viewModel?.email
+        nameTextField.text = viewModel?.user?.name
+        emailAddressTextfield.text = viewModel?.user?.email
     }
 
 }

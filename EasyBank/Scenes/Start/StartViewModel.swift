@@ -5,7 +5,6 @@ protocol StartViewModelProtocol {
     func showRoomViewController()
     func detectAuthenticationStatus()
     func undetectAuthenticationStatus()
-    func showAuthViewController()
 }
 
 final class StartViewModel: StartViewModelProtocol {
@@ -26,7 +25,7 @@ final class StartViewModel: StartViewModelProtocol {
         coordinatorDelegate?.pushToRoomViewController()
     }
 
-    func showAuthViewController() {
+    private func showAuthViewController() {
         coordinatorDelegate?.pushToAuthViewController()
     }
 
