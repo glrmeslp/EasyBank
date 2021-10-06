@@ -4,7 +4,6 @@ import FirebaseUI
 protocol AuthService {
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void)
     func removeStateDidChangeListener()
-    func getAuthViewController(completion: @escaping (UIViewController) -> Void)
     func getUser(completion: @escaping (User) -> Void)
     func signOut()
     func reauthenticate(with password: String, completion: @escaping (String?) -> Void)
@@ -19,7 +18,7 @@ final class AuthenticationService {
 
     private let auth: Auth
     private weak var handle: AuthStateDidChangeListenerHandle?
-    private let uiAuth: FUIAuth = {
+    let uiAuth: FUIAuth = {
         let uiAuth = FUIAuth.defaultAuthUI()!
         let actionCodeSettings = ActionCodeSettings()
         actionCodeSettings.handleCodeInApp = true
@@ -106,12 +105,6 @@ extension AuthenticationService: AuthService {
 
     func removeStateDidChangeListener() {
         auth.removeStateDidChangeListener(handle!)
-    }
-
-    func getAuthViewController(completion: @escaping (UIViewController) -> Void) {
-        let authViewController = uiAuth.authViewController()
-        authViewController.modalPresentationStyle = .overCurrentContext
-        completion(authViewController)
     }
 }
 

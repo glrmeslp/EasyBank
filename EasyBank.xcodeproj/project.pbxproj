@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
+		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C426EA41E100416164 /* PayViewController.swift */; };
 		DE1BA3C726EA41E100416164 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1BA3C526EA41E100416164 /* PayView.xib */; };
 		DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */; };
@@ -24,11 +25,9 @@
 		DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */; };
 		DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE46214426D6D2FB001E6685 /* Assets.xcassets */; };
 		DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */; };
-		DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215226D6D2FB001E6685 /* EasyBankTests.swift */; };
-		DE46215E26D6D2FB001E6685 /* EasyBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */; };
 		DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217426D6D996001E6685 /* RoomViewModel.swift */; };
 		DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217626D6D9F1001E6685 /* StartViewController.swift */; };
-		DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217726D6D9F1001E6685 /* StartViewController.xib */; };
+		DE46217926D6D9F1001E6685 /* StartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217726D6D9F1001E6685 /* StartView.xib */; };
 		DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217D26D6DAD7001E6685 /* RoomViewController.swift */; };
 		DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217E26D6DAD7001E6685 /* RoomViewController.xib */; };
 		DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218126D6DB83001E6685 /* StartCoordinator.swift */; };
@@ -64,6 +63,13 @@
 		DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8D26D9698B00240B70 /* HomeViewController.swift */; };
 		DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE75DD8E26D9698B00240B70 /* HomeViewController.xib */; };
 		DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD9126D96BEE00240B70 /* HomeViewModel.swift */; };
+		DE875E062704ACF900318261 /* StartViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E052704ACF900318261 /* StartViewControllerTests.swift */; };
+		DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E072704AD4000318261 /* StartViewModelSpy.swift */; };
+		DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E092704C04100318261 /* StartViewModelTests.swift */; };
+		DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E0B2704C0D500318261 /* AuthenticationServiceSpy.swift */; };
+		DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E0D2704C1B800318261 /* StartCoordinatorSpy.swift */; };
+		DE875E112704ED3500318261 /* MirrorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E102704ED3500318261 /* MirrorObject.swift */; };
+		DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E122704EE0900318261 /* StartViewControllerMirror.swift */; };
 		DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE93484826D8034700680E63 /* GoogleService-Info.plist */; };
 		DE93484B26D8041900680E63 /* NewRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484A26D8041900680E63 /* NewRoomViewModel.swift */; };
 		DE93485026D8075200680E63 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484F26D8075100680E63 /* Account.swift */; };
@@ -91,19 +97,10 @@
 		DEFFA336270216EC00A70B2E /* ReauthenticateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA335270216EC00A70B2E /* ReauthenticateViewModel.swift */; };
 		DEFFA338270220ED00A70B2E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA337270220ED00A70B2E /* ProfileViewModel.swift */; };
 		DEFFA33A27035EAD00A70B2E /* Reauthenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA33927035EAC00A70B2E /* Reauthenticate.swift */; };
-		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
-		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DE46214F26D6D2FB001E6685 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE46213026D6D2F5001E6685 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE46213726D6D2F5001E6685;
-			remoteInfo = EasyBank;
-		};
-		DE46215A26D6D2FB001E6685 /* PBXContainerItemProxy */ = {
+		DE875DFD2704AC9900318261 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE46213026D6D2F5001E6685 /* Project object */;
 			proxyType = 1;
@@ -139,15 +136,9 @@
 		DE46214426D6D2FB001E6685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE46214726D6D2FB001E6685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE46214926D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE46214E26D6D2FB001E6685 /* EasyBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE46215226D6D2FB001E6685 /* EasyBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyBankTests.swift; sourceTree = "<group>"; };
-		DE46215426D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyBankUITests.swift; sourceTree = "<group>"; };
-		DE46215F26D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE46217426D6D996001E6685 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		DE46217626D6D9F1001E6685 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		DE46217726D6D9F1001E6685 /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		DE46217726D6D9F1001E6685 /* StartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartView.xib; sourceTree = "<group>"; };
 		DE46217D26D6DAD7001E6685 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		DE46217E26D6DAD7001E6685 /* RoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
 		DE46218126D6DB83001E6685 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
@@ -183,6 +174,14 @@
 		DE75DD8D26D9698B00240B70 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE75DD8E26D9698B00240B70 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		DE75DD9126D96BEE00240B70 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DE875DF92704AC9900318261 /* EasyBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE875E052704ACF900318261 /* StartViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerTests.swift; sourceTree = "<group>"; };
+		DE875E072704AD4000318261 /* StartViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModelSpy.swift; sourceTree = "<group>"; };
+		DE875E092704C04100318261 /* StartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModelTests.swift; sourceTree = "<group>"; };
+		DE875E0B2704C0D500318261 /* AuthenticationServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceSpy.swift; sourceTree = "<group>"; };
+		DE875E0D2704C1B800318261 /* StartCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinatorSpy.swift; sourceTree = "<group>"; };
+		DE875E102704ED3500318261 /* MirrorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorObject.swift; sourceTree = "<group>"; };
+		DE875E122704EE0900318261 /* StartViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE93484826D8034700680E63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE93484A26D8041900680E63 /* NewRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewModel.swift; sourceTree = "<group>"; };
 		DE93484F26D8075100680E63 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -222,19 +221,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE46214B26D6D2FB001E6685 /* Frameworks */ = {
+		DE875DF62704AC9900318261 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE46215626D6D2FB001E6685 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */,
+				D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,8 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				DE46213A26D6D2F5001E6685 /* EasyBank */,
-				DE46215126D6D2FB001E6685 /* EasyBankTests */,
-				DE46215C26D6D2FB001E6685 /* EasyBankUITests */,
+				DE875DFA2704AC9900318261 /* EasyBankTests */,
 				DE46213926D6D2F5001E6685 /* Products */,
 				3078D4D234647692C2A31BFF /* Pods */,
 				85DE9B3B34E95869B536D2F1 /* Frameworks */,
@@ -314,8 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				DE46213826D6D2F5001E6685 /* EasyBank.app */,
-				DE46214E26D6D2FB001E6685 /* EasyBankTests.xctest */,
-				DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */,
+				DE875DF92704AC9900318261 /* EasyBankTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,24 +328,6 @@
 				DE93484826D8034700680E63 /* GoogleService-Info.plist */,
 			);
 			path = EasyBank;
-			sourceTree = "<group>";
-		};
-		DE46215126D6D2FB001E6685 /* EasyBankTests */ = {
-			isa = PBXGroup;
-			children = (
-				DE46215226D6D2FB001E6685 /* EasyBankTests.swift */,
-				DE46215426D6D2FB001E6685 /* Info.plist */,
-			);
-			path = EasyBankTests;
-			sourceTree = "<group>";
-		};
-		DE46215C26D6D2FB001E6685 /* EasyBankUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */,
-				DE46215F26D6D2FB001E6685 /* Info.plist */,
-			);
-			path = EasyBankUITests;
 			sourceTree = "<group>";
 		};
 		DE46216D26D6D869001E6685 /* Scenes */ = {
@@ -386,7 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				DE46217626D6D9F1001E6685 /* StartViewController.swift */,
-				DE46217726D6D9F1001E6685 /* StartViewController.xib */,
+				DE46217726D6D9F1001E6685 /* StartView.xib */,
 				DE46218326D6DB93001E6685 /* StartViewModel.swift */,
 			);
 			path = Start;
@@ -551,6 +522,52 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		DE875DFA2704AC9900318261 /* EasyBankTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE875E0F2704DD7500318261 /* Common */,
+				DE875E022704ACC700318261 /* Scenes */,
+				DE875E102704ED3500318261 /* MirrorObject.swift */,
+			);
+			path = EasyBankTests;
+			sourceTree = "<group>";
+		};
+		DE875E022704ACC700318261 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DE875E032704ACD000318261 /* Start */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DE875E032704ACD000318261 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				DE875E042704ACDA00318261 /* Doubles */,
+				DE875E052704ACF900318261 /* StartViewControllerTests.swift */,
+				DE875E092704C04100318261 /* StartViewModelTests.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		DE875E042704ACDA00318261 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE875E072704AD4000318261 /* StartViewModelSpy.swift */,
+				DE875E0D2704C1B800318261 /* StartCoordinatorSpy.swift */,
+				DE875E122704EE0900318261 /* StartViewControllerMirror.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DE875E0F2704DD7500318261 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DE875E0B2704C0D500318261 /* AuthenticationServiceSpy.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		DE8A0D3126DB129000D0175F /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,45 +673,24 @@
 			productReference = DE46213826D6D2F5001E6685 /* EasyBank.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DE46214D26D6D2FB001E6685 /* EasyBankTests */ = {
+		DE875DF82704AC9900318261 /* EasyBankTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE46216526D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankTests" */;
+			buildConfigurationList = DE875DFF2704AC9900318261 /* Build configuration list for PBXNativeTarget "EasyBankTests" */;
 			buildPhases = (
-				9A10338762B2803719DE76F0 /* [CP] Check Pods Manifest.lock */,
-				DE46214A26D6D2FB001E6685 /* Sources */,
-				DE46214B26D6D2FB001E6685 /* Frameworks */,
-				DE46214C26D6D2FB001E6685 /* Resources */,
+				2DD3385FCD50B0437B99730E /* [CP] Check Pods Manifest.lock */,
+				DE875DF52704AC9900318261 /* Sources */,
+				DE875DF62704AC9900318261 /* Frameworks */,
+				DE875DF72704AC9900318261 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DE46215026D6D2FB001E6685 /* PBXTargetDependency */,
+				DE875DFE2704AC9900318261 /* PBXTargetDependency */,
 			);
 			name = EasyBankTests;
 			productName = EasyBankTests;
-			productReference = DE46214E26D6D2FB001E6685 /* EasyBankTests.xctest */;
+			productReference = DE875DF92704AC9900318261 /* EasyBankTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DE46215826D6D2FB001E6685 /* EasyBankUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE46216826D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankUITests" */;
-			buildPhases = (
-				D51DC6C907864E538E92565E /* [CP] Check Pods Manifest.lock */,
-				DE46215526D6D2FB001E6685 /* Sources */,
-				DE46215626D6D2FB001E6685 /* Frameworks */,
-				DE46215726D6D2FB001E6685 /* Resources */,
-				C29EFBF57485167D3E690A40 /* [CP] Embed Pods Frameworks */,
-				D8C9CD0C8A6A9D36448CDE25 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE46215B26D6D2FB001E6685 /* PBXTargetDependency */,
-			);
-			name = EasyBankUITests;
-			productName = EasyBankUITests;
-			productReference = DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -702,18 +698,15 @@
 		DE46213026D6D2F5001E6685 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					DE46213726D6D2F5001E6685 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
-					DE46214D26D6D2FB001E6685 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = DE46213726D6D2F5001E6685;
-					};
-					DE46215826D6D2FB001E6685 = {
-						CreatedOnToolsVersion = 12.5.1;
+					DE875DF82704AC9900318261 = {
+						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 						TestTargetID = DE46213726D6D2F5001E6685;
 					};
 				};
@@ -732,8 +725,7 @@
 			projectRoot = "";
 			targets = (
 				DE46213726D6D2F5001E6685 /* EasyBank */,
-				DE46214D26D6D2FB001E6685 /* EasyBankTests */,
-				DE46215826D6D2FB001E6685 /* EasyBankUITests */,
+				DE875DF82704AC9900318261 /* EasyBankTests */,
 			);
 		};
 /* End PBXProject section */
@@ -752,7 +744,7 @@
 				DE4F07BB26F4D1F000CA595C /* ExtractView.xib in Resources */,
 				DE46218D26D6E22F001E6685 /* NewRoomView.xib in Resources */,
 				DEA3B38026F8BD6D003E09FC /* PasswordView.xib in Resources */,
-				DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */,
+				DE46217926D6D9F1001E6685 /* StartView.xib in Resources */,
 				DE1BA3C726EA41E100416164 /* PayView.xib in Resources */,
 				DE4F07C526F4DB3600CA595C /* ExtractTableViewCell.xib in Resources */,
 				DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */,
@@ -767,14 +759,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE46214C26D6D2FB001E6685 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE46215726D6D2FB001E6685 /* Resources */ = {
+		DE875DF72704AC9900318261 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -801,6 +786,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2DD3385FCD50B0437B99730E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyBankTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8230BC8256EBAC047ED6DECF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -823,28 +830,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9A10338762B2803719DE76F0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyBankTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C0B1FD3F62D1A1BDC8916EC0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -860,62 +845,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C29EFBF57485167D3E690A40 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D51DC6C907864E538E92565E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyBank-EasyBankUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D8C9CD0C8A6A9D36448CDE25 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -988,34 +917,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE46214A26D6D2FB001E6685 /* Sources */ = {
+		DE875DF52704AC9900318261 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE46215526D6D2FB001E6685 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE46215E26D6D2FB001E6685 /* EasyBankUITests.swift in Sources */,
+				DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */,
+				DE875E062704ACF900318261 /* StartViewControllerTests.swift in Sources */,
+				DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */,
+				DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */,
+				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
+				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
+				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DE46215026D6D2FB001E6685 /* PBXTargetDependency */ = {
+		DE875DFE2704AC9900318261 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DE46213726D6D2F5001E6685 /* EasyBank */;
-			targetProxy = DE46214F26D6D2FB001E6685 /* PBXContainerItemProxy */;
-		};
-		DE46215B26D6D2FB001E6685 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE46213726D6D2F5001E6685 /* EasyBank */;
-			targetProxy = DE46215A26D6D2FB001E6685 /* PBXContainerItemProxy */;
+			targetProxy = DE875DFD2704AC9900318261 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1189,87 +1111,56 @@
 			};
 			name = Release;
 		};
-		DE46216626D6D2FB001E6685 /* Debug */ = {
+		DE875E002704AC9900318261 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BEF78D447E5816E63DE57D1C /* Pods-EasyBankTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EasyBankTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C9FXM5UU24;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyBank.app/EasyBank";
 			};
 			name = Debug;
 		};
-		DE46216726D6D2FB001E6685 /* Release */ = {
+		DE875E012704AC9900318261 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EasyBankTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C9FXM5UU24;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyBank.app/EasyBank";
-			};
-			name = Release;
-		};
-		DE46216926D6D2FB001E6685 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EasyBankUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EasyBank;
-			};
-			name = Debug;
-		};
-		DE46216A26D6D2FB001E6685 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C55EF69C2D2F836C52CE1A8B /* Pods-EasyBank-EasyBankUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EasyBankUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EasyBank;
 			};
 			name = Release;
 		};
@@ -1294,20 +1185,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE46216526D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankTests" */ = {
+		DE875DFF2704AC9900318261 /* Build configuration list for PBXNativeTarget "EasyBankTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE46216626D6D2FB001E6685 /* Debug */,
-				DE46216726D6D2FB001E6685 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE46216826D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE46216926D6D2FB001E6685 /* Debug */,
-				DE46216A26D6D2FB001E6685 /* Release */,
+				DE875E002704AC9900318261 /* Debug */,
+				DE875E012704AC9900318261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
