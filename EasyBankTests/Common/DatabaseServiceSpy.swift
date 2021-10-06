@@ -1,14 +1,14 @@
-import FirebaseAuth
 @testable import EasyBank
 
 final class DatabaseServiceSpy {
     var roomExists: Bool?
-    var error: String?
+    var createRoomError: String?
+    var createAccountError: String?
 }
 
 extension DatabaseServiceSpy: RoomService {
     func createRoom(roomName: String, completion: @escaping (String?) -> Void) {
-        if let error = error {
+        if let error = createRoomError {
             completion(error)
         } else {
             completion(nil)
@@ -25,7 +25,7 @@ extension DatabaseServiceSpy: RoomService {
     }
     
     func createAccount(roomName: String, user: User, completion: @escaping (String?) -> Void) {
-        if let error = error {
+        if let error = createAccountError {
             completion(error)
         } else {
             completion(nil)

@@ -5,21 +5,24 @@ final class NewRoomViewControllerTests: XCTestCase {
     private let newRoomViewModelSpy = NewRoomViewModelSpy()
     private lazy var sut: NewRoomViewController = NewRoomViewController(viewModel: newRoomViewModelSpy)
 
-//    func test_textFieldShouldReturn_whenCreateButtonDisabled_shouldNotCallValidateRoom() {
-//        let textField = UITextField()
-//        textField.text = ""
-//        sut.loadViewIfNeeded()
-//        sut.textFieldShouldReturn(textField)
-//        XCTAssertFalse(newRoomViewModelSpy.validateRoomCalled)
-//    }
+    func test_textFieldShouldReturn_whenCreateButtonDisabled_shouldNotCallValidateRoom() {
+        let textField = UITextField()
+        textField.text = ""
+        sut.loadViewIfNeeded()
+        sut.textFieldDidChangeSelection(textField)
+        _ = sut.textFieldShouldReturn(textField)
+        XCTAssertFalse(newRoomViewModelSpy.validateRoomCalled)
+    }
 
-//    func test_textFieldShouldReturn_whenCreateButtonEnabled_shouldCallValidateRoom() {
-//        let textField = UITextField()
-//        textField.text = "Room"
-//        sut.loadViewIfNeeded()
-//        sut.textFieldShouldReturn(textField)
-//        XCTAssertTrue(newRoomViewModelSpy.validateRoomCalled)
-//    }
+    func test_textFieldShouldReturn_whenCreateButtonEnabled_shouldCallValidateRoom() {
+        let textField = UITextField()
+        textField.text = "Room"
+        sut.loadViewIfNeeded()
+        sut.textFieldDidChangeSelection(textField)
+        _ = sut.textFieldShouldReturn(textField)
+        XCTAssertTrue(newRoomViewModelSpy.validateRoomCalled)
+    }
+
     func test_didTapCreateButton_shouldCallValidateRoom() {
         sut.loadViewIfNeeded()
         let sutMirrored = NewRoomViewControllerMirror(viewController: sut)
