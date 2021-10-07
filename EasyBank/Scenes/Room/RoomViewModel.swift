@@ -1,28 +1,34 @@
 import UIKit
 
-final class RoomViewModel: BaseViewModel {
+protocol RoomViewModelProtocol {
+    func enter(_ roomName: String)
+}
+
+final class RoomViewModel: UserViewModel, RoomViewModelProtocol {
     private weak var coordinatorDelegate: RoomViewModelCoordinatorDelegate?
-    
+    private let roomService: RoomService
+
     init(coordinator: RoomViewModelCoordinatorDelegate, roomService: RoomService, authService: AuthService) {
         self.coordinatorDelegate = coordinator
-        super.init(roomName: "", authService: authService, roomService: roomService)
+        self.roomService = roomService
+        super.init(authService: authService)
     }
-    
-    func enterToRoom(_ roomName: String) {
+
+    func enter(_ roomName: String) {
         roomService.getRoom(roomName: roomName) { [weak self] error in
             guard let error = error else {
-                self?.userHasAnAccountInThisRoom(roomName: roomName)
+                self?.userHasAnAccountInThisRoom(roomName)
                 return
             }
             self?.coordinatorDelegate?.presentAlert(with: error)
         }
     }
 
-    private func userHasAnAccountInThisRoom(roomName: String) {
+    private func userHasAnAccountInThisRoom(_ roomName: String) {
         guard let uid = user?.identifier else { return }
         roomService.getAccount(roomName: roomName, uid: uid) { [weak self] account, _ in
             if account == nil {
-                self?.createAccount(with: roomName)
+                self?.createAccountInThe(roomName)
             } else {
                 let message = "You already have an account in this room. A new account will not be created"
                 self?.coordinatorDelegate?.presentAlertAndPushToHome(with: message, and: roomName)
@@ -31,7 +37,7 @@ final class RoomViewModel: BaseViewModel {
         }
     }
 
-    private func createAccount(with roomName: String) {
+    private func createAccountInThe(_ roomName: String) {
         guard let user = user else { return }
         roomService.createAccount(roomName: roomName, user: user) { [weak self] error in
             guard let error = error else {
