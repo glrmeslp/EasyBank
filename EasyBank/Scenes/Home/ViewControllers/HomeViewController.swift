@@ -2,8 +2,13 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    private var viewModel: HomeViewModel?
+    private var viewModel: HomeViewModelProtocol?
     private var transferMenu: [[String]]?
+    private var collectionViewFlowLayout: UICollectionViewFlowLayout = {
+        let collectionViewFlowLayout = UICollectionViewFlowLayout()
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        return collectionViewFlowLayout
+    }()
 
     @IBOutlet private weak var roomNameLabel: UILabel!
     @IBOutlet private weak var userNameLabel: UILabel!
@@ -18,7 +23,7 @@ final class HomeViewController: UIViewController {
         }
     }
     
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "HomeViewController", bundle: nil)
     }
@@ -32,26 +37,22 @@ final class HomeViewController: UIViewController {
         setup()
         fetchData()
         setupRightBarButton()
+        setupNavigationController(isHidden: false)
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.hidesBarsOnSwipe = true
-        viewModel?.getUser()
-        fetchData()
+        fetchUserData()
+        hideBalanceValue()
         super.viewWillAppear(animated)
     }
 
     @IBAction private func didTapShowBalanceButton(_ sender: Any) {
         guard let value = balanceLabel.text else { return }
-        switch ShowBalance(rawValue: value) {
-        case .disabled:
-            showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-            viewModel?.getBalance { [weak self] value in
-                self?.balanceLabel.text = value
-            }
+        switch Balance(rawValue: value) {
+        case .hidden:
+            showBalanceValue()
         case .none:
-            showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-            balanceLabel.text = ShowBalance.disabled.rawValue
+            hideBalanceValue()
         }
     }
 
@@ -60,9 +61,8 @@ final class HomeViewController: UIViewController {
     }
     
     private func setup() {
-        navigationController?.hidesBarsOnSwipe = true
-        navigationItem.setHidesBackButton(true, animated: true)
         title = "Easy Bank"
+        updateCollectionViewFlowLayoutItemSize()
 
         balanceView.layer.cornerRadius = 20
         balanceView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
@@ -71,15 +71,7 @@ final class HomeViewController: UIViewController {
         extractView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 
         menuTransferCollection.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionCell")
-
-        let size = view.bounds.width / 2 - 30
-        let collectionViewFlowLayout = UICollectionViewFlowLayout()
-        collectionViewFlowLayout.itemSize = CGSize(width: size, height: 100)
-        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         menuTransferCollection.collectionViewLayout = collectionViewFlowLayout
-
-        let backBarButtonItem =  UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        navigationItem.backBarButtonItem = backBarButtonItem
     }
 
     private func setupRightBarButton() {
@@ -96,15 +88,33 @@ final class HomeViewController: UIViewController {
     }
 
     private func fetchData() {
-        roomNameLabel.text = viewModel?.roomName
-        userNameLabel.text = viewModel?.user?.name
-
-        viewModel?.getTransferMenu { [weak self] menu in
+        viewModel?.getInformation { [weak self] menu, roomName in
             self?.transferMenu = menu
+            self?.roomNameLabel.text = roomName
         }
+    }
 
+    private func fetchUserData() {
+        viewModel?.getUserName { [weak self] name in
+            self?.userNameLabel.text = name
+        }
+    }
+
+    private func hideBalanceValue() {
         showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-        balanceLabel.text = ShowBalance.disabled.rawValue
+        balanceLabel.text = Balance.hidden.rawValue
+    }
+
+    private func showBalanceValue() {
+        showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        viewModel?.getBalance { [weak self] value in
+            self?.balanceLabel.text = value
+        }
+    }
+
+    private func updateCollectionViewFlowLayoutItemSize() {
+        let size = view.bounds.width / 2 - 30
+        collectionViewFlowLayout.itemSize = CGSize(width: size, height: 100)
     }
 }
 
