@@ -1,7 +1,6 @@
 @testable import EasyBank
 
 final class DatabaseServiceSpy {
-    var roomExists: Bool?
     var rooms: [String: [String: Account]]?
     var createRoomError: String?
     var createAccountError: String?
