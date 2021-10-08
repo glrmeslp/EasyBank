@@ -88,14 +88,14 @@ final class HomeViewController: UIViewController {
     }
 
     private func fetchData() {
-        viewModel?.getInformation { [weak self] menu, roomName in
+        viewModel?.fetchInformation { [weak self] menu, roomName in
             self?.transferMenu = menu
             self?.roomNameLabel.text = roomName
         }
     }
 
     private func fetchUserData() {
-        viewModel?.getUserName { [weak self] name in
+        viewModel?.fetchUserName { [weak self] name in
             self?.userNameLabel.text = name
         }
     }
@@ -107,7 +107,7 @@ final class HomeViewController: UIViewController {
 
     private func showBalanceValue() {
         showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        viewModel?.getBalance { [weak self] value in
+        viewModel?.fetchBalance { [weak self] value in
             self?.balanceLabel.text = value
         }
     }

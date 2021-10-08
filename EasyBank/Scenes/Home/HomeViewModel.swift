@@ -1,7 +1,7 @@
 protocol HomeViewModelProtocol {
-    func getBalance(completion: @escaping (String) -> Void)
-    func getInformation(completion: @escaping ([[String]],String) -> Void)
-    func getUserName(completion: @escaping (String?) -> Void)
+    func fetchBalance(completion: @escaping (String) -> Void)
+    func fetchInformation(completion: @escaping ([[String]],String) -> Void)
+    func fetchUserName(completion: @escaping (String?) -> Void)
     func showReceiveViewController()
     func showPayViewController()
     func showHomeMenuViewController()
@@ -27,7 +27,7 @@ final class HomeViewModel: UserViewModel, HomeViewModelProtocol {
         super.init(authService: authService)
     }
 
-    func getBalance(completion: @escaping (String) -> Void) {
+    func fetchBalance(completion: @escaping (String) -> Void) {
         guard let uid = user?.identifier else { return }
         roomService.getAccount(roomName: roomName, uid: uid) { account, _  in
             guard let value = account?.balance.asCurrency() else { return }
@@ -35,11 +35,11 @@ final class HomeViewModel: UserViewModel, HomeViewModelProtocol {
         }
     }
 
-    func getInformation(completion: @escaping ([[String]],String) -> Void) {
+    func fetchInformation(completion: @escaping ([[String]],String) -> Void) {
         completion(transferMenu,roomName)
     }
 
-    func getUserName(completion: @escaping (String?) -> Void) {
+    func fetchUserName(completion: @escaping (String?) -> Void) {
         getUser()
         completion(user?.name)
     }
