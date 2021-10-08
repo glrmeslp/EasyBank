@@ -1,16 +1,16 @@
 import UIKit
 
-class RoomViewController: UIViewController {
+final class RoomViewController: UIViewController {
     
-    private var viewModel: RoomViewModel?
+    private var viewModel: RoomViewModelProtocol?
 
-    @IBOutlet weak var roomNameTextField: UITextField! {
+    @IBOutlet private weak var roomNameTextField: UITextField! {
         didSet { roomNameTextField.delegate = self }}
-    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet private weak var continueButton: UIButton!
     
-    init(viewModel: RoomViewModel) {
-        super.init(nibName: "RoomViewController", bundle: nil)
+    init(viewModel: RoomViewModelProtocol) {
         self.viewModel = viewModel
+        super.init(nibName: "RoomViewController", bundle: nil)
     }
 
     required init?(coder: NSCoder) {
@@ -22,34 +22,27 @@ class RoomViewController: UIViewController {
         setup()
     }
 
-    @IBAction func didTapContinueButton(_ sender: Any) {
+    @IBAction private func didTapContinueButton(_ sender: Any) {
         guard let roomName = roomNameTextField.text else { return }
-        viewModel?.enterToRoom(roomName)
+        viewModel?.enter(roomName)
     }
 
     private func enableContinueButton() {
         continueButton.isEnabled = true
-        continueButton.layer.backgroundColor = UIColor(named: "BlueColor")!.cgColor
+        continueButton.configuration?.baseBackgroundColor = UIColor(named: "BlueColor")
+        continueButton.configuration?.baseForegroundColor = UIColor.systemBackground
     }
 
     private func disableContinueButton() {
         continueButton.isEnabled = false
-        continueButton.layer.backgroundColor = UIColor.systemGray6.cgColor
+        continueButton.configuration?.baseBackgroundColor = UIColor.systemGray6
+        continueButton.configuration?.baseForegroundColor = UIColor.gray
     }
 
     private func setup() {
-        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
-        view.addGestureRecognizer(tapGestureReconizer)
-        
-        continueButton.layer.cornerRadius = 25
-        continueButton.setTitleColor(UIColor.gray, for: .disabled)
+        addGestureRecognizerForEndEditing()
         disableContinueButton()
-        
         roomNameTextField.becomeFirstResponder()
-    }
-
-    @objc private func didTapView(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
     }
 }
 
@@ -59,13 +52,6 @@ extension RoomViewController: UITextFieldDelegate {
             didTapContinueButton(self)
         }
         return true
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let value = textField.text else { return }
-        if value.isEmpty {
-            disableContinueButton()
-        }
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {

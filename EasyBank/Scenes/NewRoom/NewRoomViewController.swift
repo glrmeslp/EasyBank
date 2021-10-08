@@ -22,7 +22,7 @@ final class NewRoomViewController: UIViewController {
         setup()
     }
 
-    @IBAction func didTapCreateButton(_ sender: Any) {
+    @IBAction private func didTapCreateButton(_ sender: Any) {
         guard let roomName = roomNameTextField.text else { return }
         viewModel?.validateRoom(with: roomName)
     }

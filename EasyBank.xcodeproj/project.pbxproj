@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
 		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
+		DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */; };
+		DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113152270F270500A80E96 /* RoomViewModelSpy.swift */; };
+		DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113154270F2B0600A80E96 /* UserViewModel.swift */; };
+		DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113156270F2EBA00A80E96 /* RoomViewControllerMirror.swift */; };
+		DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113158270F38B100A80E96 /* RoomViewModelTests.swift */; };
 		DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C426EA41E100416164 /* PayViewController.swift */; };
 		DE1BA3C726EA41E100416164 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1BA3C526EA41E100416164 /* PayView.xib */; };
 		DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */; };
@@ -123,6 +128,11 @@
 		C55EF69C2D2F836C52CE1A8B /* Pods-EasyBank-EasyBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.release.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBank_EasyBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D378C316181EED5ED3B89481 /* Pods-EasyBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.debug.xcconfig"; sourceTree = "<group>"; };
+		DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerTests.swift; sourceTree = "<group>"; };
+		DE113152270F270500A80E96 /* RoomViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelSpy.swift; sourceTree = "<group>"; };
+		DE113154270F2B0600A80E96 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		DE113156270F2EBA00A80E96 /* RoomViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE113158270F38B100A80E96 /* RoomViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelTests.swift; sourceTree = "<group>"; };
 		DE1BA3C426EA41E100416164 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		DE1BA3C526EA41E100416164 /* PayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayView.xib; sourceTree = "<group>"; };
 		DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewModel.swift; sourceTree = "<group>"; };
@@ -263,6 +273,25 @@
 				EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE11314E270F229D00A80E96 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				DE113151270F26AA00A80E96 /* Doubles */,
+				DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */,
+				DE113158270F38B100A80E96 /* RoomViewModelTests.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		DE113151270F26AA00A80E96 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE113152270F270500A80E96 /* RoomViewModelSpy.swift */,
+				DE113156270F2EBA00A80E96 /* RoomViewControllerMirror.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DE1BA3C326EA41C800416164 /* Pay */ = {
@@ -565,6 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				DE55B4DD270747E300A77DED /* NewRoom */,
+				DE11314E270F229D00A80E96 /* Room */,
 				DE875E032704ACD000318261 /* Start */,
 			);
 			path = Scenes;
@@ -604,6 +634,7 @@
 			children = (
 				DE44BB4D26E297300083B354 /* BaseViewModel.swift */,
 				DEE3858026E651E5008D9409 /* CurrencyTextField.swift */,
+				DE113154270F2B0600A80E96 /* UserViewModel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -908,6 +939,7 @@
 				DEFFA33A27035EAD00A70B2E /* Reauthenticate.swift in Sources */,
 				DEFFA32E2702112000A70B2E /* ProfileViewController.swift in Sources */,
 				DE70738326F0CE6B00E34C44 /* CompleteTransactionViewController.swift in Sources */,
+				DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */,
 				DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */,
 				DE46218C26D6E22F001E6685 /* NewRoomViewController.swift in Sources */,
 				DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */,
@@ -952,18 +984,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */,
 				DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */,
 				DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */,
 				DE55B4E227074FD400A77DED /* NewRoomViewModelSpy.swift in Sources */,
 				DE875E062704ACF900318261 /* StartViewControllerTests.swift in Sources */,
 				DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */,
 				DE55B4E827078A3A00A77DED /* DatabaseServiceSpy.swift in Sources */,
+				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
 				DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */,
 				DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */,
 				DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */,
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
+				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
 				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
+				DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
