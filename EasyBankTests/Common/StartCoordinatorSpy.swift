@@ -39,6 +39,7 @@ extension StartCoordinatorSpy: NewRoomViewModelCoordinatorDelegate, RoomViewMode
     
     func presentAlertAndPushToHome(with message: String, and roomName: String) {
         presentAlertAndPushToHomeCalled = true
+        messageAlert = message
         self.roomName = roomName
     }
     

@@ -15,16 +15,16 @@ final class RoomViewModel: UserViewModel, RoomViewModelProtocol {
     }
 
     func enter(_ roomName: String) {
-        roomService.getRoom(roomName: roomName) { [weak self] error in
-            guard let error = error else {
-                self?.userHasAnAccountInThisRoom(roomName)
+        roomService.getRoom(roomName: roomName) { [weak self] message in
+            guard let message = message else {
+                self?.userHasAnAccountInThis(roomName)
                 return
             }
-            self?.coordinatorDelegate?.presentAlert(with: error)
+            self?.coordinatorDelegate?.presentAlert(with: message)
         }
     }
 
-    private func userHasAnAccountInThisRoom(_ roomName: String) {
+    private func userHasAnAccountInThis(_ roomName: String) {
         guard let uid = user?.identifier else { return }
         roomService.getAccount(roomName: roomName, uid: uid) { [weak self] account, _ in
             if account == nil {

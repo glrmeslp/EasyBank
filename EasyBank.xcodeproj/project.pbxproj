@@ -13,6 +13,7 @@
 		DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113152270F270500A80E96 /* RoomViewModelSpy.swift */; };
 		DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113154270F2B0600A80E96 /* UserViewModel.swift */; };
 		DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113156270F2EBA00A80E96 /* RoomViewControllerMirror.swift */; };
+		DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113158270F38B100A80E96 /* RoomViewModelTests.swift */; };
 		DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C426EA41E100416164 /* PayViewController.swift */; };
 		DE1BA3C726EA41E100416164 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1BA3C526EA41E100416164 /* PayView.xib */; };
 		DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */; };
@@ -131,6 +132,7 @@
 		DE113152270F270500A80E96 /* RoomViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelSpy.swift; sourceTree = "<group>"; };
 		DE113154270F2B0600A80E96 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		DE113156270F2EBA00A80E96 /* RoomViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE113158270F38B100A80E96 /* RoomViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelTests.swift; sourceTree = "<group>"; };
 		DE1BA3C426EA41E100416164 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		DE1BA3C526EA41E100416164 /* PayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayView.xib; sourceTree = "<group>"; };
 		DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewModel.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			children = (
 				DE113151270F26AA00A80E96 /* Doubles */,
 				DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */,
+				DE113158270F38B100A80E96 /* RoomViewModelTests.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -996,6 +999,7 @@
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
 				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
+				DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
