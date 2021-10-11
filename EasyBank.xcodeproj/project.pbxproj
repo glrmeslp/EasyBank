@@ -43,6 +43,7 @@
 		DE46218D26D6E22F001E6685 /* NewRoomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46218B26D6E22F001E6685 /* NewRoomView.xib */; };
 		DE49A0E2271085FA00124DA1 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49A0E1271085FA00124DA1 /* HomeViewControllerTests.swift */; };
 		DE49A0E42710862C00124DA1 /* HomeViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49A0E32710862C00124DA1 /* HomeViewModelSpy.swift */; };
+		DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49A0E527109F6D00124DA1 /* HomeViewControllerMirror.swift */; };
 		DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */; };
 		DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */; };
 		DE4C430E26DEC0520019410A /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */; };
@@ -166,6 +167,7 @@
 		DE46218B26D6E22F001E6685 /* NewRoomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewRoomView.xib; sourceTree = "<group>"; };
 		DE49A0E1271085FA00124DA1 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		DE49A0E32710862C00124DA1 /* HomeViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpy.swift; sourceTree = "<group>"; };
+		DE49A0E527109F6D00124DA1 /* HomeViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				DE49A0E32710862C00124DA1 /* HomeViewModelSpy.swift */,
+				DE49A0E527109F6D00124DA1 /* HomeViewControllerMirror.swift */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -1016,6 +1019,7 @@
 			files = (
 				DE49A0E2271085FA00124DA1 /* HomeViewControllerTests.swift in Sources */,
 				DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */,
+				DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */,
 				DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */,
 				DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */,
 				DE55B4E227074FD400A77DED /* NewRoomViewModelSpy.swift in Sources */,

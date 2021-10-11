@@ -10,7 +10,6 @@ protocol HomeViewModelProtocol {
 
 final class HomeViewModel: UserViewModel, HomeViewModelProtocol {
 
-    
     private let transferMenu: [[String]] = [
         ["Pay QR Code","qrcode"],
         ["Receive","ReceiveIcon"]

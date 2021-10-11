@@ -15,8 +15,9 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var balanceLabel: UILabel!
     @IBOutlet private weak var balanceView: UIView!
     @IBOutlet private weak var extractView: UIView!
-    @IBOutlet weak var showBalanceButton: UIButton!
-    @IBOutlet weak var menuTransferCollection: UICollectionView! {
+    @IBOutlet private weak var seeExtractButton: UIButton!
+    @IBOutlet private weak var showBalanceButton: UIButton!
+    @IBOutlet private weak var menuTransferCollection: UICollectionView! {
         didSet{
             menuTransferCollection.dataSource = self
             menuTransferCollection.delegate = self
@@ -62,7 +63,6 @@ final class HomeViewController: UIViewController {
     
     private func setup() {
         title = "Easy Bank"
-        updateCollectionViewFlowLayoutItemSize()
 
         balanceView.layer.cornerRadius = 20
         balanceView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
@@ -70,7 +70,9 @@ final class HomeViewController: UIViewController {
         extractView.layer.cornerRadius = 20
         extractView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 
-        menuTransferCollection.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionCell")
+        updateCollectionViewFlowLayoutItemSize()
+        menuTransferCollection.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil),
+                                        forCellWithReuseIdentifier: "homeCollectionCell")
         menuTransferCollection.collectionViewLayout = collectionViewFlowLayout
     }
 
