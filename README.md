@@ -53,6 +53,8 @@ We will need to connect our project with the [Firebase Console](https://console.
 In the Firebase console for your project, you'll need to enable the following auth providers:
 - Email/Password
 
+Visit [Firebase Authentication](https://firebase.google.com/docs/auth) for more details
+
 ## Dependencies
 
 - [Firebase Firestore](https://firebase.google.com/docs/firestore)
