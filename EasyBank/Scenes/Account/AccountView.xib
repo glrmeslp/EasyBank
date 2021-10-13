@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountViewController" customModule="EasyBank" customModuleProvider="target">
+            <connections>
+                <outlet property="emailLabel" destination="UyW-TU-cW6" id="fpp-Eo-kG9"/>
+                <outlet property="emailStackView" destination="55w-ud-AVb" id="HPX-db-Q94"/>
+                <outlet property="nameStackView" destination="kaK-4J-EWq" id="jb4-Iw-bxJ"/>
+                <outlet property="roomNameLabel" destination="SuM-Hh-Bp1" id="pyF-CK-nkr"/>
+                <outlet property="roomStackView" destination="xrU-N6-St6" id="bfL-TI-D41"/>
+                <outlet property="userNameLabel" destination="APK-hT-AwR" id="NZv-xz-dgJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVq-TY-eXI">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mau-B7-m1O">
+                            <rect key="frame" x="20" y="30" width="374" height="554.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your profile " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ub-Ed-df8">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="xrU-N6-St6" userLabel="Room Stack View">
+                                    <rect key="frame" x="0.0" y="37" width="374" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-rq-1vH">
+                                            <rect key="frame" x="0.0" y="0.0" width="132" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-Hh-Bp1">
+                                            <rect key="frame" x="132" y="0.0" width="242" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ag0-b7-t7r">
+                                    <rect key="frame" x="0.0" y="77.5" width="374" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="rUG-YK-hb4"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kaK-4J-EWq" userLabel="Name Stack View">
+                                    <rect key="frame" x="0.0" y="98.5" width="374" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4s-oI-1Md">
+                                            <rect key="frame" x="0.0" y="0.0" width="133.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APK-hT-AwR">
+                                            <rect key="frame" x="133.5" y="0.0" width="240.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWi-O0-wJx">
+                                    <rect key="frame" x="0.0" y="139" width="374" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="Nji-Ir-Lrx"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="55w-ud-AVb" userLabel="Email Stack View">
+                                    <rect key="frame" x="0.0" y="160" width="374" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s19-XJ-aaK">
+                                            <rect key="frame" x="0.0" y="0.0" width="97.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user@email.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyW-TU-cW6">
+                                            <rect key="frame" x="97.5" y="0.0" width="276.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRU-x2-fKa">
+                                    <rect key="frame" x="0.0" y="200.5" width="374" height="17"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpy-bX-gwx">
+                                    <rect key="frame" x="0.0" y="237.5" width="374" height="44"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="icons8-exit-30" title="Leave room" imagePadding="8">
+                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didTapLeaveRoomButton:" destination="-1" eventType="touchUpInside" id="jET-wp-KQj"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWQ-D0-aYw">
+                                    <rect key="frame" x="0.0" y="301.5" width="374" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="rmo-LN-Bsr"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzQ-Yn-Cv9">
+                                    <rect key="frame" x="0.0" y="322.5" width="374" height="50"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <state key="normal" title="Delete Account ">
+                                        <color key="titleColor" systemColor="labelColor"/>
+                                    </state>
+                                    <buttonConfiguration key="configuration" style="plain" image="icons8-delete-user-male-30" title="Delete account " subtitle="Delete your account from the room" imagePadding="8">
+                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didTapDeleteAccountButton:" destination="-1" eventType="touchUpInside" id="qAs-bu-JTI"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-Jd-icH">
+                                    <rect key="frame" x="0.0" y="392.5" width="374" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="GrO-R2-OlG"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xec-SU-cpO">
+                                    <rect key="frame" x="0.0" y="413.5" width="374" height="50"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="icons8-edit-30" title="Your profile" subtitle="Manage your Easy Bank account information" imagePadding="8">
+                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didTapProfileButton:" destination="-1" eventType="touchUpInside" id="FOu-BN-BFE"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWH-1M-avi">
+                                    <rect key="frame" x="0.0" y="483.5" width="374" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="d4L-9n-NCT"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npc-Lo-5P5">
+                                    <rect key="frame" x="0.0" y="504.5" width="374" height="50"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" systemColor="labelColor"/>
+                                    </state>
+                                    <buttonConfiguration key="configuration" style="plain" image="icons8-delete-30" title="Close your account" subtitle="Delete your Easy Bank account" imagePadding="8">
+                                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didTapCloseYourAccountButton:" destination="-1" eventType="touchUpInside" id="Kuy-ta-tsp"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Mau-B7-m1O" firstAttribute="centerX" secondItem="zVq-TY-eXI" secondAttribute="centerX" id="3ZU-Qh-jL5"/>
+                        <constraint firstAttribute="bottom" secondItem="Mau-B7-m1O" secondAttribute="bottom" constant="233.5" id="Ds6-FT-UF9"/>
+                        <constraint firstAttribute="trailing" secondItem="Mau-B7-m1O" secondAttribute="trailing" constant="20" id="Loc-CH-WMd"/>
+                        <constraint firstItem="Mau-B7-m1O" firstAttribute="top" secondItem="ajq-ai-jJW" secondAttribute="top" constant="30" id="cXw-B3-xEH"/>
+                        <constraint firstItem="Mau-B7-m1O" firstAttribute="leading" secondItem="zVq-TY-eXI" secondAttribute="leading" constant="20" id="tD0-Sz-lp2"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="ajq-ai-jJW"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="pDH-gM-2Zf"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zVq-TY-eXI" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="7DU-tz-ZGf"/>
+                <constraint firstItem="zVq-TY-eXI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MXm-Al-Rzx"/>
+                <constraint firstItem="zVq-TY-eXI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Y6U-g5-rNV"/>
+                <constraint firstItem="zVq-TY-eXI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zyj-Fn-5QJ"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icons8-delete-30" width="30" height="30"/>
+        <image name="icons8-delete-user-male-30" width="30" height="30"/>
+        <image name="icons8-edit-30" width="30" height="30"/>
+        <image name="icons8-exit-30" width="30" height="30"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

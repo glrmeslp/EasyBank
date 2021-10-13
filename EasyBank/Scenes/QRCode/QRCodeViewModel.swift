@@ -1,0 +1,33 @@
+protocol QRcodeViewModelCoordinatorDelegate: AnyObject {
+    func didFinisih()
+}
+
+final class QRCodeViewModel: BaseViewModel {
+    private let value: Double
+    private weak var coordinatorDelegate: QRcodeViewModelCoordinatorDelegate?
+
+    init(roomName: String, value: Double, coordinator: QRcodeViewModelCoordinatorDelegate, authService: AuthService, databaseService: DatabaseService) {
+        self.value = value
+        self.coordinatorDelegate = coordinator
+        super.init(roomName: roomName, authService: authService, roomService: databaseService)
+    }
+
+    func generateStringForQRcode(completion: @escaping (String) -> Void) {
+        guard let uid = user?.identifier, let name = user?.name else { return }
+        let string = "com.glrmeslp.EasyBank00X00\(roomName)00X00\(value)00X00\(uid)00X00\(name)"
+        completion(string)
+    }
+
+    func getValue(completion: @escaping (String) -> Void) {
+        if value == 0.0 {
+            completion("Will be defined by who will pay")
+        } else {
+            guard let value = value.asCurrency() else { return }
+            completion(value)
+        }
+    }
+
+    func didFinish() {
+        coordinatorDelegate?.didFinisih()
+    }
+}

@@ -1,44 +1,43 @@
-protocol StartViewModelCoordinatorDelegate: AnyObject {
-    func pushToBankerViewController(uid: String)
-    func pushToRoomViewController(uid: String)
-    func pushToAuthViewController()
+import UIKit
+
+protocol StartViewModelProtocol {
+    func showNewRoomViewController()
+    func showRoomViewController()
+    func detectAuthenticationStatus()
+    func undetectAuthenticationStatus()
 }
 
-final class StartViewModel {
+final class StartViewModel: StartViewModelProtocol {
     
-    private weak var coordinatorDelegate: StartViewModelCoordinatorDelegate?
-    private var uid: String?
+    private var coordinatorDelegate: StartViewModelCoordinatorDelegate?
+    private let authService: AuthService
     
-    init(coordinator: StartViewModelCoordinatorDelegate) {
+    init(authService: AuthService, coordinator: StartViewModelCoordinatorDelegate) {
         self.coordinatorDelegate = coordinator
+        self.authService = authService
     }
 
-    func showBankerViewController() {
-        guard let uid = uid else { return }
-        coordinatorDelegate?.pushToBankerViewController(uid: uid)
+    func showNewRoomViewController() {
+        coordinatorDelegate?.pushToNewRoomViewController()
     }
 
-    func showPlayerViewController() {
-        guard let uid = uid else { return }
-        coordinatorDelegate?.pushToRoomViewController(uid: uid)
+    func showRoomViewController() {
+        coordinatorDelegate?.pushToRoomViewController()
+    }
+
+    private func showAuthViewController() {
+        coordinatorDelegate?.pushToAuthViewController()
     }
 
     func detectAuthenticationStatus() {
-        AuthService.shared.detectAuthenticationStatus() { [weak self] uid in
-            if let uid = uid {
-                self?.uid = uid
-                return
+        authService.detectAuthenticationStatus { [weak self] userLogged in
+            if !userLogged {
+                self?.showAuthViewController()
             }
-            self?.showAuthViewController()
         }
     }
     
     func undetectAuthenticationStatus() {
-        AuthService.shared.removeStateDidChangeListener()
+        authService.removeStateDidChangeListener()
     }
-    
-    func showAuthViewController() {
-        coordinatorDelegate?.pushToAuthViewController()
-    }
-
 }

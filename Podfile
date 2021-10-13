@@ -6,17 +6,15 @@ target 'EasyBank' do
   use_frameworks!
 
   # Pods for EasyBank
-  pod 'FirebaseUI'
-  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Email'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
 
+  pod 'SwiftLint'
+
   target 'EasyBankTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'EasyBankUITests' do
     # Pods for testing
   end
 

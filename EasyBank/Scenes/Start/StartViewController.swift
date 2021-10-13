@@ -1,51 +1,39 @@
 import UIKit
 
-class StartViewController: UIViewController {
+final class StartViewController: UIViewController {
 
-    private var viewModel: StartViewModel?
-    @IBOutlet private weak var bankerButton: UIButton!
-    @IBOutlet private weak var playerButton: UIButton!
-    
-    init(viewModel: StartViewModel) {
+    private var viewModel: StartViewModelProtocol?
+
+    @IBOutlet private weak var createButton: UIButton!
+    @IBOutlet private weak var joinButton: UIButton!
+
+    init(viewModel: StartViewModelProtocol) {
         self.viewModel = viewModel
-        super.init(nibName: "StartViewController", bundle: nil)
+        super.init(nibName: "StartView", bundle: nil)
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         viewModel?.detectAuthenticationStatus()
-        navigationController?.navigationBar.isHidden = true
+        setupNavigationController(isHidden: true)
+        super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         viewModel?.undetectAuthenticationStatus()
+        setupNavigationController(isHidden: false)
         super.viewWillDisappear(animated)
     }
-    
-    @IBAction private func didTapBankerButton(_ sender: Any) {
-        viewModel?.showBankerViewController()
+
+    @IBAction private func didTapCreateButton(_ sender: Any) {
+        viewModel?.showNewRoomViewController()
     }
 
-    @IBAction private func didTapPlayerButton(_ sender: Any) {
-        viewModel?.showPlayerViewController()
+    @IBAction private func didTapJoinButton(_ sender: Any) {
+        viewModel?.showRoomViewController()
     }
-    
-    func setup() {
-        bankerButton.layer.cornerRadius = 20
-
-        playerButton.layer.cornerRadius = 20
-        playerButton.layer.borderWidth = 1
-        playerButton.layer.borderColor = UIColor.systemBlue.cgColor
-        
-        navigationController?.navigationBar.isHidden = true
-    }
-    
 }
+

@@ -1,28 +1,43 @@
-protocol HomeViewModelDelegate: AnyObject {
-    func showErrorMessage(with message: String)
-}
 
-final class HomeViewModel {
-    private var roomName: String?
-    private var uid: String?
+final class HomeViewModel: BaseViewModel {
+    private let transferMenu: [[String]] = [
+        ["Pay QR Code","qrcode"],
+        ["Receive","ReceiveIcon"]
+    ]
 
-    weak var viewDelegate: HomeViewModelDelegate?
+    private var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
 
-    init(with roomName: String, and uid: String) {
-        self.roomName = roomName
-        self.uid = uid
+    init(with roomName: String, databaseService: DatabaseService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
+        self.coordinatorDelegate = coordinator
+        super.init(roomName: roomName, authService: authService, roomService: databaseService)
     }
 
-    func getAccountInformation(completion: @escaping (Account) -> Void) {
-        guard let roomName = roomName, let uid = uid else { return }
-        DatabaseService.shared.getAccount(roomName, uid) { account, _ in
-            guard let account = account else { return }
-            completion(account)
+    func getBalance(completion: @escaping (String) -> Void) {
+        guard let uid = user?.identifier else { return }
+        getAccount(uid: uid) { account in
+            guard let value = account.balance.asCurrency() else { return }
+            completion(value)
         }
     }
-    
-    func getRoomNameAndUserId(completion: @escaping (String, String) -> Void) {
-        guard let roomName = roomName, let uid = uid else { return }
-        completion(roomName, uid)
+
+    func getTransferMenu(completion: @escaping ([[String]]) -> Void) {
+        completion(transferMenu)
+    }
+
+    func showReceiveViewController() {
+        coordinatorDelegate?.pushToReceiveViewController()
+    }
+
+    func showPayViewController() {
+        coordinatorDelegate?.pushToScannerViewController()
+    }
+
+    func showHomeMenuViewController() {
+        coordinatorDelegate?.presentHomeMenuViewController()
+    }
+
+    func showExtractViewController() {
+        coordinatorDelegate?.pushToExtractViewController()
     }
 }
+

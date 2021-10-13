@@ -8,52 +8,109 @@
 
 /* Begin PBXBuildFile section */
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
+		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
+		DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */; };
+		DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113152270F270500A80E96 /* RoomViewModelSpy.swift */; };
+		DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113154270F2B0600A80E96 /* UserViewModel.swift */; };
+		DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113156270F2EBA00A80E96 /* RoomViewControllerMirror.swift */; };
+		DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113158270F38B100A80E96 /* RoomViewModelTests.swift */; };
+		DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C426EA41E100416164 /* PayViewController.swift */; };
+		DE1BA3C726EA41E100416164 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1BA3C526EA41E100416164 /* PayView.xib */; };
+		DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */; };
+		DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3CA26EAA44B00416164 /* Transfer.swift */; };
+		DE2EA69126FBB5D600C22D7C /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */; };
+		DE3774A426F22705005719E3 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774A326F22705005719E3 /* Formatter+Extension.swift */; };
+		DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774A626F23B82005719E3 /* HomeMenuViewController.swift */; };
+		DE3774A926F23B82005719E3 /* HomeMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE3774A726F23B82005719E3 /* HomeMenuView.xib */; };
+		DE3774AB26F23E22005719E3 /* HomeMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774AA26F23E22005719E3 /* HomeMenuViewModel.swift */; };
+		DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44BB4B26E27A550083B354 /* HomeCoordinator.swift */; };
+		DE44BB4E26E297300083B354 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44BB4D26E297300083B354 /* BaseViewModel.swift */; };
+		DE44BB5026E2B2750083B354 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44BB4F26E2B2750083B354 /* String+Extension.swift */; };
 		DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213B26D6D2F5001E6685 /* AppDelegate.swift */; };
 		DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */; };
-		DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213F26D6D2F5001E6685 /* ViewController.swift */; };
-		DE46214326D6D2F5001E6685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE46214126D6D2F5001E6685 /* Main.storyboard */; };
 		DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE46214426D6D2FB001E6685 /* Assets.xcassets */; };
 		DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */; };
-		DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215226D6D2FB001E6685 /* EasyBankTests.swift */; };
-		DE46215E26D6D2FB001E6685 /* EasyBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */; };
 		DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217426D6D996001E6685 /* RoomViewModel.swift */; };
 		DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217626D6D9F1001E6685 /* StartViewController.swift */; };
-		DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217726D6D9F1001E6685 /* StartViewController.xib */; };
+		DE46217926D6D9F1001E6685 /* StartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217726D6D9F1001E6685 /* StartView.xib */; };
 		DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46217D26D6DAD7001E6685 /* RoomViewController.swift */; };
 		DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46217E26D6DAD7001E6685 /* RoomViewController.xib */; };
 		DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218126D6DB83001E6685 /* StartCoordinator.swift */; };
 		DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218326D6DB93001E6685 /* StartViewModel.swift */; };
 		DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218626D6DBA9001E6685 /* Coordinator.swift */; };
 		DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */; };
-		DE46218C26D6E22F001E6685 /* BankerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218A26D6E22F001E6685 /* BankerViewController.swift */; };
-		DE46218D26D6E22F001E6685 /* BankerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46218B26D6E22F001E6685 /* BankerView.xib */; };
+		DE46218C26D6E22F001E6685 /* NewRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46218A26D6E22F001E6685 /* NewRoomViewController.swift */; };
+		DE46218D26D6E22F001E6685 /* NewRoomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE46218B26D6E22F001E6685 /* NewRoomView.xib */; };
+		DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */; };
+		DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */; };
+		DE4C430E26DEC0520019410A /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */; };
+		DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C431626DFFBB50019410A /* ScannerViewController.swift */; };
+		DE4C431926DFFBB50019410A /* ScannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C431726DFFBB50019410A /* ScannerView.xib */; };
+		DE4C431B26E007C00019410A /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C431A26E007C00019410A /* ScannerViewModel.swift */; };
+		DE4F07BA26F4D1F000CA595C /* ExtractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4F07B826F4D1F000CA595C /* ExtractViewController.swift */; };
+		DE4F07BB26F4D1F000CA595C /* ExtractView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4F07B926F4D1F000CA595C /* ExtractView.xib */; };
+		DE4F07C426F4DB3600CA595C /* ExtractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4F07C226F4DB3600CA595C /* ExtractTableViewCell.swift */; };
+		DE4F07C526F4DB3600CA595C /* ExtractTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4F07C326F4DB3600CA595C /* ExtractTableViewCell.xib */; };
+		DE4F07C926F503BA00CA595C /* ExtractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4F07C826F503BA00CA595C /* ExtractViewModel.swift */; };
+		DE52A77726E8FC3E00EC3521 /* ReceiveCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77626E8FC3E00EC3521 /* ReceiveCoordinator.swift */; };
+		DE52A77A26E8FDE500EC3521 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77826E8FDE500EC3521 /* QRCodeViewController.swift */; };
+		DE52A77B26E8FDE500EC3521 /* QRCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE52A77926E8FDE500EC3521 /* QRCodeView.xib */; };
+		DE52A77D26E9049C00EC3521 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77C26E9049C00EC3521 /* Double+Extension.swift */; };
+		DE52A77F26E90CC300EC3521 /* TransferMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A77E26E90CC300EC3521 /* TransferMenu.swift */; };
+		DE52A78126E933C200EC3521 /* PayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52A78026E933C200EC3521 /* PayCoordinator.swift */; };
+		DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4DE27074F7800A77DED /* NewRoomViewControllerTests.swift */; };
+		DE55B4E227074FD400A77DED /* NewRoomViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E127074FD400A77DED /* NewRoomViewModelSpy.swift */; };
+		DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E3270750F700A77DED /* NewRoomViewControllerMirror.swift */; };
+		DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E52707862F00A77DED /* NewRoomViewModelTests.swift */; };
+		DE55B4E827078A3A00A77DED /* DatabaseServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */; };
+		DE64A4E426FB756E004E95F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64A4E226FB756E004E95F7 /* AccountViewController.swift */; };
+		DE64A4E526FB756E004E95F7 /* AccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE64A4E326FB756E004E95F7 /* AccountView.xib */; };
+		DE64A4E726FB7614004E95F7 /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64A4E626FB7614004E95F7 /* AccountCoordinator.swift */; };
+		DE70738326F0CE6B00E34C44 /* CompleteTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */; };
+		DE70738426F0CE6B00E34C44 /* CompleteTransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */; };
+		DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */; };
 		DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */; };
 		DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8D26D9698B00240B70 /* HomeViewController.swift */; };
 		DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE75DD8E26D9698B00240B70 /* HomeViewController.xib */; };
 		DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD9126D96BEE00240B70 /* HomeViewModel.swift */; };
+		DE875E062704ACF900318261 /* StartViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E052704ACF900318261 /* StartViewControllerTests.swift */; };
+		DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E072704AD4000318261 /* StartViewModelSpy.swift */; };
+		DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E092704C04100318261 /* StartViewModelTests.swift */; };
+		DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E0B2704C0D500318261 /* AuthenticationServiceSpy.swift */; };
+		DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E0D2704C1B800318261 /* StartCoordinatorSpy.swift */; };
+		DE875E112704ED3500318261 /* MirrorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E102704ED3500318261 /* MirrorObject.swift */; };
+		DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E122704EE0900318261 /* StartViewControllerMirror.swift */; };
 		DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE93484826D8034700680E63 /* GoogleService-Info.plist */; };
-		DE93484B26D8041900680E63 /* BankerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484A26D8041900680E63 /* BankerViewModel.swift */; };
+		DE93484B26D8041900680E63 /* NewRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484A26D8041900680E63 /* NewRoomViewModel.swift */; };
 		DE93485026D8075200680E63 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484F26D8075100680E63 /* Account.swift */; };
 		DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485226D80A5600680E63 /* DatabaseService.swift */; };
-		DE93485526D82BB500680E63 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485426D82BB500680E63 /* AuthService.swift */; };
-		DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */; };
-		DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */; };
-		DEE8FB9A26DC1CB7005547CA /* TextFieldWithErrorLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */; };
-		DEE8FB9C26DC1EAC005547CA /* TextFieldWithErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9B26DC1EAC005547CA /* TextFieldWithErrorLabel.swift */; };
-		DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */; };
-		E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
-		FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */; };
+		DE93485526D82BB500680E63 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485426D82BB500680E63 /* AuthenticationService.swift */; };
+		DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */; };
+		DEA3B37F26F8BD6D003E09FC /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */; };
+		DEA3B38026F8BD6D003E09FC /* PasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */; };
+		DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */; };
+		DEA3B38426F8D044003E09FC /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */; };
+		DEC1162E270B5CB100E74380 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1162D270B5CB100E74380 /* User.swift */; };
+		DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3857C26E64702008D9409 /* ReceiveViewController.swift */; };
+		DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE3857D26E64702008D9409 /* ReceiveView.xib */; };
+		DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3858026E651E5008D9409 /* CurrencyTextField.swift */; };
+		DEEBC0CF26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBC0CD26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift */; };
+		DEEBC0D026FA1B3C00A21AC4 /* RecoverPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEEBC0CE26FA1B3C00A21AC4 /* RecoverPasswordView.xib */; };
+		DEEBC0D226FA1C7400A21AC4 /* PasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBC0D126FA1C7400A21AC4 /* PasswordCoordinator.swift */; };
+		DEEBC0D426FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */; };
+		DEF0DB1F26F80CFF00498CD2 /* ShowBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */; };
+		DEFFA32A2702015B00A70B2E /* QRCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA3292702015B00A70B2E /* QRCodeHelper.swift */; };
+		DEFFA32E2702112000A70B2E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA32C2702112000A70B2E /* ProfileViewController.swift */; };
+		DEFFA32F2702112000A70B2E /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFFA32D2702112000A70B2E /* ProfileView.xib */; };
+		DEFFA3332702138300A70B2E /* ReauthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA3312702138300A70B2E /* ReauthenticateViewController.swift */; };
+		DEFFA3342702138300A70B2E /* ReauthenticateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFFA3322702138300A70B2E /* ReauthenticateView.xib */; };
+		DEFFA336270216EC00A70B2E /* ReauthenticateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA335270216EC00A70B2E /* ReauthenticateViewModel.swift */; };
+		DEFFA338270220ED00A70B2E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA337270220ED00A70B2E /* ProfileViewModel.swift */; };
+		DEFFA33A27035EAD00A70B2E /* Reauthenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFA33927035EAC00A70B2E /* Reauthenticate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DE46214F26D6D2FB001E6685 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE46213026D6D2F5001E6685 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE46213726D6D2F5001E6685;
-			remoteInfo = EasyBank;
-		};
-		DE46215A26D6D2FB001E6685 /* PBXContainerItemProxy */ = {
+		DE875DFD2704AC9900318261 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE46213026D6D2F5001E6685 /* Project object */;
 			proxyType = 1;
@@ -71,45 +128,107 @@
 		C55EF69C2D2F836C52CE1A8B /* Pods-EasyBank-EasyBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.release.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBank_EasyBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D378C316181EED5ED3B89481 /* Pods-EasyBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.debug.xcconfig"; sourceTree = "<group>"; };
+		DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerTests.swift; sourceTree = "<group>"; };
+		DE113152270F270500A80E96 /* RoomViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelSpy.swift; sourceTree = "<group>"; };
+		DE113154270F2B0600A80E96 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		DE113156270F2EBA00A80E96 /* RoomViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE113158270F38B100A80E96 /* RoomViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelTests.swift; sourceTree = "<group>"; };
+		DE1BA3C426EA41E100416164 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		DE1BA3C526EA41E100416164 /* PayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayView.xib; sourceTree = "<group>"; };
+		DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewModel.swift; sourceTree = "<group>"; };
+		DE1BA3CA26EAA44B00416164 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		DE3774A326F22705005719E3 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
+		DE3774A626F23B82005719E3 /* HomeMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewController.swift; sourceTree = "<group>"; };
+		DE3774A726F23B82005719E3 /* HomeMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMenuView.xib; sourceTree = "<group>"; };
+		DE3774AA26F23E22005719E3 /* HomeMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModel.swift; sourceTree = "<group>"; };
+		DE44BB4B26E27A550083B354 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		DE44BB4D26E297300083B354 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		DE44BB4F26E2B2750083B354 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DE46213826D6D2F5001E6685 /* EasyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE46213B26D6D2F5001E6685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE46213F26D6D2F5001E6685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DE46214226D6D2F5001E6685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE46214426D6D2FB001E6685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE46214726D6D2FB001E6685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE46214926D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE46214E26D6D2FB001E6685 /* EasyBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE46215226D6D2FB001E6685 /* EasyBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyBankTests.swift; sourceTree = "<group>"; };
-		DE46215426D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyBankUITests.swift; sourceTree = "<group>"; };
-		DE46215F26D6D2FB001E6685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE46217426D6D996001E6685 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
 		DE46217626D6D9F1001E6685 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		DE46217726D6D9F1001E6685 /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		DE46217726D6D9F1001E6685 /* StartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartView.xib; sourceTree = "<group>"; };
 		DE46217D26D6DAD7001E6685 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		DE46217E26D6DAD7001E6685 /* RoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
 		DE46218126D6DB83001E6685 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 		DE46218326D6DB93001E6685 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		DE46218626D6DBA9001E6685 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
-		DE46218A26D6E22F001E6685 /* BankerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankerViewController.swift; sourceTree = "<group>"; };
-		DE46218B26D6E22F001E6685 /* BankerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankerView.xib; sourceTree = "<group>"; };
+		DE46218A26D6E22F001E6685 /* NewRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewController.swift; sourceTree = "<group>"; };
+		DE46218B26D6E22F001E6685 /* NewRoomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewRoomView.xib; sourceTree = "<group>"; };
+		DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
+		DE4C431626DFFBB50019410A /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		DE4C431726DFFBB50019410A /* ScannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerView.xib; sourceTree = "<group>"; };
+		DE4C431A26E007C00019410A /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		DE4F07B826F4D1F000CA595C /* ExtractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewController.swift; sourceTree = "<group>"; };
+		DE4F07B926F4D1F000CA595C /* ExtractView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtractView.xib; sourceTree = "<group>"; };
+		DE4F07C226F4DB3600CA595C /* ExtractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractTableViewCell.swift; sourceTree = "<group>"; };
+		DE4F07C326F4DB3600CA595C /* ExtractTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtractTableViewCell.xib; sourceTree = "<group>"; };
+		DE4F07C826F503BA00CA595C /* ExtractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewModel.swift; sourceTree = "<group>"; };
+		DE52A77626E8FC3E00EC3521 /* ReceiveCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveCoordinator.swift; sourceTree = "<group>"; };
+		DE52A77826E8FDE500EC3521 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRCodeViewController.swift; path = EasyBank/Scenes/QRCode/QRCodeViewController.swift; sourceTree = SOURCE_ROOT; };
+		DE52A77926E8FDE500EC3521 /* QRCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QRCodeView.xib; path = EasyBank/Scenes/QRCode/QRCodeView.xib; sourceTree = SOURCE_ROOT; };
+		DE52A77C26E9049C00EC3521 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		DE52A77E26E90CC300EC3521 /* TransferMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMenu.swift; sourceTree = "<group>"; };
+		DE52A78026E933C200EC3521 /* PayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCoordinator.swift; sourceTree = "<group>"; };
+		DE55B4DE27074F7800A77DED /* NewRoomViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewControllerTests.swift; sourceTree = "<group>"; };
+		DE55B4E127074FD400A77DED /* NewRoomViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewModelSpy.swift; sourceTree = "<group>"; };
+		DE55B4E3270750F700A77DED /* NewRoomViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE55B4E52707862F00A77DED /* NewRoomViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewModelTests.swift; sourceTree = "<group>"; };
+		DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceSpy.swift; sourceTree = "<group>"; };
+		DE64A4E226FB756E004E95F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		DE64A4E326FB756E004E95F7 /* AccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountView.xib; sourceTree = "<group>"; };
+		DE64A4E626FB7614004E95F7 /* AccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
+		DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewController.swift; sourceTree = "<group>"; };
+		DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTransactionView.xib; sourceTree = "<group>"; };
+		DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewModel.swift; sourceTree = "<group>"; };
 		DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DE75DD8D26D9698B00240B70 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE75DD8E26D9698B00240B70 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		DE75DD9126D96BEE00240B70 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DE875DF92704AC9900318261 /* EasyBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE875E052704ACF900318261 /* StartViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerTests.swift; sourceTree = "<group>"; };
+		DE875E072704AD4000318261 /* StartViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModelSpy.swift; sourceTree = "<group>"; };
+		DE875E092704C04100318261 /* StartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModelTests.swift; sourceTree = "<group>"; };
+		DE875E0B2704C0D500318261 /* AuthenticationServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceSpy.swift; sourceTree = "<group>"; };
+		DE875E0D2704C1B800318261 /* StartCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinatorSpy.swift; sourceTree = "<group>"; };
+		DE875E102704ED3500318261 /* MirrorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorObject.swift; sourceTree = "<group>"; };
+		DE875E122704EE0900318261 /* StartViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE93484826D8034700680E63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DE93484A26D8041900680E63 /* BankerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankerViewModel.swift; sourceTree = "<group>"; };
+		DE93484A26D8041900680E63 /* NewRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewModel.swift; sourceTree = "<group>"; };
 		DE93484F26D8075100680E63 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		DE93485226D80A5600680E63 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
-		DE93485426D82BB500680E63 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
-		DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldWithErrorLabelView.xib; sourceTree = "<group>"; };
-		DEE8FB9B26DC1EAC005547CA /* TextFieldWithErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithErrorLabel.swift; sourceTree = "<group>"; };
-		DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		DE93485426D82BB500680E63 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractEnum.swift; sourceTree = "<group>"; };
+		DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordView.xib; sourceTree = "<group>"; };
+		DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordEnum.swift; sourceTree = "<group>"; };
+		DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
+		DEC1162D270B5CB100E74380 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DEE3857C26E64702008D9409 /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
+		DEE3857D26E64702008D9409 /* ReceiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveView.xib; sourceTree = "<group>"; };
+		DEE3858026E651E5008D9409 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		DEEBC0CD26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
+		DEEBC0CE26FA1B3C00A21AC4 /* RecoverPasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecoverPasswordView.xib; sourceTree = "<group>"; };
+		DEEBC0D126FA1C7400A21AC4 /* PasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinator.swift; sourceTree = "<group>"; };
+		DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModel.swift; sourceTree = "<group>"; };
+		DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBalance.swift; sourceTree = "<group>"; };
+		DEFFA3292702015B00A70B2E /* QRCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeHelper.swift; sourceTree = "<group>"; };
+		DEFFA32C2702112000A70B2E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DEFFA32D2702112000A70B2E /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		DEFFA3312702138300A70B2E /* ReauthenticateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewController.swift; sourceTree = "<group>"; };
+		DEFFA3322702138300A70B2E /* ReauthenticateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReauthenticateView.xib; sourceTree = "<group>"; };
+		DEFFA335270216EC00A70B2E /* ReauthenticateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewModel.swift; sourceTree = "<group>"; };
+		DEFFA337270220ED00A70B2E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		DEFFA33927035EAC00A70B2E /* Reauthenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reauthenticate.swift; sourceTree = "<group>"; };
 		EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,19 +241,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE46214B26D6D2FB001E6685 /* Frameworks */ = {
+		DE875DF62704AC9900318261 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5797DA42F2290D6D159BBD0 /* Pods_EasyBankTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE46215626D6D2FB001E6685 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB1351DDB6C15DE09E28C197 /* Pods_EasyBank_EasyBankUITests.framework in Frameworks */,
+				D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,12 +275,64 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE11314E270F229D00A80E96 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				DE113151270F26AA00A80E96 /* Doubles */,
+				DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */,
+				DE113158270F38B100A80E96 /* RoomViewModelTests.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		DE113151270F26AA00A80E96 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE113152270F270500A80E96 /* RoomViewModelSpy.swift */,
+				DE113156270F2EBA00A80E96 /* RoomViewControllerMirror.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DE1BA3C326EA41C800416164 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				DE1BA3C426EA41E100416164 /* PayViewController.swift */,
+				DE1BA3C526EA41E100416164 /* PayView.xib */,
+				DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		DE3774A526F23B6A005719E3 /* HomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DE3774A626F23B82005719E3 /* HomeMenuViewController.swift */,
+				DE3774A726F23B82005719E3 /* HomeMenuView.xib */,
+				DE3774AA26F23E22005719E3 /* HomeMenuViewModel.swift */,
+			);
+			path = HomeMenu;
+			sourceTree = "<group>";
+		};
+		DE44BB4A26E25B8F0083B354 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */,
+				DE46218126D6DB83001E6685 /* StartCoordinator.swift */,
+				DE44BB4B26E27A550083B354 /* HomeCoordinator.swift */,
+				DE52A77626E8FC3E00EC3521 /* ReceiveCoordinator.swift */,
+				DE52A78026E933C200EC3521 /* PayCoordinator.swift */,
+				DEEBC0D126FA1C7400A21AC4 /* PasswordCoordinator.swift */,
+				DE64A4E626FB7614004E95F7 /* AccountCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		DE46212F26D6D2F5001E6685 = {
 			isa = PBXGroup;
 			children = (
 				DE46213A26D6D2F5001E6685 /* EasyBank */,
-				DE46215126D6D2FB001E6685 /* EasyBankTests */,
-				DE46215C26D6D2FB001E6685 /* EasyBankUITests */,
+				DE875DFA2704AC9900318261 /* EasyBankTests */,
 				DE46213926D6D2F5001E6685 /* Products */,
 				3078D4D234647692C2A31BFF /* Pods */,
 				85DE9B3B34E95869B536D2F1 /* Frameworks */,
@@ -180,8 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				DE46213826D6D2F5001E6685 /* EasyBank.app */,
-				DE46214E26D6D2FB001E6685 /* EasyBankTests.xctest */,
-				DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */,
+				DE875DF92704AC9900318261 /* EasyBankTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +351,8 @@
 		DE46213A26D6D2F5001E6685 /* EasyBank */ = {
 			isa = PBXGroup;
 			children = (
+				DE60801E26FE0B0800813C5B /* Helpers */,
+				DE44BB4A26E25B8F0083B354 /* Coordinators */,
 				DE8A0D3126DB129000D0175F /* Components */,
 				DE75DD8926D9686800240B70 /* Extensions */,
 				DE93485126D80A3D00680E63 /* Service */,
@@ -197,8 +361,6 @@
 				DE46216D26D6D869001E6685 /* Scenes */,
 				DE46213B26D6D2F5001E6685 /* AppDelegate.swift */,
 				DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */,
-				DE46213F26D6D2F5001E6685 /* ViewController.swift */,
-				DE46214126D6D2F5001E6685 /* Main.storyboard */,
 				DE46214426D6D2FB001E6685 /* Assets.xcassets */,
 				DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */,
 				DE46214926D6D2FB001E6685 /* Info.plist */,
@@ -207,32 +369,25 @@
 			path = EasyBank;
 			sourceTree = "<group>";
 		};
-		DE46215126D6D2FB001E6685 /* EasyBankTests */ = {
-			isa = PBXGroup;
-			children = (
-				DE46215226D6D2FB001E6685 /* EasyBankTests.swift */,
-				DE46215426D6D2FB001E6685 /* Info.plist */,
-			);
-			path = EasyBankTests;
-			sourceTree = "<group>";
-		};
-		DE46215C26D6D2FB001E6685 /* EasyBankUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DE46215D26D6D2FB001E6685 /* EasyBankUITests.swift */,
-				DE46215F26D6D2FB001E6685 /* Info.plist */,
-			);
-			path = EasyBankUITests;
-			sourceTree = "<group>";
-		};
 		DE46216D26D6D869001E6685 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DEFFA3302702136200A70B2E /* Reauthenticate */,
+				DEFFA32B270210EE00A70B2E /* Profile */,
+				DE64A4E126FB754B004E95F7 /* Account */,
+				DEEBC0CC26FA1AF700A21AC4 /* RecoverPassword */,
+				DEA3B37C26F8BCC8003E09FC /* Password */,
+				DE4F07B726F4D1C100CA595C /* Extract */,
+				DE70738026F0CE2E00E34C44 /* CompleteTransaction */,
+				DEE3857B26E646E9008D9409 /* Receive */,
+				DE4C430826DEBFEE0019410A /* QRcode */,
+				DE1BA3C326EA41C800416164 /* Pay */,
+				DE4C431126DFDB660019410A /* Scanner */,
+				DE3774A526F23B6A005719E3 /* HomeMenu */,
 				DE75DD8C26D9697200240B70 /* Home */,
-				DE46217A26D6DA05001E6685 /* Banker */,
-				DE46216F26D6D911001E6685 /* Player */,
+				DE46217A26D6DA05001E6685 /* NewRoom */,
+				DE46216F26D6D911001E6685 /* Room */,
 				DE46216E26D6D87A001E6685 /* Start */,
-				DE46218826D6DC25001E6685 /* ApplicationCoordinator.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -241,31 +396,30 @@
 			isa = PBXGroup;
 			children = (
 				DE46217626D6D9F1001E6685 /* StartViewController.swift */,
-				DE46217726D6D9F1001E6685 /* StartViewController.xib */,
-				DE46218126D6DB83001E6685 /* StartCoordinator.swift */,
+				DE46217726D6D9F1001E6685 /* StartView.xib */,
 				DE46218326D6DB93001E6685 /* StartViewModel.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
 		};
-		DE46216F26D6D911001E6685 /* Player */ = {
+		DE46216F26D6D911001E6685 /* Room */ = {
 			isa = PBXGroup;
 			children = (
-				DEE8FB9826DC1A1F005547CA /* ViewModel */,
-				DEE8FB9226DC192D005547CA /* Views */,
-				DEE8FB9126DC1904005547CA /* ViewController */,
+				DE46217426D6D996001E6685 /* RoomViewModel.swift */,
+				DE46217E26D6DAD7001E6685 /* RoomViewController.xib */,
+				DE46217D26D6DAD7001E6685 /* RoomViewController.swift */,
 			);
-			path = Player;
+			path = Room;
 			sourceTree = "<group>";
 		};
-		DE46217A26D6DA05001E6685 /* Banker */ = {
+		DE46217A26D6DA05001E6685 /* NewRoom */ = {
 			isa = PBXGroup;
 			children = (
-				DE46218A26D6E22F001E6685 /* BankerViewController.swift */,
-				DE46218B26D6E22F001E6685 /* BankerView.xib */,
-				DE93484A26D8041900680E63 /* BankerViewModel.swift */,
+				DE46218A26D6E22F001E6685 /* NewRoomViewController.swift */,
+				DE46218B26D6E22F001E6685 /* NewRoomView.xib */,
+				DE93484A26D8041900680E63 /* NewRoomViewModel.swift */,
 			);
-			path = Banker;
+			path = NewRoom;
 			sourceTree = "<group>";
 		};
 		DE46218526D6DB97001E6685 /* Protocols */ = {
@@ -276,10 +430,142 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		DE4C430626DEB3B10019410A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE75DD8D26D9698B00240B70 /* HomeViewController.swift */,
+				DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DE4C430726DEB3D80019410A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE75DD8E26D9698B00240B70 /* HomeViewController.xib */,
+				DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE4C430826DEBFEE0019410A /* QRcode */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */,
+				DE52A77826E8FDE500EC3521 /* QRCodeViewController.swift */,
+				DE52A77926E8FDE500EC3521 /* QRCodeView.xib */,
+			);
+			path = QRcode;
+			sourceTree = "<group>";
+		};
+		DE4C431126DFDB660019410A /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C431626DFFBB50019410A /* ScannerViewController.swift */,
+				DE4C431726DFFBB50019410A /* ScannerView.xib */,
+				DE4C431A26E007C00019410A /* ScannerViewModel.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		DE4F07B726F4D1C100CA595C /* Extract */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07C626F4DB4300CA595C /* Controllers */,
+				DE4F07C026F4DB0300CA595C /* Views */,
+				DE4F07C826F503BA00CA595C /* ExtractViewModel.swift */,
+			);
+			path = Extract;
+			sourceTree = "<group>";
+		};
+		DE4F07C026F4DB0300CA595C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07B926F4D1F000CA595C /* ExtractView.xib */,
+				DE4F07C126F4DB0C00CA595C /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE4F07C126F4DB0C00CA595C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07C326F4DB3600CA595C /* ExtractTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE4F07C626F4DB4300CA595C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07B826F4D1F000CA595C /* ExtractViewController.swift */,
+				DE4F07C726F4DB5D00CA595C /* Cells */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DE4F07C726F4DB5D00CA595C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F07C226F4DB3600CA595C /* ExtractTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE55B4DD270747E300A77DED /* NewRoom */ = {
+			isa = PBXGroup;
+			children = (
+				DE55B4E027074FA500A77DED /* Doubles */,
+				DE55B4DE27074F7800A77DED /* NewRoomViewControllerTests.swift */,
+				DE55B4E52707862F00A77DED /* NewRoomViewModelTests.swift */,
+			);
+			path = NewRoom;
+			sourceTree = "<group>";
+		};
+		DE55B4E027074FA500A77DED /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE55B4E127074FD400A77DED /* NewRoomViewModelSpy.swift */,
+				DE55B4E3270750F700A77DED /* NewRoomViewControllerMirror.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DE60801E26FE0B0800813C5B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DEFFA3292702015B00A70B2E /* QRCodeHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DE64A4E126FB754B004E95F7 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				DE64A4E226FB756E004E95F7 /* AccountViewController.swift */,
+				DE64A4E326FB756E004E95F7 /* AccountView.xib */,
+				DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		DE70738026F0CE2E00E34C44 /* CompleteTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */,
+				DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */,
+				DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */,
+			);
+			path = CompleteTransaction;
+			sourceTree = "<group>";
+		};
 		DE75DD8926D9686800240B70 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */,
+				DE44BB4F26E2B2750083B354 /* String+Extension.swift */,
+				DE52A77C26E9049C00EC3521 /* Double+Extension.swift */,
+				DE3774A326F22705005719E3 /* Formatter+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,18 +573,68 @@
 		DE75DD8C26D9697200240B70 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DE75DD8D26D9698B00240B70 /* HomeViewController.swift */,
-				DE75DD8E26D9698B00240B70 /* HomeViewController.xib */,
+				DE4C430726DEB3D80019410A /* Views */,
+				DE4C430626DEB3B10019410A /* ViewControllers */,
 				DE75DD9126D96BEE00240B70 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
+		DE875DFA2704AC9900318261 /* EasyBankTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE875E0F2704DD7500318261 /* Common */,
+				DE875E022704ACC700318261 /* Scenes */,
+				DE875E102704ED3500318261 /* MirrorObject.swift */,
+			);
+			path = EasyBankTests;
+			sourceTree = "<group>";
+		};
+		DE875E022704ACC700318261 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DE55B4DD270747E300A77DED /* NewRoom */,
+				DE11314E270F229D00A80E96 /* Room */,
+				DE875E032704ACD000318261 /* Start */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DE875E032704ACD000318261 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				DE875E042704ACDA00318261 /* Doubles */,
+				DE875E052704ACF900318261 /* StartViewControllerTests.swift */,
+				DE875E092704C04100318261 /* StartViewModelTests.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		DE875E042704ACDA00318261 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE875E072704AD4000318261 /* StartViewModelSpy.swift */,
+				DE875E122704EE0900318261 /* StartViewControllerMirror.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DE875E0F2704DD7500318261 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DE875E0D2704C1B800318261 /* StartCoordinatorSpy.swift */,
+				DE875E0B2704C0D500318261 /* AuthenticationServiceSpy.swift */,
+				DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		DE8A0D3126DB129000D0175F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DEE8FB9926DC1CB7005547CA /* TextFieldWithErrorLabelView.xib */,
-				DEE8FB9B26DC1EAC005547CA /* TextFieldWithErrorLabel.swift */,
+				DE44BB4D26E297300083B354 /* BaseViewModel.swift */,
+				DEE3858026E651E5008D9409 /* CurrencyTextField.swift */,
+				DE113154270F2B0600A80E96 /* UserViewModel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -307,6 +643,13 @@
 			isa = PBXGroup;
 			children = (
 				DE93484F26D8075100680E63 /* Account.swift */,
+				DE52A77E26E90CC300EC3521 /* TransferMenu.swift */,
+				DE1BA3CA26EAA44B00416164 /* Transfer.swift */,
+				DEF0DB1E26F80CFF00498CD2 /* ShowBalance.swift */,
+				DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */,
+				DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */,
+				DEFFA33927035EAC00A70B2E /* Reauthenticate.swift */,
+				DEC1162D270B5CB100E74380 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,36 +658,58 @@
 			isa = PBXGroup;
 			children = (
 				DE93485226D80A5600680E63 /* DatabaseService.swift */,
-				DE93485426D82BB500680E63 /* AuthService.swift */,
+				DE93485426D82BB500680E63 /* AuthenticationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
 		};
-		DEE8FB9126DC1904005547CA /* ViewController */ = {
+		DEA3B37C26F8BCC8003E09FC /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				DE46217D26D6DAD7001E6685 /* RoomViewController.swift */,
-				DEE8FB9426DC19DD005547CA /* PlayerViewController.swift */,
+				DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */,
+				DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */,
+				DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */,
 			);
-			path = ViewController;
+			path = Password;
 			sourceTree = "<group>";
 		};
-		DEE8FB9226DC192D005547CA /* Views */ = {
+		DEE3857B26E646E9008D9409 /* Receive */ = {
 			isa = PBXGroup;
 			children = (
-				DE46217E26D6DAD7001E6685 /* RoomViewController.xib */,
-				DEE8FB9526DC19DD005547CA /* PlayerViewController.xib */,
+				DEE3857C26E64702008D9409 /* ReceiveViewController.swift */,
+				DEE3857D26E64702008D9409 /* ReceiveView.xib */,
 			);
-			path = Views;
+			path = Receive;
 			sourceTree = "<group>";
 		};
-		DEE8FB9826DC1A1F005547CA /* ViewModel */ = {
+		DEEBC0CC26FA1AF700A21AC4 /* RecoverPassword */ = {
 			isa = PBXGroup;
 			children = (
-				DE46217426D6D996001E6685 /* RoomViewModel.swift */,
-				DEE8FB9D26DC23DF005547CA /* PlayerViewModel.swift */,
+				DEEBC0CD26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift */,
+				DEEBC0CE26FA1B3C00A21AC4 /* RecoverPasswordView.xib */,
+				DEEBC0D326FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift */,
 			);
-			path = ViewModel;
+			path = RecoverPassword;
+			sourceTree = "<group>";
+		};
+		DEFFA32B270210EE00A70B2E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DEFFA32C2702112000A70B2E /* ProfileViewController.swift */,
+				DEFFA32D2702112000A70B2E /* ProfileView.xib */,
+				DEFFA337270220ED00A70B2E /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DEFFA3302702136200A70B2E /* Reauthenticate */ = {
+			isa = PBXGroup;
+			children = (
+				DEFFA3312702138300A70B2E /* ReauthenticateViewController.swift */,
+				DEFFA3322702138300A70B2E /* ReauthenticateView.xib */,
+				DEFFA335270216EC00A70B2E /* ReauthenticateViewModel.swift */,
+			);
+			path = Reauthenticate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,45 +735,24 @@
 			productReference = DE46213826D6D2F5001E6685 /* EasyBank.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DE46214D26D6D2FB001E6685 /* EasyBankTests */ = {
+		DE875DF82704AC9900318261 /* EasyBankTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE46216526D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankTests" */;
+			buildConfigurationList = DE875DFF2704AC9900318261 /* Build configuration list for PBXNativeTarget "EasyBankTests" */;
 			buildPhases = (
-				9A10338762B2803719DE76F0 /* [CP] Check Pods Manifest.lock */,
-				DE46214A26D6D2FB001E6685 /* Sources */,
-				DE46214B26D6D2FB001E6685 /* Frameworks */,
-				DE46214C26D6D2FB001E6685 /* Resources */,
+				2DD3385FCD50B0437B99730E /* [CP] Check Pods Manifest.lock */,
+				DE875DF52704AC9900318261 /* Sources */,
+				DE875DF62704AC9900318261 /* Frameworks */,
+				DE875DF72704AC9900318261 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DE46215026D6D2FB001E6685 /* PBXTargetDependency */,
+				DE875DFE2704AC9900318261 /* PBXTargetDependency */,
 			);
 			name = EasyBankTests;
 			productName = EasyBankTests;
-			productReference = DE46214E26D6D2FB001E6685 /* EasyBankTests.xctest */;
+			productReference = DE875DF92704AC9900318261 /* EasyBankTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DE46215826D6D2FB001E6685 /* EasyBankUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE46216826D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankUITests" */;
-			buildPhases = (
-				D51DC6C907864E538E92565E /* [CP] Check Pods Manifest.lock */,
-				DE46215526D6D2FB001E6685 /* Sources */,
-				DE46215626D6D2FB001E6685 /* Frameworks */,
-				DE46215726D6D2FB001E6685 /* Resources */,
-				C29EFBF57485167D3E690A40 /* [CP] Embed Pods Frameworks */,
-				D8C9CD0C8A6A9D36448CDE25 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE46215B26D6D2FB001E6685 /* PBXTargetDependency */,
-			);
-			name = EasyBankUITests;
-			productName = EasyBankUITests;
-			productReference = DE46215926D6D2FB001E6685 /* EasyBankUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -416,18 +760,15 @@
 		DE46213026D6D2F5001E6685 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					DE46213726D6D2F5001E6685 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
-					DE46214D26D6D2FB001E6685 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = DE46213726D6D2F5001E6685;
-					};
-					DE46215826D6D2FB001E6685 = {
-						CreatedOnToolsVersion = 12.5.1;
+					DE875DF82704AC9900318261 = {
+						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 						TestTargetID = DE46213726D6D2F5001E6685;
 					};
 				};
@@ -446,8 +787,7 @@
 			projectRoot = "";
 			targets = (
 				DE46213726D6D2F5001E6685 /* EasyBank */,
-				DE46214D26D6D2FB001E6685 /* EasyBankTests */,
-				DE46215826D6D2FB001E6685 /* EasyBankUITests */,
+				DE875DF82704AC9900318261 /* EasyBankTests */,
 			);
 		};
 /* End PBXProject section */
@@ -457,27 +797,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFFA3342702138300A70B2E /* ReauthenticateView.xib in Resources */,
 				DE46214826D6D2FB001E6685 /* LaunchScreen.storyboard in Resources */,
+				DEEBC0D026FA1B3C00A21AC4 /* RecoverPasswordView.xib in Resources */,
+				DE52A77B26E8FDE500EC3521 /* QRCodeView.xib in Resources */,
+				DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */,
 				DE46214526D6D2FB001E6685 /* Assets.xcassets in Resources */,
-				DEE8FB9726DC19DD005547CA /* PlayerViewController.xib in Resources */,
-				DE46218D26D6E22F001E6685 /* BankerView.xib in Resources */,
-				DE46214326D6D2F5001E6685 /* Main.storyboard in Resources */,
-				DE46217926D6D9F1001E6685 /* StartViewController.xib in Resources */,
+				DE4F07BB26F4D1F000CA595C /* ExtractView.xib in Resources */,
+				DE46218D26D6E22F001E6685 /* NewRoomView.xib in Resources */,
+				DEA3B38026F8BD6D003E09FC /* PasswordView.xib in Resources */,
+				DE46217926D6D9F1001E6685 /* StartView.xib in Resources */,
+				DE1BA3C726EA41E100416164 /* PayView.xib in Resources */,
+				DE4F07C526F4DB3600CA595C /* ExtractTableViewCell.xib in Resources */,
 				DE46218026D6DAD7001E6685 /* RoomViewController.xib in Resources */,
 				DE93484926D8034700680E63 /* GoogleService-Info.plist in Resources */,
-				DEE8FB9A26DC1CB7005547CA /* TextFieldWithErrorLabelView.xib in Resources */,
+				DE64A4E526FB756E004E95F7 /* AccountView.xib in Resources */,
+				DE3774A926F23B82005719E3 /* HomeMenuView.xib in Resources */,
+				DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */,
+				DE70738426F0CE6B00E34C44 /* CompleteTransactionView.xib in Resources */,
+				DE4C431926DFFBB50019410A /* ScannerView.xib in Resources */,
+				DEFFA32F2702112000A70B2E /* ProfileView.xib in Resources */,
 				DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE46214C26D6D2FB001E6685 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE46215726D6D2FB001E6685 /* Resources */ = {
+		DE875DF72704AC9900318261 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -504,6 +848,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2DD3385FCD50B0437B99730E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyBankTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8230BC8256EBAC047ED6DECF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,28 +886,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-EasyBank-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A10338762B2803719DE76F0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyBankTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -565,62 +909,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank/Pods-EasyBank-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C29EFBF57485167D3E690A40 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D51DC6C907864E538E92565E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyBank-EasyBankUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D8C9CD0C8A6A9D36448CDE25 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -628,70 +916,104 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFFA336270216EC00A70B2E /* ReauthenticateViewModel.swift in Sources */,
+				DE3774A426F22705005719E3 /* Formatter+Extension.swift in Sources */,
+				DEFFA338270220ED00A70B2E /* ProfileViewModel.swift in Sources */,
+				DE4C430E26DEC0520019410A /* QRCodeViewModel.swift in Sources */,
 				DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */,
 				DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */,
-				DE46214026D6D2F5001E6685 /* ViewController.swift in Sources */,
+				DE52A77D26E9049C00EC3521 /* Double+Extension.swift in Sources */,
+				DE4F07C926F503BA00CA595C /* ExtractViewModel.swift in Sources */,
+				DEC1162E270B5CB100E74380 /* User.swift in Sources */,
 				DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */,
+				DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */,
+				DE64A4E426FB756E004E95F7 /* AccountViewController.swift in Sources */,
+				DE4F07C426F4DB3600CA595C /* ExtractTableViewCell.swift in Sources */,
+				DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */,
+				DE52A77F26E90CC300EC3521 /* TransferMenu.swift in Sources */,
+				DEEBC0D226FA1C7400A21AC4 /* PasswordCoordinator.swift in Sources */,
+				DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */,
 				DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */,
 				DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */,
 				DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */,
-				DEE8FB9626DC19DD005547CA /* PlayerViewController.swift in Sources */,
+				DEFFA33A27035EAD00A70B2E /* Reauthenticate.swift in Sources */,
+				DEFFA32E2702112000A70B2E /* ProfileViewController.swift in Sources */,
+				DE70738326F0CE6B00E34C44 /* CompleteTransactionViewController.swift in Sources */,
+				DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */,
 				DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */,
-				DE46218C26D6E22F001E6685 /* BankerViewController.swift in Sources */,
+				DE46218C26D6E22F001E6685 /* NewRoomViewController.swift in Sources */,
+				DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */,
+				DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */,
+				DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */,
+				DEFFA32A2702015B00A70B2E /* QRCodeHelper.swift in Sources */,
 				DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */,
+				DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */,
+				DE1BA3C626EA41E100416164 /* PayViewController.swift in Sources */,
+				DE52A78126E933C200EC3521 /* PayCoordinator.swift in Sources */,
 				DE46218926D6DC25001E6685 /* ApplicationCoordinator.swift in Sources */,
-				DEE8FB9E26DC23DF005547CA /* PlayerViewModel.swift in Sources */,
-				DE93484B26D8041900680E63 /* BankerViewModel.swift in Sources */,
+				DE64A4E726FB7614004E95F7 /* AccountCoordinator.swift in Sources */,
+				DEEBC0CF26FA1B3C00A21AC4 /* RecoverPasswordViewController.swift in Sources */,
+				DE4C431B26E007C00019410A /* ScannerViewModel.swift in Sources */,
+				DEA3B38426F8D044003E09FC /* PasswordViewModel.swift in Sources */,
+				DE93484B26D8041900680E63 /* NewRoomViewModel.swift in Sources */,
 				DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */,
+				DE4F07BA26F4D1F000CA595C /* ExtractViewController.swift in Sources */,
 				DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */,
+				DE3774AB26F23E22005719E3 /* HomeMenuViewModel.swift in Sources */,
+				DEEBC0D426FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift in Sources */,
 				DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */,
+				DEFFA3332702138300A70B2E /* ReauthenticateViewController.swift in Sources */,
+				DEF0DB1F26F80CFF00498CD2 /* ShowBalance.swift in Sources */,
 				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,
+				DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */,
+				DE52A77A26E8FDE500EC3521 /* QRCodeViewController.swift in Sources */,
+				DE44BB4E26E297300083B354 /* BaseViewModel.swift in Sources */,
 				DE93485026D8075200680E63 /* Account.swift in Sources */,
-				DE93485526D82BB500680E63 /* AuthService.swift in Sources */,
-				DEE8FB9C26DC1EAC005547CA /* TextFieldWithErrorLabel.swift in Sources */,
+				DEA3B37F26F8BD6D003E09FC /* PasswordViewController.swift in Sources */,
+				DE52A77726E8FC3E00EC3521 /* ReceiveCoordinator.swift in Sources */,
+				DE2EA69126FBB5D600C22D7C /* AccountViewModel.swift in Sources */,
+				DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */,
+				DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */,
+				DE93485526D82BB500680E63 /* AuthenticationService.swift in Sources */,
+				DE44BB5026E2B2750083B354 /* String+Extension.swift in Sources */,
+				DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE46214A26D6D2FB001E6685 /* Sources */ = {
+		DE875DF52704AC9900318261 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE46215326D6D2FB001E6685 /* EasyBankTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE46215526D6D2FB001E6685 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE46215E26D6D2FB001E6685 /* EasyBankUITests.swift in Sources */,
+				DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */,
+				DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */,
+				DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */,
+				DE55B4E227074FD400A77DED /* NewRoomViewModelSpy.swift in Sources */,
+				DE875E062704ACF900318261 /* StartViewControllerTests.swift in Sources */,
+				DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */,
+				DE55B4E827078A3A00A77DED /* DatabaseServiceSpy.swift in Sources */,
+				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
+				DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */,
+				DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */,
+				DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */,
+				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
+				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
+				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
+				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
+				DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DE46215026D6D2FB001E6685 /* PBXTargetDependency */ = {
+		DE875DFE2704AC9900318261 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DE46213726D6D2F5001E6685 /* EasyBank */;
-			targetProxy = DE46214F26D6D2FB001E6685 /* PBXContainerItemProxy */;
-		};
-		DE46215B26D6D2FB001E6685 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE46213726D6D2F5001E6685 /* EasyBank */;
-			targetProxy = DE46215A26D6D2FB001E6685 /* PBXContainerItemProxy */;
+			targetProxy = DE875DFD2704AC9900318261 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DE46214126D6D2F5001E6685 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE46214226D6D2F5001E6685 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -754,7 +1076,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -809,7 +1131,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -826,11 +1148,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C9FXM5UU24;
 				INFOPLIST_FILE = EasyBank/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -845,11 +1170,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C9FXM5UU24;
 				INFOPLIST_FILE = EasyBank/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -857,87 +1185,56 @@
 			};
 			name = Release;
 		};
-		DE46216626D6D2FB001E6685 /* Debug */ = {
+		DE875E002704AC9900318261 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BEF78D447E5816E63DE57D1C /* Pods-EasyBankTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EasyBankTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C9FXM5UU24;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyBank.app/EasyBank";
 			};
 			name = Debug;
 		};
-		DE46216726D6D2FB001E6685 /* Release */ = {
+		DE875E012704AC9900318261 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EasyBankTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C9FXM5UU24;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyBank.app/EasyBank";
-			};
-			name = Release;
-		};
-		DE46216926D6D2FB001E6685 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EasyBankUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EasyBank;
-			};
-			name = Debug;
-		};
-		DE46216A26D6D2FB001E6685 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C55EF69C2D2F836C52CE1A8B /* Pods-EasyBank-EasyBankUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = EasyBankUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.glrmeslp.EasyBankUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EasyBank;
 			};
 			name = Release;
 		};
@@ -962,20 +1259,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE46216526D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankTests" */ = {
+		DE875DFF2704AC9900318261 /* Build configuration list for PBXNativeTarget "EasyBankTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE46216626D6D2FB001E6685 /* Debug */,
-				DE46216726D6D2FB001E6685 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE46216826D6D2FB001E6685 /* Build configuration list for PBXNativeTarget "EasyBankUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE46216926D6D2FB001E6685 /* Debug */,
-				DE46216A26D6D2FB001E6685 /* Release */,
+				DE875E002704AC9900318261 /* Debug */,
+				DE875E012704AC9900318261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
