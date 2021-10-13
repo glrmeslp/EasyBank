@@ -59,7 +59,7 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         let authService = AuthenticationService(auth: auth)
         let extractViewModel = ExtractViewModel(databaseService: databaseService, authService: authService, roomName: roomName)
         let extractViewController = ExtractViewController(viewModel: extractViewModel)
-        navigationController.pushViewController(extractViewController, animated: true)
+        
     }
     
     func presentHomeMenuViewController() {
@@ -77,24 +77,20 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         let payCoordinator = PayCoordinator(navigationController: navigationController, firestore: firestore, roomName: roomName, auth: auth)
         payCoordinator.parentCoordinator = self
         childCoordinators.append(payCoordinator)
-        payCoordinator.start()
     }
     
     func pushToReceiveViewController() {
         let receiveCoordinator = ReceiveCoordinator(navigationController: navigationController, roomName: roomName, auth: auth, firestore: firestore)
-        receiveCoordinator.start()
     }
 }
 
 extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
     func pushToAccountViewController() {
         let accountCoordinator = AccountCoordinator(navigationController: navigationController, roomName: roomName, auth: auth, firestore: firestore)
-        accountCoordinator.start()
     }
     
     func pushToPasswordViewController() {
         let passwordCoordinator = PasswordCoordinator(navigationController: navigationController, auth: auth)
-        passwordCoordinator.start()
     }
     
     func pushToStartViewController() {
