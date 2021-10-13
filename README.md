@@ -56,7 +56,7 @@ We will need to connect our project with the [Firebase Console](https://console.
 
 ## License
 
-This projext is licensed under the MIT License - see the [LICENSE] file for details
+This project is licensed under the MIT License - see the [LICENSE] file for details
 
 
 
