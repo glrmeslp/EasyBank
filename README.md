@@ -52,7 +52,7 @@ We will need to connect our project with the [Firebase Console](https://console.
 ## Dependencies
 
 - [Firebase Firestore](https://firebase.google.com/docs/firestore)
-- [FirebaseuUI with Email](https://firebase.google.com/docs/auth/ios/firebaseui)
+- [FirebaseUI with Email](https://firebase.google.com/docs/auth/ios/firebaseui)
 
 ## License
 
