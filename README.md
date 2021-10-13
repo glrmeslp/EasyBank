@@ -48,6 +48,10 @@ We will need to connect our project with the [Firebase Console](https://console.
 4. Drag the downloaded GoogleService-Info.plist into the opened project app. In Xcode, you can also add this file to the project by going to File-> Add Files to 'EasyBank' and selecting the downloaded .plist file. Be sure to add the .plist file to the app's main target.
 5. At this point, you can build and run the EasyBank!
 
+### Console
+
+In the Firebase console for your project, you'll need to enable the following auth providers:
+- Email/Password
 
 ## Dependencies
 
