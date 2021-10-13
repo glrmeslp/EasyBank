@@ -11,11 +11,14 @@
   
 ## Project description
 
-Description
+EasyBank is a money manager for board games. This app keeps track of accounts in a room so you can enjoy the game without worrying about counting money anymore. 
+Each room represents a game that can have multiple accounts.
 
 ## What the app is able to do
 
-List
+- Authentication with email
+- Room creation: A new account is created.
+- Room join: If you already have an account in this room. A new account will not be created.
 
 ## Getting Started 
 
@@ -40,18 +43,26 @@ We will need to connect our project with the [Firebase Console](https://console.
 ### Here's a summary of the steps!
 
 1. Visit the [Firebase Console](https://console.firebase.google.com/) and create a new app.
-2. Add an iOS app to the project. Make sure the Bundle Identifier - com.glrmeslp.EasyBank you set for this iOS App matches that of the one in this project.
+2. Add an iOS app to the project. Make sure the Bundle Identifier you set for this iOS App matches that of the one in this project.
 3. Download the GoogleService-Info.plist when prompted.
 4. Drag the downloaded GoogleService-Info.plist into the opened project app. In Xcode, you can also add this file to the project by going to File-> Add Files to 'EasyBank' and selecting the downloaded .plist file. Be sure to add the .plist file to the app's main target.
 5. At this point, you can build and run the EasyBank!
 
+### Console
+
+In the Firebase console for your project, you'll need to enable the following auth providers:
+- Email/Password
+
+Visit [Firebase Authentication](https://firebase.google.com/docs/auth) for more details
 
 ## Dependencies
 
-List
+- [Firebase Firestore](https://firebase.google.com/docs/firestore)
+- [FirebaseUI with Email](https://firebase.google.com/docs/auth/ios/firebaseui)
 
 ## License
 
-See 
+This project is licensed under the MIT License - see the [LICENSE] file for details
+
 
 
