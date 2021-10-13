@@ -1,7 +1,7 @@
 import UIKit
 
 protocol HomeCollectionViewCellDelegate {
-    func configure(with data: HomeCollectionViewCell.ViewModel, and view: UICollectionViewCell)
+    func configure(with data: HomeCollectionViewCell.ViewModel)
 }
 
 final class HomeCollectionViewCell: UICollectionViewCell {
@@ -16,7 +16,7 @@ final class HomeCollectionViewCell: UICollectionViewCell {
 }
 
 extension HomeCollectionViewCell: HomeCollectionViewCellDelegate {
-    func configure(with data: ViewModel, and view: UICollectionViewCell) {
+    func configure(with data: ViewModel) {
         titleLabel.text = data.title
         var image: UIImage?
         if data.image == "qrcode" {
@@ -25,8 +25,8 @@ extension HomeCollectionViewCell: HomeCollectionViewCellDelegate {
             image = UIImage(named: data.image)
         }
         imageView.image = image?.withTintColor(UIColor(named: "BlueColor")!)
-        view.layer.cornerRadius = 20
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor(named: "BlueColor")?.cgColor
+        self.layer.cornerRadius = 20
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(named: "BlueColor")?.cgColor
     }
 }

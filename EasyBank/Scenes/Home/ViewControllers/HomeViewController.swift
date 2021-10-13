@@ -60,7 +60,7 @@ final class HomeViewController: UIViewController {
     @IBAction private func didTapExtractButton(_ sender: Any) {
         viewModel?.showExtractViewController()
     }
-    
+
     private func setup() {
         title = "Easy Bank"
 
@@ -124,14 +124,14 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         transferMenu?.count ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionCell", for: indexPath) as? HomeCollectionViewCell,
               let title = transferMenu?[indexPath.row].first,
               let image = transferMenu?[indexPath.row].last else {
             return UICollectionViewCell()
         }
-        cell.configure(with: .init(title: title, image: image), and: cell)
+        cell.configure(with: .init(title: title, image: image))
         return cell
     }
 }
