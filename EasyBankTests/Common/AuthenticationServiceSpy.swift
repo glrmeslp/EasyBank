@@ -17,10 +17,6 @@ final class AuthenticationServiceSpy: AuthService {
         removeStateDidChangeListenerCalled = true
     }
     
-    func getAuthViewController(completion: @escaping (UIViewController) -> Void) {
-        
-    }
-    
     func getUser(completion: @escaping (User) -> Void) {
         guard let user = user else { return }
         completion(user)

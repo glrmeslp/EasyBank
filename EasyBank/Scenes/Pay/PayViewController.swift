@@ -41,15 +41,15 @@ final class PayViewController: UIViewController {
 
     @IBAction func didTapShowBalanceButton(_ sender: Any) {
         guard let value = balanceLabel.text else { return }
-        switch ShowBalance(rawValue: value) {
-        case .disabled:
+        switch Balance(rawValue: value) {
+        case .hidden:
             showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
             viewModel?.getBalance { [weak self] value in
                 self?.balanceLabel.text = value
             }
         case .none:
             showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-            balanceLabel.text = ShowBalance.disabled.rawValue
+            balanceLabel.text = Balance.hidden.rawValue
         }
     }
 

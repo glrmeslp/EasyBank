@@ -7,7 +7,7 @@ class UserViewModel {
         getUser()
     }
 
-    private func getUser() {
+    func getUser() {
         authService.getUser { [weak self] user in
             self?.user = user
         }

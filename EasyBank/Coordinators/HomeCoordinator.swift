@@ -27,7 +27,7 @@ final class HomeCoordinator: Coordinator {
     private var homeViewModel: HomeViewModel {
         let databaseService = DatabaseService(firestore: firestore)
         let authService = AuthenticationService(auth: auth)
-        let viewModel = HomeViewModel(with: roomName, databaseService: databaseService, authService: authService, coordinator: self)
+        let viewModel = HomeViewModel(with: roomName, roomService: databaseService, authService: authService, coordinator: self)
         return viewModel
     }
 
