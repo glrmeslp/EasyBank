@@ -66,7 +66,6 @@
 		DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E3270750F700A77DED /* NewRoomViewControllerMirror.swift */; };
 		DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E52707862F00A77DED /* NewRoomViewModelTests.swift */; };
 		DE55B4E827078A3A00A77DED /* DatabaseServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */; };
-		DE5EEDF82714832100145453 /* HomeCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5EEDF72714832100145453 /* HomeCollectionViewCellTests.swift */; };
 		DE5EEDFA2714844200145453 /* HomeCollectionViewCellMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5EEDF92714844200145453 /* HomeCollectionViewCellMirror.swift */; };
 		DE64A4E426FB756E004E95F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64A4E226FB756E004E95F7 /* AccountViewController.swift */; };
 		DE64A4E526FB756E004E95F7 /* AccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE64A4E326FB756E004E95F7 /* AccountView.xib */; };
@@ -74,6 +73,8 @@
 		DE70738326F0CE6B00E34C44 /* CompleteTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */; };
 		DE70738426F0CE6B00E34C44 /* CompleteTransactionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */; };
 		DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */; };
+		DE725B4227173894006892A4 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE725B4127173894006892A4 /* HomeViewModelTests.swift */; };
+		DE725B4427173952006892A4 /* HomeCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE725B4327173952006892A4 /* HomeCoordinatorSpy.swift */; };
 		DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */; };
 		DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75DD8D26D9698B00240B70 /* HomeViewController.swift */; };
 		DE75DD9026D9698B00240B70 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE75DD8E26D9698B00240B70 /* HomeViewController.xib */; };
@@ -192,7 +193,6 @@
 		DE55B4E3270750F700A77DED /* NewRoomViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE55B4E52707862F00A77DED /* NewRoomViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewModelTests.swift; sourceTree = "<group>"; };
 		DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceSpy.swift; sourceTree = "<group>"; };
-		DE5EEDF72714832100145453 /* HomeCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		DE5EEDF92714844200145453 /* HomeCollectionViewCellMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellMirror.swift; sourceTree = "<group>"; };
 		DE64A4E226FB756E004E95F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		DE64A4E326FB756E004E95F7 /* AccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountView.xib; sourceTree = "<group>"; };
@@ -200,6 +200,8 @@
 		DE70738126F0CE6B00E34C44 /* CompleteTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewController.swift; sourceTree = "<group>"; };
 		DE70738226F0CE6B00E34C44 /* CompleteTransactionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTransactionView.xib; sourceTree = "<group>"; };
 		DE70738526F0DC3C00E34C44 /* CompleteTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewModel.swift; sourceTree = "<group>"; };
+		DE725B4127173894006892A4 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		DE725B4327173952006892A4 /* HomeCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorSpy.swift; sourceTree = "<group>"; };
 		DE75DD8A26D9689500240B70 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DE75DD8D26D9698B00240B70 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE75DD8E26D9698B00240B70 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 			children = (
 				DE49A0E0271085D200124DA1 /* Doubles */,
 				DE49A0DF271085AB00124DA1 /* ViewControllers */,
+				DE725B4127173894006892A4 /* HomeViewModelTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -453,7 +456,6 @@
 			isa = PBXGroup;
 			children = (
 				DE49A0E1271085FA00124DA1 /* HomeViewControllerTests.swift */,
-				DE5EEDF72714832100145453 /* HomeCollectionViewCellTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -664,6 +666,7 @@
 				DE875E0D2704C1B800318261 /* StartCoordinatorSpy.swift */,
 				DE875E0B2704C0D500318261 /* AuthenticationServiceSpy.swift */,
 				DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */,
+				DE725B4327173952006892A4 /* HomeCoordinatorSpy.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1032,8 +1035,8 @@
 				DE875E062704ACF900318261 /* StartViewControllerTests.swift in Sources */,
 				DE49A0E42710862C00124DA1 /* HomeViewModelSpy.swift in Sources */,
 				DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */,
-				DE5EEDF82714832100145453 /* HomeCollectionViewCellTests.swift in Sources */,
 				DE55B4E827078A3A00A77DED /* DatabaseServiceSpy.swift in Sources */,
+				DE725B4227173894006892A4 /* HomeViewModelTests.swift in Sources */,
 				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
 				DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */,
 				DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */,
@@ -1041,6 +1044,7 @@
 				DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */,
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
+				DE725B4427173952006892A4 /* HomeCoordinatorSpy.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
 				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
 				DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */,

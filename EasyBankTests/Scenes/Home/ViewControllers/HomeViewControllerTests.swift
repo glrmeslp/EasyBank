@@ -35,6 +35,22 @@ final class HomeViewControllerTests: XCTestCase {
         XCTAssertTrue(homeViewModelSpy.showPayViewControllerCalled)
     }
 
+    func test_cellForItemAt_givenIndexPathZero_shouldReturnHomeCollectionViewCell() {
+        homeViewModelSpy.roomName = "Room"
+        sut.loadViewIfNeeded()
+        sut.viewDidLoad()
+        let sutMirrored = HomeViewControllerMirror(viewController: sut)
+        guard let collectionView = sutMirrored.menuTransferCollection else {
+            XCTFail("Menu Transfer Collection is nil")
+            return
+        }
+        let result = sut.collectionView(collectionView, cellForItemAt: IndexPath(row: 0, section: 0))
+        let homeCollectionviewCell = HomeCollectionViewCellMirror(collectionViewCell: result)
+        XCTAssertEqual("Pay QR Code", homeCollectionviewCell.titleLabel?.text)
+        XCTAssertEqual(20, result.layer.cornerRadius)
+        XCTAssertEqual(1, result.layer.borderWidth)
+    }
+
     func test_didSelectItemAt_givenIndexPathOne_shouldCallShowReceiveViewController() {
         homeViewModelSpy.roomName = "RoomTest"
         sut.loadViewIfNeeded()
