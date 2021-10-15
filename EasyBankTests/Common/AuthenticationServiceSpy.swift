@@ -3,6 +3,7 @@ import UIKit
 
 final class AuthenticationServiceSpy: AuthService {
     private(set) var removeStateDidChangeListenerCalled = false
+    private(set) var signOutCalled = false
     var user: User?
     
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void) {
@@ -23,7 +24,7 @@ final class AuthenticationServiceSpy: AuthService {
     }
     
     func signOut() {
-        
+        signOutCalled = true
     }
     
     func reauthenticate(with password: String, completion: @escaping (String?) -> Void) {
