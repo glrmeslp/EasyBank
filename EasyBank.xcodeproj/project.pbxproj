@@ -18,6 +18,9 @@
 		DE1BA3C726EA41E100416164 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1BA3C526EA41E100416164 /* PayView.xib */; };
 		DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */; };
 		DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3CA26EAA44B00416164 /* Transfer.swift */; };
+		DE21EACF2719B04D00688DE3 /* HomeMenuViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EACE2719B04D00688DE3 /* HomeMenuViewModelSpy.swift */; };
+		DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EAD02719B50900688DE3 /* HomeMenuViewControllerMirror.swift */; };
+		DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EAD22719B8FF00688DE3 /* HomeMenuViewModelTests.swift */; };
 		DE2EA69126FBB5D600C22D7C /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */; };
 		DE3774A426F22705005719E3 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774A326F22705005719E3 /* Formatter+Extension.swift */; };
 		DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774A626F23B82005719E3 /* HomeMenuViewController.swift */; };
@@ -66,6 +69,7 @@
 		DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E3270750F700A77DED /* NewRoomViewControllerMirror.swift */; };
 		DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E52707862F00A77DED /* NewRoomViewModelTests.swift */; };
 		DE55B4E827078A3A00A77DED /* DatabaseServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */; };
+		DE5D36E82718884F0049A326 /* HomeMenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5D36E72718884F0049A326 /* HomeMenuViewControllerTests.swift */; };
 		DE5EEDFA2714844200145453 /* HomeCollectionViewCellMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5EEDF92714844200145453 /* HomeCollectionViewCellMirror.swift */; };
 		DE64A4E426FB756E004E95F7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64A4E226FB756E004E95F7 /* AccountViewController.swift */; };
 		DE64A4E526FB756E004E95F7 /* AccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE64A4E326FB756E004E95F7 /* AccountView.xib */; };
@@ -143,6 +147,9 @@
 		DE1BA3C526EA41E100416164 /* PayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayView.xib; sourceTree = "<group>"; };
 		DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewModel.swift; sourceTree = "<group>"; };
 		DE1BA3CA26EAA44B00416164 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		DE21EACE2719B04D00688DE3 /* HomeMenuViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModelSpy.swift; sourceTree = "<group>"; };
+		DE21EAD02719B50900688DE3 /* HomeMenuViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE21EAD22719B8FF00688DE3 /* HomeMenuViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModelTests.swift; sourceTree = "<group>"; };
 		DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		DE3774A326F22705005719E3 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
 		DE3774A626F23B82005719E3 /* HomeMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +200,7 @@
 		DE55B4E3270750F700A77DED /* NewRoomViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE55B4E52707862F00A77DED /* NewRoomViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewModelTests.swift; sourceTree = "<group>"; };
 		DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceSpy.swift; sourceTree = "<group>"; };
+		DE5D36E72718884F0049A326 /* HomeMenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewControllerTests.swift; sourceTree = "<group>"; };
 		DE5EEDF92714844200145453 /* HomeCollectionViewCellMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellMirror.swift; sourceTree = "<group>"; };
 		DE64A4E226FB756E004E95F7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		DE64A4E326FB756E004E95F7 /* AccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountView.xib; sourceTree = "<group>"; };
@@ -571,6 +579,25 @@
 			path = Doubles;
 			sourceTree = "<group>";
 		};
+		DE5D36E52718880B0049A326 /* HomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DE5D36E6271888180049A326 /* Doubles */,
+				DE5D36E72718884F0049A326 /* HomeMenuViewControllerTests.swift */,
+				DE21EAD22719B8FF00688DE3 /* HomeMenuViewModelTests.swift */,
+			);
+			path = HomeMenu;
+			sourceTree = "<group>";
+		};
+		DE5D36E6271888180049A326 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE21EACE2719B04D00688DE3 /* HomeMenuViewModelSpy.swift */,
+				DE21EAD02719B50900688DE3 /* HomeMenuViewControllerMirror.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
 		DE60801E26FE0B0800813C5B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +660,7 @@
 		DE875E022704ACC700318261 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DE5D36E52718880B0049A326 /* HomeMenu */,
 				DE49A0DD2710859900124DA1 /* Home */,
 				DE55B4DD270747E300A77DED /* NewRoom */,
 				DE11314E270F229D00A80E96 /* Room */,
@@ -1037,7 +1065,10 @@
 				DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */,
 				DE55B4E827078A3A00A77DED /* DatabaseServiceSpy.swift in Sources */,
 				DE725B4227173894006892A4 /* HomeViewModelTests.swift in Sources */,
+				DE21EACF2719B04D00688DE3 /* HomeMenuViewModelSpy.swift in Sources */,
+				DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */,
 				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
+				DE5D36E82718884F0049A326 /* HomeMenuViewControllerTests.swift in Sources */,
 				DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */,
 				DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */,
 				DE5EEDFA2714844200145453 /* HomeCollectionViewCellMirror.swift in Sources */,
@@ -1045,6 +1076,7 @@
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
 				DE725B4427173952006892A4 /* HomeCoordinatorSpy.swift in Sources */,
+				DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
 				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
 				DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */,

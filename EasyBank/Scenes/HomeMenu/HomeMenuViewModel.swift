@@ -1,4 +1,11 @@
-final class HomeMenuViewModel {
+protocol HomeMenuViewModelProtocol {
+    func updatePassword()
+    func leaveRoom()
+    func showAccount()
+    func signOut()
+}
+
+final class HomeMenuViewModel: HomeMenuViewModelProtocol {
     private let authService: AuthService
     private weak var coordinatorDelegate: HomeMenuViewModelCoordinatorDelegate?
 
