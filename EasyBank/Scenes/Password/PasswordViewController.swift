@@ -2,19 +2,18 @@ import UIKit
 
 final class PasswordViewController: UIViewController {
 
-    private var viewModel: PasswordViewModel?
+    private var viewModel: PasswordViewModelProtocol?
 
     @IBOutlet private weak var progressView: UIProgressView!
     @IBOutlet private weak var stepLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var continueButton: UIButton!
-    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var forgotPasswordButton: UIButton!
     @IBOutlet private weak var passwordTextField: UITextField! {
         didSet { passwordTextField.delegate = self }
     }
 
-    init(viewModel: PasswordViewModel){
+    init(viewModel: PasswordViewModelProtocol){
         self.viewModel = viewModel
         super.init(nibName: "PasswordView", bundle: nil)
     }
@@ -33,27 +32,11 @@ final class PasswordViewController: UIViewController {
         enableActivityIndicatorView()
         switch PasswordEnum(rawValue: placeholder) {
         case .currentPassword:
-            viewModel?.reauthenticate(with: password) { [weak self] error in
-                self?.disableActivityIndicatorView()
-                guard let error = error else {
-                    self?.setupNewPassword()
-                    return
-                }
-                self?.presentAlert(with: error)
-            }
+            reauthenticate(with: password)
         case .newPassword:
-            viewModel?.newPassword(password)
-            disableActivityIndicatorView()
-            setupConfirmPassword()
+            newPassword(with: password)
         case .confirmPassword:
-            viewModel?.validateNewPassword(password) {  [weak self] message, success in
-                self?.disableActivityIndicatorView()
-                if success {
-                    self?.presentAlert(with: message) { _ in self?.viewModel?.didFinish()}
-                } else {
-                    self?.presentAlert(with: message) { _ in self?.setupNewPassword()}
-                }
-            }
+            validateNewPassword(with: password)
         case .none:
             break
         }
@@ -65,50 +48,75 @@ final class PasswordViewController: UIViewController {
     }
 
     private func setup() {
-        continueButton.layer.cornerRadius = 25
-        continueButton.setTitleColor(UIColor.gray, for: .disabled)
         disableContinueButton()
-        progressView.progress = 1/3
-        activityIndicatorView.isHidden = true
+        addGestureRecognizerForEndEditing()
+        progressView.setProgress(1/3, animated: true)
     }
 
     private func disableContinueButton() {
         continueButton.isEnabled = false
-        continueButton.layer.backgroundColor = UIColor.systemGray6.cgColor
+        continueButton.configuration?.baseBackgroundColor = UIColor.systemGray6
+        continueButton.configuration?.baseForegroundColor = UIColor.gray
     }
 
     private func enableContinueButton() {
         continueButton.isEnabled = true
-        continueButton.layer.backgroundColor = UIColor(named: "BlueColor")!.cgColor
+        continueButton.configuration?.baseBackgroundColor = UIColor(named: "BlueColor")
+        continueButton.configuration?.baseForegroundColor = UIColor.systemBackground
     }
 
     private func enableActivityIndicatorView() {
-        continueButton.setTitle("", for: .normal)
-        activityIndicatorView.isHidden = false
-        activityIndicatorView.startAnimating()
+        continueButton.configuration?.title = ""
+        continueButton.configuration?.showsActivityIndicator = true
     }
     
     private func disableActivityIndicatorView() {
-        activityIndicatorView.stopAnimating()
-        activityIndicatorView.isHidden = true
-        continueButton.setTitle("Continue", for: .normal)
+        continueButton.configuration?.showsActivityIndicator = false
+        continueButton.configuration?.title = "Continue"
     }
 
     private func setupNewPassword() {
-        forgotPasswordButton.isHidden = true
         passwordTextField.placeholder = PasswordEnum.newPassword.rawValue
         titleLabel.text = "Enter new password"
-        progressView.progress = 2/3
+        progressView.setProgress(2/3, animated: true)
         stepLabel.text = "Step 2/3"
     }
 
     private func setupConfirmPassword() {
         passwordTextField.placeholder = PasswordEnum.confirmPassword.rawValue
         titleLabel.text = "Confirm new password"
-        progressView.progress = 1
+        progressView.setProgress(1, animated: true)
         stepLabel.text = "Step 3/3"
     }
 
+    private func reauthenticate(with password: String) {
+        viewModel?.reauthenticate(with: password) { [weak self] error in
+            self?.disableActivityIndicatorView()
+            guard let error = error else {
+                self?.setupNewPassword()
+                self?.forgotPasswordButton.isHidden = true
+                return
+            }
+            self?.presentAlert(with: error)
+        }
+    }
+
+    private func newPassword(with newPassword: String) {
+        viewModel?.newPassword(newPassword)
+        disableActivityIndicatorView()
+        setupConfirmPassword()
+    }
+
+    private func validateNewPassword(with newPassword: String) {
+        viewModel?.validateNewPassword(newPassword) { [weak self] message, success in
+            self?.disableActivityIndicatorView()
+            if success {
+                self?.presentAlert(with: message) { _ in self?.viewModel?.didFinish()}
+            } else {
+                self?.presentAlert(with: message) { _ in self?.setupNewPassword()}
+            }
+        }
+    }
 }
 
 extension PasswordViewController: UITextFieldDelegate {
@@ -117,13 +125,6 @@ extension PasswordViewController: UITextFieldDelegate {
             didTapContinueButton(self)
         }
         return true
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let value = textField.text else { return }
-        if value.isEmpty {
-            disableContinueButton()
-        }
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {

@@ -1,4 +1,12 @@
-final class PasswordViewModel {
+protocol PasswordViewModelProtocol {
+    func reauthenticate(with password: String, completion: @escaping (String?) -> Void)
+    func newPassword(_ password: String)
+    func validateNewPassword(_ password: String, completion: @escaping (String, Bool) -> Void)
+    func didFinish()
+    func showRecoverPasswordViewController()
+}
+
+final class PasswordViewModel: PasswordViewModelProtocol {
 
     private var newPassword: String?
     private let authService: AuthService
@@ -11,10 +19,6 @@ final class PasswordViewModel {
 
     func reauthenticate(with password: String, completion: @escaping (String?) -> Void) {
         authService.reauthenticate(with: password) { error in
-            guard let error = error else {
-                completion(nil)
-                return
-            }
             completion(error)
         }
     }
@@ -37,7 +41,7 @@ final class PasswordViewModel {
         }
     }
 
-    func didFinish(){
+    func didFinish() {
         coordinatorDelegate.popToHomeViewController()
     }
 
