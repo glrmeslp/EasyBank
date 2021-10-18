@@ -4,6 +4,9 @@ import UIKit
 final class AuthenticationServiceSpy: AuthService {
     private(set) var removeStateDidChangeListenerCalled = false
     private(set) var signOutCalled = false
+    private(set) var reauthenticateCalled = false
+    var reauthenticateErrorToBeReturn: String?
+    var updatePasswordErrorToBeReturn: String?
     var user: User?
     
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void) {
@@ -28,11 +31,12 @@ final class AuthenticationServiceSpy: AuthService {
     }
     
     func reauthenticate(with password: String, completion: @escaping (String?) -> Void) {
-        
+        reauthenticateCalled = true
+        completion(reauthenticateErrorToBeReturn)
     }
     
     func updatePassword(with password: String, completion: @escaping (String?) -> Void) {
-        
+        completion(updatePasswordErrorToBeReturn)
     }
     
     func sendPasswordReset(with email: String, completion: @escaping (String?) -> Void) {
