@@ -18,9 +18,12 @@
 		DE1BA3C726EA41E100416164 /* PayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1BA3C526EA41E100416164 /* PayView.xib */; };
 		DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */; };
 		DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3CA26EAA44B00416164 /* Transfer.swift */; };
+		DE1EF9C4271DA8B60064D832 /* PasswordViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1EF9C3271DA8B60064D832 /* PasswordViewControllerMirror.swift */; };
 		DE21EACF2719B04D00688DE3 /* HomeMenuViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EACE2719B04D00688DE3 /* HomeMenuViewModelSpy.swift */; };
 		DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EAD02719B50900688DE3 /* HomeMenuViewControllerMirror.swift */; };
 		DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EAD22719B8FF00688DE3 /* HomeMenuViewModelTests.swift */; };
+		DE21EAD62719D8A600688DE3 /* PasswordViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EAD52719D8A600688DE3 /* PasswordViewControllerTests.swift */; };
+		DE21EAD92719D90B00688DE3 /* PasswordViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EAD82719D90B00688DE3 /* PasswordViewModelSpy.swift */; };
 		DE2EA69126FBB5D600C22D7C /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */; };
 		DE3774A426F22705005719E3 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774A326F22705005719E3 /* Formatter+Extension.swift */; };
 		DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774A626F23B82005719E3 /* HomeMenuViewController.swift */; };
@@ -147,9 +150,12 @@
 		DE1BA3C526EA41E100416164 /* PayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayView.xib; sourceTree = "<group>"; };
 		DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewModel.swift; sourceTree = "<group>"; };
 		DE1BA3CA26EAA44B00416164 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		DE1EF9C3271DA8B60064D832 /* PasswordViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE21EACE2719B04D00688DE3 /* HomeMenuViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModelSpy.swift; sourceTree = "<group>"; };
 		DE21EAD02719B50900688DE3 /* HomeMenuViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE21EAD22719B8FF00688DE3 /* HomeMenuViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModelTests.swift; sourceTree = "<group>"; };
+		DE21EAD52719D8A600688DE3 /* PasswordViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewControllerTests.swift; sourceTree = "<group>"; };
+		DE21EAD82719D90B00688DE3 /* PasswordViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModelSpy.swift; sourceTree = "<group>"; };
 		DE2EA69026FBB5D600C22D7C /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		DE3774A326F22705005719E3 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
 		DE3774A626F23B82005719E3 /* HomeMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +328,24 @@
 				DE1BA3C826EA4C7C00416164 /* PayViewModel.swift */,
 			);
 			path = Pay;
+			sourceTree = "<group>";
+		};
+		DE21EAD42719D88600688DE3 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				DE21EAD72719D8B700688DE3 /* Doubles */,
+				DE21EAD52719D8A600688DE3 /* PasswordViewControllerTests.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		DE21EAD72719D8B700688DE3 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE21EAD82719D90B00688DE3 /* PasswordViewModelSpy.swift */,
+				DE1EF9C3271DA8B60064D832 /* PasswordViewControllerMirror.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DE3774A526F23B6A005719E3 /* HomeMenu */ = {
@@ -660,6 +684,7 @@
 		DE875E022704ACC700318261 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DE21EAD42719D88600688DE3 /* Password */,
 				DE5D36E52718880B0049A326 /* HomeMenu */,
 				DE49A0DD2710859900124DA1 /* Home */,
 				DE55B4DD270747E300A77DED /* NewRoom */,
@@ -1055,6 +1080,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE49A0E2271085FA00124DA1 /* HomeViewControllerTests.swift in Sources */,
+				DE1EF9C4271DA8B60064D832 /* PasswordViewControllerMirror.swift in Sources */,
+				DE21EAD62719D8A600688DE3 /* PasswordViewControllerTests.swift in Sources */,
 				DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */,
 				DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */,
 				DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */,
@@ -1077,6 +1104,7 @@
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
 				DE725B4427173952006892A4 /* HomeCoordinatorSpy.swift in Sources */,
 				DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */,
+				DE21EAD92719D90B00688DE3 /* PasswordViewModelSpy.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
 				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
 				DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */,
