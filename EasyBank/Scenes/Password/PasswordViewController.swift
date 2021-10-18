@@ -90,14 +90,12 @@ final class PasswordViewController: UIViewController {
     }
 
     private func reauthenticate(with password: String) {
-        viewModel?.reauthenticate(with: password) { [weak self] error in
+        viewModel?.reauthenticate(with: password) { [weak self] success in
             self?.disableActivityIndicatorView()
-            guard let error = error else {
+            if success {
                 self?.setupNewPassword()
                 self?.forgotPasswordButton.isHidden = true
-                return
             }
-            self?.presentAlert(with: error)
         }
     }
 
@@ -108,12 +106,10 @@ final class PasswordViewController: UIViewController {
     }
 
     private func validateNewPassword(with newPassword: String) {
-        viewModel?.validateNewPassword(newPassword) { [weak self] message, success in
+        viewModel?.validateNewPassword(newPassword) { [weak self] success in
             self?.disableActivityIndicatorView()
-            if success {
-                self?.presentAlert(with: message) { _ in self?.viewModel?.didFinish()}
-            } else {
-                self?.presentAlert(with: message) { _ in self?.setupNewPassword()}
+            if !success {
+                self?.setupNewPassword()
             }
         }
     }

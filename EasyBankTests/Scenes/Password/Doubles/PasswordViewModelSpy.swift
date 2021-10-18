@@ -1,33 +1,30 @@
 @testable import EasyBank
 
 final class PasswordViewModelSpy: PasswordViewModelProtocol {
+
+    
     private(set) var reauthenticateCalled = false
     private(set) var didFinishCalled = false
     private(set) var showRecoverPasswordViewControllerCalled = false
-    var newPassword: String?
-    var updatePasswordErrorToBeReturn: String?
-    var reauthenticateErrorToBeReturn: String?
-    
-    func reauthenticate(with password: String, completion: @escaping (String?) -> Void) {
+    private var newPassword: String?
+    var updatePasswordResultToBeReturn: Bool?
+    var reauthenticateResultToBeReturn: Bool?
+
+    func reauthenticate(with password: String, completion: @escaping (Bool) -> Void) {
         reauthenticateCalled = true
-        completion(reauthenticateErrorToBeReturn)
+        completion(reauthenticateResultToBeReturn ?? false)
+    }
+    
+    func validateNewPassword(_ password: String, completion: @escaping (Bool) -> Void) {
+        guard newPassword == password else {
+            completion(false)
+            return
+        }
+        completion(updatePasswordResultToBeReturn ?? false)
     }
     
     func newPassword(_ password: String) {
         newPassword = password
-    }
-    
-    func validateNewPassword(_ password: String, completion: @escaping (String, Bool) -> Void) {
-        guard newPassword == password else {
-            completion("Please enter a valid password", false)
-            return
-        }
-        guard let updatePasswordErrorToBeReturn = updatePasswordErrorToBeReturn else {
-            completion("Password updated successfully", true)
-            return
-        }
-        completion(updatePasswordErrorToBeReturn, false)
-
     }
     
     func didFinish() {
