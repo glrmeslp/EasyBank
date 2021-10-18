@@ -7,8 +7,6 @@ final class HomeCoordinatorSpy {
     private(set) var pushToStartViewControllerCalled = false
     private(set) var pushToPasswordViewControllerCalled = false
     private(set) var pushToAccountViewControllerCalled = false
-    private(set) var popToHomeViewControllerCalled = false
-    private(set) var pushToRecoverPasswordViewControllerCalled = false
 }
 
 extension HomeCoordinatorSpy: HomeViewModelCoordinatorDelegate {
@@ -40,15 +38,5 @@ extension HomeCoordinatorSpy: HomeMenuViewModelCoordinatorDelegate {
     
     func pushToAccountViewController() {
         pushToAccountViewControllerCalled = true
-    }
-}
-
-extension HomeCoordinatorSpy: PasswordViewModelCoordinatorDelegate {
-    func popToHomeViewController() {
-        popToHomeViewControllerCalled = true
-    }
-    
-    func pushToRecoverPasswordViewController() {
-        pushToRecoverPasswordViewControllerCalled = true
     }
 }

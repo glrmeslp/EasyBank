@@ -20,6 +20,7 @@
 		DE1BA3CB26EAA44B00416164 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1BA3CA26EAA44B00416164 /* Transfer.swift */; };
 		DE1EF9C4271DA8B60064D832 /* PasswordViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1EF9C3271DA8B60064D832 /* PasswordViewControllerMirror.swift */; };
 		DE1EF9C6271DB5640064D832 /* PasswordViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1EF9C5271DB5640064D832 /* PasswordViewModelTests.swift */; };
+		DE1EF9C8271DBE8F0064D832 /* PasswordCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1EF9C7271DBE8F0064D832 /* PasswordCoordinatorSpy.swift */; };
 		DE21EACF2719B04D00688DE3 /* HomeMenuViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EACE2719B04D00688DE3 /* HomeMenuViewModelSpy.swift */; };
 		DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EAD02719B50900688DE3 /* HomeMenuViewControllerMirror.swift */; };
 		DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21EAD22719B8FF00688DE3 /* HomeMenuViewModelTests.swift */; };
@@ -153,6 +154,7 @@
 		DE1BA3CA26EAA44B00416164 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
 		DE1EF9C3271DA8B60064D832 /* PasswordViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE1EF9C5271DB5640064D832 /* PasswordViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModelTests.swift; sourceTree = "<group>"; };
+		DE1EF9C7271DBE8F0064D832 /* PasswordCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCoordinatorSpy.swift; sourceTree = "<group>"; };
 		DE21EACE2719B04D00688DE3 /* HomeMenuViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModelSpy.swift; sourceTree = "<group>"; };
 		DE21EAD02719B50900688DE3 /* HomeMenuViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE21EAD22719B8FF00688DE3 /* HomeMenuViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModelTests.swift; sourceTree = "<group>"; };
@@ -723,6 +725,7 @@
 				DE875E0B2704C0D500318261 /* AuthenticationServiceSpy.swift */,
 				DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */,
 				DE725B4327173952006892A4 /* HomeCoordinatorSpy.swift */,
+				DE1EF9C7271DBE8F0064D832 /* PasswordCoordinatorSpy.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1107,6 +1110,7 @@
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
 				DE725B4427173952006892A4 /* HomeCoordinatorSpy.swift in Sources */,
+				DE1EF9C8271DBE8F0064D832 /* PasswordCoordinatorSpy.swift in Sources */,
 				DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */,
 				DE21EAD92719D90B00688DE3 /* PasswordViewModelSpy.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,

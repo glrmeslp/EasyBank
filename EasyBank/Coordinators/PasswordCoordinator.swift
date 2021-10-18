@@ -4,6 +4,7 @@ import FirebaseAuth
 protocol PasswordViewModelCoordinatorDelegate: AnyObject {
     func popToHomeViewController()
     func pushToRecoverPasswordViewController()
+    func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?)
 }
 
 final class PasswordCoordinator: Coordinator {
@@ -28,6 +29,10 @@ final class PasswordCoordinator: Coordinator {
 }
 
 extension PasswordCoordinator: PasswordViewModelCoordinatorDelegate {
+    func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?) {
+        navigationController.presentAlert(with: message, and: handler)
+    }
+
     func pushToRecoverPasswordViewController() {
         let authService = AuthenticationService(auth: auth)
         let viewModel = RecoverPasswordViewModel(authService: authService )
