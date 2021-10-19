@@ -103,6 +103,7 @@
 		DE9E9130271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E912F271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift */; };
 		DE9E9132271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E9131271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift */; };
 		DE9E9134271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E9133271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift */; };
+		DE9E9136271F09D4006037C0 /* RecoverPasswordViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E9135271F09D4006037C0 /* RecoverPasswordViewModelTests.swift */; };
 		DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */; };
 		DEA3B37F26F8BD6D003E09FC /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */; };
 		DEA3B38026F8BD6D003E09FC /* PasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */; };
@@ -243,6 +244,7 @@
 		DE9E912F271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModelSpy.swift; sourceTree = "<group>"; };
 		DE9E9131271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewControllerTests.swift; sourceTree = "<group>"; };
 		DE9E9133271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE9E9135271F09D4006037C0 /* RecoverPasswordViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModelTests.swift; sourceTree = "<group>"; };
 		DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractEnum.swift; sourceTree = "<group>"; };
 		DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordView.xib; sourceTree = "<group>"; };
@@ -775,6 +777,7 @@
 			isa = PBXGroup;
 			children = (
 				DE9E912E271EF80D006037C0 /* Doubles */,
+				DE9E9135271F09D4006037C0 /* RecoverPasswordViewModelTests.swift */,
 				DE9E9131271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift */,
 			);
 			path = RecoverPassword;
@@ -1134,6 +1137,7 @@
 				DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */,
 				DE5EEDFA2714844200145453 /* HomeCollectionViewCellMirror.swift in Sources */,
 				DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */,
+				DE9E9136271F09D4006037C0 /* RecoverPasswordViewModelTests.swift in Sources */,
 				DE1EF9C6271DB5640064D832 /* PasswordViewModelTests.swift in Sources */,
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,

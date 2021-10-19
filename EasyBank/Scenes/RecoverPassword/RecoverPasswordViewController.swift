@@ -1,6 +1,6 @@
 import UIKit
 
-class RecoverPasswordViewController: UIViewController {
+final class RecoverPasswordViewController: UIViewController {
 
     private var viewModel: RecoverPasswordViewModelProtocol?
 
