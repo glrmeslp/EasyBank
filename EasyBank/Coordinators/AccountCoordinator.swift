@@ -15,6 +15,9 @@ protocol AccountViewModelCoordinatorDelegate: AnyObject {
 protocol ReauthenticateViewModelCoordinatorDelegate: AnyObject {
     func pushToProfileViewController()
     func presentDeleteUserActionSheet(with handler: @escaping ((UIAlertAction) -> Void))
+    func presentAlert(message: String)
+    func pushToStartViewController()
+    func didFinish()
 }
 
 final class AccountCoordinator: Coordinator {
@@ -89,6 +92,10 @@ extension AccountCoordinator: AccountViewModelCoordinatorDelegate {
 }
 
 extension AccountCoordinator: ReauthenticateViewModelCoordinatorDelegate {
+    func didFinish() {
+        navigationController.dismiss(animated: true)
+    }
+    
     func presentDeleteUserActionSheet(with handler: @escaping ((UIAlertAction) -> Void)) {
         navigationController.presentActionSheet(title: "Do you want to delete your EasyBank account?",
                                                 buttonTitle: "Delete",
