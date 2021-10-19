@@ -100,6 +100,10 @@
 		DE93485026D8075200680E63 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484F26D8075100680E63 /* Account.swift */; };
 		DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485226D80A5600680E63 /* DatabaseService.swift */; };
 		DE93485526D82BB500680E63 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485426D82BB500680E63 /* AuthenticationService.swift */; };
+		DE9E9130271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E912F271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift */; };
+		DE9E9132271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E9131271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift */; };
+		DE9E9134271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E9133271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift */; };
+		DE9E9136271F09D4006037C0 /* RecoverPasswordViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E9135271F09D4006037C0 /* RecoverPasswordViewModelTests.swift */; };
 		DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */; };
 		DEA3B37F26F8BD6D003E09FC /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */; };
 		DEA3B38026F8BD6D003E09FC /* PasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */; };
@@ -237,6 +241,10 @@
 		DE93484F26D8075100680E63 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		DE93485226D80A5600680E63 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		DE93485426D82BB500680E63 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		DE9E912F271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModelSpy.swift; sourceTree = "<group>"; };
+		DE9E9131271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewControllerTests.swift; sourceTree = "<group>"; };
+		DE9E9133271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE9E9135271F09D4006037C0 /* RecoverPasswordViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModelTests.swift; sourceTree = "<group>"; };
 		DEA3B37A26F8B317003E09FC /* ExtractEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractEnum.swift; sourceTree = "<group>"; };
 		DEA3B37D26F8BD6D003E09FC /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		DEA3B37E26F8BD6D003E09FC /* PasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordView.xib; sourceTree = "<group>"; };
@@ -689,6 +697,7 @@
 		DE875E022704ACC700318261 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DE9E912D271EF7FD006037C0 /* RecoverPassword */,
 				DE21EAD42719D88600688DE3 /* Password */,
 				DE5D36E52718880B0049A326 /* HomeMenu */,
 				DE49A0DD2710859900124DA1 /* Home */,
@@ -762,6 +771,25 @@
 				DE93485426D82BB500680E63 /* AuthenticationService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		DE9E912D271EF7FD006037C0 /* RecoverPassword */ = {
+			isa = PBXGroup;
+			children = (
+				DE9E912E271EF80D006037C0 /* Doubles */,
+				DE9E9135271F09D4006037C0 /* RecoverPasswordViewModelTests.swift */,
+				DE9E9131271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift */,
+			);
+			path = RecoverPassword;
+			sourceTree = "<group>";
+		};
+		DE9E912E271EF80D006037C0 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE9E912F271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift */,
+				DE9E9133271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DEA3B37C26F8BCC8003E09FC /* Password */ = {
@@ -1090,14 +1118,17 @@
 				DE21EAD62719D8A600688DE3 /* PasswordViewControllerTests.swift in Sources */,
 				DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */,
 				DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */,
+				DE9E9132271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift in Sources */,
 				DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */,
 				DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */,
+				DE9E9130271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift in Sources */,
 				DE55B4E227074FD400A77DED /* NewRoomViewModelSpy.swift in Sources */,
 				DE875E062704ACF900318261 /* StartViewControllerTests.swift in Sources */,
 				DE49A0E42710862C00124DA1 /* HomeViewModelSpy.swift in Sources */,
 				DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */,
 				DE55B4E827078A3A00A77DED /* DatabaseServiceSpy.swift in Sources */,
 				DE725B4227173894006892A4 /* HomeViewModelTests.swift in Sources */,
+				DE9E9134271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift in Sources */,
 				DE21EACF2719B04D00688DE3 /* HomeMenuViewModelSpy.swift in Sources */,
 				DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */,
 				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
@@ -1106,6 +1137,7 @@
 				DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */,
 				DE5EEDFA2714844200145453 /* HomeCollectionViewCellMirror.swift in Sources */,
 				DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */,
+				DE9E9136271F09D4006037C0 /* RecoverPasswordViewModelTests.swift in Sources */,
 				DE1EF9C6271DB5640064D832 /* PasswordViewModelTests.swift in Sources */,
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,

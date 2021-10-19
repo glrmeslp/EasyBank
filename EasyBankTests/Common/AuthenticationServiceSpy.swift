@@ -7,6 +7,7 @@ final class AuthenticationServiceSpy: AuthService {
     private(set) var reauthenticateCalled = false
     var reauthenticateErrorToBeReturn: String?
     var updatePasswordErrorToBeReturn: String?
+    var sendPasswordResetErrorToBeReturn: String?
     var user: User?
     
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void) {
@@ -40,7 +41,7 @@ final class AuthenticationServiceSpy: AuthService {
     }
     
     func sendPasswordReset(with email: String, completion: @escaping (String?) -> Void) {
-        
+        completion(sendPasswordResetErrorToBeReturn)
     }
     
     func deleteUser(completion: @escaping (String?) -> Void) {

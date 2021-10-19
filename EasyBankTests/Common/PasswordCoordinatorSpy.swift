@@ -8,7 +8,12 @@ final class PasswordCoordinatorSpy {
     private(set) var alertMessage = ""
 }
 
-extension PasswordCoordinatorSpy: PasswordViewModelCoordinatorDelegate {
+extension PasswordCoordinatorSpy: PasswordViewModelCoordinatorDelegate,
+                                  RecoverPasswordViewModelCoordinatorDelegate {
+    func didFinishRecoverPassword() {
+        
+    }
+
     func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?) {
         presentAlertCalled = true
         alertMessage = message
