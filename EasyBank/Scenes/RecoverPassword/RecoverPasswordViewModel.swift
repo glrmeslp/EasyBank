@@ -1,17 +1,24 @@
-final class RecoverPasswordViewModel {
-    private let authService: AuthService
+protocol RecoverPasswordViewModelProtocol {
+    func sendPasswordReset(with email: String)
+}
 
-    init(authService: AuthService) {
+final class RecoverPasswordViewModel: RecoverPasswordViewModelProtocol {
+    private let authService: AuthService
+    private weak var coordinatorDelegate: RecoverPasswordViewModelCoordinatorDelegate?
+
+    init(authService: AuthService, coordinator: RecoverPasswordViewModelCoordinatorDelegate) {
         self.authService = authService
+        self.coordinatorDelegate = coordinator
     }
 
-    func sendPasswordReset(with email: String, completion: @escaping (String) -> Void) {
-        authService.sendPasswordReset(with: email) { error in
+    func sendPasswordReset(with email: String) {
+        authService.sendPasswordReset(with: email) { [weak self] error in
             guard let error = error else {
-                completion("Follow the instructions sent to \(email) to recover your password.")
+                let message = "Follow the instructions sent to \(email) to recover your password."
+                self?.coordinatorDelegate?.presentAlert(message: message, and: nil)
                 return
             }
-            completion(error)
+            self?.coordinatorDelegate?.presentAlert(message: error, and: nil)
         }
     }
 }
