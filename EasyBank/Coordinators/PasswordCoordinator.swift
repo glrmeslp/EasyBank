@@ -9,6 +9,7 @@ protocol PasswordViewModelCoordinatorDelegate: AnyObject {
 
 protocol RecoverPasswordViewModelCoordinatorDelegate: AnyObject {
     func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?)
+    func didFinishRecoverPassword()
 }
 
 final class PasswordCoordinator: Coordinator {
@@ -35,6 +36,10 @@ final class PasswordCoordinator: Coordinator {
 extension PasswordCoordinator: PasswordViewModelCoordinatorDelegate, RecoverPasswordViewModelCoordinatorDelegate {
     func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?) {
         navigationController.presentAlert(with: message, and: handler)
+    }
+
+    func didFinishRecoverPassword() {
+        navigationController.dismiss(animated: true)
     }
 
     func pushToRecoverPasswordViewController() {

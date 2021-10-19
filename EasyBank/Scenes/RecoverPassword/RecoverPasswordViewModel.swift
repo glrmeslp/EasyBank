@@ -4,7 +4,7 @@ protocol RecoverPasswordViewModelProtocol {
 
 final class RecoverPasswordViewModel: RecoverPasswordViewModelProtocol {
     private let authService: AuthService
-    private weak var coordinatorDelegate: RecoverPasswordViewModelCoordinatorDelegate?
+    private var coordinatorDelegate: RecoverPasswordViewModelCoordinatorDelegate?
 
     init(authService: AuthService, coordinator: RecoverPasswordViewModelCoordinatorDelegate) {
         self.authService = authService
@@ -13,6 +13,7 @@ final class RecoverPasswordViewModel: RecoverPasswordViewModelProtocol {
 
     func sendPasswordReset(with email: String) {
         authService.sendPasswordReset(with: email) { [weak self] error in
+            self?.coordinatorDelegate?.didFinishRecoverPassword()
             guard let error = error else {
                 let message = "Follow the instructions sent to \(email) to recover your password."
                 self?.coordinatorDelegate?.presentAlert(message: message, and: nil)
