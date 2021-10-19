@@ -87,6 +87,7 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
 extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
     func pushToAccountViewController() {
         let accountCoordinator = AccountCoordinator(navigationController: navigationController, roomName: roomName, auth: auth, firestore: firestore)
+        accountCoordinator.start()
     }
     
     func pushToPasswordViewController() {
