@@ -91,6 +91,7 @@ extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
     
     func pushToPasswordViewController() {
         let passwordCoordinator = PasswordCoordinator(navigationController: navigationController, auth: auth)
+        passwordCoordinator.start()
     }
     
     func pushToStartViewController() {
