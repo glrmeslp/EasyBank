@@ -10,7 +10,11 @@ final class AccountViewController: UIViewController {
     @IBOutlet private weak var roomStackView: UIStackView!
     @IBOutlet private weak var nameStackView: UIStackView!
     @IBOutlet private weak var emailStackView: UIStackView!
-
+    @IBOutlet private weak var leaveRoomButton: UIButton!
+    @IBOutlet private weak var deleteAccount: UIButton!
+    @IBOutlet private weak var yourProfileButton: UIButton!
+    @IBOutlet private weak var closeYourAccountButton: UIButton!
+    
     init(viewModel: AccountViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "AccountView", bundle: nil)
@@ -23,7 +27,6 @@ final class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        fetchData()
         setupNavigationController(isHidden: false)
     }
 

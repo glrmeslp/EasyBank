@@ -110,6 +110,11 @@
 		DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */; };
 		DEA3B38426F8D044003E09FC /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */; };
 		DEC1162E270B5CB100E74380 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1162D270B5CB100E74380 /* User.swift */; };
+		DECA54732720483A00A8747D /* AccountViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA54722720483A00A8747D /* AccountViewControllerMirror.swift */; };
+		DECA5475272048E900A8747D /* AccounViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA5474272048E900A8747D /* AccounViewModelSpy.swift */; };
+		DECA547727204C3300A8747D /* AccountViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA547627204C3300A8747D /* AccountViewControllerTests.swift */; };
+		DECA547927205E9200A8747D /* AccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA547827205E9200A8747D /* AccountViewModelTests.swift */; };
+		DECA547B27205F1100A8747D /* AccountCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA547A27205F1100A8747D /* AccountCoordinatorSpy.swift */; };
 		DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3857C26E64702008D9409 /* ReceiveViewController.swift */; };
 		DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE3857D26E64702008D9409 /* ReceiveView.xib */; };
 		DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3858026E651E5008D9409 /* CurrencyTextField.swift */; };
@@ -251,6 +256,11 @@
 		DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordEnum.swift; sourceTree = "<group>"; };
 		DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		DEC1162D270B5CB100E74380 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DECA54722720483A00A8747D /* AccountViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewControllerMirror.swift; sourceTree = "<group>"; };
+		DECA5474272048E900A8747D /* AccounViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccounViewModelSpy.swift; sourceTree = "<group>"; };
+		DECA547627204C3300A8747D /* AccountViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewControllerTests.swift; sourceTree = "<group>"; };
+		DECA547827205E9200A8747D /* AccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModelTests.swift; sourceTree = "<group>"; };
+		DECA547A27205F1100A8747D /* AccountCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinatorSpy.swift; sourceTree = "<group>"; };
 		DEE3857C26E64702008D9409 /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		DEE3857D26E64702008D9409 /* ReceiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveView.xib; sourceTree = "<group>"; };
 		DEE3858026E651E5008D9409 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
@@ -697,6 +707,7 @@
 		DE875E022704ACC700318261 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DECA54702720477900A8747D /* Account */,
 				DE9E912D271EF7FD006037C0 /* RecoverPassword */,
 				DE21EAD42719D88600688DE3 /* Password */,
 				DE5D36E52718880B0049A326 /* HomeMenu */,
@@ -735,6 +746,7 @@
 				DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */,
 				DE725B4327173952006892A4 /* HomeCoordinatorSpy.swift */,
 				DE1EF9C7271DBE8F0064D832 /* PasswordCoordinatorSpy.swift */,
+				DECA547A27205F1100A8747D /* AccountCoordinatorSpy.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -800,6 +812,25 @@
 				DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		DECA54702720477900A8747D /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				DECA54712720478C00A8747D /* Doubles */,
+				DECA547627204C3300A8747D /* AccountViewControllerTests.swift */,
+				DECA547827205E9200A8747D /* AccountViewModelTests.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		DECA54712720478C00A8747D /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DECA54722720483A00A8747D /* AccountViewControllerMirror.swift */,
+				DECA5474272048E900A8747D /* AccounViewModelSpy.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DEE3857B26E646E9008D9409 /* Receive */ = {
@@ -1117,8 +1148,10 @@
 				DE1EF9C4271DA8B60064D832 /* PasswordViewControllerMirror.swift in Sources */,
 				DE21EAD62719D8A600688DE3 /* PasswordViewControllerTests.swift in Sources */,
 				DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */,
+				DECA547B27205F1100A8747D /* AccountCoordinatorSpy.swift in Sources */,
 				DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */,
 				DE9E9132271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift in Sources */,
+				DECA547927205E9200A8747D /* AccountViewModelTests.swift in Sources */,
 				DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */,
 				DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */,
 				DE9E9130271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift in Sources */,
@@ -1132,8 +1165,10 @@
 				DE21EACF2719B04D00688DE3 /* HomeMenuViewModelSpy.swift in Sources */,
 				DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */,
 				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
+				DECA5475272048E900A8747D /* AccounViewModelSpy.swift in Sources */,
 				DE5D36E82718884F0049A326 /* HomeMenuViewControllerTests.swift in Sources */,
 				DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */,
+				DECA547727204C3300A8747D /* AccountViewControllerTests.swift in Sources */,
 				DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */,
 				DE5EEDFA2714844200145453 /* HomeCollectionViewCellMirror.swift in Sources */,
 				DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */,
@@ -1142,6 +1177,7 @@
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
 				DE725B4427173952006892A4 /* HomeCoordinatorSpy.swift in Sources */,
+				DECA54732720483A00A8747D /* AccountViewControllerMirror.swift in Sources */,
 				DE1EF9C8271DBE8F0064D832 /* PasswordCoordinatorSpy.swift in Sources */,
 				DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */,
 				DE21EAD92719D90B00688DE3 /* PasswordViewModelSpy.swift in Sources */,
