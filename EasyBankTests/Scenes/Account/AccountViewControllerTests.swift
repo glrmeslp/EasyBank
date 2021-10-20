@@ -1,32 +1,55 @@
-//
-//  AccountViewControllerTests.swift
-//  EasyBankTests
-//
-//  Created by Guilherme de Sousa Peixoto on 20/10/21.
-//
-
 import XCTest
+@testable import EasyBank
 
-class AccountViewControllerTests: XCTestCase {
+final class AccountViewControllerTests: XCTestCase {
+    private let viewModelSpy = AccountViewModelSpy()
+    private lazy var sut: AccountViewController = AccountViewController(viewModel: viewModelSpy)
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_viewDidLoad_shouldSetupTittle() {
+        sut.loadViewIfNeeded()
+        sut.viewDidLoad()
+        let title = sut.title
+        XCTAssertEqual("Account", title)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_viewWillAppear_shouldCallFetchData() {
+        viewModelSpy.roomNameToBeReturn = "Room"
+        viewModelSpy.userToBeReturn = User(identifier: "", name: "Guilherme", email: "guilherme@test.com")
+        sut.loadViewIfNeeded()
+        sut.viewWillAppear(false)
+        let sutMirrored = AccountViewControllerMirror(viewController: sut)
+        XCTAssertTrue(viewModelSpy.fetchDataCalled)
+        XCTAssertEqual("Room", sutMirrored.roomNameLabel?.text)
+        XCTAssertEqual("Guilherme", sutMirrored.userNameLabel?.text)
+        XCTAssertEqual("guilherme@test.com", sutMirrored.emailLabel?.text)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_didTapDeleteAccountButton_shouldCallPresentDeleteAccountActionSheet() {
+        sut.loadViewIfNeeded()
+        let sutMirrored = AccountViewControllerMirror(viewController: sut)
+        sutMirrored.deleteAccount?.sendActions(for: .touchUpInside)
+        XCTAssertTrue(viewModelSpy.presentDeleteAccountActionSheetCalled)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_didTapCloseYourAccountButton_shouldCallDeleteEasyBankAccount() {
+        sut.loadViewIfNeeded()
+        let sutMirrored = AccountViewControllerMirror(viewController: sut)
+        sutMirrored.closeYourAccountButton?.sendActions(for: .touchUpInside)
+        XCTAssertTrue(viewModelSpy.deleteEasyBankAccountCalled)
+    }
+
+    func test_didTapLeaveRoomButton_shouldCallPresentLeaveRoomActionSheet() {
+        sut.loadViewIfNeeded()
+        let sutMirrored = AccountViewControllerMirror(viewController: sut)
+        sutMirrored.leaveRoomButton?.sendActions(for: .touchUpInside)
+        XCTAssertTrue(viewModelSpy.presentLeaveRoomActionSheetCalled)
+    }
+
+    func test_didTapProfileButton_shouldCallManageProfileInformation() {
+        sut.loadViewIfNeeded()
+        let sutMirrored = AccountViewControllerMirror(viewController: sut)
+        sutMirrored.yourProfileButton?.sendActions(for: .touchUpInside)
+        XCTAssertTrue(viewModelSpy.manageProfileInformationCalled)
     }
 
 }

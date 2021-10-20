@@ -77,7 +77,7 @@ final class AccountViewController: UIViewController {
     }
 
     @objc private func didTapEmailStackView(_ sender: UITapGestureRecognizer) {
-        viewModel?.presentUpdateNameActionSheet { _ in
+        viewModel?.presentUpdateEmailActionSheet { _ in
             self.didTapProfileButton(self)
         }
     }
