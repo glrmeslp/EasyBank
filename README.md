@@ -62,7 +62,7 @@ Visit [Firebase Authentication](https://firebase.google.com/docs/auth) for more 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE] file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/glrmeslp/EasyBank/blob/master/LICENSE) file for details
 
 
 
