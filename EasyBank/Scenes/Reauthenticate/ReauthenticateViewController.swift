@@ -54,11 +54,13 @@ final class ReauthenticateViewController: UIViewController {
     private func enableActivityIndicatorView() {
         continueButton.configuration?.title = ""
         continueButton.configuration?.showsActivityIndicator = true
+        continueButton.isEnabled = false
     }
     
     private func disableActivityIndicatorView() {
         continueButton.configuration?.showsActivityIndicator = false
         continueButton.configuration?.title = "Continue"
+        continueButton.isEnabled = true
     }
 }
 
