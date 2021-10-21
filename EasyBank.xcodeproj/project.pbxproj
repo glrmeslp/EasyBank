@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
 		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
+		DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */; };
+		DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */; };
+		DE04E6F12721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */; };
 		DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */; };
 		DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113152270F270500A80E96 /* RoomViewModelSpy.swift */; };
 		DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113154270F2B0600A80E96 /* UserViewModel.swift */; };
@@ -152,6 +155,9 @@
 		C55EF69C2D2F836C52CE1A8B /* Pods-EasyBank-EasyBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.release.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBank_EasyBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D378C316181EED5ED3B89481 /* Pods-EasyBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.debug.xcconfig"; sourceTree = "<group>"; };
+		DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewModelSpy.swift; sourceTree = "<group>"; };
+		DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewControllerTests.swift; sourceTree = "<group>"; };
 		DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerTests.swift; sourceTree = "<group>"; };
 		DE113152270F270500A80E96 /* RoomViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelSpy.swift; sourceTree = "<group>"; };
 		DE113154270F2B0600A80E96 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -321,6 +327,15 @@
 				EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE04E6EB2721A22700A8A7F0 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */,
+				DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DE11314E270F229D00A80E96 /* Room */ = {
@@ -707,6 +722,7 @@
 		DE875E022704ACC700318261 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DECA547C2720729700A8747D /* Reauthenticate */,
 				DECA54702720477900A8747D /* Account */,
 				DE9E912D271EF7FD006037C0 /* RecoverPassword */,
 				DE21EAD42719D88600688DE3 /* Password */,
@@ -831,6 +847,15 @@
 				DECA5474272048E900A8747D /* AccounViewModelSpy.swift */,
 			);
 			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DECA547C2720729700A8747D /* Reauthenticate */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E6EB2721A22700A8A7F0 /* Doubles */,
+				DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */,
+			);
+			path = Reauthenticate;
 			sourceTree = "<group>";
 		};
 		DEE3857B26E646E9008D9409 /* Receive */ = {
@@ -1172,15 +1197,18 @@
 				DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */,
 				DE5EEDFA2714844200145453 /* HomeCollectionViewCellMirror.swift in Sources */,
 				DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */,
+				DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */,
 				DE9E9136271F09D4006037C0 /* RecoverPasswordViewModelTests.swift in Sources */,
 				DE1EF9C6271DB5640064D832 /* PasswordViewModelTests.swift in Sources */,
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
+				DE04E6F12721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift in Sources */,
 				DE725B4427173952006892A4 /* HomeCoordinatorSpy.swift in Sources */,
 				DECA54732720483A00A8747D /* AccountViewControllerMirror.swift in Sources */,
 				DE1EF9C8271DBE8F0064D832 /* PasswordCoordinatorSpy.swift in Sources */,
 				DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */,
 				DE21EAD92719D90B00688DE3 /* PasswordViewModelSpy.swift in Sources */,
+				DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
 				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
 				DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */,
