@@ -23,8 +23,14 @@ final class RecoverPasswordViewController: UIViewController {
         setup()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        disableActivityIndicatorView()
+    }
+
     @IBAction private func didTapSendButton(_ sender: Any) {
         guard let email = emailTextField.text else { return }
+        enableActivityIndicatorView()
         viewModel?.sendPasswordReset(with: email)
     }
     
@@ -43,6 +49,18 @@ final class RecoverPasswordViewController: UIViewController {
         sendButton.isEnabled = true
         sendButton.configuration?.baseForegroundColor = .systemBackground
         sendButton.configuration?.baseBackgroundColor = UIColor(named: "BlueColor")
+    }
+
+    private func enableActivityIndicatorView() {
+        sendButton.configuration?.title = ""
+        sendButton.configuration?.showsActivityIndicator = true
+        sendButton.isEnabled = false
+    }
+    
+    private func disableActivityIndicatorView() {
+        sendButton.configuration?.showsActivityIndicator = false
+        sendButton.configuration?.title = "Send Email"
+        sendButton.isEnabled = true
     }
 }
 
