@@ -1,27 +1,46 @@
+protocol HomeViewModelProtocol {
+    func fetchBalance(completion: @escaping (String) -> Void)
+    func fetchInformation(completion: @escaping ([[String]],String) -> Void)
+    func fetchUserName(completion: @escaping (String?) -> Void)
+    func showReceiveViewController()
+    func showPayViewController()
+    func showHomeMenuViewController()
+    func showExtractViewController()
+}
 
-final class HomeViewModel: BaseViewModel {
+final class HomeViewModel: UserViewModel, HomeViewModelProtocol {
+
     private let transferMenu: [[String]] = [
         ["Pay QR Code","qrcode"],
         ["Receive","ReceiveIcon"]
     ]
+    private let roomName: String
+    private let roomService: RoomService
 
     private var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
 
-    init(with roomName: String, databaseService: DatabaseService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
+    init(with roomName: String, roomService: RoomService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
         self.coordinatorDelegate = coordinator
-        super.init(roomName: roomName, authService: authService, roomService: databaseService)
+        self.roomName = roomName
+        self.roomService = roomService
+        super.init(authService: authService)
     }
 
-    func getBalance(completion: @escaping (String) -> Void) {
+    func fetchBalance(completion: @escaping (String) -> Void) {
         guard let uid = user?.identifier else { return }
-        getAccount(uid: uid) { account in
-            guard let value = account.balance.asCurrency() else { return }
+        roomService.getAccount(roomName: roomName, uid: uid) { account, _  in
+            guard let value = account?.balance.asCurrency() else { return }
             completion(value)
         }
     }
 
-    func getTransferMenu(completion: @escaping ([[String]]) -> Void) {
-        completion(transferMenu)
+    func fetchInformation(completion: @escaping ([[String]],String) -> Void) {
+        completion(transferMenu,roomName)
+    }
+
+    func fetchUserName(completion: @escaping (String?) -> Void) {
+        getUser()
+        completion(user?.name)
     }
 
     func showReceiveViewController() {

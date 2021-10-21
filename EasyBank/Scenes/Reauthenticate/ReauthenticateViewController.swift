@@ -1,15 +1,15 @@
 import UIKit
 
-class ReauthenticateViewController: UIViewController {
+final class ReauthenticateViewController: UIViewController {
 
-    private var viewModel: ReauthenticateViewModel?
+    private var viewModel: ReauthenticateViewModelProtocol?
     
     @IBOutlet private weak var continueButton: UIButton!
     @IBOutlet private weak var passwordTextfield: UITextField! {
         didSet { passwordTextfield.delegate = self }
     }
 
-    init(viewModel: ReauthenticateViewModel) {
+    init(viewModel: ReauthenticateViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "ReauthenticateView", bundle: nil)
     }
@@ -23,63 +23,61 @@ class ReauthenticateViewController: UIViewController {
         setup()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        disableActivityIndicatorView()
+    }
+
     @IBAction func didTapContinueButton(_ sender: Any) {
         guard let password = passwordTextfield.text else { return }
-        viewModel?.reauthenticate(with: password) { [weak self] error, motive in
-            guard let error = error else {
-                self?.reautheticateFor(motive)
-                return
-            }
-            self? .presentAlert(with: error)
-        }
+        enableActivityIndicatorView()
+        viewModel?.reauthenticate(with: password)
     }
 
     private func setup() {
-        continueButton.setTitleColor(UIColor.gray, for: .disabled)
         disableContinueButton()
+        addGestureRecognizerForEndEditing()
     }
 
     private func disableContinueButton() {
         continueButton.isEnabled = false
         continueButton.configuration?.baseBackgroundColor = UIColor.systemGray6
+        continueButton.configuration?.baseForegroundColor = UIColor.gray
     }
 
     private func enableContinueButton() {
         continueButton.isEnabled = true
         continueButton.configuration?.baseBackgroundColor = UIColor(named: "BlueColor")
+        continueButton.configuration?.baseForegroundColor = UIColor.systemBackground
     }
 
-    private func reautheticateFor(_ motive: Reautheticate) {
-        switch motive {
-        case .deleteUser:
-            dismiss(animated: true) { self.viewModel?.showDeleteUserActionSheet() }
-        case .updateUserInformation:
-            dismiss(animated: true) { self.viewModel?.showProfileViewController() }
-        }
+    private func enableActivityIndicatorView() {
+        continueButton.configuration?.title = ""
+        continueButton.configuration?.showsActivityIndicator = true
+        continueButton.isEnabled = false
+    }
+    
+    private func disableActivityIndicatorView() {
+        continueButton.configuration?.showsActivityIndicator = false
+        continueButton.configuration?.title = "Continue"
+        continueButton.isEnabled = true
     }
 }
 
 extension ReauthenticateViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-           if continueButton.isEnabled {
-               didTapContinueButton(self)
-           }
-           return true
+       if continueButton.isEnabled {
+           didTapContinueButton(self)
        }
+       return true
+   }
 
-       func textFieldDidEndEditing(_ textField: UITextField) {
-           guard let value = textField.text else { return }
-           if value.isEmpty {
-               disableContinueButton()
-           }
+   func textFieldDidChangeSelection(_ textField: UITextField) {
+       guard let value = textField.text else { return }
+       if value.isEmpty {
+           disableContinueButton()
+       } else {
+           enableContinueButton()
        }
-       
-       func textFieldDidChangeSelection(_ textField: UITextField) {
-           guard let value = textField.text else { return }
-           if value.isEmpty {
-               disableContinueButton()
-           } else {
-               enableContinueButton()
-           }
-       }
+   }
 }

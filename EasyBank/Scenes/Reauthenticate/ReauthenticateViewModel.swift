@@ -1,4 +1,8 @@
-final class ReauthenticateViewModel {
+protocol ReauthenticateViewModelProtocol {
+    func reauthenticate(with password: String)
+}
+
+final class ReauthenticateViewModel: ReauthenticateViewModelProtocol {
 
     private weak var coordinatorDelegate: ReauthenticateViewModelCoordinatorDelegate?
     private let authService: AuthService
@@ -10,28 +14,43 @@ final class ReauthenticateViewModel {
         self.motive = motive
     }
 
-    func showProfileViewController() {
+    private func showProfileViewController() {
         coordinatorDelegate?.pushToProfileViewController()
     }
 
     private func deleteUser() {
-        authService.deleteUser { _ in }
-    }
-
-    private func showStartViewController() {
-        coordinatorDelegate?.pushToStartViewController()
-    }
-
-    func showDeleteUserActionSheet() {
-        coordinatorDelegate?.presentDeleteUserActionSheet { _ in
-            self.deleteUser()
-            self.showStartViewController()
+        authService.deleteUser { [weak self] error in
+            guard let error = error else {
+                self?.coordinatorDelegate?.pushToStartViewController()
+                return
+            }
+            self?.coordinatorDelegate?.presentAlert(message: error)
         }
     }
 
-    func reauthenticate(with password: String, completion: @escaping (String?, Reautheticate) -> Void) {
-        authService.reauthenticate(with: password) { error in
-            completion(error, self.motive)
+    private func showDeleteUserActionSheet() {
+        coordinatorDelegate?.presentDeleteUserActionSheet { [weak self] _ in
+            self?.deleteUser()
+        }
+    }
+
+    func reauthenticate(with password: String) {
+        authService.reauthenticate(with: password) { [weak self] error in
+            self?.coordinatorDelegate?.didFinish()
+            guard let error = error else {
+                self?.reautheticateFor()
+                return
+            }
+            self?.coordinatorDelegate?.presentAlert(message: error)
+        }
+    }
+
+    private func reautheticateFor() {
+        switch motive {
+        case .deleteUser:
+            showDeleteUserActionSheet()
+        case .updateUserInformation:
+            showProfileViewController()
         }
     }
 }

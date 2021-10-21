@@ -3,6 +3,13 @@ import UIKit
 
 final class AuthenticationServiceSpy: AuthService {
     private(set) var removeStateDidChangeListenerCalled = false
+    private(set) var signOutCalled = false
+    private(set) var reauthenticateCalled = false
+    var reauthenticateErrorToBeReturn: String?
+    var updatePasswordErrorToBeReturn: String?
+    var sendPasswordResetErrorToBeReturn: String?
+    var updateNameErrorToBeReturn: String?
+    var updateEmailErrorToBeReturn: String?
     var user: User?
     
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void) {
@@ -17,29 +24,26 @@ final class AuthenticationServiceSpy: AuthService {
         removeStateDidChangeListenerCalled = true
     }
     
-    func getAuthViewController(completion: @escaping (UIViewController) -> Void) {
-        
-    }
-    
     func getUser(completion: @escaping (User) -> Void) {
         guard let user = user else { return }
         completion(user)
     }
     
     func signOut() {
-        
+        signOutCalled = true
     }
     
     func reauthenticate(with password: String, completion: @escaping (String?) -> Void) {
-        
+        reauthenticateCalled = true
+        completion(reauthenticateErrorToBeReturn)
     }
     
     func updatePassword(with password: String, completion: @escaping (String?) -> Void) {
-        
+        completion(updatePasswordErrorToBeReturn)
     }
     
     func sendPasswordReset(with email: String, completion: @escaping (String?) -> Void) {
-        
+        completion(sendPasswordResetErrorToBeReturn)
     }
     
     func deleteUser(completion: @escaping (String?) -> Void) {
@@ -47,10 +51,10 @@ final class AuthenticationServiceSpy: AuthService {
     }
     
     func updateDisplayName(with newName: String, completion: @escaping (String?) -> Void) {
-        
+        completion(updateNameErrorToBeReturn)
     }
     
     func updateEmailAddress(with newEmail: String, completion: @escaping (String?) -> Void) {
-        
+        completion(updateEmailErrorToBeReturn)
     }
 }

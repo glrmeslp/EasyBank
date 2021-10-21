@@ -27,7 +27,7 @@ final class HomeCoordinator: Coordinator {
     private var homeViewModel: HomeViewModel {
         let databaseService = DatabaseService(firestore: firestore)
         let authService = AuthenticationService(auth: auth)
-        let viewModel = HomeViewModel(with: roomName, databaseService: databaseService, authService: authService, coordinator: self)
+        let viewModel = HomeViewModel(with: roomName, roomService: databaseService, authService: authService, coordinator: self)
         return viewModel
     }
 
@@ -87,10 +87,12 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
 extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
     func pushToAccountViewController() {
         let accountCoordinator = AccountCoordinator(navigationController: navigationController, roomName: roomName, auth: auth, firestore: firestore)
+        accountCoordinator.start()
     }
     
     func pushToPasswordViewController() {
         let passwordCoordinator = PasswordCoordinator(navigationController: navigationController, auth: auth)
+        passwordCoordinator.start()
     }
     
     func pushToStartViewController() {

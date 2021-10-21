@@ -7,6 +7,7 @@
   * [What the platform is capable of doing](#what-the-app-is-able-to-do)
   * [Getting Started](#getting-started)
   * [Dependencies](#dependencies)
+  * [Compatibility](#compatibility)
   * [License](#license)
   
 ## Project description
@@ -17,8 +18,13 @@ Each room represents a game that can have multiple accounts.
 ## What the app is able to do
 
 - Authentication with email
-- Room creation: A new account is created.
-- Room join: If you already have an account in this room. A new account will not be created.
+- Sign Out
+- Delete EasyBank account
+- Update password, name and email address
+- Room creation, Room join and Change room
+- Balance View
+- Delete account
+- Different Themes(Day and Night)
 
 ## Getting Started 
 
@@ -50,8 +56,8 @@ We will need to connect our project with the [Firebase Console](https://console.
 
 ### Console
 
-In the Firebase console for your project, you'll need to enable the following auth providers:
-- Email/Password
+Go to Firebase Console, select your project, choose "Authentication" from left menu.
+Select "SIGN-IN METHOD" and enable "Email/Password" option.
 
 Visit [Firebase Authentication](https://firebase.google.com/docs/auth) for more details
 
@@ -59,6 +65,9 @@ Visit [Firebase Authentication](https://firebase.google.com/docs/auth) for more 
 
 - [Firebase Firestore](https://firebase.google.com/docs/firestore)
 - [FirebaseUI with Email](https://firebase.google.com/docs/auth/ios/firebaseui)
+
+## Compatibility
+Easy Bank is written in Swift 5 and requires iOS 15.0 or later.
 
 ## License
 
