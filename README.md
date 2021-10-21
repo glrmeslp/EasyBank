@@ -7,6 +7,7 @@
   * [What the platform is capable of doing](#what-the-app-is-able-to-do)
   * [Getting Started](#getting-started)
   * [Dependencies](#dependencies)
+  * [Compatibility](#compatibility)
   * [License](#license)
   
 ## Project description
