@@ -12,6 +12,7 @@
 		DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */; };
 		DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */; };
 		DE04E6F12721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */; };
+		DE04E6F32721A88600A8A7F0 /* ReauthenticateViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F22721A88600A8A7F0 /* ReauthenticateViewModelTests.swift */; };
 		DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */; };
 		DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113152270F270500A80E96 /* RoomViewModelSpy.swift */; };
 		DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113154270F2B0600A80E96 /* UserViewModel.swift */; };
@@ -158,6 +159,7 @@
 		DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewModelSpy.swift; sourceTree = "<group>"; };
 		DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewControllerTests.swift; sourceTree = "<group>"; };
+		DE04E6F22721A88600A8A7F0 /* ReauthenticateViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewModelTests.swift; sourceTree = "<group>"; };
 		DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerTests.swift; sourceTree = "<group>"; };
 		DE113152270F270500A80E96 /* RoomViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelSpy.swift; sourceTree = "<group>"; };
 		DE113154270F2B0600A80E96 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -854,6 +856,7 @@
 			children = (
 				DE04E6EB2721A22700A8A7F0 /* Doubles */,
 				DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */,
+				DE04E6F22721A88600A8A7F0 /* ReauthenticateViewModelTests.swift */,
 			);
 			path = Reauthenticate;
 			sourceTree = "<group>";
@@ -1211,6 +1214,7 @@
 				DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
 				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
+				DE04E6F32721A88600A8A7F0 /* ReauthenticateViewModelTests.swift in Sources */,
 				DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

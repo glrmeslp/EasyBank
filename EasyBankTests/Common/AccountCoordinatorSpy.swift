@@ -8,7 +8,10 @@ final class AccountCoordinatorSpy {
     private(set) var presentUpdateNameActionSheetCalled = false
     private(set) var presentUpdateEmailActionSheetCalled = false
     private(set) var pushToStartViewControllerCalled = false
+    private(set) var pushToProfileViewControllerCalled = false
     private(set) var presentAlertCalled = false
+    private(set) var didFinishCalled = false
+    private(set) var presentDeleteUserActionSheetCalled = false
     private(set) var handler: ((UIAlertAction) -> Void)? = nil
     private(set) var motive: Reautheticate? = nil
     private(set) var message = ""
@@ -46,5 +49,20 @@ extension AccountCoordinatorSpy: AccountViewModelCoordinatorDelegate {
     func presentAlert(message: String) {
         presentAlertCalled = true
         self.message = message
+    }
+}
+
+extension AccountCoordinatorSpy: ReauthenticateViewModelCoordinatorDelegate {
+    func pushToProfileViewController() {
+        pushToProfileViewControllerCalled = true
+    }
+    
+    func presentDeleteUserActionSheet(with handler: @escaping ((UIAlertAction) -> Void)) {
+        presentDeleteAccountActionSheetCalled = true
+        self.handler = handler
+    }
+    
+    func didFinish() {
+        didFinishCalled = true
     }
 }

@@ -28,7 +28,6 @@ final class ReauthenticateViewModel: ReauthenticateViewModelProtocol {
         }
     }
 
-
     private func showDeleteUserActionSheet() {
         coordinatorDelegate?.presentDeleteUserActionSheet { [weak self] _ in
             self?.deleteUser()
