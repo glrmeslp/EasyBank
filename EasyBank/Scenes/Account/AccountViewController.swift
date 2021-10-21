@@ -2,7 +2,7 @@ import UIKit
 
 final class AccountViewController: UIViewController {
 
-    private var viewModel: AccountViewModel?
+    private var viewModel: AccountViewModelProtocol?
 
     @IBOutlet private weak var roomNameLabel: UILabel!
     @IBOutlet private weak var userNameLabel: UILabel!
@@ -10,8 +10,12 @@ final class AccountViewController: UIViewController {
     @IBOutlet private weak var roomStackView: UIStackView!
     @IBOutlet private weak var nameStackView: UIStackView!
     @IBOutlet private weak var emailStackView: UIStackView!
-
-    init(viewModel: AccountViewModel) {
+    @IBOutlet private weak var leaveRoomButton: UIButton!
+    @IBOutlet private weak var deleteAccount: UIButton!
+    @IBOutlet private weak var yourProfileButton: UIButton!
+    @IBOutlet private weak var closeYourAccountButton: UIButton!
+    
+    init(viewModel: AccountViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "AccountView", bundle: nil)
     }
@@ -23,21 +27,16 @@ final class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        fetchData()
         setupNavigationController(isHidden: false)
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        viewModel?.getUser()
         fetchData()
         super.viewWillAppear(animated)
     }
 
     @IBAction private func didTapDeleteAccountButton(_ sender: Any) {
-        presentActionSheet(title: "Do you want to delete your account?", buttonTitle: "Delete account",
-                           message: "This operation cannot be undone. If you enter this room again, a new account will be created.",
-                           style: .destructive) { _ in self.viewModel?.deleteAccount { error in self.presentAlert(with: error)}
-        }
+        viewModel?.presentDeleteAccountActionSheet()
     }
     
     @IBAction private func didTapCloseYourAccountButton(_ sender: Any) {
@@ -45,7 +44,7 @@ final class AccountViewController: UIViewController {
     }
 
     @IBAction private func didTapLeaveRoomButton(_ sender: Any) {
-        presentActionSheet(title: "Do you want to leave the room?", buttonTitle: "Get Out") { _ in self.viewModel?.leaveRoom()}
+        viewModel?.presentLeaveRoomActionSheet()
     }
 
     @IBAction private func didTapProfileButton(_ sender: Any) {
@@ -54,16 +53,17 @@ final class AccountViewController: UIViewController {
 
     private func setup() {
         title = "Account"
-        navigationController?.hidesBarsOnSwipe = false
         roomStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapRoomStackView)))
         nameStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapNameStackView)))
         emailStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapEmailStackView)))
     }
 
     private func fetchData() {
-        roomNameLabel.text = viewModel?.roomName
-        userNameLabel.text = viewModel?.user?.name
-        emailLabel.text = viewModel?.user?.email
+        viewModel?.fetchData { [weak self] roomName, user in
+            self?.roomNameLabel.text = roomName
+            self?.userNameLabel.text = user?.name
+            self?.emailLabel.text = user?.email
+        }
     }
     
     @objc private func didTapRoomStackView(_ sender: UITapGestureRecognizer) {
@@ -71,11 +71,15 @@ final class AccountViewController: UIViewController {
     }
 
     @objc private func didTapNameStackView(_ sender: UITapGestureRecognizer) {
-        presentActionSheet(title: "Do you want to update your name?", buttonTitle: "Update name") { _ in self.didTapProfileButton(self) }
+        viewModel?.presentUpdateNameActionSheet { _ in
+            self.didTapProfileButton(self)
+        }
     }
 
     @objc private func didTapEmailStackView(_ sender: UITapGestureRecognizer) {
-        presentActionSheet(title: "Do you want to change your email address?", buttonTitle: "Update email address") { _ in self.didTapProfileButton(self) }
+        viewModel?.presentUpdateEmailActionSheet { _ in
+            self.didTapProfileButton(self)
+        }
     }
     
 }

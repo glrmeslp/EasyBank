@@ -2,12 +2,14 @@ import UIKit
 
 final class ProfileViewController: UIViewController {
 
-    private var viewModel: ProfileViewModel?
+    private var viewModel: ProfileViewModelProtocol?
 
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var emailAddressTextfield: UITextField!
-    
-    init(viewModel: ProfileViewModel) {
+    @IBOutlet private weak var updateNameButton: UIButton!
+    @IBOutlet private weak var updateEmailButton: UIButton!
+
+    init(viewModel: ProfileViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "ProfileView", bundle: nil)
     }
@@ -18,16 +20,12 @@ final class ProfileViewController: UIViewController {
 
     @IBAction func didTapUpdateNameButton(_ sender: Any) {
         guard let name = nameTextField.text else { return }
-        viewModel?.updateDispleyName(name) { [weak self] message in
-            self?.presentAlert(with: message)
-        }
+        viewModel?.updateDispleyName(name)
     }
 
     @IBAction func didTapUpdateEmailButton(_ sender: Any) {
         guard let email = emailAddressTextfield.text else { return }
-        viewModel?.updateEmailAddress(email) { [weak self] message in
-            self?.presentAlert(with: message)
-        }
+        viewModel?.updateEmailAddress(email)
     }
 
     override func viewDidLoad() {
@@ -41,8 +39,10 @@ final class ProfileViewController: UIViewController {
     }
 
     private func fetchData() {
-        nameTextField.text = viewModel?.user?.name
-        emailAddressTextfield.text = viewModel?.user?.email
+        viewModel?.fetchData { [weak self] user in
+            self?.nameTextField.text = user.name
+            self?.emailAddressTextfield.text = user.email
+        }
+        
     }
-
 }

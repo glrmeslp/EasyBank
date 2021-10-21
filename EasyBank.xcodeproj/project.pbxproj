@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
 		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
+		DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */; };
+		DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */; };
+		DE04E6F12721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */; };
+		DE04E6F32721A88600A8A7F0 /* ReauthenticateViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F22721A88600A8A7F0 /* ReauthenticateViewModelTests.swift */; };
+		DE04E6F72721CAB600A8A7F0 /* ProfileViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F62721CAB600A8A7F0 /* ProfileViewControllerMirror.swift */; };
+		DE04E6F92721CB6300A8A7F0 /* ProfileViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F82721CB6300A8A7F0 /* ProfileViewModelSpy.swift */; };
+		DE04E6FB2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6FA2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift */; };
+		DE04E6FD2721D29800A8A7F0 /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6FC2721D29800A8A7F0 /* ProfileViewModelTests.swift */; };
 		DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */; };
 		DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113152270F270500A80E96 /* RoomViewModelSpy.swift */; };
 		DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113154270F2B0600A80E96 /* UserViewModel.swift */; };
@@ -110,6 +118,11 @@
 		DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */; };
 		DEA3B38426F8D044003E09FC /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */; };
 		DEC1162E270B5CB100E74380 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1162D270B5CB100E74380 /* User.swift */; };
+		DECA54732720483A00A8747D /* AccountViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA54722720483A00A8747D /* AccountViewControllerMirror.swift */; };
+		DECA5475272048E900A8747D /* AccounViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA5474272048E900A8747D /* AccounViewModelSpy.swift */; };
+		DECA547727204C3300A8747D /* AccountViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA547627204C3300A8747D /* AccountViewControllerTests.swift */; };
+		DECA547927205E9200A8747D /* AccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA547827205E9200A8747D /* AccountViewModelTests.swift */; };
+		DECA547B27205F1100A8747D /* AccountCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA547A27205F1100A8747D /* AccountCoordinatorSpy.swift */; };
 		DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3857C26E64702008D9409 /* ReceiveViewController.swift */; };
 		DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE3857D26E64702008D9409 /* ReceiveView.xib */; };
 		DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3858026E651E5008D9409 /* CurrencyTextField.swift */; };
@@ -147,6 +160,14 @@
 		C55EF69C2D2F836C52CE1A8B /* Pods-EasyBank-EasyBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.release.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CBB2EE6FDC7AE4D5B452822A /* Pods_EasyBank_EasyBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBank_EasyBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D378C316181EED5ED3B89481 /* Pods-EasyBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.debug.xcconfig"; sourceTree = "<group>"; };
+		DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewModelSpy.swift; sourceTree = "<group>"; };
+		DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewControllerTests.swift; sourceTree = "<group>"; };
+		DE04E6F22721A88600A8A7F0 /* ReauthenticateViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewModelTests.swift; sourceTree = "<group>"; };
+		DE04E6F62721CAB600A8A7F0 /* ProfileViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE04E6F82721CB6300A8A7F0 /* ProfileViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelSpy.swift; sourceTree = "<group>"; };
+		DE04E6FA2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
+		DE04E6FC2721D29800A8A7F0 /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
 		DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerTests.swift; sourceTree = "<group>"; };
 		DE113152270F270500A80E96 /* RoomViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelSpy.swift; sourceTree = "<group>"; };
 		DE113154270F2B0600A80E96 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -251,6 +272,11 @@
 		DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordEnum.swift; sourceTree = "<group>"; };
 		DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		DEC1162D270B5CB100E74380 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DECA54722720483A00A8747D /* AccountViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewControllerMirror.swift; sourceTree = "<group>"; };
+		DECA5474272048E900A8747D /* AccounViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccounViewModelSpy.swift; sourceTree = "<group>"; };
+		DECA547627204C3300A8747D /* AccountViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewControllerTests.swift; sourceTree = "<group>"; };
+		DECA547827205E9200A8747D /* AccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModelTests.swift; sourceTree = "<group>"; };
+		DECA547A27205F1100A8747D /* AccountCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinatorSpy.swift; sourceTree = "<group>"; };
 		DEE3857C26E64702008D9409 /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		DEE3857D26E64702008D9409 /* ReceiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveView.xib; sourceTree = "<group>"; };
 		DEE3858026E651E5008D9409 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
@@ -311,6 +337,34 @@
 				EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE04E6EB2721A22700A8A7F0 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */,
+				DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DE04E6F42721C9A600A8A7F0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E6F52721C9B900A8A7F0 /* Doubles */,
+				DE04E6FA2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift */,
+				DE04E6FC2721D29800A8A7F0 /* ProfileViewModelTests.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DE04E6F52721C9B900A8A7F0 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E6F62721CAB600A8A7F0 /* ProfileViewControllerMirror.swift */,
+				DE04E6F82721CB6300A8A7F0 /* ProfileViewModelSpy.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DE11314E270F229D00A80E96 /* Room */ = {
@@ -697,6 +751,9 @@
 		DE875E022704ACC700318261 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DECA547C2720729700A8747D /* Reauthenticate */,
+				DE04E6F42721C9A600A8A7F0 /* Profile */,
+				DECA54702720477900A8747D /* Account */,
 				DE9E912D271EF7FD006037C0 /* RecoverPassword */,
 				DE21EAD42719D88600688DE3 /* Password */,
 				DE5D36E52718880B0049A326 /* HomeMenu */,
@@ -735,6 +792,7 @@
 				DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */,
 				DE725B4327173952006892A4 /* HomeCoordinatorSpy.swift */,
 				DE1EF9C7271DBE8F0064D832 /* PasswordCoordinatorSpy.swift */,
+				DECA547A27205F1100A8747D /* AccountCoordinatorSpy.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -800,6 +858,35 @@
 				DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		DECA54702720477900A8747D /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				DECA54712720478C00A8747D /* Doubles */,
+				DECA547627204C3300A8747D /* AccountViewControllerTests.swift */,
+				DECA547827205E9200A8747D /* AccountViewModelTests.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		DECA54712720478C00A8747D /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DECA54722720483A00A8747D /* AccountViewControllerMirror.swift */,
+				DECA5474272048E900A8747D /* AccounViewModelSpy.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DECA547C2720729700A8747D /* Reauthenticate */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E6EB2721A22700A8A7F0 /* Doubles */,
+				DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */,
+				DE04E6F22721A88600A8A7F0 /* ReauthenticateViewModelTests.swift */,
+			);
+			path = Reauthenticate;
 			sourceTree = "<group>";
 		};
 		DEE3857B26E646E9008D9409 /* Receive */ = {
@@ -1117,8 +1204,10 @@
 				DE1EF9C4271DA8B60064D832 /* PasswordViewControllerMirror.swift in Sources */,
 				DE21EAD62719D8A600688DE3 /* PasswordViewControllerTests.swift in Sources */,
 				DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */,
+				DECA547B27205F1100A8747D /* AccountCoordinatorSpy.swift in Sources */,
 				DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */,
 				DE9E9132271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift in Sources */,
+				DECA547927205E9200A8747D /* AccountViewModelTests.swift in Sources */,
 				DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */,
 				DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */,
 				DE9E9130271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift in Sources */,
@@ -1131,22 +1220,33 @@
 				DE9E9134271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift in Sources */,
 				DE21EACF2719B04D00688DE3 /* HomeMenuViewModelSpy.swift in Sources */,
 				DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */,
+				DE04E6FB2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift in Sources */,
 				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
+				DE04E6FD2721D29800A8A7F0 /* ProfileViewModelTests.swift in Sources */,
+				DECA5475272048E900A8747D /* AccounViewModelSpy.swift in Sources */,
 				DE5D36E82718884F0049A326 /* HomeMenuViewControllerTests.swift in Sources */,
 				DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */,
+				DECA547727204C3300A8747D /* AccountViewControllerTests.swift in Sources */,
 				DE55B4E4270750F700A77DED /* NewRoomViewControllerMirror.swift in Sources */,
 				DE5EEDFA2714844200145453 /* HomeCollectionViewCellMirror.swift in Sources */,
 				DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */,
+				DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */,
 				DE9E9136271F09D4006037C0 /* RecoverPasswordViewModelTests.swift in Sources */,
 				DE1EF9C6271DB5640064D832 /* PasswordViewModelTests.swift in Sources */,
+				DE04E6F92721CB6300A8A7F0 /* ProfileViewModelSpy.swift in Sources */,
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
+				DE04E6F12721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift in Sources */,
 				DE725B4427173952006892A4 /* HomeCoordinatorSpy.swift in Sources */,
+				DECA54732720483A00A8747D /* AccountViewControllerMirror.swift in Sources */,
 				DE1EF9C8271DBE8F0064D832 /* PasswordCoordinatorSpy.swift in Sources */,
 				DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */,
 				DE21EAD92719D90B00688DE3 /* PasswordViewModelSpy.swift in Sources */,
+				DE04E6F72721CAB600A8A7F0 /* ProfileViewControllerMirror.swift in Sources */,
+				DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
 				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,
+				DE04E6F32721A88600A8A7F0 /* ReauthenticateViewModelTests.swift in Sources */,
 				DE113159270F38B100A80E96 /* RoomViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

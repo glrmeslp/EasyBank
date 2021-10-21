@@ -8,6 +8,8 @@ final class AuthenticationServiceSpy: AuthService {
     var reauthenticateErrorToBeReturn: String?
     var updatePasswordErrorToBeReturn: String?
     var sendPasswordResetErrorToBeReturn: String?
+    var updateNameErrorToBeReturn: String?
+    var updateEmailErrorToBeReturn: String?
     var user: User?
     
     func detectAuthenticationStatus(completion: @escaping (Bool) -> Void) {
@@ -49,10 +51,10 @@ final class AuthenticationServiceSpy: AuthService {
     }
     
     func updateDisplayName(with newName: String, completion: @escaping (String?) -> Void) {
-        
+        completion(updateNameErrorToBeReturn)
     }
     
     func updateEmailAddress(with newEmail: String, completion: @escaping (String?) -> Void) {
-        
+        completion(updateEmailErrorToBeReturn)
     }
 }
