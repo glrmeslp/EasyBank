@@ -23,8 +23,14 @@ final class ReauthenticateViewController: UIViewController {
         setup()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        disableActivityIndicatorView()
+    }
+
     @IBAction func didTapContinueButton(_ sender: Any) {
         guard let password = passwordTextfield.text else { return }
+        enableActivityIndicatorView()
         viewModel?.reauthenticate(with: password)
     }
 
@@ -43,6 +49,18 @@ final class ReauthenticateViewController: UIViewController {
         continueButton.isEnabled = true
         continueButton.configuration?.baseBackgroundColor = UIColor(named: "BlueColor")
         continueButton.configuration?.baseForegroundColor = UIColor.systemBackground
+    }
+
+    private func enableActivityIndicatorView() {
+        continueButton.configuration?.title = ""
+        continueButton.configuration?.showsActivityIndicator = true
+        continueButton.isEnabled = false
+    }
+    
+    private func disableActivityIndicatorView() {
+        continueButton.configuration?.showsActivityIndicator = false
+        continueButton.configuration?.title = "Continue"
+        continueButton.isEnabled = true
     }
 }
 
