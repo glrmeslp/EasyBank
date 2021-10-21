@@ -13,6 +13,10 @@
 		DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */; };
 		DE04E6F12721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */; };
 		DE04E6F32721A88600A8A7F0 /* ReauthenticateViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F22721A88600A8A7F0 /* ReauthenticateViewModelTests.swift */; };
+		DE04E6F72721CAB600A8A7F0 /* ProfileViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F62721CAB600A8A7F0 /* ProfileViewControllerMirror.swift */; };
+		DE04E6F92721CB6300A8A7F0 /* ProfileViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6F82721CB6300A8A7F0 /* ProfileViewModelSpy.swift */; };
+		DE04E6FB2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6FA2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift */; };
+		DE04E6FD2721D29800A8A7F0 /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6FC2721D29800A8A7F0 /* ProfileViewModelTests.swift */; };
 		DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */; };
 		DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113152270F270500A80E96 /* RoomViewModelSpy.swift */; };
 		DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113154270F2B0600A80E96 /* UserViewModel.swift */; };
@@ -160,6 +164,10 @@
 		DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewModelSpy.swift; sourceTree = "<group>"; };
 		DE04E6F02721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewControllerTests.swift; sourceTree = "<group>"; };
 		DE04E6F22721A88600A8A7F0 /* ReauthenticateViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReauthenticateViewModelTests.swift; sourceTree = "<group>"; };
+		DE04E6F62721CAB600A8A7F0 /* ProfileViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE04E6F82721CB6300A8A7F0 /* ProfileViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelSpy.swift; sourceTree = "<group>"; };
+		DE04E6FA2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
+		DE04E6FC2721D29800A8A7F0 /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
 		DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerTests.swift; sourceTree = "<group>"; };
 		DE113152270F270500A80E96 /* RoomViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelSpy.swift; sourceTree = "<group>"; };
 		DE113154270F2B0600A80E96 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -336,6 +344,25 @@
 			children = (
 				DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */,
 				DE04E6EE2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DE04E6F42721C9A600A8A7F0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E6F52721C9B900A8A7F0 /* Doubles */,
+				DE04E6FA2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift */,
+				DE04E6FC2721D29800A8A7F0 /* ProfileViewModelTests.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DE04E6F52721C9B900A8A7F0 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E6F62721CAB600A8A7F0 /* ProfileViewControllerMirror.swift */,
+				DE04E6F82721CB6300A8A7F0 /* ProfileViewModelSpy.swift */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -725,6 +752,7 @@
 			isa = PBXGroup;
 			children = (
 				DECA547C2720729700A8747D /* Reauthenticate */,
+				DE04E6F42721C9A600A8A7F0 /* Profile */,
 				DECA54702720477900A8747D /* Account */,
 				DE9E912D271EF7FD006037C0 /* RecoverPassword */,
 				DE21EAD42719D88600688DE3 /* Password */,
@@ -1192,7 +1220,9 @@
 				DE9E9134271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift in Sources */,
 				DE21EACF2719B04D00688DE3 /* HomeMenuViewModelSpy.swift in Sources */,
 				DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */,
+				DE04E6FB2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift in Sources */,
 				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
+				DE04E6FD2721D29800A8A7F0 /* ProfileViewModelTests.swift in Sources */,
 				DECA5475272048E900A8747D /* AccounViewModelSpy.swift in Sources */,
 				DE5D36E82718884F0049A326 /* HomeMenuViewControllerTests.swift in Sources */,
 				DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */,
@@ -1203,6 +1233,7 @@
 				DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */,
 				DE9E9136271F09D4006037C0 /* RecoverPasswordViewModelTests.swift in Sources */,
 				DE1EF9C6271DB5640064D832 /* PasswordViewModelTests.swift in Sources */,
+				DE04E6F92721CB6300A8A7F0 /* ProfileViewModelSpy.swift in Sources */,
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
 				DE04E6F12721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift in Sources */,
@@ -1211,6 +1242,7 @@
 				DE1EF9C8271DBE8F0064D832 /* PasswordCoordinatorSpy.swift in Sources */,
 				DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */,
 				DE21EAD92719D90B00688DE3 /* PasswordViewModelSpy.swift in Sources */,
+				DE04E6F72721CAB600A8A7F0 /* ProfileViewControllerMirror.swift in Sources */,
 				DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,
 				DE875E0A2704C04100318261 /* StartViewModelTests.swift in Sources */,

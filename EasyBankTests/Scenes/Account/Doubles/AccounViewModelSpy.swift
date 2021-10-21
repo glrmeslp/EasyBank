@@ -39,7 +39,7 @@ final class AccountViewModelSpy: AccountViewModelProtocol {
         manageProfileInformationCalled = true
     }
     
-    func fecthData(completion: @escaping (String, User?) -> Void) {
+    func fetchData(completion: @escaping (String, User?) -> Void) {
         fetchDataCalled = true
         guard let roomNameToBeReturn = roomNameToBeReturn else {
             return

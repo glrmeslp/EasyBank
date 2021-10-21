@@ -7,7 +7,7 @@ protocol AccountViewModelProtocol {
     func presentUpdateEmailActionSheet(handler: ((UIAlertAction) -> Void)?)
     func deleteEasyBankAccount()
     func manageProfileInformation()
-    func fecthData(completion: @escaping (String, User?) -> Void)
+    func fetchData(completion: @escaping (String, User?) -> Void)
 }
 
 final class AccountViewModel: UserViewModel, AccountViewModelProtocol {
@@ -60,7 +60,7 @@ final class AccountViewModel: UserViewModel, AccountViewModelProtocol {
         coordinatorDelegate?.presentReauthenticateViewController(for: .updateUserInformation)
     }
 
-    func fecthData(completion: @escaping (String, User?) -> Void) {
+    func fetchData(completion: @escaping (String, User?) -> Void) {
         getUser()
         completion(roomName,user)
     }

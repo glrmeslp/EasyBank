@@ -47,7 +47,7 @@ final class AccountViewModelTests: XCTestCase {
 
     func test_fecthData_shouldReturnRoomNameAndUser() {
         authServiceSpy.user = User(identifier: "", name: "Guilherme", email: "guilherme@test.com")
-        sut.fecthData { roomName, user in
+        sut.fetchData { roomName, user in
             XCTAssertEqual("Room", roomName)
             XCTAssertEqual("Guilherme", user?.name)
             XCTAssertEqual("guilherme@test.com", user?.email)

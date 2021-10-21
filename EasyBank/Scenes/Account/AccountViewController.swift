@@ -59,7 +59,7 @@ final class AccountViewController: UIViewController {
     }
 
     private func fetchData() {
-        viewModel?.fecthData { [weak self] roomName, user in
+        viewModel?.fetchData { [weak self] roomName, user in
             self?.roomNameLabel.text = roomName
             self?.userNameLabel.text = user?.name
             self?.emailLabel.text = user?.email

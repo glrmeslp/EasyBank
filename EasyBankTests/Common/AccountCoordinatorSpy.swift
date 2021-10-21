@@ -66,3 +66,5 @@ extension AccountCoordinatorSpy: ReauthenticateViewModelCoordinatorDelegate {
         didFinishCalled = true
     }
 }
+
+extension AccountCoordinatorSpy: ProfileViewModelCoordinatorDelegate {}
