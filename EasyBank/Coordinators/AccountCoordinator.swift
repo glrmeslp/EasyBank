@@ -20,6 +20,10 @@ protocol ReauthenticateViewModelCoordinatorDelegate: AnyObject {
     func didFinish()
 }
 
+protocol ProfileViewModelCoordinatorDelegate: AnyObject {
+    func presentAlert(message: String)
+}
+
 final class AccountCoordinator: Coordinator {
     var navigationController: UINavigationController
 
@@ -105,10 +109,11 @@ extension AccountCoordinator: ReauthenticateViewModelCoordinatorDelegate {
     }
 
     func pushToProfileViewController() {
-        let profileViewModel = ProfileViewModel(roomName: roomName,
-                                                authService: AuthenticationService(auth: auth),
-                                                roomService: DatabaseService(firestore: firestore))
+        let profileViewModel = ProfileViewModel(coordinator: self,
+                                                authService: AuthenticationService(auth: auth))
         let profileViewController = ProfileViewController(viewModel: profileViewModel)
         navigationController.pushViewController(profileViewController, animated: true)
     }
 }
+
+extension AccountCoordinator: ProfileViewModelCoordinatorDelegate {}

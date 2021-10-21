@@ -12,6 +12,8 @@
             <connections>
                 <outlet property="emailAddressTextfield" destination="yjO-hP-VmO" id="jGO-JO-Gbu"/>
                 <outlet property="nameTextField" destination="Epc-vv-AH2" id="Tv7-p8-4ew"/>
+                <outlet property="updateEmailButton" destination="b1t-ak-kYU" id="0kv-EN-BMz"/>
+                <outlet property="updateNameButton" destination="O2i-hx-byj" id="ixR-nl-U6N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
