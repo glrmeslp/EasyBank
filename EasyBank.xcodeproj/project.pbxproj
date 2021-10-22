@@ -20,6 +20,10 @@
 		DE04E7002722F68300A8A7F0 /* ReceiveViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6FF2722F68300A8A7F0 /* ReceiveViewControllerTests.swift */; };
 		DE04E7042722F6F000A8A7F0 /* ReceiveCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E7032722F6F000A8A7F0 /* ReceiveCoordinatorSpy.swift */; };
 		DE04E7072722F88100A8A7F0 /* ReceiveViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E7062722F88100A8A7F0 /* ReceiveViewControllerMirror.swift */; };
+		DE04E70A2722FAA700A8A7F0 /* QRCodeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E7092722FAA700A8A7F0 /* QRCodeViewControllerTests.swift */; };
+		DE04E70D2722FAD600A8A7F0 /* QRCodeViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E70C2722FAD600A8A7F0 /* QRCodeViewControllerMirror.swift */; };
+		DE04E70F2722FB6800A8A7F0 /* QRCodeViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E70E2722FB6800A8A7F0 /* QRCodeViewModelSpy.swift */; };
+		DE04E7112723044F00A8A7F0 /* QRCodeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E7102723044F00A8A7F0 /* QRCodeViewModelTests.swift */; };
 		DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */; };
 		DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113152270F270500A80E96 /* RoomViewModelSpy.swift */; };
 		DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113154270F2B0600A80E96 /* UserViewModel.swift */; };
@@ -174,6 +178,10 @@
 		DE04E6FF2722F68300A8A7F0 /* ReceiveViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewControllerTests.swift; sourceTree = "<group>"; };
 		DE04E7032722F6F000A8A7F0 /* ReceiveCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveCoordinatorSpy.swift; sourceTree = "<group>"; };
 		DE04E7062722F88100A8A7F0 /* ReceiveViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE04E7092722FAA700A8A7F0 /* QRCodeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewControllerTests.swift; sourceTree = "<group>"; };
+		DE04E70C2722FAD600A8A7F0 /* QRCodeViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE04E70E2722FB6800A8A7F0 /* QRCodeViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModelSpy.swift; sourceTree = "<group>"; };
+		DE04E7102723044F00A8A7F0 /* QRCodeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModelTests.swift; sourceTree = "<group>"; };
 		DE11314F270F22C400A80E96 /* RoomViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewControllerTests.swift; sourceTree = "<group>"; };
 		DE113152270F270500A80E96 /* RoomViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelSpy.swift; sourceTree = "<group>"; };
 		DE113154270F2B0600A80E96 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -408,6 +416,25 @@
 				DE04E7062722F88100A8A7F0 /* ReceiveViewControllerMirror.swift */,
 			);
 			path = "Doubles ";
+			sourceTree = "<group>";
+		};
+		DE04E7082722FA8B00A8A7F0 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E70B2722FAB400A8A7F0 /* Doubles */,
+				DE04E7092722FAA700A8A7F0 /* QRCodeViewControllerTests.swift */,
+				DE04E7102723044F00A8A7F0 /* QRCodeViewModelTests.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		DE04E70B2722FAB400A8A7F0 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DE04E70C2722FAD600A8A7F0 /* QRCodeViewControllerMirror.swift */,
+				DE04E70E2722FB6800A8A7F0 /* QRCodeViewModelSpy.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DE11314E270F229D00A80E96 /* Room */ = {
@@ -794,6 +821,7 @@
 		DE875E022704ACC700318261 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DE04E7082722FA8B00A8A7F0 /* QRCode */,
 				DE04E6FE2722F65C00A8A7F0 /* Receive */,
 				DECA547C2720729700A8747D /* Reauthenticate */,
 				DE04E6F42721C9A600A8A7F0 /* Profile */,
@@ -1246,12 +1274,15 @@
 				DE21EAD62719D8A600688DE3 /* PasswordViewControllerTests.swift in Sources */,
 				DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */,
 				DECA547B27205F1100A8747D /* AccountCoordinatorSpy.swift in Sources */,
+				DE04E70F2722FB6800A8A7F0 /* QRCodeViewModelSpy.swift in Sources */,
 				DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */,
 				DE9E9132271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift in Sources */,
 				DECA547927205E9200A8747D /* AccountViewModelTests.swift in Sources */,
+				DE04E70D2722FAD600A8A7F0 /* QRCodeViewControllerMirror.swift in Sources */,
 				DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */,
 				DE875E082704AD4000318261 /* StartViewModelSpy.swift in Sources */,
 				DE9E9130271EF82C006037C0 /* RecoverPasswordViewModelSpy.swift in Sources */,
+				DE04E7112723044F00A8A7F0 /* QRCodeViewModelTests.swift in Sources */,
 				DE55B4E227074FD400A77DED /* NewRoomViewModelSpy.swift in Sources */,
 				DE875E062704ACF900318261 /* StartViewControllerTests.swift in Sources */,
 				DE49A0E42710862C00124DA1 /* HomeViewModelSpy.swift in Sources */,
@@ -1263,6 +1294,7 @@
 				DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */,
 				DE04E6FB2721CD0D00A8A7F0 /* ProfileViewControllerTests.swift in Sources */,
 				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
+				DE04E70A2722FAA700A8A7F0 /* QRCodeViewControllerTests.swift in Sources */,
 				DE04E6FD2721D29800A8A7F0 /* ProfileViewModelTests.swift in Sources */,
 				DECA5475272048E900A8747D /* AccounViewModelSpy.swift in Sources */,
 				DE5D36E82718884F0049A326 /* HomeMenuViewControllerTests.swift in Sources */,
