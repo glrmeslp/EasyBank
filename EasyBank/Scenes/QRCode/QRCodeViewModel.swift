@@ -1,15 +1,20 @@
-protocol QRcodeViewModelCoordinatorDelegate: AnyObject {
-    func didFinisih()
+
+protocol QRCodeViewModelProtocol {
+    func didFinish()
+    func generateStringForQRcode(completion: @escaping (String) -> Void)
+    func getValue(completion: @escaping (String) -> Void)
 }
 
-final class QRCodeViewModel: BaseViewModel {
+final class QRCodeViewModel: UserViewModel, QRCodeViewModelProtocol {
     private let value: Double
+    private let roomName: String
     private weak var coordinatorDelegate: QRcodeViewModelCoordinatorDelegate?
 
-    init(roomName: String, value: Double, coordinator: QRcodeViewModelCoordinatorDelegate, authService: AuthService, databaseService: DatabaseService) {
+    init(roomName: String, value: Double, coordinator: QRcodeViewModelCoordinatorDelegate, authService: AuthService) {
         self.value = value
+        self.roomName = roomName
         self.coordinatorDelegate = coordinator
-        super.init(roomName: roomName, authService: authService, roomService: databaseService)
+        super.init(authService: authService)
     }
 
     func generateStringForQRcode(completion: @escaping (String) -> Void) {
@@ -19,12 +24,12 @@ final class QRCodeViewModel: BaseViewModel {
     }
 
     func getValue(completion: @escaping (String) -> Void) {
-        if value == 0.0 {
-            completion("Will be defined by who will pay")
-        } else {
+        guard value == 0.0 else {
             guard let value = value.asCurrency() else { return }
             completion(value)
+            return
         }
+        completion("Will be defined by who will pay")
     }
 
     func didFinish() {

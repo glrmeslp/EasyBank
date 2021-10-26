@@ -1,14 +1,14 @@
 import UIKit
 
-class QRCodeViewController: UIViewController {
+final class QRCodeViewController: UIViewController {
 
-    private var viewModel: QRCodeViewModel?
+    private var viewModel: QRCodeViewModelProtocol?
 
-    @IBOutlet private weak var valueTextField: UILabel!
+    @IBOutlet private weak var valueLabel: UILabel!
     @IBOutlet private weak var qrCodeImageView: UIImageView!
     @IBOutlet private weak var homeButton: UIButton!
     
-    init(viewModel: QRCodeViewModel) {
+    init(viewModel: QRCodeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "QRCodeView", bundle: nil)
     }
@@ -20,6 +20,7 @@ class QRCodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        fetchData()
     }
 
     @IBAction func didTapHomeButton(_ sender: Any) {
@@ -27,14 +28,13 @@ class QRCodeViewController: UIViewController {
     }
 
     private func setup() {
-        homeButton.layer.cornerRadius = 25
-    
         title = "My QR Code"
-        
+    }
+
+    private func fetchData() {
         viewModel?.getValue { [weak self] value in
-            self?.valueTextField.text = value
+            self?.valueLabel.text = value
         }
-        
         viewModel?.generateStringForQRcode { [weak self] string in
             self?.qrCodeImageView.image = QRCodeHelper().generateQRCode(from: string)
         }

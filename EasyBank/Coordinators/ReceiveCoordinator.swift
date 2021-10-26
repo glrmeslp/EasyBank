@@ -6,17 +6,19 @@ protocol ReceiveViewCoordinatorDelegate: AnyObject {
     func pushToQRCodeViewController(value: Double)
 }
 
+protocol QRcodeViewModelCoordinatorDelegate: AnyObject {
+    func didFinisih()
+}
+
 final class ReceiveCoordinator: Coordinator {
     var navigationController: UINavigationController
     private let roomName: String
     private let auth: Auth
-    private let firestore: Firestore
     
-    init(navigationController: UINavigationController, roomName: String, auth: Auth, firestore: Firestore) {
+    init(navigationController: UINavigationController, roomName: String, auth: Auth) {
         self.navigationController = navigationController
         self.roomName = roomName
         self.auth = auth
-        self.firestore = firestore
     }
 
     func start() {
@@ -28,8 +30,7 @@ final class ReceiveCoordinator: Coordinator {
 extension ReceiveCoordinator: ReceiveViewCoordinatorDelegate {
     func pushToQRCodeViewController(value: Double) {
         let authService = AuthenticationService(auth: auth)
-        let databaseService = DatabaseService(firestore: firestore)
-        let qrCodeViewModel = QRCodeViewModel(roomName: roomName, value: value, coordinator: self, authService: authService, databaseService: databaseService)
+        let qrCodeViewModel = QRCodeViewModel(roomName: roomName, value: value, coordinator: self, authService: authService)
         let qrCodeViewController = QRCodeViewController(viewModel: qrCodeViewModel)
         navigationController.pushViewController(qrCodeViewController, animated: true)
     }

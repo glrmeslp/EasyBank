@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="homeButton" destination="d0Z-kA-BPX" id="9YC-Ms-u8U"/>
                 <outlet property="qrCodeImageView" destination="AXa-4b-zkV" id="FZb-fX-qOW"/>
-                <outlet property="valueTextField" destination="XOJ-D5-s0J" id="eDr-gL-7uh"/>
+                <outlet property="valueLabel" destination="XOJ-D5-s0J" id="eDr-gL-7uh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -46,15 +46,16 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0Z-kA-BPX">
-                    <rect key="frame" x="20" y="782" width="374" height="50"/>
-                    <color key="backgroundColor" name="BlueColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Ksd-dU-4sF"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="784" width="374" height="48"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Home">
                         <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                     </state>
+                    <buttonConfiguration key="configuration" style="filled" title="Home" cornerStyle="capsule" buttonSize="large">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="baseBackgroundColor" name="BlueColor"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="didTapHomeButton:" destination="-1" eventType="touchUpInside" id="ARH-KB-pJP"/>
                     </connections>

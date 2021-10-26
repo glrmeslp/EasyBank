@@ -80,7 +80,8 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     }
     
     func pushToReceiveViewController() {
-        let receiveCoordinator = ReceiveCoordinator(navigationController: navigationController, roomName: roomName, auth: auth, firestore: firestore)
+        let receiveCoordinator = ReceiveCoordinator(navigationController: navigationController, roomName: roomName, auth: auth)
+        receiveCoordinator.start()
     }
 }
 
