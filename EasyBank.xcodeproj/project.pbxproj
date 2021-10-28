@@ -111,6 +111,8 @@
 		DE875E0E2704C1B800318261 /* StartCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E0D2704C1B800318261 /* StartCoordinatorSpy.swift */; };
 		DE875E112704ED3500318261 /* MirrorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E102704ED3500318261 /* MirrorObject.swift */; };
 		DE875E132704EE0900318261 /* StartViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE875E122704EE0900318261 /* StartViewControllerMirror.swift */; };
+		DE891916272AE3E500612602 /* ScannerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE891915272AE3E500612602 /* ScannerViewModelTests.swift */; };
+		DE891918272AE44D00612602 /* PayCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE891917272AE44D00612602 /* PayCoordinatorSpy.swift */; };
 		DE93484B26D8041900680E63 /* NewRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484A26D8041900680E63 /* NewRoomViewModel.swift */; };
 		DE93485026D8075200680E63 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93484F26D8075100680E63 /* Account.swift */; };
 		DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93485226D80A5600680E63 /* DatabaseService.swift */; };
@@ -272,6 +274,8 @@
 		DE875E0D2704C1B800318261 /* StartCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinatorSpy.swift; sourceTree = "<group>"; };
 		DE875E102704ED3500318261 /* MirrorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorObject.swift; sourceTree = "<group>"; };
 		DE875E122704EE0900318261 /* StartViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE891915272AE3E500612602 /* ScannerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModelTests.swift; sourceTree = "<group>"; };
+		DE891917272AE44D00612602 /* PayCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCoordinatorSpy.swift; sourceTree = "<group>"; };
 		DE93484A26D8041900680E63 /* NewRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomViewModel.swift; sourceTree = "<group>"; };
 		DE93484F26D8075100680E63 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		DE93485226D80A5600680E63 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 				DE1EF9C7271DBE8F0064D832 /* PasswordCoordinatorSpy.swift */,
 				DECA547A27205F1100A8747D /* AccountCoordinatorSpy.swift */,
 				DE04E7032722F6F000A8A7F0 /* ReceiveCoordinatorSpy.swift */,
+				DE891917272AE44D00612602 /* PayCoordinatorSpy.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -821,13 +826,15 @@
 		DE875E022704ACC700318261 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				DE04E7082722FA8B00A8A7F0 /* QRCode */,
-				DE04E6FE2722F65C00A8A7F0 /* Receive */,
 				DECA547C2720729700A8747D /* Reauthenticate */,
 				DE04E6F42721C9A600A8A7F0 /* Profile */,
 				DECA54702720477900A8747D /* Account */,
 				DE9E912D271EF7FD006037C0 /* RecoverPassword */,
 				DE21EAD42719D88600688DE3 /* Password */,
+				DE04E7082722FA8B00A8A7F0 /* QRCode */,
+				DE04E6FE2722F65C00A8A7F0 /* Receive */,
+				DE891910272AE2FE00612602 /* Pay */,
+				DE891913272AE3B800612602 /* Scanner */,
 				DE5D36E52718880B0049A326 /* HomeMenu */,
 				DE49A0DD2710859900124DA1 /* Home */,
 				DE55B4DD270747E300A77DED /* NewRoom */,
@@ -864,6 +871,29 @@
 				DE55B4E727078A3A00A77DED /* DatabaseServiceSpy.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		DE891910272AE2FE00612602 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		DE891913272AE3B800612602 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				DE891914272AE3C500612602 /* Doubles */,
+				DE891915272AE3E500612602 /* ScannerViewModelTests.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		DE891914272AE3C500612602 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DE8A0D3126DB129000D0175F /* Components */ = {
@@ -1276,7 +1306,9 @@
 				DECA547B27205F1100A8747D /* AccountCoordinatorSpy.swift in Sources */,
 				DE04E70F2722FB6800A8A7F0 /* QRCodeViewModelSpy.swift in Sources */,
 				DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */,
+				DE891916272AE3E500612602 /* ScannerViewModelTests.swift in Sources */,
 				DE9E9132271F01E3006037C0 /* RecoverPasswordViewControllerTests.swift in Sources */,
+				DE891918272AE44D00612602 /* PayCoordinatorSpy.swift in Sources */,
 				DECA547927205E9200A8747D /* AccountViewModelTests.swift in Sources */,
 				DE04E70D2722FAD600A8A7F0 /* QRCodeViewControllerMirror.swift in Sources */,
 				DE55B4DF27074F7800A77DED /* NewRoomViewControllerTests.swift in Sources */,
