@@ -4,12 +4,12 @@ import AVFoundation
 final class ScannerViewController: UIViewController {
     private var captureSession: AVCaptureSession!
     private var previewLayer: AVCaptureVideoPreviewLayer!
-    private var viewModel: ScannerViewModel?
+    private var viewModel: ScannerViewModelDelegate?
     
     @IBOutlet private weak var qrCodeSafeAreaView: UIView!
     @IBOutlet private weak var preview: UIView!
     
-    init(viewModel: ScannerViewModel) {
+    init(viewModel: ScannerViewModelDelegate) {
         self.viewModel = viewModel
         super.init(nibName: "ScannerView", bundle: nil)
     }
@@ -29,10 +29,10 @@ final class ScannerViewController: UIViewController {
     }
 
     private func isCaptureSessionRunning() {
-        if (captureSession?.isRunning == true) {
+        if (captureSession.isRunning == true) {
             captureSession.stopRunning()
         }
-        if (captureSession?.isRunning == false) {
+        if (captureSession.isRunning == false) {
             captureSession.startRunning()
         }
     }
@@ -41,11 +41,17 @@ final class ScannerViewController: UIViewController {
         qrCodeSafeAreaView.layer.cornerRadius = 5
         qrCodeSafeAreaView.layer.borderColor = UIColor(named: "BlueColor")!.cgColor
         qrCodeSafeAreaView.layer.borderWidth = 2
+        
         captureSession = AVCaptureSession()
+        addInput()
+        addOutput()
+        addPreviewLayer()
+        captureSession.startRunning()
+    }
 
+    private func addInput() {
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
         let videoInput: AVCaptureDeviceInput
-
         do {
             videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
         } catch {
@@ -58,40 +64,34 @@ final class ScannerViewController: UIViewController {
             failed()
             return
         }
+    }
 
+    private func addOutput() {
         let metadataOutput = AVCaptureMetadataOutput()
 
         if (captureSession.canAddOutput(metadataOutput)) {
             captureSession.addOutput(metadataOutput)
-
             metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             metadataOutput.metadataObjectTypes = [.qr]
         } else {
             failed()
             return
         }
+    }
 
+    private func addPreviewLayer() {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = view.layer.bounds
         previewLayer.videoGravity = .resizeAspectFill
         preview.layer.addSublayer(previewLayer)
-        captureSession.startRunning()
     }
 
     private func found(code: String) {
-        viewModel?.validateQRCode(with: code, from: self) { [weak self] isValid in
-            if !isValid {
-                self?.presentAlert(with: "Oops! Something went wrong",
-                                   mesage: "This payment has not been completed because this QR code is invalid.") { _ in
-                    self?.captureSession.startRunning()
-                }
-            }
-        }
+        viewModel?.validateQRCode(code: code) { _ in self.captureSession.startRunning()}
     }
 
     private func failed() {
-        presentAlert(with: "Scanning not supported",
-                     mesage: "Your device does not support scanning a code from an item. Please use a device with a camera.")
+        viewModel?.presentFailedAlert()
         captureSession = nil
     }
 }

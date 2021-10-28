@@ -4,7 +4,7 @@ import FirebaseAuth
 
 protocol ScannerViewModelCoordinatorDelegate: AnyObject {
     func pushToPayViewController(with code: [String])
-    func presentAlert(with title: String, and message: String, from controller: UIViewController)
+    func presentAlert(title: String, message: String, and handler: ((UIAlertAction) -> Void)?)
 }
 
 protocol PayViewModelCoordinatorDelegate: AnyObject {
@@ -43,8 +43,8 @@ final class PayCoordinator: Coordinator {
 }
 
 extension PayCoordinator: ScannerViewModelCoordinatorDelegate {
-    func presentAlert(with title: String, and message: String, from controller: UIViewController) {
-        controller.presentAlert(with: title, mesage: message)
+    func presentAlert(title: String, message: String, and handler: ((UIAlertAction) -> Void)?) {
+        navigationController.presentAlert(with: title, mesage: message, and: handler)
     }
     
     func pushToPayViewController(with code: [String]) {

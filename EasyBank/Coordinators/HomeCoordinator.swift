@@ -77,6 +77,7 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
         let payCoordinator = PayCoordinator(navigationController: navigationController, firestore: firestore, roomName: roomName, auth: auth)
         payCoordinator.parentCoordinator = self
         childCoordinators.append(payCoordinator)
+        payCoordinator.start()
     }
     
     func pushToReceiveViewController() {
