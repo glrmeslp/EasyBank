@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 final class ScannerViewController: UIViewController {
-    private var captureSession: AVCaptureSession!
+    private var captureSession: AVCaptureSession = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer!
     private var viewModel: ScannerViewModelDelegate?
     
@@ -41,16 +41,15 @@ final class ScannerViewController: UIViewController {
         qrCodeSafeAreaView.layer.cornerRadius = 5
         qrCodeSafeAreaView.layer.borderColor = UIColor(named: "BlueColor")!.cgColor
         qrCodeSafeAreaView.layer.borderWidth = 2
-        
-        captureSession = AVCaptureSession()
+
         addInput()
-        addOutput()
-        addPreviewLayer()
-        captureSession.startRunning()
     }
 
     private func addInput() {
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
+            failed()
+            return
+        }
         let videoInput: AVCaptureDeviceInput
         do {
             videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
@@ -64,6 +63,7 @@ final class ScannerViewController: UIViewController {
             failed()
             return
         }
+        addOutput()
     }
 
     private func addOutput() {
@@ -77,6 +77,7 @@ final class ScannerViewController: UIViewController {
             failed()
             return
         }
+        addPreviewLayer()
     }
 
     private func addPreviewLayer() {
@@ -84,6 +85,8 @@ final class ScannerViewController: UIViewController {
         previewLayer.frame = view.layer.bounds
         previewLayer.videoGravity = .resizeAspectFill
         preview.layer.addSublayer(previewLayer)
+
+        captureSession.startRunning()
     }
 
     private func found(code: String) {
@@ -92,7 +95,6 @@ final class ScannerViewController: UIViewController {
 
     private func failed() {
         viewModel?.presentFailedAlert()
-        captureSession = nil
     }
 }
 

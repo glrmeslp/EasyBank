@@ -883,17 +883,9 @@
 		DE891913272AE3B800612602 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
-				DE891914272AE3C500612602 /* Doubles */,
 				DE891915272AE3E500612602 /* ScannerViewModelTests.swift */,
 			);
 			path = Scanner;
-			sourceTree = "<group>";
-		};
-		DE891914272AE3C500612602 /* Doubles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DE8A0D3126DB129000D0175F /* Components */ = {
