@@ -9,6 +9,8 @@ protocol ScannerViewModelCoordinatorDelegate: AnyObject {
 
 protocol PayViewModelCoordinatorDelegate: AnyObject {
     func pushToCompleteTransaction(with transferId: String)
+    func presentConfirmAlert(handler: ((UIAlertAction) -> Void)?)
+    func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?)
 }
 
 protocol CompleteTransactionViewModelCoordinatorDelegate: AnyObject {
@@ -57,7 +59,17 @@ extension PayCoordinator: ScannerViewModelCoordinatorDelegate {
 }
 
 extension PayCoordinator: PayViewModelCoordinatorDelegate {
-    
+    func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?) {
+        navigationController.presentAlert(with: message, and: handler)
+    }
+
+    func presentConfirmAlert(handler: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: "Do you want to confirm the transaction?", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: handler))
+        navigationController.present(alert, animated: true, completion: nil)
+    }
+
     func pushToCompleteTransaction(with transferId: String) {
         let transferService = DatabaseService(firestore: firestore)
         let viewModel = CompleteTransactionViewModel(transferService: transferService, transferId: transferId, roomName: roomName, coordinator: self)
