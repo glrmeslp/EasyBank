@@ -50,9 +50,10 @@ final class ScannerViewModel: ScannerViewModelDelegate {
     private func splitCode(_ code: String) -> [[String]] {
         var splittedCode = code.components(separatedBy: "00X00")
         splittedCode.removeFirst()
-        let data = splittedCode
+        var data = splittedCode
         var accountInformations = data
         accountInformations.removeLast()
+        data.removeFirst()
         return [data, accountInformations]
     }
 }

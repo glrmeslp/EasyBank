@@ -21,6 +21,7 @@ final class ScannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupNavigationController(isHidden: false)
     }
 
     override func viewWillAppear(_ animated: Bool) {
