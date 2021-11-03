@@ -17,10 +17,15 @@ final class PayViewModel: UserViewModel, PayViewModelDelegate {
     private let transferService: TransferDatabaseService
     private let roomService: RoomService
 
-    init(data: [String], roomName: String, authService: AuthService, databaseService: DatabaseService, coordinator: PayViewModelCoordinatorDelegate) {
+    init(data: [String],
+         roomName: String,
+         authService: AuthService,
+         roomService: RoomService,
+         transferService: TransferDatabaseService,
+         coordinator: PayViewModelCoordinatorDelegate) {
         self.coordiantorDelegate = coordinator
-        self.transferService = databaseService
-        self.roomService = databaseService
+        self.transferService = transferService
+        self.roomService = roomService
         self.roomName = roomName
         super.init(authService: authService)
         setup(data: data)
