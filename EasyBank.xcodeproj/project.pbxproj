@@ -68,6 +68,7 @@
 		DE49A0E2271085FA00124DA1 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49A0E1271085FA00124DA1 /* HomeViewControllerTests.swift */; };
 		DE49A0E42710862C00124DA1 /* HomeViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49A0E32710862C00124DA1 /* HomeViewModelSpy.swift */; };
 		DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49A0E527109F6D00124DA1 /* HomeViewControllerMirror.swift */; };
+		DE4C03FC2734228900729CE7 /* CompleteTransactionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C03FB2734228900729CE7 /* CompleteTransactionViewModelTests.swift */; };
 		DE4C430426DE6A7C0019410A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */; };
 		DE4C430526DE6A7C0019410A /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */; };
 		DE4C430E26DEC0520019410A /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */; };
@@ -128,6 +129,9 @@
 		DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */; };
 		DEA3B38426F8D044003E09FC /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */; };
 		DEC1162E270B5CB100E74380 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1162D270B5CB100E74380 /* User.swift */; };
+		DEC7CBC92734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7CBC82734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift */; };
+		DEC7CBCB2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7CBCA2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift */; };
+		DEC7CBCD2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7CBCC2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift */; };
 		DECA54732720483A00A8747D /* AccountViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA54722720483A00A8747D /* AccountViewControllerMirror.swift */; };
 		DECA5475272048E900A8747D /* AccounViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA5474272048E900A8747D /* AccounViewModelSpy.swift */; };
 		DECA547727204C3300A8747D /* AccountViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA547627204C3300A8747D /* AccountViewControllerTests.swift */; };
@@ -234,6 +238,7 @@
 		DE49A0E1271085FA00124DA1 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		DE49A0E32710862C00124DA1 /* HomeViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpy.swift; sourceTree = "<group>"; };
 		DE49A0E527109F6D00124DA1 /* HomeViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMirror.swift; sourceTree = "<group>"; };
+		DE4C03FB2734228900729CE7 /* CompleteTransactionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewModelTests.swift; sourceTree = "<group>"; };
 		DE4C430226DE6A7C0019410A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE4C430326DE6A7C0019410A /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
@@ -295,6 +300,9 @@
 		DEA3B38126F8CB89003E09FC /* PasswordEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordEnum.swift; sourceTree = "<group>"; };
 		DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		DEC1162D270B5CB100E74380 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DEC7CBC82734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewControllerMirror.swift; sourceTree = "<group>"; };
+		DEC7CBCA2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewModelSpy.swift; sourceTree = "<group>"; };
+		DEC7CBCC2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewControllerTests.swift; sourceTree = "<group>"; };
 		DECA54722720483A00A8747D /* AccountViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewControllerMirror.swift; sourceTree = "<group>"; };
 		DECA5474272048E900A8747D /* AccounViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccounViewModelSpy.swift; sourceTree = "<group>"; };
 		DECA547627204C3300A8747D /* AccountViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewControllerTests.swift; sourceTree = "<group>"; };
@@ -841,6 +849,7 @@
 				DE21EAD42719D88600688DE3 /* Password */,
 				DE04E7082722FA8B00A8A7F0 /* QRCode */,
 				DE04E6FE2722F65C00A8A7F0 /* Receive */,
+				DEC7CBC62734121100D0E24C /* CompleteTransaction */,
 				DE891910272AE2FE00612602 /* Pay */,
 				DE891913272AE3B800612602 /* Scanner */,
 				DE5D36E52718880B0049A326 /* HomeMenu */,
@@ -960,6 +969,25 @@
 				DEA3B38326F8D044003E09FC /* PasswordViewModel.swift */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		DEC7CBC62734121100D0E24C /* CompleteTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				DEC7CBC72734122A00D0E24C /* Doubles */,
+				DEC7CBCC2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift */,
+				DE4C03FB2734228900729CE7 /* CompleteTransactionViewModelTests.swift */,
+			);
+			path = CompleteTransaction;
+			sourceTree = "<group>";
+		};
+		DEC7CBC72734122A00D0E24C /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				DEC7CBC82734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift */,
+				DEC7CBCA2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 		DECA54702720477900A8747D /* Account */ = {
@@ -1335,6 +1363,7 @@
 				DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */,
 				DE55B4E827078A3A00A77DED /* DatabaseServiceSpy.swift in Sources */,
 				DE725B4227173894006892A4 /* HomeViewModelTests.swift in Sources */,
+				DEC7CBCD2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift in Sources */,
 				DE9E9134271F0587006037C0 /* RecoverPasswordViewControllerMirror.swift in Sources */,
 				DE21EACF2719B04D00688DE3 /* HomeMenuViewModelSpy.swift in Sources */,
 				DE21EAD32719B8FF00688DE3 /* HomeMenuViewModelTests.swift in Sources */,
@@ -1342,6 +1371,8 @@
 				DEFE686A273030760043DC6C /* PayViewControllerMirror.swift in Sources */,
 				DE113150270F22C400A80E96 /* RoomViewControllerTests.swift in Sources */,
 				DE04E70A2722FAA700A8A7F0 /* QRCodeViewControllerTests.swift in Sources */,
+				DE4C03FC2734228900729CE7 /* CompleteTransactionViewModelTests.swift in Sources */,
+				DEC7CBC92734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift in Sources */,
 				DE04E6FD2721D29800A8A7F0 /* ProfileViewModelTests.swift in Sources */,
 				DECA5475272048E900A8747D /* AccounViewModelSpy.swift in Sources */,
 				DE5D36E82718884F0049A326 /* HomeMenuViewControllerTests.swift in Sources */,
@@ -1366,6 +1397,7 @@
 				DE1EF9C8271DBE8F0064D832 /* PasswordCoordinatorSpy.swift in Sources */,
 				DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */,
 				DE21EAD92719D90B00688DE3 /* PasswordViewModelSpy.swift in Sources */,
+				DEC7CBCB2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift in Sources */,
 				DE04E6F72721CAB600A8A7F0 /* ProfileViewControllerMirror.swift in Sources */,
 				DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */,
 				DE113157270F2EBA00A80E96 /* RoomViewControllerMirror.swift in Sources */,

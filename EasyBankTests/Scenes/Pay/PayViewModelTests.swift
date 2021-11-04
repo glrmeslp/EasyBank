@@ -1,4 +1,5 @@
 import XCTest
+import FirebaseFirestore
 @testable import EasyBank
 
 final class PayViewModelTests: XCTestCase {
@@ -39,11 +40,10 @@ final class PayViewModelTests: XCTestCase {
 
     func test_transfer_withoutError_shouldCallPushToCompleteTransaction() {
         authServiceSpy.user = User(identifier: "123", name: "Guilherme", email: "test@test.com")
-        databaseSpy.transferIdToBeReturn = "1234"
+        databaseSpy.transferToBeReturn = Transfer(id: "123", payDate: Timestamp(date: Date()), value: 10, receiverName: "", payerName: "")
         sut.transfer(value: 10.0.asCurrency() ?? "") { _ in }
         XCTAssertTrue(databaseSpy.transferCalled)
         XCTAssertTrue(coordinatorSpy.pushToCompleteTransactionCalled)
-        XCTAssertEqual("1234", coordinatorSpy.transferIdReturned)
     }
 
     func test_presentConfirmAlert_shouldCallCoodinatorPresentConfirmAlert() {

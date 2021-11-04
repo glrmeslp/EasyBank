@@ -5,7 +5,7 @@ final class DatabaseServiceSpy {
     var createRoomError: String?
     var createAccountError: String?
     var transferErrorToBeReturn: Error?
-    var transferIdToBeReturn: String?
+    var transferToBeReturn: Transfer?
     private(set) var transferCalled = false
 }
 
@@ -48,15 +48,9 @@ extension DatabaseServiceSpy: RoomService {
 }
 
 extension DatabaseServiceSpy: TransferDatabaseService {
-    func transfer(_ roomName: String,
-                  value: Double,
-                  payerID: String,
-                  payerName: String,
-                  receiverID: String,
-                  receiverName: String,
-                  completion: @escaping (Error?, String?) -> Void) {
+    func transfer(_ roomName: String, value: Double, payerID: String, payerName: String, receiverID: String, receiverName: String, completion: @escaping (Error?, Transfer?) -> Void) {
         transferCalled = true
-        completion(transferErrorToBeReturn, transferIdToBeReturn)
+        completion(transferErrorToBeReturn, transferToBeReturn)
     }
     
     func getTransfer(roomName: String, documentId: String, completion: @escaping (Transfer?, String?) -> Void) {

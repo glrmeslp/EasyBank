@@ -10,7 +10,8 @@ final class PayCoordinatorSpy {
     private(set) var codeReturned = [""]
     private(set) var pushToCompleteTransactionCalled = false
     private(set) var presentConfirmAlertCalled = false
-    private(set) var transferIdReturned = ""
+    private(set) var transferReturned: Transfer?
+    private(set) var popToHomeViewControllerCalled = false
 }
 
 extension PayCoordinatorSpy: ScannerViewModelCoordinatorDelegate {
@@ -28,9 +29,9 @@ extension PayCoordinatorSpy: ScannerViewModelCoordinatorDelegate {
 }
 
 extension PayCoordinatorSpy: PayViewModelCoordinatorDelegate {
-    func pushToCompleteTransaction(with transferId: String) {
+    func pushToCompleteTransaction(with transfer: Transfer) {
         pushToCompleteTransactionCalled = true
-        transferIdReturned = transferId
+        transferReturned = transfer
     }
     
     func presentConfirmAlert(handler: ((UIAlertAction) -> Void)?) {
@@ -42,5 +43,11 @@ extension PayCoordinatorSpy: PayViewModelCoordinatorDelegate {
         presentAlertCalled = true
         handlerReturned = handler
         messageReturned = message
+    }
+}
+
+extension PayCoordinatorSpy: CompleteTransactionViewModelCoordinatorDelegate {
+    func popToHomeViewController() {
+        popToHomeViewControllerCalled = true
     }
 }
