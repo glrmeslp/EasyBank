@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayViewController" customModule="EasyBank" customModuleProvider="target">
             <connections>
-                <outlet property="activityIndicatorView" destination="G8k-XL-ycb" id="2xF-Jj-SBf"/>
                 <outlet property="balanceLabel" destination="b2Z-q8-A3P" id="4ds-qe-BdA"/>
                 <outlet property="confirmButton" destination="JAA-Mk-5Mj" id="gzh-Oq-RZ7"/>
                 <outlet property="nameLabel" destination="GgN-IW-xci" id="rAF-Dl-ByH"/>
@@ -110,32 +109,26 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAA-Mk-5Mj">
-                    <rect key="frame" x="20" y="782" width="374" height="50"/>
-                    <color key="backgroundColor" name="BlueColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="k2p-QD-sRP"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="784" width="374" height="48"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Confirm">
                         <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                     </state>
+                    <buttonConfiguration key="configuration" style="filled" title="Confirm" cornerStyle="capsule" buttonSize="large">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="baseBackgroundColor" name="BlueColor"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="didTapConfirmButton:" destination="-1" eventType="touchUpInside" id="Hdc-8l-RNZ"/>
                     </connections>
                 </button>
-                <activityIndicatorView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="G8k-XL-ycb">
-                    <rect key="frame" x="197" y="782" width="20" height="50"/>
-                    <color key="color" systemColor="secondarySystemBackgroundColor"/>
-                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="G8k-XL-ycb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Awp-DE-oxX"/>
                 <constraint firstItem="EGV-1h-IvW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="BqS-go-pRW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JAA-Mk-5Mj" secondAttribute="trailing" constant="20" id="J0h-CH-9vH"/>
-                <constraint firstItem="G8k-XL-ycb" firstAttribute="bottom" secondItem="JAA-Mk-5Mj" secondAttribute="bottom" id="Lkt-dO-Dwe"/>
-                <constraint firstItem="G8k-XL-ycb" firstAttribute="top" secondItem="JAA-Mk-5Mj" secondAttribute="top" id="Y3g-Iv-pK8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JAA-Mk-5Mj" secondAttribute="bottom" constant="30" id="ds9-sZ-b8i"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EGV-1h-IvW" secondAttribute="trailing" constant="20" id="t7Q-Fa-QIp"/>
                 <constraint firstItem="JAA-Mk-5Mj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ueS-aW-4AN"/>
