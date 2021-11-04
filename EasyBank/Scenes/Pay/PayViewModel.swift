@@ -61,10 +61,10 @@ final class PayViewModel: UserViewModel, PayViewModelDelegate {
                                  payerID: payerID,
                                  payerName: payerName,
                                  receiverID: receiverID,
-                                 receiverName: receiverName) { [weak self] error, documentID in
+                                 receiverName: receiverName) { [weak self] error, transfer in
             guard let error = error else {
-                guard let documentID = documentID else { return }
-                self?.coordiantorDelegate?.pushToCompleteTransaction(with: documentID)
+                guard let transfer = transfer else { return }
+                self?.coordiantorDelegate?.pushToCompleteTransaction(with: transfer)
                 return
             }
             self?.coordiantorDelegate?.presentAlert(message: error.localizedDescription, and: handler)

@@ -8,13 +8,13 @@ protocol ScannerViewModelCoordinatorDelegate: AnyObject {
 }
 
 protocol PayViewModelCoordinatorDelegate: AnyObject {
-    func pushToCompleteTransaction(with transferId: String)
+    func pushToCompleteTransaction(with transfer: Transfer)
     func presentConfirmAlert(handler: ((UIAlertAction) -> Void)?)
     func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?)
 }
 
 protocol CompleteTransactionViewModelCoordinatorDelegate: AnyObject {
-    func pushToHomeViewController(from controller: UIViewController)
+    func popToHomeViewController()
 }
 
 final class PayCoordinator: Coordinator {
@@ -75,9 +75,8 @@ extension PayCoordinator: PayViewModelCoordinatorDelegate {
         navigationController.present(alert, animated: true, completion: nil)
     }
 
-    func pushToCompleteTransaction(with transferId: String) {
-        let transferService = DatabaseService(firestore: firestore)
-        let viewModel = CompleteTransactionViewModel(transferService: transferService, transferId: transferId, roomName: roomName, coordinator: self)
+    func pushToCompleteTransaction(with transfer: Transfer) {
+        let viewModel = CompleteTransactionViewModel( transfer: transfer, coordinator: self)
         let completeTransaction = CompleteTransactionViewController(viewModel: viewModel)
         completeTransaction.modalPresentationStyle = .fullScreen
         navigationController.present(completeTransaction, animated: true)
@@ -85,8 +84,8 @@ extension PayCoordinator: PayViewModelCoordinatorDelegate {
 }
 
 extension PayCoordinator: CompleteTransactionViewModelCoordinatorDelegate {
-    func pushToHomeViewController(from controller: UIViewController) {
-        controller.dismiss(animated: true)
+    func popToHomeViewController() {
+        navigationController.dismiss(animated: true)
         navigationController.popToRootViewController(animated: false)
         didFinish()
     }

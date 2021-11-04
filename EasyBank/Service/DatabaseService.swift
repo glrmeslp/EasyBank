@@ -14,7 +14,7 @@ protocol TransferDatabaseService {
     func transfer(_ roomName: String, value: Double,
                   payerID: String, payerName: String,
                   receiverID: String, receiverName: String,
-                  completion: @escaping (Error?, String?) -> Void)
+                  completion: @escaping (Error?, Transfer?) -> Void)
     func getTransfer(roomName: String, documentId: String, completion: @escaping (Transfer?, String?) -> Void )
     func getAllTransfers(roomName: String, name: String, completion: @escaping ([Transfer]) -> Void)
 }
@@ -151,7 +151,7 @@ extension DatabaseService: TransferDatabaseService {
     func transfer(_ roomName: String, value: Double,
                   payerID: String, payerName: String,
                   receiverID: String, receiverName: String,
-                  completion: @escaping (Error?, String?) -> Void) {
+                  completion: @escaping (Error?, Transfer?) -> Void) {
         let payerReference = firestore.collection(COLLECTION_ROOM).document(roomName)
             .collection(COLLECTION_ACCOUNTS).document(payerID)
         let receiverReference = firestore.collection(COLLECTION_ROOM).document(roomName)
@@ -196,8 +196,8 @@ extension DatabaseService: TransferDatabaseService {
             return nil
         }) { (object, error) in
             guard let error = error else {
-                self.createTransferDocument(roomName, value: value, payerName: payerName, receiverName: receiverName) { error, documentID in
-                    completion(error,documentID)
+                self.createTransferDocument(roomName, value: value, payerName: payerName, receiverName: receiverName) { error, transfer in
+                    completion(error,transfer)
                 }
                 return
             }
@@ -205,11 +205,12 @@ extension DatabaseService: TransferDatabaseService {
         }
     }
 
-    private func createTransferDocument(_ roomName: String, value: Double, payerName: String, receiverName: String, completion: @escaping (Error? ,String?) -> Void) {
-        let transfer = Transfer(payDate: Timestamp(date: Date()), value: value, receiverName: receiverName, payerName: payerName)
+    private func createTransferDocument(_ roomName: String, value: Double, payerName: String, receiverName: String, completion: @escaping (Error? , Transfer?) -> Void) {
+        var transfer = Transfer(payDate: Timestamp(date: Date()), value: value, receiverName: receiverName, payerName: payerName)
         do {
             let reference = try firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_TRANSFERS).addDocument(from: transfer)
-            completion(nil, reference.documentID)
+            transfer.id = reference.documentID
+            completion(nil, transfer)
         } catch let error {
             completion(error, nil)
         }
