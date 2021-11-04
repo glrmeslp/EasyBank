@@ -20,15 +20,13 @@ protocol CompleteTransactionViewModelCoordinatorDelegate: AnyObject {
 final class PayCoordinator: Coordinator {
     var navigationController: UINavigationController
     private let firestore: Firestore
-    private let roomName: String
     private let auth: Auth
     
     weak var parentCoordinator: HomeCoordinator?
 
-    init(navigationController: UINavigationController, firestore: Firestore, roomName: String, auth: Auth) {
+    init(navigationController: UINavigationController, firestore: Firestore, auth: Auth) {
         self.navigationController = navigationController
         self.firestore = firestore
-        self.roomName = roomName
         self.auth = auth
     }
 
@@ -53,7 +51,6 @@ extension PayCoordinator: ScannerViewModelCoordinatorDelegate {
         let databaseService = DatabaseService(firestore: firestore)
         let authService = AuthenticationService(auth: auth)
         let payViewModel = PayViewModel(data: code,
-                                        roomName: roomName,
                                         authService: authService,
                                         roomService: databaseService,
                                         transferService: databaseService,

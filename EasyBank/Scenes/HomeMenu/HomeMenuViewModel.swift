@@ -1,3 +1,5 @@
+import Foundation
+
 protocol HomeMenuViewModelProtocol {
     func updatePassword()
     func leaveRoom()
@@ -19,6 +21,7 @@ final class HomeMenuViewModel: HomeMenuViewModelProtocol {
     }
 
     func leaveRoom() {
+        UserDefaults.standard.removeObject(forKey: "Room")
         coordinatorDelegate?.pushToStartViewController()
     }
 
@@ -27,6 +30,7 @@ final class HomeMenuViewModel: HomeMenuViewModelProtocol {
     }
 
     func signOut() {
+        UserDefaults.standard.removeObject(forKey: "Room")
         authService.signOut()
         coordinatorDelegate?.pushToStartViewController()
     }

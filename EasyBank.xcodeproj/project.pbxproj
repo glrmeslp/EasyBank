@@ -48,7 +48,6 @@
 		DE3774A926F23B82005719E3 /* HomeMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE3774A726F23B82005719E3 /* HomeMenuView.xib */; };
 		DE3774AB26F23E22005719E3 /* HomeMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3774AA26F23E22005719E3 /* HomeMenuViewModel.swift */; };
 		DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44BB4B26E27A550083B354 /* HomeCoordinator.swift */; };
-		DE44BB4E26E297300083B354 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44BB4D26E297300083B354 /* BaseViewModel.swift */; };
 		DE44BB5026E2B2750083B354 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44BB4F26E2B2750083B354 /* String+Extension.swift */; };
 		DE46213C26D6D2F5001E6685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213B26D6D2F5001E6685 /* AppDelegate.swift */; };
 		DE46213E26D6D2F5001E6685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */; };
@@ -216,7 +215,6 @@
 		DE3774A726F23B82005719E3 /* HomeMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMenuView.xib; sourceTree = "<group>"; };
 		DE3774AA26F23E22005719E3 /* HomeMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModel.swift; sourceTree = "<group>"; };
 		DE44BB4B26E27A550083B354 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		DE44BB4D26E297300083B354 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		DE44BB4F26E2B2750083B354 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DE46213826D6D2F5001E6685 /* EasyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE46213B26D6D2F5001E6685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -911,7 +909,6 @@
 		DE8A0D3126DB129000D0175F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DE44BB4D26E297300083B354 /* BaseViewModel.swift */,
 				DEE3858026E651E5008D9409 /* CurrencyTextField.swift */,
 				DE113154270F2B0600A80E96 /* UserViewModel.swift */,
 			);
@@ -1322,7 +1319,6 @@
 				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,
 				DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */,
 				DE52A77A26E8FDE500EC3521 /* QRCodeViewController.swift in Sources */,
-				DE44BB4E26E297300083B354 /* BaseViewModel.swift in Sources */,
 				DE93485026D8075200680E63 /* Account.swift in Sources */,
 				DEA3B37F26F8BD6D003E09FC /* PasswordViewController.swift in Sources */,
 				DE52A77726E8FC3E00EC3521 /* ReceiveCoordinator.swift in Sources */,
