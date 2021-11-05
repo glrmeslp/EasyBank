@@ -27,7 +27,7 @@ final class ScannerViewModelTests: XCTestCase {
         roomServiceSpy.rooms = ["Room": ["123": Account(balance: 0, userName: "UserName")]]
         sut.validateQRCode(code: "com.glrmeslp.EasyBank00X00Room00X0010.000X0012300X00UserName") { _ in }
         XCTAssertTrue(coordinatorSpy.pushToPayViewControllerCalled)
-        XCTAssertEqual(["Room","10.0","123","UserName"], coordinatorSpy.codeReturned)
+        XCTAssertEqual(["10.0","123","UserName"], coordinatorSpy.codeReturned)
     }
 
     func test_presentFailedAlert_shouldCallPresentAlert() {

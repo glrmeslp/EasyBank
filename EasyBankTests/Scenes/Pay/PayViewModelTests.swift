@@ -7,7 +7,6 @@ final class PayViewModelTests: XCTestCase {
     private let coordinatorSpy = PayCoordinatorSpy()
     private let authServiceSpy = AuthenticationServiceSpy()
     private lazy var sut: PayViewModel = PayViewModel(data: ["10.0","124","UserName"],
-                                                      roomName: "Room",
                                                       authService: authServiceSpy,
                                                       roomService: databaseSpy,
                                                       transferService: databaseSpy,

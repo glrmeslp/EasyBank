@@ -4,8 +4,7 @@ import XCTest
 final class QRCodeViewModelTests: XCTestCase {
     private let authServiceSpy = AuthenticationServiceSpy()
     private let coordinatorSpy = ReceiveCoordinatorSpy()
-    private lazy var sut: QRCodeViewModel = QRCodeViewModel(roomName: "Room",
-                                                            value: 0.0,
+    private lazy var sut: QRCodeViewModel = QRCodeViewModel(value: 0.0,
                                                             coordinator: coordinatorSpy,
                                                             authService: authServiceSpy)
 
@@ -29,7 +28,7 @@ final class QRCodeViewModelTests: XCTestCase {
 
     func test_getValue_givenValueTen_shouldReturnValueAsCurrency() {
         let value = 10.0
-        sut = QRCodeViewModel(roomName: "Room", value: value, coordinator: coordinatorSpy, authService: authServiceSpy)
+        sut = QRCodeViewModel(value: value, coordinator: coordinatorSpy, authService: authServiceSpy)
         sut.getValue { result in
             XCTAssertEqual(value.asCurrency(), result)
         }
