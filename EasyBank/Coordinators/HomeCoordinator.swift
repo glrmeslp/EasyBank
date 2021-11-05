@@ -55,9 +55,9 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     func pushToExtractViewController() {
         let databaseService = DatabaseService(firestore: firestore)
         let authService = AuthenticationService(auth: auth)
-        let extractViewModel = ExtractViewModel(databaseService: databaseService, authService: authService)
+        let extractViewModel = ExtractViewModel(transferService: databaseService, authService: authService, roomService: databaseService)
         let extractViewController = ExtractViewController(viewModel: extractViewModel)
-        
+        navigationController.pushViewController(extractViewController, animated: true)
     }
     
     func presentHomeMenuViewController() {
