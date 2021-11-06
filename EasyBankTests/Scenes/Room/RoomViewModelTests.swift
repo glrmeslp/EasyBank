@@ -29,7 +29,6 @@ final class RoomViewModelTests: XCTestCase {
         sut.enter("Room")
         XCTAssertTrue(coordinatorSpy.presentAlertAndPushToHomeCalled)
         XCTAssertEqual("You don't have an account in the room yet. A new account will be created", coordinatorSpy.messageAlert)
-        XCTAssertEqual("Room", coordinatorSpy.roomName)
     }
 
     func test_createAccountInThe_withError_shouldCallPresentAlert() {

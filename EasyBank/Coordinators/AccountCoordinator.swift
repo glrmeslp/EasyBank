@@ -26,21 +26,17 @@ protocol ProfileViewModelCoordinatorDelegate: AnyObject {
 
 final class AccountCoordinator: Coordinator {
     var navigationController: UINavigationController
-
-    private let roomName: String
     private let auth: Auth
     private let firestore: Firestore
 
-    init(navigationController: UINavigationController, roomName: String, auth: Auth, firestore: Firestore) {
+    init(navigationController: UINavigationController, auth: Auth, firestore: Firestore) {
         self.navigationController = navigationController
-        self.roomName = roomName
         self.auth = auth
         self.firestore = firestore
     }
 
     func start() {
-        let accountViewModel = AccountViewModel(roomName: roomName,
-                                                authService: AuthenticationService(auth: auth),
+        let accountViewModel = AccountViewModel(authService: AuthenticationService(auth: auth),
                                                 roomService: DatabaseService(firestore: firestore),
                                                 coordinator: self)
         let accountViewController = AccountViewController(viewModel: accountViewModel)
@@ -81,7 +77,10 @@ extension AccountCoordinator: AccountViewModelCoordinatorDelegate {
     func presentLeaveRoomActionSheet() {
         navigationController.presentActionSheet(title: "Do you want to leave the room?",
                                                 buttonTitle: "Get Out",
-                                                style: .destructive) { _ in self.pushToStartViewController()}
+                                                style: .destructive) { _ in
+            UserDefaults.standard.removeObject(forKey: "Room")
+            self.pushToStartViewController()
+        }
     }
     
     func presentReauthenticateViewController(for motive: Reautheticate) {

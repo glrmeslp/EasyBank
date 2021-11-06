@@ -2,6 +2,7 @@
 
 final class DatabaseServiceSpy {
     var rooms: [String: [String: Account]]?
+    var transfersToBeReturn: [Transfer]?
     var createRoomError: String?
     var createAccountError: String?
     var transferErrorToBeReturn: Error?
@@ -58,7 +59,8 @@ extension DatabaseServiceSpy: TransferDatabaseService {
     }
     
     func getAllTransfers(roomName: String, name: String, completion: @escaping ([Transfer]) -> Void) {
-        
+        guard let transfersToBeReturn = transfersToBeReturn else { return }
+        completion(transfersToBeReturn)
     }
     
     

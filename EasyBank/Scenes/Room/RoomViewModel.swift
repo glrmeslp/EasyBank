@@ -18,6 +18,7 @@ final class RoomViewModel: UserViewModel, RoomViewModelProtocol {
         roomService.getRoom(roomName: roomName) { [weak self] message in
             guard let message = message else {
                 self?.userHasAnAccountInThis(roomName)
+                self?.setupUserDefaultsForRoomKey(roomName)
                 return
             }
             self?.coordinatorDelegate?.presentAlert(with: message)
@@ -31,7 +32,7 @@ final class RoomViewModel: UserViewModel, RoomViewModelProtocol {
                 self?.createAccountInThe(roomName)
             } else {
                 let message = "You already have an account in this room. A new account will not be created"
-                self?.coordinatorDelegate?.presentAlertAndPushToHome(with: message, and: roomName)
+                self?.coordinatorDelegate?.presentAlertAndPushToHome(with: message)
             }
             
         }
@@ -42,10 +43,14 @@ final class RoomViewModel: UserViewModel, RoomViewModelProtocol {
         roomService.createAccount(roomName: roomName, user: user) { [weak self] error in
             guard let error = error else {
                 let message = "You don't have an account in the room yet. A new account will be created"
-                self?.coordinatorDelegate?.presentAlertAndPushToHome(with: message, and: roomName)
+                self?.coordinatorDelegate?.presentAlertAndPushToHome(with: message)
                 return
             }
             self?.coordinatorDelegate?.presentAlert(with: error)
         }
+    }
+
+    private func setupUserDefaultsForRoomKey(_ roomName: String) {
+        UserDefaults.standard.set(roomName, forKey: "Room")
     }
 }

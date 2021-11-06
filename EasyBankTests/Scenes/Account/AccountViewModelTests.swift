@@ -5,8 +5,7 @@ final class AccountViewModelTests: XCTestCase {
     private let authServiceSpy = AuthenticationServiceSpy()
     private let roomServiceSpy = DatabaseServiceSpy()
     private let coordinatorSpy = AccountCoordinatorSpy()
-    private lazy var sut: AccountViewModel = AccountViewModel(roomName: "Room",
-                                                              authService: authServiceSpy,
+    private lazy var sut: AccountViewModel = AccountViewModel(authService: authServiceSpy,
                                                               roomService: roomServiceSpy,
                                                               coordinator: coordinatorSpy)
 
@@ -46,6 +45,7 @@ final class AccountViewModelTests: XCTestCase {
     }
 
     func test_fecthData_shouldReturnRoomNameAndUser() {
+        UserDefaults.standard.set("Room", forKey: "Room")
         authServiceSpy.user = User(identifier: "", name: "Guilherme", email: "guilherme@test.com")
         sut.fetchData { roomName, user in
             XCTAssertEqual("Room", roomName)
