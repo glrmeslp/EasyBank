@@ -116,7 +116,7 @@ final class HomeViewControllerTests: XCTestCase {
         }
         XCTAssertEqual(UIImage(systemName: "eye.fill"), showBalanceButton.image(for: .normal))
         XCTAssertTrue(homeViewModelSpy.fetchBalanceCalled)
-        XCTAssertEqual("¤10.00", balanceLabel.text)
+        XCTAssertEqual(10.0.asCurrency(), balanceLabel.text)
     }
 
     func test_didTapExtractButton_shouldCallShowExtractViewController() {

@@ -1,3 +1,5 @@
+import Foundation
+
 protocol HomeViewModelProtocol {
     func fetchBalance(completion: @escaping (String) -> Void)
     func fetchInformation(completion: @escaping ([[String]],String) -> Void)
@@ -14,20 +16,19 @@ final class HomeViewModel: UserViewModel, HomeViewModelProtocol {
         ["Pay QR Code","qrcode"],
         ["Receive","ReceiveIcon"]
     ]
-    private let roomName: String
+    private let roomName: String?
     private let roomService: RoomService
-
     private var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
 
-    init(with roomName: String, roomService: RoomService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
+    init(roomService: RoomService, authService: AuthService, coordinator: HomeViewModelCoordinatorDelegate) {
         self.coordinatorDelegate = coordinator
-        self.roomName = roomName
         self.roomService = roomService
+        self.roomName = UserDefaults.standard.string(forKey: "Room")
         super.init(authService: authService)
     }
 
     func fetchBalance(completion: @escaping (String) -> Void) {
-        guard let uid = user?.identifier else { return }
+        guard let uid = user?.identifier, let roomName = roomName else { return }
         roomService.getAccount(roomName: roomName, uid: uid) { account, _  in
             guard let value = account?.balance.asCurrency() else { return }
             completion(value)
@@ -35,6 +36,7 @@ final class HomeViewModel: UserViewModel, HomeViewModelProtocol {
     }
 
     func fetchInformation(completion: @escaping ([[String]],String) -> Void) {
+        guard let roomName = roomName else { return }
         completion(transferMenu,roomName)
     }
 

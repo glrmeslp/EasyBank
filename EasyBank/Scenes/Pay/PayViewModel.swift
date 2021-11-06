@@ -12,13 +12,12 @@ final class PayViewModel: UserViewModel, PayViewModelDelegate {
     private var value: Double?
     private var receiverName: String?
     private var receiverID: String?
-    private let roomName: String
+    private let roomName: String? = UserDefaults.standard.string(forKey: "Room")
     private var coordiantorDelegate: PayViewModelCoordinatorDelegate?
     private let transferService: TransferDatabaseService
     private let roomService: RoomService
 
     init(data: [String],
-         roomName: String,
          authService: AuthService,
          roomService: RoomService,
          transferService: TransferDatabaseService,
@@ -26,7 +25,6 @@ final class PayViewModel: UserViewModel, PayViewModelDelegate {
         self.coordiantorDelegate = coordinator
         self.transferService = transferService
         self.roomService = roomService
-        self.roomName = roomName
         super.init(authService: authService)
         setup(data: data)
     }
@@ -42,7 +40,7 @@ final class PayViewModel: UserViewModel, PayViewModelDelegate {
     }
 
     func fetchBalance(completion: @escaping (String) -> Void) {
-        guard let uid = user?.identifier else { return }
+        guard let uid = user?.identifier, let roomName = roomName else { return }
         roomService.getAccount(roomName: roomName, uid: uid) { account, _  in
             guard let value = account?.balance.asCurrency() else { return }
             completion(value)
@@ -55,7 +53,12 @@ final class PayViewModel: UserViewModel, PayViewModelDelegate {
     }
 
     func transfer(value: String, handler: ((UIAlertAction) -> Void)?) {
-        guard let receiverName = receiverName, let payerName = user?.name, let value = value.asDouble(), let payerID = user?.identifier, let receiverID = receiverID else { return }
+        guard let receiverName = receiverName,
+              let payerName = user?.name,
+              let value = value.asDouble(),
+              let payerID = user?.identifier,
+              let receiverID = receiverID,
+              let roomName = roomName else { return }
         transferService.transfer(roomName,
                                  value: value,
                                  payerID: payerID,

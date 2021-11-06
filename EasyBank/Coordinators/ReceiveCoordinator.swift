@@ -12,12 +12,10 @@ protocol QRcodeViewModelCoordinatorDelegate: AnyObject {
 
 final class ReceiveCoordinator: Coordinator {
     var navigationController: UINavigationController
-    private let roomName: String
     private let auth: Auth
     
-    init(navigationController: UINavigationController, roomName: String, auth: Auth) {
+    init(navigationController: UINavigationController, auth: Auth) {
         self.navigationController = navigationController
-        self.roomName = roomName
         self.auth = auth
     }
 
@@ -30,7 +28,7 @@ final class ReceiveCoordinator: Coordinator {
 extension ReceiveCoordinator: ReceiveViewCoordinatorDelegate {
     func pushToQRCodeViewController(value: Double) {
         let authService = AuthenticationService(auth: auth)
-        let qrCodeViewModel = QRCodeViewModel(roomName: roomName, value: value, coordinator: self, authService: authService)
+        let qrCodeViewModel = QRCodeViewModel(value: value, coordinator: self, authService: authService)
         let qrCodeViewController = QRCodeViewController(viewModel: qrCodeViewModel)
         navigationController.pushViewController(qrCodeViewController, animated: true)
     }

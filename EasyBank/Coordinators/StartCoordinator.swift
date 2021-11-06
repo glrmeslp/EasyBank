@@ -9,14 +9,14 @@ protocol StartViewModelCoordinatorDelegate: AnyObject {
 }
 
 protocol NewRoomViewModelCoordinatorDelegate: AnyObject {
-    func pushToHomeViewController(with roomName: String)
+    func pushToHomeViewController()
     func presentAlert(with message: String)
 }
 
 protocol RoomViewModelCoordinatorDelegate: AnyObject {
-    func pushToHomeViewController(with roomName: String)
+    func pushToHomeViewController()
     func presentAlert(with message: String)
-    func presentAlertAndPushToHome(with message: String, and roomName: String)
+    func presentAlertAndPushToHome(with message: String)
 }
 
 final class StartCoordinator: Coordinator {
@@ -80,14 +80,14 @@ extension StartCoordinator: NewRoomViewModelCoordinatorDelegate, RoomViewModelCo
         navigationController.presentAlert(with: message)
     }
 
-    func presentAlertAndPushToHome(with message: String, and roomName: String) {
+    func presentAlertAndPushToHome(with message: String) {
         navigationController.presentAlert(with: message) { _ in
-            self.pushToHomeViewController(with: roomName)
+            self.pushToHomeViewController()
         }
     }
 
-    func pushToHomeViewController(with roomName: String) {
-        let homeCoordinator = HomeCoordinator(navigationController: navigationController, roomName: roomName, firestore: firestore, auth: auth)
+    func pushToHomeViewController() {
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController, firestore: firestore, auth: auth)
         homeCoordinator.start()
     }
 }

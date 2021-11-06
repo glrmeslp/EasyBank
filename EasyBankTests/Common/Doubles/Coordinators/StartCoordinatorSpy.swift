@@ -9,7 +9,6 @@ final class StartCoordinatorSpy {
     private(set) var presentAlertCalled = false
     private(set) var messageAlert = ""
     private(set) var presentAlertAndPushToHomeCalled = false
-    private(set) var roomName = ""
 }
 
 extension StartCoordinatorSpy: StartViewModelCoordinatorDelegate {
@@ -27,9 +26,8 @@ extension StartCoordinatorSpy: StartViewModelCoordinatorDelegate {
 }
 
 extension StartCoordinatorSpy: NewRoomViewModelCoordinatorDelegate, RoomViewModelCoordinatorDelegate {
-    func pushToHomeViewController(with roomName: String) {
+    func pushToHomeViewController() {
         pushToHomeViewControllerCalled = true
-        self.roomName = roomName
     }
     
     func presentAlert(with message: String) {
@@ -37,10 +35,9 @@ extension StartCoordinatorSpy: NewRoomViewModelCoordinatorDelegate, RoomViewMode
         messageAlert = message
     }
     
-    func presentAlertAndPushToHome(with message: String, and roomName: String) {
+    func presentAlertAndPushToHome(with message: String) {
         presentAlertAndPushToHomeCalled = true
         messageAlert = message
-        self.roomName = roomName
     }
     
     
