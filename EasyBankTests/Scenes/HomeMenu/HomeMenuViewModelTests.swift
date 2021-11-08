@@ -27,4 +27,9 @@ final class HomeMenuViewModelTests: XCTestCase {
         XCTAssertTrue(authServiceSpy.signOutCalled)
         XCTAssertTrue(coordinatorSpy.pushToStartViewControllerCalled)
     }
+
+    func test_enterBankMode_shouldCallPresentBankModeAlert() {
+        sut.enterBankMode()
+        XCTAssertTrue(coordinatorSpy.presentBankModeAlertCalled)
+    }
 }

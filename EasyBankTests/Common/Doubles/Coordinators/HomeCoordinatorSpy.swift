@@ -7,6 +7,7 @@ final class HomeCoordinatorSpy {
     private(set) var pushToStartViewControllerCalled = false
     private(set) var pushToPasswordViewControllerCalled = false
     private(set) var pushToAccountViewControllerCalled = false
+    private(set) var presentBankModeAlertCalled = false
 }
 
 extension HomeCoordinatorSpy: HomeViewModelCoordinatorDelegate {
@@ -28,6 +29,10 @@ extension HomeCoordinatorSpy: HomeViewModelCoordinatorDelegate {
 }
 
 extension HomeCoordinatorSpy: HomeMenuViewModelCoordinatorDelegate {
+    func presentBankModeAlert() {
+        presentBankModeAlertCalled = true
+    }
+    
     func pushToStartViewController() {
         pushToStartViewControllerCalled = true
     }

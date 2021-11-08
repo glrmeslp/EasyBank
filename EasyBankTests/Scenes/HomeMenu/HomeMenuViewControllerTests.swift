@@ -18,4 +18,11 @@ final class HomeMenuViewControllerTests: XCTestCase {
         sutMirrored.accountButton?.sendActions(for: .touchUpInside)
         XCTAssertTrue(viewModelSpy.showAccountCalled)
     }
+
+    func test_didTapBankButton_shouldCallEnterBankMode() {
+        sut.loadViewIfNeeded()
+        let sutMirrored = HomeMenuViewControllerMirror(viewController: sut)
+        sutMirrored.bankButton?.sendActions(for: .touchUpInside)
+        XCTAssertTrue(viewModelSpy.enterBankModeCalled)
+    }
 }
