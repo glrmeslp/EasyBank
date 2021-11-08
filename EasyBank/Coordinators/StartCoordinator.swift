@@ -5,17 +5,18 @@ import FirebaseAuth
 protocol StartViewModelCoordinatorDelegate: AnyObject {
     func pushToNewRoomViewController()
     func pushToRoomViewController()
-    func pushToAuthViewController(controller: UIViewController)
+    func pushToAuthViewController()
 }
 
 protocol NewRoomViewModelCoordinatorDelegate: AnyObject {
-    func pushToHomeViewController(with roomName: String)
-    func presentAlert(with message: String, from controller: UIViewController)
+    func pushToHomeViewController()
+    func presentAlert(with message: String)
 }
 
-protocol RoomViewModelCoordinatorDelegate: AnyObject {func pushToHomeViewController(with roomName: String)
-    func presentAlert(with message: String, from controller: UIViewController)
-    func presentAlertAndPushToHome(with message: String, from controller: UIViewController, and roomName: String)
+protocol RoomViewModelCoordinatorDelegate: AnyObject {
+    func pushToHomeViewController()
+    func presentAlert(with message: String)
+    func presentAlertAndPushToHome(with message: String)
 }
 
 final class StartCoordinator: Coordinator {
@@ -56,8 +57,11 @@ final class StartCoordinator: Coordinator {
 }
 
 extension StartCoordinator: StartViewModelCoordinatorDelegate {
-    func pushToAuthViewController(controller: UIViewController) {
-        navigationController.present(controller, animated: true, completion: nil)
+    func pushToAuthViewController() {
+        let authService = AuthenticationService(auth: auth)
+        let authViewController = authService.uiAuth.authViewController()
+        authViewController.modalPresentationStyle = .overCurrentContext
+        navigationController.present(authViewController, animated: true)
     }
 
     func pushToNewRoomViewController() {
@@ -72,18 +76,18 @@ extension StartCoordinator: StartViewModelCoordinatorDelegate {
 }
 
 extension StartCoordinator: NewRoomViewModelCoordinatorDelegate, RoomViewModelCoordinatorDelegate {
-    func presentAlert(with message: String, from controller: UIViewController) {
-        controller.presentAlert(with: message)
+    func presentAlert(with message: String) {
+        navigationController.presentAlert(with: message)
     }
 
-    func presentAlertAndPushToHome(with message: String, from controller: UIViewController, and roomName: String) {
-        controller.presentAlert(with: message) { _ in
-            self.pushToHomeViewController(with: roomName)
+    func presentAlertAndPushToHome(with message: String) {
+        navigationController.presentAlert(with: message) { _ in
+            self.pushToHomeViewController()
         }
     }
 
-    func pushToHomeViewController(with roomName: String) {
-        let homeCoordinator = HomeCoordinator(navigationController: navigationController, roomName: roomName, firestore: firestore, auth: auth)
+    func pushToHomeViewController() {
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController, firestore: firestore, auth: auth)
         homeCoordinator.start()
     }
 }

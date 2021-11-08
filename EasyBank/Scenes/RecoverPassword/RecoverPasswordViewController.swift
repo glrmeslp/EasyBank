@@ -1,15 +1,15 @@
 import UIKit
 
-class RecoverPasswordViewController: UIViewController {
+final class RecoverPasswordViewController: UIViewController {
 
-    private var viewModel: RecoverPasswordViewModel?
+    private var viewModel: RecoverPasswordViewModelProtocol?
 
     @IBOutlet private weak var sendButton: UIButton!
     @IBOutlet private weak var emailTextField: UITextField! {
         didSet { emailTextField.delegate = self }
     }
 
-    init(viewModel: RecoverPasswordViewModel) {
+    init(viewModel: RecoverPasswordViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "RecoverPasswordView", bundle: nil)
     }
@@ -22,35 +22,45 @@ class RecoverPasswordViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
-    @IBAction func didTapSendButton(_ sender: Any) {
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        disableActivityIndicatorView()
+    }
+
+    @IBAction private func didTapSendButton(_ sender: Any) {
         guard let email = emailTextField.text else { return }
-        viewModel?.sendPasswordReset(with: email) { [weak self] message in
-            self?.presentAlert(with: message)
-        }
+        enableActivityIndicatorView()
+        viewModel?.sendPasswordReset(with: email)
     }
     
     private func setup() {
-        sendButton.layer.cornerRadius = 25
-        sendButton.setTitleColor(UIColor.gray, for: .disabled)
         disableSendButton()
-        emailTextField.becomeFirstResponder()
-        
-        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
-        view.addGestureRecognizer(tapGestureReconizer)
+        addGestureRecognizerForEndEditing()
     }
 
     private func disableSendButton() {
         sendButton.isEnabled = false
-        sendButton.layer.backgroundColor = UIColor.systemGray6.cgColor
+        sendButton.configuration?.baseForegroundColor = .gray
+        sendButton.configuration?.baseBackgroundColor = .systemGray6
     }
 
     private func enableSendButton() {
         sendButton.isEnabled = true
-        sendButton.layer.backgroundColor = UIColor(named: "BlueColor")!.cgColor
+        sendButton.configuration?.baseForegroundColor = .systemBackground
+        sendButton.configuration?.baseBackgroundColor = UIColor(named: "BlueColor")
     }
 
-    @objc private func didTapView(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
+    private func enableActivityIndicatorView() {
+        sendButton.configuration?.title = ""
+        sendButton.configuration?.showsActivityIndicator = true
+        sendButton.isEnabled = false
+    }
+    
+    private func disableActivityIndicatorView() {
+        sendButton.configuration?.showsActivityIndicator = false
+        sendButton.configuration?.title = "Send Email"
+        sendButton.isEnabled = true
     }
 }
 
@@ -62,13 +72,6 @@ extension RecoverPasswordViewController: UITextFieldDelegate {
         return true
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let value = textField.text else { return }
-        if value.isEmpty {
-            disableSendButton()
-        }
-    }
-    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let value = textField.text else { return }
         if value.isEmpty {

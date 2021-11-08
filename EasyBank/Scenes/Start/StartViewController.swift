@@ -2,23 +2,18 @@ import UIKit
 
 final class StartViewController: UIViewController {
 
-    private var viewModel: StartViewModel?
+    private var viewModel: StartViewModelProtocol?
 
     @IBOutlet private weak var createButton: UIButton!
     @IBOutlet private weak var joinButton: UIButton!
 
-    init(viewModel: StartViewModel) {
+    init(viewModel: StartViewModelProtocol) {
         self.viewModel = viewModel
-        super.init(nibName: "StartViewController", bundle: nil)
+        super.init(nibName: "StartView", bundle: nil)
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +24,7 @@ final class StartViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         viewModel?.undetectAuthenticationStatus()
+        setupNavigationController(isHidden: false)
         super.viewWillDisappear(animated)
     }
 
@@ -39,15 +35,5 @@ final class StartViewController: UIViewController {
     @IBAction private func didTapJoinButton(_ sender: Any) {
         viewModel?.showRoomViewController()
     }
-
-    func setup() {
-        createButton.layer.cornerRadius = 25
-        joinButton.layer.cornerRadius = 25
-        joinButton.layer.borderWidth = 1
-        joinButton.layer.borderColor = UIColor(named: "BlueColor")!.cgColor
-        setupNavigationController(isHidden: true)
-        navigationController?.hidesBarsOnSwipe = false
-    }
-
 }
 

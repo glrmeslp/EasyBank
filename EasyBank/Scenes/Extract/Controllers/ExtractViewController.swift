@@ -2,7 +2,7 @@ import UIKit
 
 final class ExtractViewController: UIViewController {
 
-    private var viewModel: ExtractViewModel?
+    private var viewModel: ExtractViewModelDelegate?
     private var transfers: [Transfer]?
 
     @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
@@ -14,7 +14,7 @@ final class ExtractViewController: UIViewController {
         }
     }
 
-    init(viewModel: ExtractViewModel) {
+    init(viewModel: ExtractViewModelDelegate) {
         self.viewModel = viewModel
         super.init(nibName: "ExtractView", bundle: nil)
     }
@@ -31,15 +31,11 @@ final class ExtractViewController: UIViewController {
 
     @IBAction private func didTapShowBalanceButton(_ sender: Any) {
         guard let value = balanceLabel.text else { return }
-        switch ShowBalance(rawValue: value) {
-        case .disabled:
-            showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-            viewModel?.getBalance { [weak self] value in
-                self?.balanceLabel.text = value
-            }
+        switch Balance(rawValue: value) {
+        case .hidden:
+            showBalanceValue()
         case .none:
-            showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-            balanceLabel.text = ShowBalance.disabled.rawValue
+            hideBalanceValue()
         }
     }
 
@@ -50,12 +46,24 @@ final class ExtractViewController: UIViewController {
     }
 
     private func fetchData() {
-        viewModel?.getAllTransfers { [weak self] transfers in
+        viewModel?.fetchAllTransfers { [weak self] transfers in
             self?.transfers = transfers
             self?.activityIndicatorView.stopAnimating()
             self?.activityIndicatorView.isHidden = true
             self?.extractTableView.isHidden = false
             self?.extractTableView.reloadData()
+        }
+    }
+
+    private func hideBalanceValue() {
+        showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        balanceLabel.text = Balance.hidden.rawValue
+    }
+
+    private func showBalanceValue() {
+        showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        viewModel?.fetchBalance { [weak self] value in
+            self?.balanceLabel.text = value
         }
     }
 }

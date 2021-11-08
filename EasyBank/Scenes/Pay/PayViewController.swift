@@ -3,19 +3,18 @@ import UIKit
 
 final class PayViewController: UIViewController {
 
-    private var viewModel: PayViewModel?
+    private var viewModel: PayViewModelDelegate?
 
     @IBOutlet private weak var confirmButton: UIButton!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var valueLabel: UILabel!
     @IBOutlet private weak var balanceLabel: UILabel!
     @IBOutlet private weak var showBalanceButton: UIButton!
-    @IBOutlet private weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var valueTextField: CurrencyTextField! {
         didSet { valueTextField.delegate = self}
     }
     
-    init(viewModel: PayViewModel) {
+    init(viewModel: PayViewModelDelegate) {
         self.viewModel = viewModel
         super.init(nibName: "PayView", bundle: nil)
     }
@@ -26,7 +25,6 @@ final class PayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         fetchData()
     }
 
@@ -36,40 +34,31 @@ final class PayViewController: UIViewController {
     }
 
     @IBAction func didTapConfirmButton(_ sender: Any) {
-        createConfirmAlert()
+        viewModel?.presentConfirmAlert { _ in self.transfer()}
     }
 
     @IBAction func didTapShowBalanceButton(_ sender: Any) {
         guard let value = balanceLabel.text else { return }
-        switch ShowBalance(rawValue: value) {
-        case .disabled:
-            showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-            viewModel?.getBalance { [weak self] value in
-                self?.balanceLabel.text = value
-            }
+        switch Balance(rawValue: value) {
+        case .hidden:
+            showBalanceValue()
         case .none:
-            showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
-            balanceLabel.text = ShowBalance.disabled.rawValue
+            hideBalanceValue()
         }
-    }
-
-    private func setup() {
-        confirmButton.layer.cornerRadius = 25
-        activityIndicatorView.isHidden = true
     }
     
     private func fetchData() {
-        viewModel?.getInformation { [weak self] name, value in
+        viewModel?.fetchData { [weak self] name, value in
             self?.nameLabel.text = name
             if value > 0 {
-                self?.showValueName(value: value)
+                self?.showValueLabel(value: value)
             } else {
                 self?.showValueTextField()
             }
         }
     }
     
-    private func showValueName(value: Double) {
+    private func showValueLabel(value: Double) {
         valueLabel.isHidden = false
         valueLabel.text = value.asCurrency()
     }
@@ -77,28 +66,16 @@ final class PayViewController: UIViewController {
     private func showValueTextField() {
         valueTextField.isHidden = false
         valueTextField.becomeFirstResponder()
-        
-        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
-        view.addGestureRecognizer(tapGestureReconizer)
-        
+        addGestureRecognizerForEndEditing()
         disableConfirmButton()
     }
 
     private func enableConfirmButton() {
         confirmButton.isEnabled = true
-        confirmButton.layer.backgroundColor = UIColor(named: "BlueColor")!.cgColor
     }
 
     private func disableConfirmButton() {
         confirmButton.isEnabled = false
-        confirmButton.layer.backgroundColor = UIColor.systemGray6.cgColor
-    }
-    
-    private func createConfirmAlert() {
-        let alert = UIAlertController(title: "Do you want to confirm the transaction?", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in self.disableActivityIndicatorView() })
-        alert.addAction(UIAlertAction(title: "Confirm", style: .default) { _ in self.transfer() })
-        present(alert, animated: true, completion: nil)
     }
     
     private func transfer() {
@@ -111,37 +88,34 @@ final class PayViewController: UIViewController {
             guard let text = valueLabel.text else { return }
             value = text
         }
-        viewModel?.transfer(value: value) { [weak self] error in
-            self?.disableActivityIndicatorView()
-            self?.presentAlert(with: error) 
-        }
+        viewModel?.transfer(value: value) { _ in self.disableActivityIndicatorView()}
     }
 
     private func enableActivityIndicatorView() {
-        confirmButton.setTitle("", for: .normal)
-        activityIndicatorView.isHidden = false
-        activityIndicatorView.startAnimating()
+        confirmButton.configuration?.title = ""
+        confirmButton.configuration?.showsActivityIndicator = true
     }
     
     private func disableActivityIndicatorView() {
-        activityIndicatorView.stopAnimating()
-        activityIndicatorView.isHidden = true
-        confirmButton.setTitle("Confirm", for: .normal)
+        confirmButton.configuration?.title = "Confirm"
+        confirmButton.configuration?.showsActivityIndicator = false
     }
 
-    @objc private func didTapView(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
+    private func hideBalanceValue() {
+        showBalanceButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        balanceLabel.text = Balance.hidden.rawValue
+    }
+
+    private func showBalanceValue() {
+        showBalanceButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        viewModel?.fetchBalance { [weak self] value in
+            self?.balanceLabel.text = value
+        }
     }
 }
 
 extension PayViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let value = textField.text else { return }
-        if let value = value.asDouble(), value > 0 {
-            enableConfirmButton()
-        }
-    }
-    
+
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let value = textField.text else { return }
         if let value = value.asDouble(), value > 0 {

@@ -4,6 +4,12 @@ import FirebaseAuth
 protocol PasswordViewModelCoordinatorDelegate: AnyObject {
     func popToHomeViewController()
     func pushToRecoverPasswordViewController()
+    func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?)
+}
+
+protocol RecoverPasswordViewModelCoordinatorDelegate: AnyObject {
+    func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?)
+    func didFinishRecoverPassword()
 }
 
 final class PasswordCoordinator: Coordinator {
@@ -27,10 +33,18 @@ final class PasswordCoordinator: Coordinator {
     }
 }
 
-extension PasswordCoordinator: PasswordViewModelCoordinatorDelegate {
+extension PasswordCoordinator: PasswordViewModelCoordinatorDelegate, RecoverPasswordViewModelCoordinatorDelegate {
+    func presentAlert(message: String, and handler: ((UIAlertAction) -> Void)?) {
+        navigationController.presentAlert(with: message, and: handler)
+    }
+
+    func didFinishRecoverPassword() {
+        navigationController.dismiss(animated: true)
+    }
+
     func pushToRecoverPasswordViewController() {
         let authService = AuthenticationService(auth: auth)
-        let viewModel = RecoverPasswordViewModel(authService: authService )
+        let viewModel = RecoverPasswordViewModel(authService: authService, coordinator: self)
         let recoverPassword = RecoverPasswordViewController(viewModel: viewModel)
         if let sheet = recoverPassword.sheetPresentationController {
             sheet.detents = [.medium()]

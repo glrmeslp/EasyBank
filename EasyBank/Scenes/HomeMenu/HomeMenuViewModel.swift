@@ -1,4 +1,13 @@
-final class HomeMenuViewModel {
+import Foundation
+
+protocol HomeMenuViewModelProtocol {
+    func updatePassword()
+    func leaveRoom()
+    func showAccount()
+    func signOut()
+}
+
+final class HomeMenuViewModel: HomeMenuViewModelProtocol {
     private let authService: AuthService
     private weak var coordinatorDelegate: HomeMenuViewModelCoordinatorDelegate?
 
@@ -12,6 +21,7 @@ final class HomeMenuViewModel {
     }
 
     func leaveRoom() {
+        UserDefaults.standard.removeObject(forKey: "Room")
         coordinatorDelegate?.pushToStartViewController()
     }
 
@@ -20,6 +30,7 @@ final class HomeMenuViewModel {
     }
 
     func signOut() {
+        UserDefaults.standard.removeObject(forKey: "Room")
         authService.signOut()
         coordinatorDelegate?.pushToStartViewController()
     }

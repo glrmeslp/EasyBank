@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,15 +106,16 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trK-mI-jzg">
-                    <rect key="frame" x="20" y="782" width="374" height="50"/>
-                    <color key="backgroundColor" name="BlueColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Vg1-Mg-rk8"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="784" width="374" height="48"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Home">
                         <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                     </state>
+                    <buttonConfiguration key="configuration" style="filled" title="Home" cornerStyle="capsule" buttonSize="large">
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="baseBackgroundColor" name="BlueColor"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="didTapHomeButton:" destination="-1" eventType="touchUpInside" id="hro-99-hKN"/>
                     </connections>

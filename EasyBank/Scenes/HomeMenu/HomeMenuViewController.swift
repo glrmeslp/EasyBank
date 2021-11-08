@@ -2,24 +2,20 @@ import UIKit
 
 final class HomeMenuViewController: UIViewController {
 
-    private var viewModel: HomeMenuViewModel?
+    private var viewModel: HomeMenuViewModelProtocol?
 
     @IBOutlet private weak var passwordButton: UIButton!
     @IBOutlet private weak var roomButton: UIButton!
     @IBOutlet private weak var accountButton: UIButton!
     @IBOutlet private weak var signOutButton: UIButton!
 
-    init(viewModel: HomeMenuViewModel) {
+    init(viewModel: HomeMenuViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "HomeMenuView", bundle: nil)
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 
     @IBAction private func didTapPasswordButton(_ sender: Any) {

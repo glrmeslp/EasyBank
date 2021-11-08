@@ -4,7 +4,7 @@ import FirebaseAuth
 
 protocol RoomService {
     func createRoom(roomName: String, completion: @escaping (String?) -> Void)
-    func getRoom(roomName: String, completion: @escaping (Bool, String?) -> Void)
+    func getRoom(roomName: String, completion: @escaping (String?) -> Void)
     func createAccount(roomName: String, user: User, completion: @escaping (String?) -> Void)
     func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void)
     func deleteAccount(roomName: String, uid: String, completion: @escaping (String?) -> Void)
@@ -14,7 +14,7 @@ protocol TransferDatabaseService {
     func transfer(_ roomName: String, value: Double,
                   payerID: String, payerName: String,
                   receiverID: String, receiverName: String,
-                  completion: @escaping (Error?, String?) -> Void)
+                  completion: @escaping (Error?, Transfer?) -> Void)
     func getTransfer(roomName: String, documentId: String, completion: @escaping (Transfer?, String?) -> Void )
     func getAllTransfers(roomName: String, name: String, completion: @escaping ([Transfer]) -> Void)
 }
@@ -54,18 +54,14 @@ extension DatabaseService: RoomService {
         }
     }
 
-    func getRoom(roomName: String, completion: @escaping (Bool, String?) -> Void) {
+    func getRoom(roomName: String, completion: @escaping (String?) -> Void) {
         let roomRef = firestore.collection(COLLECTION_ROOM).document(roomName)
         roomRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                completion(true, nil)
-            } else {
-                guard let error = error else {
-                    completion(false,"This room does not exist")
-                    return
-                }
-                completion(false,error.localizedDescription)
+            guard let document = document, document.exists else {
+                completion("This room does not exist")
+                return
             }
+            completion(nil)
         }
     }
 
@@ -89,9 +85,9 @@ extension DatabaseService: RoomService {
     }
 
     func createAccount(roomName: String, user: User, completion: @escaping (String?) -> Void) {
-        let account =  Account(balance: 0, userName: user.displayName ?? "No name")
+        let account =  Account(balance: 0, userName: user.name)
         do {
-            try firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_ACCOUNTS).document(user.uid).setData(from: account)
+            try firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_ACCOUNTS).document(user.identifier).setData(from: account)
             completion(nil)
         } catch let error {
             completion(error.localizedDescription)
@@ -155,7 +151,7 @@ extension DatabaseService: TransferDatabaseService {
     func transfer(_ roomName: String, value: Double,
                   payerID: String, payerName: String,
                   receiverID: String, receiverName: String,
-                  completion: @escaping (Error?, String?) -> Void) {
+                  completion: @escaping (Error?, Transfer?) -> Void) {
         let payerReference = firestore.collection(COLLECTION_ROOM).document(roomName)
             .collection(COLLECTION_ACCOUNTS).document(payerID)
         let receiverReference = firestore.collection(COLLECTION_ROOM).document(roomName)
@@ -200,8 +196,8 @@ extension DatabaseService: TransferDatabaseService {
             return nil
         }) { (object, error) in
             guard let error = error else {
-                self.createTransferDocument(roomName, value: value, payerName: payerName, receiverName: receiverName) { error, documentID in
-                    completion(error,documentID)
+                self.createTransferDocument(roomName, value: value, payerName: payerName, receiverName: receiverName) { error, transfer in
+                    completion(error,transfer)
                 }
                 return
             }
@@ -209,11 +205,12 @@ extension DatabaseService: TransferDatabaseService {
         }
     }
 
-    private func createTransferDocument(_ roomName: String, value: Double, payerName: String, receiverName: String, completion: @escaping (Error? ,String?) -> Void) {
-        let transfer = Transfer(payDate: Timestamp(date: Date()), value: value, receiverName: receiverName, payerName: payerName)
+    private func createTransferDocument(_ roomName: String, value: Double, payerName: String, receiverName: String, completion: @escaping (Error? , Transfer?) -> Void) {
+        var transfer = Transfer(payDate: Timestamp(date: Date()), value: value, receiverName: receiverName, payerName: payerName)
         do {
             let reference = try firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_TRANSFERS).addDocument(from: transfer)
-            completion(nil, reference.documentID)
+            transfer.id = reference.documentID
+            completion(nil, transfer)
         } catch let error {
             completion(error, nil)
         }

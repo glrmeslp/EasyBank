@@ -10,13 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountViewController" customModule="EasyBank" customModuleProvider="target">
             <connections>
+                <outlet property="closeYourAccountButton" destination="npc-Lo-5P5" id="X4H-cp-YUh"/>
+                <outlet property="deleteAccount" destination="jzQ-Yn-Cv9" id="mVv-SG-SH6"/>
                 <outlet property="emailLabel" destination="UyW-TU-cW6" id="fpp-Eo-kG9"/>
                 <outlet property="emailStackView" destination="55w-ud-AVb" id="HPX-db-Q94"/>
+                <outlet property="leaveRoomButton" destination="qpy-bX-gwx" id="juN-AZ-pNK"/>
                 <outlet property="nameStackView" destination="kaK-4J-EWq" id="jb4-Iw-bxJ"/>
                 <outlet property="roomNameLabel" destination="SuM-Hh-Bp1" id="pyF-CK-nkr"/>
                 <outlet property="roomStackView" destination="xrU-N6-St6" id="bfL-TI-D41"/>
                 <outlet property="userNameLabel" destination="APK-hT-AwR" id="NZv-xz-dgJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yourProfileButton" destination="xec-SU-cpO" id="g8f-UP-fOg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
