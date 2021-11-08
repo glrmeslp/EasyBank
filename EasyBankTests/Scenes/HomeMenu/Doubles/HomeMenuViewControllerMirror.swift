@@ -17,4 +17,8 @@ final class HomeMenuViewControllerMirror: MirrorObject {
     var signOutButton: UIButton? {
         return extract()
     }
+
+    var bankButton: UIButton? {
+        return extract()
+    }
 }
