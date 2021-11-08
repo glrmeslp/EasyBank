@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeMenuViewController" customModule="EasyBank" customModuleProvider="target">
             <connections>
                 <outlet property="accountButton" destination="GBc-fE-8Qn" id="ZFH-CL-rP9"/>
+                <outlet property="bankButton" destination="xsp-oz-Jq5" id="XiM-gx-XGJ"/>
                 <outlet property="passwordButton" destination="Nky-YU-O8j" id="K8B-bn-tnf"/>
                 <outlet property="roomButton" destination="ZSP-Wm-pLu" id="HJZ-nL-4Oc"/>
                 <outlet property="signOutButton" destination="oKb-mV-LJz" id="eT8-aQ-hJh"/>
