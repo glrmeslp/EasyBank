@@ -13,6 +13,7 @@ protocol HomeMenuViewModelCoordinatorDelegate: AnyObject {
     func pushToStartViewController()
     func pushToPasswordViewController()
     func pushToAccountViewController()
+    func presentBankModeAlert()
 }
 
 final class HomeCoordinator: Coordinator {
@@ -85,6 +86,16 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
 }
 
 extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
+    func presentBankModeAlert() {
+        let alert = UIAlertController(title: "Enter bank mode", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default) { _ in
+            self.navigationController.dismiss(animated: true)
+            self.pushToBankViewController()
+        })
+        navigationController.present(alert, animated: true)
+    }
+    
     func pushToAccountViewController() {
         let accountCoordinator = AccountCoordinator(navigationController: navigationController, auth: auth, firestore: firestore)
         accountCoordinator.start()
@@ -98,6 +109,10 @@ extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
     func pushToStartViewController() {
         let startCoordinator = StartCoordinator(navigationController: navigationController, firestore: firestore, auth: auth)
         startCoordinator.start()
+    }
+
+    private func pushToBankViewController() {
+        
     }
 }
 

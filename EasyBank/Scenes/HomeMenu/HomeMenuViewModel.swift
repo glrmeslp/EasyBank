@@ -5,9 +5,11 @@ protocol HomeMenuViewModelProtocol {
     func leaveRoom()
     func showAccount()
     func signOut()
+    func enterBankMode()
 }
 
 final class HomeMenuViewModel: HomeMenuViewModelProtocol {
+    
     private let authService: AuthService
     private weak var coordinatorDelegate: HomeMenuViewModelCoordinatorDelegate?
 
@@ -33,5 +35,9 @@ final class HomeMenuViewModel: HomeMenuViewModelProtocol {
         UserDefaults.standard.removeObject(forKey: "Room")
         authService.signOut()
         coordinatorDelegate?.pushToStartViewController()
+    }
+
+    func enterBankMode() {
+        coordinatorDelegate?.presentBankModeAlert()
     }
 }
