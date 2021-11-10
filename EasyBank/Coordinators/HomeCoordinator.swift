@@ -87,10 +87,10 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
 
 extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
     func presentBankModeAlert() {
+        navigationController.dismiss(animated: true)
         let alert = UIAlertController(title: "Enter bank mode", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alert.addAction(UIAlertAction(title: "Ok", style: .default) { _ in
-            self.navigationController.dismiss(animated: true)
             self.pushToBankViewController()
         })
         navigationController.present(alert, animated: true)
@@ -112,7 +112,8 @@ extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
     }
 
     private func pushToBankViewController() {
-        
+        let bankCoordinator = BankCoordinator(navigationController: navigationController, firestore: firestore, auth: auth)
+        bankCoordinator.start()
     }
 }
 

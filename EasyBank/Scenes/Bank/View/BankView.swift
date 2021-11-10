@@ -103,9 +103,4 @@ extension BankView: UITableViewDataSource {
 }
 
 extension BankView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "accountTableHeaderView") as? AccountTableHeaderView else { return UIView()}
-        view.configure(with: .init(title: "ACCOUNTS"))
-        return view
-    }
 }
