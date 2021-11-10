@@ -90,13 +90,13 @@
                                                     <rect key="frame" x="0.0" y="25" width="318" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•••••" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kt9-ET-KjB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="264.66666666666669" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="289" height="24"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-Rw-qHC">
-                                                            <rect key="frame" x="270.66666666666669" y="1" width="47.333333333333314" height="22"/>
+                                                            <rect key="frame" x="295" y="1" width="23" height="22"/>
                                                             <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                                             <state key="normal" image="eye.slash.fill" catalog="system"/>
                                                             <connections>
