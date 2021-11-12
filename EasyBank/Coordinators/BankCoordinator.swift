@@ -14,7 +14,8 @@ final class BankCoordinator: Coordinator {
     }
 
     func start() {
-        let viewController = BankViewController()
+        let viewModel = BankViewModel(roomService: DatabaseService(firestore: firestore))
+        let viewController = BankViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }
 

@@ -137,6 +137,7 @@
 		DEB6D21B273AB1A900284415 /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB6D21A273AB1A900284415 /* BankViewController.swift */; };
 		DEB6D21D273ABF3C00284415 /* BankMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB6D21C273ABF3C00284415 /* BankMenu.swift */; };
 		DEC1162E270B5CB100E74380 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1162D270B5CB100E74380 /* User.swift */; };
+		DEC72693273E9E93006C14F1 /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC72692273E9E93006C14F1 /* BankViewModel.swift */; };
 		DEC7CBC92734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7CBC82734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift */; };
 		DEC7CBCB2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7CBCA2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift */; };
 		DEC7CBCD2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7CBCC2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift */; };
@@ -319,6 +320,7 @@
 		DEB6D21A273AB1A900284415 /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		DEB6D21C273ABF3C00284415 /* BankMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankMenu.swift; sourceTree = "<group>"; };
 		DEC1162D270B5CB100E74380 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DEC72692273E9E93006C14F1 /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
 		DEC7CBC82734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewControllerMirror.swift; sourceTree = "<group>"; };
 		DEC7CBCA2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewModelSpy.swift; sourceTree = "<group>"; };
 		DEC7CBCC2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewControllerTests.swift; sourceTree = "<group>"; };
@@ -791,6 +793,7 @@
 			children = (
 				DEFE5367273C067000A91B9D /* View */,
 				DEB6D21A273AB1A900284415 /* BankViewController.swift */,
+				DEC72692273E9E93006C14F1 /* BankViewModel.swift */,
 			);
 			path = Bank;
 			sourceTree = "<group>";
@@ -1356,6 +1359,7 @@
 				DE4F07C926F503BA00CA595C /* ExtractViewModel.swift in Sources */,
 				DEC1162E270B5CB100E74380 /* User.swift in Sources */,
 				DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */,
+				DEC72693273E9E93006C14F1 /* BankViewModel.swift in Sources */,
 				DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */,
 				DE64A4E426FB756E004E95F7 /* AccountViewController.swift in Sources */,
 				DE4F07C426F4DB3600CA595C /* ExtractTableViewCell.swift in Sources */,
