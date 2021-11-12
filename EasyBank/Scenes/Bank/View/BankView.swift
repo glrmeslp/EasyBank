@@ -1,18 +1,19 @@
 import UIKit
 
 protocol BankViewDelegate {
-    func setupCollection(dataSource: UICollectionViewDataSource, delegate: UICollectionViewDelegate)
     func setup(_ roomName: String)
     func setup(_ accounts: [Account])
+    func setup(_ bankmenu: [String])
 }
 
 final class BankView: UIView, NibView {
 
     private var accounts: [Account]?
+    private var bankMenu: [String]?
     private var view: UIView?
     private var collectionViewFlowLayout: UICollectionViewFlowLayout = {
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
-        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         return collectionViewFlowLayout
     }()
 
@@ -47,6 +48,7 @@ final class BankView: UIView, NibView {
                                     forCellWithReuseIdentifier: "menuCollectionCell")
         menuCollectionView.collectionViewLayout = collectionViewFlowLayout
         menuCollectionView.showsHorizontalScrollIndicator = false
+        menuCollectionView.dataSource = self
     
         accountsTableView.register(UINib(nibName: "AccountTableViewCell", bundle: nil),
                                    forCellReuseIdentifier: "accountTableViewCell")
@@ -54,7 +56,6 @@ final class BankView: UIView, NibView {
         accountsTableView.register(UINib(nibName: "AccountTableHeaderView", bundle: nil),
                                    forHeaderFooterViewReuseIdentifier: "accountTableHeaderView")
         accountsTableView.dataSource = self
-        accountsTableView.delegate = self
 
     }
 
@@ -65,6 +66,10 @@ final class BankView: UIView, NibView {
 }
 
 extension BankView: BankViewDelegate {
+    func setup(_ bankmenu: [String]) {
+        self.bankMenu = bankmenu
+    }
+
     func setup(_ accounts: [Account]) {
         self.accounts = accounts
         accountsTableView.reloadData()
@@ -72,11 +77,6 @@ extension BankView: BankViewDelegate {
     
     func setup(_ roomName: String) {
         roomNameLabel.text = roomName
-    }
-
-    func setupCollection(dataSource: UICollectionViewDataSource, delegate: UICollectionViewDelegate) {
-        menuCollectionView.dataSource = dataSource
-        menuCollectionView.delegate = delegate
     }
 }
 
@@ -106,5 +106,18 @@ extension BankView: UITableViewDataSource {
     }
 }
 
-extension BankView: UITableViewDelegate {
+extension BankView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        bankMenu?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "menuCollectionCell", for: indexPath) as? MenuCollectionViewCell,
+              let menu = bankMenu?[indexPath.row] else {
+            return UICollectionViewCell()
+        }
+        cell.configure(with: .init(title: menu, image: menu))
+        return cell
+    }    
 }
+
