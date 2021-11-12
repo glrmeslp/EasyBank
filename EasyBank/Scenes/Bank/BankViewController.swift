@@ -24,12 +24,13 @@ final class BankViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        customView.setupCollection(dataSource: self, delegate: self)
         fetchData()
     }
 
     private func fetchData() {
-        bankMenu = BankMenu().bankMenu
+        viewModel?.fetchBankMenu { [weak self] menu in
+            self?.customView.setup(menu)
+        }
     
         viewModel?.fetchRoomName { [weak self] roomName in
             self?.customView.setup(roomName)
@@ -39,23 +40,4 @@ final class BankViewController: UIViewController {
             self?.customView.setup(accounts)
         }
     }
-}
-
-extension BankViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        bankMenu?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "menuCollectionCell", for: indexPath) as? MenuCollectionViewCell,
-              let menu = bankMenu?[indexPath.row] else {
-            return UICollectionViewCell()
-        }
-        cell.configure(with: .init(title: menu, image: menu))
-        return cell
-    }
-}
-
-extension BankViewController: UICollectionViewDelegate {
-    
 }
