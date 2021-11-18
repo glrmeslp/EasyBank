@@ -1,6 +1,6 @@
 
 import Quick
-import Nimbleck
+import Nimble
 @testable import EasyBank
 
 final class ViewModelTests: QuickSpec {
