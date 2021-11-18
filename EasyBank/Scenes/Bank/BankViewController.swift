@@ -2,9 +2,7 @@ import UIKit
 
 final class BankViewController: UIViewController {
 
-    private var bankMenu: [String]?
     private var viewModel: BankViewModelDelegate?
-
     private var customView: BankViewDelegate {
         return view as! BankViewDelegate
     }

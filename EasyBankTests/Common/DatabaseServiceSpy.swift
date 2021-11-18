@@ -7,10 +7,16 @@ final class DatabaseServiceSpy {
     var createAccountError: String?
     var transferErrorToBeReturn: Error?
     var transferToBeReturn: Transfer?
+    var accountsToBeReturn: [Account]?
     private(set) var transferCalled = false
 }
 
 extension DatabaseServiceSpy: RoomService {
+    func getAllAccounts(roomName: String, completion: @escaping ([Account], Error?) -> Void) {
+        guard let accountsToBeReturn = accountsToBeReturn else { return }
+        completion(accountsToBeReturn, nil)
+    }
+
     func createRoom(roomName: String, completion: @escaping (String?) -> Void) {
         if let error = createRoomError {
             completion(error)
