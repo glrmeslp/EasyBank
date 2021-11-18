@@ -150,6 +150,7 @@
 		DEDAC9A62746811700CB0EEE /* BankViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC9A52746811700CB0EEE /* BankViewModelSpy.swift */; };
 		DEDAC9A82746826200CB0EEE /* BankViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC9A72746826200CB0EEE /* BankViewControllerTests.swift */; };
 		DEDAC9AB2746888000CB0EEE /* BankViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC9AA2746888000CB0EEE /* BankViewTests.swift */; };
+		DEDAC9AD2746932800CB0EEE /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC9AC2746932800CB0EEE /* ViewModelTests.swift */; };
 		DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3857C26E64702008D9409 /* ReceiveViewController.swift */; };
 		DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE3857D26E64702008D9409 /* ReceiveView.xib */; };
 		DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3858026E651E5008D9409 /* CurrencyTextField.swift */; };
@@ -337,6 +338,7 @@
 		DEDAC9A52746811700CB0EEE /* BankViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModelSpy.swift; sourceTree = "<group>"; };
 		DEDAC9A72746826200CB0EEE /* BankViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewControllerTests.swift; sourceTree = "<group>"; };
 		DEDAC9AA2746888000CB0EEE /* BankViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewTests.swift; sourceTree = "<group>"; };
+		DEDAC9AC2746932800CB0EEE /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		DEE3857C26E64702008D9409 /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		DEE3857D26E64702008D9409 /* ReceiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveView.xib; sourceTree = "<group>"; };
 		DEE3858026E651E5008D9409 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
@@ -900,6 +902,7 @@
 				DE875E0F2704DD7500318261 /* Common */,
 				DE875E022704ACC700318261 /* Scenes */,
 				DE875E102704ED3500318261 /* MirrorObject.swift */,
+				DEDAC9AC2746932800CB0EEE /* ViewModelTests.swift */,
 			);
 			path = EasyBankTests;
 			sourceTree = "<group>";
@@ -1210,6 +1213,7 @@
 				DE875DF52704AC9900318261 /* Sources */,
 				DE875DF62704AC9900318261 /* Frameworks */,
 				DE875DF72704AC9900318261 /* Resources */,
+				46104055E30A1409B3255B96 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1337,6 +1341,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46104055E30A1409B3255B96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8230BC8256EBAC047ED6DECF /* [CP] Check Pods Manifest.lock */ = {
@@ -1525,6 +1546,7 @@
 				DE1EF9C8271DBE8F0064D832 /* PasswordCoordinatorSpy.swift in Sources */,
 				DE21EAD12719B50900688DE3 /* HomeMenuViewControllerMirror.swift in Sources */,
 				DE21EAD92719D90B00688DE3 /* PasswordViewModelSpy.swift in Sources */,
+				DEDAC9AD2746932800CB0EEE /* ViewModelTests.swift in Sources */,
 				DEC7CBCB2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift in Sources */,
 				DE04E6F72721CAB600A8A7F0 /* ProfileViewControllerMirror.swift in Sources */,
 				DE04E6EF2721A3B800A8A7F0 /* ReauthenticateViewModelSpy.swift in Sources */,
