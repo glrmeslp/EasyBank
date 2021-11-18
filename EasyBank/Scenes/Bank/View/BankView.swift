@@ -52,11 +52,7 @@ final class BankView: UIView, NibView {
     
         accountsTableView.register(UINib(nibName: "AccountTableViewCell", bundle: nil),
                                    forCellReuseIdentifier: "accountTableViewCell")
-        
-        accountsTableView.register(UINib(nibName: "AccountTableHeaderView", bundle: nil),
-                                   forHeaderFooterViewReuseIdentifier: "accountTableHeaderView")
         accountsTableView.dataSource = self
-
     }
 
     private func updateCollectionViewFlowLayoutItemSize() {

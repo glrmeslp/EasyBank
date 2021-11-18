@@ -149,6 +149,7 @@
 		DECA547B27205F1100A8747D /* AccountCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECA547A27205F1100A8747D /* AccountCoordinatorSpy.swift */; };
 		DEDAC9A62746811700CB0EEE /* BankViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC9A52746811700CB0EEE /* BankViewModelSpy.swift */; };
 		DEDAC9A82746826200CB0EEE /* BankViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC9A72746826200CB0EEE /* BankViewControllerTests.swift */; };
+		DEDAC9AB2746888000CB0EEE /* BankViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC9AA2746888000CB0EEE /* BankViewTests.swift */; };
 		DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3857C26E64702008D9409 /* ReceiveViewController.swift */; };
 		DEE3857F26E64702008D9409 /* ReceiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE3857D26E64702008D9409 /* ReceiveView.xib */; };
 		DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3858026E651E5008D9409 /* CurrencyTextField.swift */; };
@@ -335,6 +336,7 @@
 		DECA547A27205F1100A8747D /* AccountCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinatorSpy.swift; sourceTree = "<group>"; };
 		DEDAC9A52746811700CB0EEE /* BankViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModelSpy.swift; sourceTree = "<group>"; };
 		DEDAC9A72746826200CB0EEE /* BankViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewControllerTests.swift; sourceTree = "<group>"; };
+		DEDAC9AA2746888000CB0EEE /* BankViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewTests.swift; sourceTree = "<group>"; };
 		DEE3857C26E64702008D9409 /* ReceiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		DEE3857D26E64702008D9409 /* ReceiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveView.xib; sourceTree = "<group>"; };
 		DEE3858026E651E5008D9409 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
@@ -779,6 +781,7 @@
 			isa = PBXGroup;
 			children = (
 				DEDAC9A4274680E300CB0EEE /* Doubles */,
+				DEDAC9A92746886D00CB0EEE /* View */,
 				DE55505D27454A340064F7D2 /* BankViewModelTests.swift */,
 				DEDAC9A72746826200CB0EEE /* BankViewControllerTests.swift */,
 			);
@@ -1089,6 +1092,14 @@
 				DEDAC9A52746811700CB0EEE /* BankViewModelSpy.swift */,
 			);
 			path = Doubles;
+			sourceTree = "<group>";
+		};
+		DEDAC9A92746886D00CB0EEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEDAC9AA2746888000CB0EEE /* BankViewTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DEE3857B26E646E9008D9409 /* Receive */ = {
@@ -1453,6 +1464,7 @@
 				DE21EAD62719D8A600688DE3 /* PasswordViewControllerTests.swift in Sources */,
 				DE113153270F270500A80E96 /* RoomViewModelSpy.swift in Sources */,
 				DECA547B27205F1100A8747D /* AccountCoordinatorSpy.swift in Sources */,
+				DEDAC9AB2746888000CB0EEE /* BankViewTests.swift in Sources */,
 				DE04E70F2722FB6800A8A7F0 /* QRCodeViewModelSpy.swift in Sources */,
 				DE8365A7273716EE00961C45 /* ExtractViewControllerMirror.swift in Sources */,
 				DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */,
