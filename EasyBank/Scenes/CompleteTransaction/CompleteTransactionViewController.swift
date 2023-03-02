@@ -2,7 +2,7 @@ import UIKit
 
 final class CompleteTransactionViewController: UIViewController {
 
-    private var viewModel: CompleteTransactionViewModel?
+    private var viewModel: CompleteTransactionViewModelDelegate?
 
     @IBOutlet private weak var homeButton: UIButton!
     @IBOutlet private weak var transactionIDLabel: UILabel!
@@ -11,7 +11,7 @@ final class CompleteTransactionViewController: UIViewController {
     @IBOutlet private weak var receiverNameLabel: UILabel!
     @IBOutlet private weak var payerNameLabel: UILabel!
 
-    init(viewModel: CompleteTransactionViewModel) {
+    init(viewModel: CompleteTransactionViewModelDelegate) {
         self.viewModel = viewModel
         super.init(nibName: "CompleteTransactionView", bundle: nil)
     }
@@ -22,28 +22,22 @@ final class CompleteTransactionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         fetchData()
     }
 
-    private func setup() {
-        homeButton.layer.cornerRadius = 25
+    @IBAction private func didTapHomeButton(_ sender: Any) {
+        viewModel?.didFinish()
     }
 
     private func fetchData() {
-        viewModel?.getTransaction { [weak self] transfer, id in
+        viewModel?.fetchTransaction { [weak self] transfer in
             var split = "\(transfer.payDate.dateValue())".components(separatedBy: " ")
             split.removeLast()
-            self?.transactionIDLabel.text = id
+            self?.transactionIDLabel.text = transfer.id
             self?.payDayLabel.text = split.first
             self?.hourLabel.text = split.last
             self?.receiverNameLabel.text = transfer.receiverName
             self?.payerNameLabel.text = transfer.payerName
         }
     }
-
-    @IBAction func didTapHomeButton(_ sender: Any) {
-        viewModel?.showHomeViewController(from: self)
-    }
-    
 }

@@ -14,12 +14,11 @@ final class AccountViewModel: UserViewModel, AccountViewModelProtocol {
 
     private var coordinatorDelegate: AccountViewModelCoordinatorDelegate?
     private let roomService: RoomService
-    private let roomName: String
+    private let roomName: String? = UserDefaults.standard.string(forKey: "Room")
 
-    init(roomName: String, authService: AuthService, roomService: RoomService, coordinator: AccountViewModelCoordinatorDelegate) {
+    init(authService: AuthService, roomService: RoomService, coordinator: AccountViewModelCoordinatorDelegate) {
         self.coordinatorDelegate = coordinator
         self.roomService = roomService
-        self.roomName = roomName
         super.init(authService: authService)
     }
 
@@ -42,7 +41,7 @@ final class AccountViewModel: UserViewModel, AccountViewModelProtocol {
     }
 
     private func deleteAccount() {
-        guard let uid = user?.identifier else { return }
+        guard let uid = user?.identifier, let roomName = roomName else { return }
         roomService.deleteAccount(roomName: roomName, uid: uid) { [weak self] error in
             guard let error = error else {
                 self?.coordinatorDelegate?.pushToStartViewController()
@@ -62,6 +61,7 @@ final class AccountViewModel: UserViewModel, AccountViewModelProtocol {
 
     func fetchData(completion: @escaping (String, User?) -> Void) {
         getUser()
+        guard let roomName = roomName else { return }
         completion(roomName,user)
     }
 }

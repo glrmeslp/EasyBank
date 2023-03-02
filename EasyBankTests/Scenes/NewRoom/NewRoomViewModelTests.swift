@@ -29,7 +29,6 @@ final class NewRoomViewModelTests: XCTestCase {
         roomServiceSpy.createRoomError = nil
         sut.validateRoom(with: "Room")
         XCTAssertTrue(coordinatorSpy.pushToHomeViewControllerCalled)
-        XCTAssertEqual("Room", coordinatorSpy.roomName)
     }
 
     func test_createAccount_withError_shouldCallCoordinatorPresentAlert() {

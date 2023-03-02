@@ -5,8 +5,7 @@ final class HomeViewModelTests: XCTestCase {
     private let roomServiceSpy = DatabaseServiceSpy()
     private let authServiceSpy = AuthenticationServiceSpy()
     private let coordinatorSpy = HomeCoordinatorSpy()
-    private lazy var sut: HomeViewModel = HomeViewModel(with: "Room",
-                                                        roomService: roomServiceSpy,
+    private lazy var sut: HomeViewModel = HomeViewModel(roomService: roomServiceSpy,
                                                         authService: authServiceSpy,
                                                         coordinator: coordinatorSpy)
 

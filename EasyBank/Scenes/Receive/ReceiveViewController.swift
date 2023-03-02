@@ -1,6 +1,6 @@
 import UIKit
 
-class ReceiveViewController: UIViewController {
+final class ReceiveViewController: UIViewController {
 
     private var coordinator: ReceiveViewCoordinatorDelegate?
 
@@ -29,14 +29,7 @@ class ReceiveViewController: UIViewController {
     }
 
     private func setup() {
-        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
-        view.addGestureRecognizer(tapGestureReconizer)
-        createQRCodeButton.layer.cornerRadius = 25
+        addGestureRecognizerForEndEditing()
         title = "Receive"
-    }
-    
-
-    @objc private func didTapView(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
     }
 }
