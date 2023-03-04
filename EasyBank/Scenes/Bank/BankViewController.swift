@@ -4,18 +4,31 @@ protocol BankDisplaying: AnyObject {
     
 }
 
-final class BankViewController: UIViewController {
+final class BankViewController: ViewController<BankInteractor, UIView> {
     
-    private var interactor: BankInteractor
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.backgroundColor = .clear
+        stackView.axis = .vertical
+        return stackView
+    }()
+
+    private lazy var roomHeaderView = RoomHeaderView()
     
-    init(interactor: BankInteractor) {
-        self.interactor = interactor
-        super.init(nibName: nil, bundle: nil)
-        self.view = UIView()
+    override func buildViewHierarchy() {
+        stackView.addArrangedSubview(roomHeaderView)
+        view.addSubview(stackView)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func setupConstraints() {
+        stackView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.equalToSuperview()
+        }
+    }
+    
+    override func configureViews() {
+        view.backgroundColor = .systemBackground
     }
     //
 //    private var viewModel: BankViewModelDelegate?

@@ -13,6 +13,8 @@
 		1F18435929B13E1C00BCC5DC /* BankPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F18435429B13E1C00BCC5DC /* BankPresenter.swift */; };
 		1F18435A29B13E1C00BCC5DC /* BankInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F18435529B13E1C00BCC5DC /* BankInteractor.swift */; };
 		1F18435B29B13E1C00BCC5DC /* BankService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F18435629B13E1C00BCC5DC /* BankService.swift */; };
+		1F9C2CE529B3CB1B0054DFA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CE429B3CB1B0054DFA5 /* ViewController.swift */; };
+		1F9C2CE829B3CD6E0054DFA5 /* RoomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CE729B3CD6E0054DFA5 /* RoomHeaderView.swift */; };
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
 		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */; };
@@ -197,6 +199,8 @@
 		1F18435429B13E1C00BCC5DC /* BankPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankPresenter.swift; sourceTree = "<group>"; };
 		1F18435529B13E1C00BCC5DC /* BankInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInteractor.swift; sourceTree = "<group>"; };
 		1F18435629B13E1C00BCC5DC /* BankService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankService.swift; sourceTree = "<group>"; };
+		1F9C2CE429B3CB1B0054DFA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F9C2CE729B3CD6E0054DFA5 /* RoomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomHeaderView.swift; sourceTree = "<group>"; };
 		3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBankTests.release.xcconfig"; path = "Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests.release.xcconfig"; sourceTree = "<group>"; };
 		87F1038D9DB1EE76AEC9202F /* Pods-EasyBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.release.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.release.xcconfig"; sourceTree = "<group>"; };
 		8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 		1F18435029B13C5100BCC5DC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1F9C2CE629B3CCE90054DFA5 /* RoomHeader */,
 				1F18435129B13CBD00BCC5DC /* AccountList */,
 			);
 			path = Components;
@@ -407,6 +412,29 @@
 			children = (
 			);
 			path = AccountList;
+			sourceTree = "<group>";
+		};
+		1F9C2B4529B3C8DC0054DFA5 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C2B4629B3C8F60054DFA5 /* MenuCollection */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		1F9C2B4629B3C8F60054DFA5 /* MenuCollection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MenuCollection;
+			sourceTree = "<group>";
+		};
+		1F9C2CE629B3CCE90054DFA5 /* RoomHeader */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C2CE729B3CD6E0054DFA5 /* RoomHeaderView.swift */,
+			);
+			path = RoomHeader;
 			sourceTree = "<group>";
 		};
 		3078D4D234647692C2A31BFF /* Pods */ = {
@@ -613,6 +641,7 @@
 		DE46213A26D6D2F5001E6685 /* EasyBank */ = {
 			isa = PBXGroup;
 			children = (
+				1F9C2B4529B3C8DC0054DFA5 /* DesignSystem */,
 				DE60801E26FE0B0800813C5B /* Helpers */,
 				DE44BB4A26E25B8F0083B354 /* Coordinators */,
 				DE8A0D3126DB129000D0175F /* Components */,
@@ -690,6 +719,7 @@
 			children = (
 				DE46218626D6DBA9001E6685 /* Coordinator.swift */,
 				DEB6D218273AAD6000284415 /* NibView.swift */,
+				1F9C2CE429B3CB1B0054DFA5 /* ViewController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1244,7 +1274,6 @@
 				DE875DF52704AC9900318261 /* Sources */,
 				DE875DF62704AC9900318261 /* Frameworks */,
 				DE875DF72704AC9900318261 /* Resources */,
-				46104055E30A1409B3255B96 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1374,23 +1403,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		46104055E30A1409B3255B96 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8230BC8256EBAC047ED6DECF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1445,11 +1457,13 @@
 				DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */,
 				DE52A77D26E9049C00EC3521 /* Double+Extension.swift in Sources */,
 				DE4F07C926F503BA00CA595C /* ExtractViewModel.swift in Sources */,
+				1F9C2CE529B3CB1B0054DFA5 /* ViewController.swift in Sources */,
 				DEC1162E270B5CB100E74380 /* User.swift in Sources */,
 				DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */,
 				1F18435929B13E1C00BCC5DC /* BankPresenter.swift in Sources */,
 				DEC72693273E9E93006C14F1 /* BankViewModel.swift in Sources */,
 				DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */,
+				1F9C2CE829B3CD6E0054DFA5 /* RoomHeaderView.swift in Sources */,
 				DE64A4E426FB756E004E95F7 /* AccountViewController.swift in Sources */,
 				DE4F07C426F4DB3600CA595C /* ExtractTableViewCell.swift in Sources */,
 				DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */,
