@@ -112,8 +112,8 @@ extension HomeCoordinator: HomeMenuViewModelCoordinatorDelegate {
     }
 
     private func pushToBankViewController() {
-        let bankCoordinator = BankCoordinator(navigationController: navigationController, firestore: firestore, auth: auth)
-        bankCoordinator.start()
+        let bankViewController = BankFactory.make()
+        navigationController.pushViewController(bankViewController, animated: true)
     }
 }
 

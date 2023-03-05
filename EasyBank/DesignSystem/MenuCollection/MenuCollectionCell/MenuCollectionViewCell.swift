@@ -50,7 +50,7 @@ extension MenuCollectionViewCell: ViewConfiguration {
         
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(iconImageView.snp.bottom).inset(8)
+            $0.top.equalTo(iconImageView.snp.bottom).offset(8)
             $0.bottom.equalToSuperview().inset(16)
         }
     }

@@ -16,17 +16,19 @@ final class BankViewController: ViewController<BankInteractor, UIView> {
 
     private lazy var roomHeaderView = RoomHeaderView()
     private lazy var menuCollectionView = MenuCollectionView()
+    private lazy var accountListView = AccountListView()
     
     override func buildViewHierarchy() {
         stackView.addArrangedSubview(roomHeaderView)
         stackView.addArrangedSubview(menuCollectionView)
+        stackView.addArrangedSubview(accountListView)
         view.addSubview(stackView)
     }
     
     override func setupConstraints() {
         stackView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(30)
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
     

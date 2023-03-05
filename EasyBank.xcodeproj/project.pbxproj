@@ -20,6 +20,8 @@
 		1F9C2CF129B3E5DE0054DFA5 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CF029B3E5DE0054DFA5 /* CollectionViewDataSource.swift */; };
 		1F9C2CF329B3E60E0054DFA5 /* ReloadableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CF229B3E60E0054DFA5 /* ReloadableDataSource.swift */; };
 		1F9C2CF529B3E6340054DFA5 /* ReloadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CF429B3E6340054DFA5 /* ReloadableView.swift */; };
+		1F9C2CF729B41D190054DFA5 /* AccountListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CF629B41D190054DFA5 /* AccountListView.swift */; };
+		1F9C2CFA29B4203D0054DFA5 /* AccountListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CF929B4203D0054DFA5 /* AccountListViewCell.swift */; };
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
 		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */; };
@@ -211,6 +213,8 @@
 		1F9C2CF029B3E5DE0054DFA5 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		1F9C2CF229B3E60E0054DFA5 /* ReloadableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableDataSource.swift; sourceTree = "<group>"; };
 		1F9C2CF429B3E6340054DFA5 /* ReloadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableView.swift; sourceTree = "<group>"; };
+		1F9C2CF629B41D190054DFA5 /* AccountListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListView.swift; sourceTree = "<group>"; };
+		1F9C2CF929B4203D0054DFA5 /* AccountListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListViewCell.swift; sourceTree = "<group>"; };
 		3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBankTests.release.xcconfig"; path = "Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests.release.xcconfig"; sourceTree = "<group>"; };
 		87F1038D9DB1EE76AEC9202F /* Pods-EasyBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.release.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.release.xcconfig"; sourceTree = "<group>"; };
 		8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -420,6 +424,8 @@
 		1F18435129B13CBD00BCC5DC /* AccountList */ = {
 			isa = PBXGroup;
 			children = (
+				1F9C2CF829B4200E0054DFA5 /* AccountListViewCell */,
+				1F9C2CF629B41D190054DFA5 /* AccountListView.swift */,
 			);
 			path = AccountList;
 			sourceTree = "<group>";
@@ -474,6 +480,14 @@
 				1F9C2CF429B3E6340054DFA5 /* ReloadableView.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		1F9C2CF829B4200E0054DFA5 /* AccountListViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C2CF929B4203D0054DFA5 /* AccountListViewCell.swift */,
+			);
+			path = AccountListViewCell;
 			sourceTree = "<group>";
 		};
 		3078D4D234647692C2A31BFF /* Pods */ = {
@@ -1492,6 +1506,7 @@
 				DE3774A426F22705005719E3 /* Formatter+Extension.swift in Sources */,
 				DEFFA338270220ED00A70B2E /* ProfileViewModel.swift in Sources */,
 				DE4C430E26DEC0520019410A /* QRCodeViewModel.swift in Sources */,
+				1F9C2CF729B41D190054DFA5 /* AccountListView.swift in Sources */,
 				DE75DD8B26D9689500240B70 /* UIViewController+Extension.swift in Sources */,
 				DE75DD9226D96BEE00240B70 /* HomeViewModel.swift in Sources */,
 				DE52A77D26E9049C00EC3521 /* Double+Extension.swift in Sources */,
@@ -1558,6 +1573,7 @@
 				DE46218726D6DBA9001E6685 /* Coordinator.swift in Sources */,
 				DEA3B37B26F8B317003E09FC /* ExtractEnum.swift in Sources */,
 				DE52A77A26E8FDE500EC3521 /* QRCodeViewController.swift in Sources */,
+				1F9C2CFA29B4203D0054DFA5 /* AccountListViewCell.swift in Sources */,
 				DE93485026D8075200680E63 /* Account.swift in Sources */,
 				DEA3B37F26F8BD6D003E09FC /* PasswordViewController.swift in Sources */,
 				DE52A77726E8FC3E00EC3521 /* ReceiveCoordinator.swift in Sources */,
