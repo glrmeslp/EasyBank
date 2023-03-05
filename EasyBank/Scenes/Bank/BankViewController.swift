@@ -10,19 +10,22 @@ final class BankViewController: ViewController<BankInteractor, UIView> {
         let stackView = UIStackView()
         stackView.backgroundColor = .clear
         stackView.axis = .vertical
+        stackView.spacing = 30
         return stackView
     }()
 
     private lazy var roomHeaderView = RoomHeaderView()
+    private lazy var menuCollectionView = MenuCollectionView()
     
     override func buildViewHierarchy() {
         stackView.addArrangedSubview(roomHeaderView)
+        stackView.addArrangedSubview(menuCollectionView)
         view.addSubview(stackView)
     }
     
     override func setupConstraints() {
         stackView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(30)
             $0.leading.trailing.equalToSuperview()
         }
     }

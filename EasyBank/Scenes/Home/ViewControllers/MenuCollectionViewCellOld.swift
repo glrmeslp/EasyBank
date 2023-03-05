@@ -1,10 +1,10 @@
 import UIKit
 
 protocol MenuCollectionViewCellDelegate {
-    func configure(with data: MenuCollectionViewCell.ViewModel)
+    func configure(with data: MenuCollectionViewCellOld.ViewModel)
 }
 
-final class MenuCollectionViewCell: UICollectionViewCell {
+final class MenuCollectionViewCellOld: UICollectionViewCell {
 
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -15,7 +15,7 @@ final class MenuCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension MenuCollectionViewCell: MenuCollectionViewCellDelegate {
+extension MenuCollectionViewCellOld: MenuCollectionViewCellDelegate {
     func configure(with data: ViewModel) {
         titleLabel.text = data.title
         var image: UIImage?

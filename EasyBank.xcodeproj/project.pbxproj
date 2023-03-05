@@ -15,6 +15,11 @@
 		1F18435B29B13E1C00BCC5DC /* BankService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F18435629B13E1C00BCC5DC /* BankService.swift */; };
 		1F9C2CE529B3CB1B0054DFA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CE429B3CB1B0054DFA5 /* ViewController.swift */; };
 		1F9C2CE829B3CD6E0054DFA5 /* RoomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CE729B3CD6E0054DFA5 /* RoomHeaderView.swift */; };
+		1F9C2CEA29B3DC2B0054DFA5 /* MenuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CE929B3DC2B0054DFA5 /* MenuCollectionView.swift */; };
+		1F9C2CED29B3DF290054DFA5 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CEC29B3DF290054DFA5 /* MenuCollectionViewCell.swift */; };
+		1F9C2CF129B3E5DE0054DFA5 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CF029B3E5DE0054DFA5 /* CollectionViewDataSource.swift */; };
+		1F9C2CF329B3E60E0054DFA5 /* ReloadableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CF229B3E60E0054DFA5 /* ReloadableDataSource.swift */; };
+		1F9C2CF529B3E6340054DFA5 /* ReloadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C2CF429B3E6340054DFA5 /* ReloadableView.swift */; };
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
 		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */; };
@@ -75,7 +80,7 @@
 		DE49A0E42710862C00124DA1 /* HomeViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49A0E32710862C00124DA1 /* HomeViewModelSpy.swift */; };
 		DE49A0E627109F6D00124DA1 /* HomeViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49A0E527109F6D00124DA1 /* HomeViewControllerMirror.swift */; };
 		DE4C03FC2734228900729CE7 /* CompleteTransactionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C03FB2734228900729CE7 /* CompleteTransactionViewModelTests.swift */; };
-		DE4C430426DE6A7C0019410A /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430226DE6A7C0019410A /* MenuCollectionViewCell.swift */; };
+		DE4C430426DE6A7C0019410A /* MenuCollectionViewCellOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430226DE6A7C0019410A /* MenuCollectionViewCellOld.swift */; };
 		DE4C430526DE6A7C0019410A /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4C430326DE6A7C0019410A /* MenuCollectionViewCell.xib */; };
 		DE4C430E26DEC0520019410A /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */; };
 		DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C431626DFFBB50019410A /* ScannerViewController.swift */; };
@@ -201,6 +206,11 @@
 		1F18435629B13E1C00BCC5DC /* BankService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankService.swift; sourceTree = "<group>"; };
 		1F9C2CE429B3CB1B0054DFA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F9C2CE729B3CD6E0054DFA5 /* RoomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomHeaderView.swift; sourceTree = "<group>"; };
+		1F9C2CE929B3DC2B0054DFA5 /* MenuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionView.swift; sourceTree = "<group>"; };
+		1F9C2CEC29B3DF290054DFA5 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F9C2CF029B3E5DE0054DFA5 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		1F9C2CF229B3E60E0054DFA5 /* ReloadableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableDataSource.swift; sourceTree = "<group>"; };
+		1F9C2CF429B3E6340054DFA5 /* ReloadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableView.swift; sourceTree = "<group>"; };
 		3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBankTests.release.xcconfig"; path = "Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests.release.xcconfig"; sourceTree = "<group>"; };
 		87F1038D9DB1EE76AEC9202F /* Pods-EasyBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.release.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.release.xcconfig"; sourceTree = "<group>"; };
 		8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -269,7 +279,7 @@
 		DE49A0E32710862C00124DA1 /* HomeViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpy.swift; sourceTree = "<group>"; };
 		DE49A0E527109F6D00124DA1 /* HomeViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMirror.swift; sourceTree = "<group>"; };
 		DE4C03FB2734228900729CE7 /* CompleteTransactionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewModelTests.swift; sourceTree = "<group>"; };
-		DE4C430226DE6A7C0019410A /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE4C430226DE6A7C0019410A /* MenuCollectionViewCellOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCellOld.swift; sourceTree = "<group>"; };
 		DE4C430326DE6A7C0019410A /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE4C430D26DEC0520019410A /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
 		DE4C431626DFFBB50019410A /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +427,7 @@
 		1F9C2B4529B3C8DC0054DFA5 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				1F9C2CEE29B3E5B90054DFA5 /* UI */,
 				1F9C2B4629B3C8F60054DFA5 /* MenuCollection */,
 			);
 			path = DesignSystem;
@@ -425,6 +436,8 @@
 		1F9C2B4629B3C8F60054DFA5 /* MenuCollection */ = {
 			isa = PBXGroup;
 			children = (
+				1F9C2CEB29B3DEF90054DFA5 /* MenuCollectionCell */,
+				1F9C2CE929B3DC2B0054DFA5 /* MenuCollectionView.swift */,
 			);
 			path = MenuCollection;
 			sourceTree = "<group>";
@@ -435,6 +448,32 @@
 				1F9C2CE729B3CD6E0054DFA5 /* RoomHeaderView.swift */,
 			);
 			path = RoomHeader;
+			sourceTree = "<group>";
+		};
+		1F9C2CEB29B3DEF90054DFA5 /* MenuCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C2CEC29B3DF290054DFA5 /* MenuCollectionViewCell.swift */,
+			);
+			path = MenuCollectionCell;
+			sourceTree = "<group>";
+		};
+		1F9C2CEE29B3E5B90054DFA5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C2CEF29B3E5C10054DFA5 /* DataSource */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1F9C2CEF29B3E5C10054DFA5 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C2CF029B3E5DE0054DFA5 /* CollectionViewDataSource.swift */,
+				1F9C2CF229B3E60E0054DFA5 /* ReloadableDataSource.swift */,
+				1F9C2CF429B3E6340054DFA5 /* ReloadableView.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		3078D4D234647692C2A31BFF /* Pods */ = {
@@ -756,7 +795,7 @@
 			isa = PBXGroup;
 			children = (
 				DE75DD8D26D9698B00240B70 /* HomeViewController.swift */,
-				DE4C430226DE6A7C0019410A /* MenuCollectionViewCell.swift */,
+				DE4C430226DE6A7C0019410A /* MenuCollectionViewCellOld.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1478,13 +1517,16 @@
 				DEB6D217273AAB0D00284415 /* BankView.swift in Sources */,
 				1F18435829B13E1C00BCC5DC /* BankFactory.swift in Sources */,
 				DEFFA32E2702112000A70B2E /* ProfileViewController.swift in Sources */,
+				1F9C2CF329B3E60E0054DFA5 /* ReloadableDataSource.swift in Sources */,
 				DE70738326F0CE6B00E34C44 /* CompleteTransactionViewController.swift in Sources */,
 				DE113155270F2B0600A80E96 /* UserViewModel.swift in Sources */,
 				DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */,
 				DE46218C26D6E22F001E6685 /* NewRoomViewController.swift in Sources */,
 				DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */,
+				1F9C2CF129B3E5DE0054DFA5 /* CollectionViewDataSource.swift in Sources */,
 				DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */,
 				DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */,
+				1F9C2CF529B3E6340054DFA5 /* ReloadableView.swift in Sources */,
 				DEFFA32A2702015B00A70B2E /* QRCodeHelper.swift in Sources */,
 				DE93485326D80A5600680E63 /* DatabaseService.swift in Sources */,
 				DE1BA3C926EA4C7C00416164 /* PayViewModel.swift in Sources */,
@@ -1502,8 +1544,10 @@
 				DEB6D21D273ABF3C00284415 /* BankMenu.swift in Sources */,
 				1F18435B29B13E1C00BCC5DC /* BankService.swift in Sources */,
 				DE46217826D6D9F1001E6685 /* StartViewController.swift in Sources */,
+				1F9C2CED29B3DF290054DFA5 /* MenuCollectionViewCell.swift in Sources */,
 				DE4F07BA26F4D1F000CA595C /* ExtractViewController.swift in Sources */,
 				DE46218226D6DB83001E6685 /* StartCoordinator.swift in Sources */,
+				1F9C2CEA29B3DC2B0054DFA5 /* MenuCollectionView.swift in Sources */,
 				DEB6D21B273AB1A900284415 /* BankViewController.swift in Sources */,
 				DE3774AB26F23E22005719E3 /* HomeMenuViewModel.swift in Sources */,
 				DEEBC0D426FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift in Sources */,
@@ -1522,7 +1566,7 @@
 				DE4C431826DFFBB50019410A /* ScannerViewController.swift in Sources */,
 				DE93485526D82BB500680E63 /* AuthenticationService.swift in Sources */,
 				DE44BB5026E2B2750083B354 /* String+Extension.swift in Sources */,
-				DE4C430426DE6A7C0019410A /* MenuCollectionViewCell.swift in Sources */,
+				DE4C430426DE6A7C0019410A /* MenuCollectionViewCellOld.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

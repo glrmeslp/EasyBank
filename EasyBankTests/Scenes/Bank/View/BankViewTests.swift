@@ -26,7 +26,7 @@ final class BankViewTests: XCTestCase {
         collectionView.register(UINib(nibName: "MenuCollectionViewCell", bundle: nil),
                                 forCellWithReuseIdentifier: "menuCollectionCell")
         let result = sut.collectionView(collectionView, cellForItemAt: IndexPath(row: 0, section: 0))
-        XCTAssertTrue(result is MenuCollectionViewCell)
+        XCTAssertTrue(result is MenuCollectionViewCellOld)
     }
 
     func test_tableViewNumberOfRowsInSection_whenAccountsIsNil_shouldReturnZero() {
