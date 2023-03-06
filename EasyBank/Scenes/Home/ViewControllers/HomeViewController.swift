@@ -71,8 +71,8 @@ final class HomeViewController: UIViewController {
         extractView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 
         updateCollectionViewFlowLayoutItemSize()
-        menuTransferCollection.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil),
-                                        forCellWithReuseIdentifier: "homeCollectionCell")
+        menuTransferCollection.register(UINib(nibName: "MenuCollectionViewCell", bundle: nil),
+                                        forCellWithReuseIdentifier: "menuCollectionCell")
         menuTransferCollection.collectionViewLayout = collectionViewFlowLayout
     }
 
@@ -126,7 +126,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionCell", for: indexPath) as? HomeCollectionViewCell,
+        guard let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "menuCollectionCell", for: indexPath) as? MenuCollectionViewCellOld,
               let title = transferMenu?[indexPath.row].first,
               let image = transferMenu?[indexPath.row].last else {
             return UICollectionViewCell()

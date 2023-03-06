@@ -1,10 +1,10 @@
 import UIKit
 
-protocol HomeCollectionViewCellDelegate {
-    func configure(with data: HomeCollectionViewCell.ViewModel)
+protocol MenuCollectionViewCellDelegate {
+    func configure(with data: MenuCollectionViewCellOld.ViewModel)
 }
 
-final class HomeCollectionViewCell: UICollectionViewCell {
+final class MenuCollectionViewCellOld: UICollectionViewCell {
 
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -15,7 +15,7 @@ final class HomeCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension HomeCollectionViewCell: HomeCollectionViewCellDelegate {
+extension MenuCollectionViewCellOld: MenuCollectionViewCellDelegate {
     func configure(with data: ViewModel) {
         titleLabel.text = data.title
         var image: UIImage?

@@ -12,6 +12,7 @@ target 'EasyBank' do
   pod 'FirebaseFirestoreSwift'
 
   pod 'SwiftLint'
+  pod 'SnapKit'
 
   target 'EasyBankTests' do
     inherit! :search_paths

@@ -7,6 +7,7 @@ protocol RoomService {
     func getRoom(roomName: String, completion: @escaping (String?) -> Void)
     func createAccount(roomName: String, user: User, completion: @escaping (String?) -> Void)
     func getAccount(roomName: String, uid: String, completion: @escaping (Account?, String?) -> Void)
+    func getAllAccounts(roomName: String, completion: @escaping ([Account], Error?) -> Void)
     func deleteAccount(roomName: String, uid: String, completion: @escaping (String?) -> Void)
 }
 
@@ -32,6 +33,26 @@ final class DatabaseService {
 }
 
 extension DatabaseService: RoomService {
+    func getAllAccounts(roomName: String, completion: @escaping ([Account], Error?) -> Void) {
+        var accounts: [Account] = []
+        firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_ACCOUNTS).order(by: "balance", descending: true).getDocuments() { (querySnapshot, error) in
+            guard let querySnapshot = querySnapshot else {
+                completion(accounts, error)
+                return
+            }
+            for document in querySnapshot.documents {
+                do {
+                    let account = try document.data(as: Account.self)
+                    guard let account = account else { return }
+                    accounts.append(account)
+                } catch let error {
+                    completion(accounts, error)
+                }
+            }
+            completion(accounts, error)
+        }
+    }
+
     func deleteAccount(roomName: String, uid: String, completion: @escaping (String?) -> Void) {
         firestore.collection(COLLECTION_ROOM).document(roomName).collection(COLLECTION_ACCOUNTS).document(uid).delete() { error in
             guard let error = error else {

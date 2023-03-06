@@ -8,7 +8,8 @@ final class HomeMenuViewController: UIViewController {
     @IBOutlet private weak var roomButton: UIButton!
     @IBOutlet private weak var accountButton: UIButton!
     @IBOutlet private weak var signOutButton: UIButton!
-
+    @IBOutlet private weak var bankButton: UIButton!
+    
     init(viewModel: HomeMenuViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "HomeMenuView", bundle: nil)
@@ -36,6 +37,10 @@ final class HomeMenuViewController: UIViewController {
     @IBAction private func didTapAccountButton(_ sender: Any) {
         dismiss(animated: true)
         viewModel?.showAccount()
+    }
+
+    @IBAction func didTapBankButton(_ sender: Any) {
+        viewModel?.enterBankMode()
     }
 
     @IBAction private func didTapSignOutButton(_ sender: Any) {
