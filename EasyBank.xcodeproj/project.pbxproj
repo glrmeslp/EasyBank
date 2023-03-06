@@ -25,6 +25,8 @@
 		1FC91FAD29B65C1400B68A5C /* AccountListViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FAC29B65C1400B68A5C /* AccountListViewCellPresenter.swift */; };
 		1FC91FB129B662DF00B68A5C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FB029B662DF00B68A5C /* UIView+Extension.swift */; };
 		1FC91FB429B66FA400B68A5C /* BankInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FB329B66FA400B68A5C /* BankInteractorTests.swift */; };
+		1FC91FB629B679C700B68A5C /* BankPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FB529B679C700B68A5C /* BankPresenterTests.swift */; };
+		1FC91FBB29B67D7300B68A5C /* AccountListViewCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FBA29B67D7300B68A5C /* AccountListViewCellPresenterTests.swift */; };
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
 		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */; };
@@ -211,6 +213,8 @@
 		1FC91FAC29B65C1400B68A5C /* AccountListViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListViewCellPresenter.swift; sourceTree = "<group>"; };
 		1FC91FB029B662DF00B68A5C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1FC91FB329B66FA400B68A5C /* BankInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInteractorTests.swift; sourceTree = "<group>"; };
+		1FC91FB529B679C700B68A5C /* BankPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankPresenterTests.swift; sourceTree = "<group>"; };
+		1FC91FBA29B67D7300B68A5C /* AccountListViewCellPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListViewCellPresenterTests.swift; sourceTree = "<group>"; };
 		3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBankTests.release.xcconfig"; path = "Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests.release.xcconfig"; sourceTree = "<group>"; };
 		87F1038D9DB1EE76AEC9202F /* Pods-EasyBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.release.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.release.xcconfig"; sourceTree = "<group>"; };
 		8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -480,9 +484,35 @@
 		1FC91FB229B66E3200B68A5C /* Bank */ = {
 			isa = PBXGroup;
 			children = (
+				1FC91FB729B67BDF00B68A5C /* Components */,
 				1FC91FB329B66FA400B68A5C /* BankInteractorTests.swift */,
+				1FC91FB529B679C700B68A5C /* BankPresenterTests.swift */,
 			);
 			path = Bank;
+			sourceTree = "<group>";
+		};
+		1FC91FB729B67BDF00B68A5C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1FC91FB829B67BEA00B68A5C /* AccountList */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1FC91FB829B67BEA00B68A5C /* AccountList */ = {
+			isa = PBXGroup;
+			children = (
+				1FC91FB929B67D5000B68A5C /* AccountListViewCell */,
+			);
+			path = AccountList;
+			sourceTree = "<group>";
+		};
+		1FC91FB929B67D5000B68A5C /* AccountListViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1FC91FBA29B67D7300B68A5C /* AccountListViewCellPresenterTests.swift */,
+			);
+			path = AccountListViewCell;
 			sourceTree = "<group>";
 		};
 		3078D4D234647692C2A31BFF /* Pods */ = {
@@ -1555,6 +1585,7 @@
 				DE04E7112723044F00A8A7F0 /* QRCodeViewModelTests.swift in Sources */,
 				DE55B4E227074FD400A77DED /* NewRoomViewModelSpy.swift in Sources */,
 				DE875E062704ACF900318261 /* StartViewControllerTests.swift in Sources */,
+				1FC91FBB29B67D7300B68A5C /* AccountListViewCellPresenterTests.swift in Sources */,
 				DEFE686827302D410043DC6C /* PayViewModelSpy.swift in Sources */,
 				DE49A0E42710862C00124DA1 /* HomeViewModelSpy.swift in Sources */,
 				DE55B4E62707862F00A77DED /* NewRoomViewModelTests.swift in Sources */,
@@ -1592,6 +1623,7 @@
 				DE875E112704ED3500318261 /* MirrorObject.swift in Sources */,
 				DE875E0C2704C0D500318261 /* AuthenticationServiceSpy.swift in Sources */,
 				DE04E6F12721A4E200A8A7F0 /* ReauthenticateViewControllerTests.swift in Sources */,
+				1FC91FB629B679C700B68A5C /* BankPresenterTests.swift in Sources */,
 				DE725B4427173952006892A4 /* HomeCoordinatorSpy.swift in Sources */,
 				DECA54732720483A00A8747D /* AccountViewControllerMirror.swift in Sources */,
 				DE1EF9C8271DBE8F0064D832 /* PasswordCoordinatorSpy.swift in Sources */,
