@@ -1,7 +1,7 @@
 import UIKit
 
 protocol BankDisplaying: AnyObject {
-    
+    func display(accounts: [Account])
 }
 
 final class BankViewController: ViewController<BankInteractor, UIView> {
@@ -17,6 +17,11 @@ final class BankViewController: ViewController<BankInteractor, UIView> {
     private lazy var roomHeaderView = RoomHeaderView()
     private lazy var menuCollectionView = MenuCollectionView()
     private lazy var accountListView = AccountListView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        interactor.loadData()
+    }
     
     override func buildViewHierarchy() {
         stackView.addArrangedSubview(roomHeaderView)
@@ -37,4 +42,8 @@ final class BankViewController: ViewController<BankInteractor, UIView> {
     }
 }
 
-extension BankViewController: BankDisplaying { }
+extension BankViewController: BankDisplaying {
+    func display(accounts: [Account]) {
+        accountListView.configure(data: accounts)
+    }
+}

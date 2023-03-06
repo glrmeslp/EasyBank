@@ -1,5 +1,7 @@
+import Foundation
+
 protocol BankInteracting: AnyObject {
-    func doSomething()
+    func loadData()
 }
 
 final class BankInteractor {
@@ -14,7 +16,27 @@ final class BankInteractor {
 
 // MARK: - BankInteracting
 extension BankInteractor: BankInteracting {
-    func doSomething() {
-        presenter.displaySomething()
+    func loadData() {
+        getAccounts()
+    }
+}
+
+private extension BankInteractor {
+    func getAccounts() {
+        service.getAccounts(roomName: getRoomName()) {[weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let data):
+                self.presenter.display(accounts: data)
+            case .failure:
+                // Next PR
+                break
+            }
+        }
+    }
+    
+    func getRoomName() -> String {
+        guard let name = UserDefaults.standard.string(forKey: "Room") else { return "Error!"}
+        return name
     }
 }

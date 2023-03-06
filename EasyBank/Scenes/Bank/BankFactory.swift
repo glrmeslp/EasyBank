@@ -1,8 +1,9 @@
+import FirebaseFirestore
 import UIKit
 
 enum BankFactory {
-    static func make() -> UIViewController {
-        let service = BankService()
+    static func make(firestore: Firestore) -> UIViewController {
+        let service = BankService(firestore: firestore)
         let coordinator = BankCoordinator()
         let presenter = BankPresenter(coordinator: coordinator)
         let interactor = BankInteractor(service: service, presenter: presenter)
