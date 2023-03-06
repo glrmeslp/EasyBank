@@ -1,17 +1,30 @@
 import UIKit
 
+protocol AccountListViewCellDisplaying: AnyObject {
+    func display(name: String)
+    func display(balance: String)
+}
+
+protocol AccountListViewCellProtocol: AnyObject {
+    func configure(data: Account)
+}
+
 final class AccountListViewCell: UIView {
+    private lazy var presenter: AccountListViewCellPresenting = {
+        let presenter = AccountListViewCellPresenter()
+        presenter.view = self
+        return presenter
+    }()
+    
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Name"
         label.font = .boldSystemFont(ofSize: 14)
         return label
     }()
     
-    private lazy var valueLabel: UILabel = {
+    private lazy var balanceLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 14)
-        label.text = "$ 0.00"
         label.textColor = UIColor(named: "BlueColor")
         return label
     }()
@@ -35,7 +48,7 @@ final class AccountListViewCell: UIView {
 extension AccountListViewCell: ViewConfiguration {
     func buildViewHierarchy() {
         addSubview(nameLabel)
-        addSubview(valueLabel)
+        addSubview(balanceLabel)
         addSubview(lineView)
     }
     
@@ -45,13 +58,13 @@ extension AccountListViewCell: ViewConfiguration {
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
-        valueLabel.snp.makeConstraints {
+        balanceLabel.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.top.equalTo(nameLabel.snp_bottom).offset(8)
         }
         
         lineView.snp.makeConstraints {
-            $0.top.equalTo(valueLabel.snp_bottom).offset(16)
+            $0.top.equalTo(balanceLabel.snp_bottom).offset(16)
             $0.trailing.bottom.equalToSuperview()
             $0.leading.equalToSuperview().inset(20)
             $0.height.equalTo(1)
@@ -60,5 +73,21 @@ extension AccountListViewCell: ViewConfiguration {
         superview?.snp.makeConstraints {
             $0.height.equalTo(61)
         }
+    }
+}
+
+extension AccountListViewCell: AccountListViewCellDisplaying {
+    func display(name: String) {
+        nameLabel.text = name
+    }
+    
+    func display(balance: String) {
+        balanceLabel.text = balance
+    }
+}
+
+extension AccountListViewCell: AccountListViewCellProtocol {
+    func configure(data: Account) {
+        presenter.configure(data: data)
     }
 }

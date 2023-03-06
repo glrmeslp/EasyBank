@@ -1,11 +1,6 @@
 import UIKit
 
-enum BankAction {
-    // template
-}
-
 protocol BankCoordinating: AnyObject {
-    func perform(action: BankAction)
 }
 
 final class BankCoordinator {
@@ -13,7 +8,4 @@ final class BankCoordinator {
 }
 // MARK: - BankCoordinating
 extension BankCoordinator: BankCoordinating {
-    func perform(action: BankAction) {
-        // template
-    }
 }

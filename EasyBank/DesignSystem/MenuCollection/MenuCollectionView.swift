@@ -12,9 +12,8 @@ final class MenuCollectionView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = Layout.sectionInset
         layout.scrollDirection = .horizontal
-//        layout.minimumLineSpacing = Space.base01.rawValue
         layout.itemSize = Layout.itemSize
-//
+        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: MenuCollectionViewCell.self))
         collectionView.isScrollEnabled = true
