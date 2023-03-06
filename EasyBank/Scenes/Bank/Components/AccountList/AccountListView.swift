@@ -25,18 +25,19 @@ final class AccountListView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         buildLayout()
-        stackView.addArrangedSubview(AccountListViewCell())
-        stackView.addArrangedSubview(AccountListViewCell())
-        stackView.addArrangedSubview(AccountListViewCell())
-        stackView.addArrangedSubview(AccountListViewCell())
-        stackView.addArrangedSubview(AccountListViewCell())
-        stackView.addArrangedSubview(AccountListViewCell())
-        stackView.addArrangedSubview(AccountListViewCell())
-        stackView.addArrangedSubview(AccountListViewCell())
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func configure(data: [Account]) {
+        stackView.removeAllSubviews()
+        for account in data {
+            let view = AccountListViewCell()
+            view.configure(data: account)
+            stackView.addArrangedSubview(view)
+        }
     }
 }
 
