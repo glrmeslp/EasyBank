@@ -2,6 +2,8 @@ import UIKit
 
 protocol BankDisplaying: AnyObject {
     func display(accounts: [Account])
+    func display(roomName: String)
+    func display(items: [MenuCollectionItem])
 }
 
 final class BankViewController: ViewController<BankInteractor, UIView> {
@@ -40,9 +42,18 @@ final class BankViewController: ViewController<BankInteractor, UIView> {
     override func configureViews() {
         view.backgroundColor = .systemBackground
     }
+
 }
 
 extension BankViewController: BankDisplaying {
+    func display(items: [MenuCollectionItem]) {
+        menuCollectionView.configure(items: items)
+    }
+    
+    func display(roomName: String) {
+        roomHeaderView.configure(roomName: roomName)
+    }
+    
     func display(accounts: [Account]) {
         accountListView.configure(data: accounts)
     }

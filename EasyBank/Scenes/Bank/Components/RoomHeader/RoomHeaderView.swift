@@ -34,7 +34,6 @@ final class RoomHeaderView: UIView {
 
     private lazy var roomNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Room Name"
         label.font = .systemFont(ofSize: 14)
         label.textColor = .systemGray
         label.textAlignment = .right
@@ -48,6 +47,10 @@ final class RoomHeaderView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(roomName: String) {
+        roomNameLabel.text = roomName
     }
 }
 
