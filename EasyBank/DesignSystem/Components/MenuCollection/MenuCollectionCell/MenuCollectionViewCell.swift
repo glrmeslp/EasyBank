@@ -33,6 +33,11 @@ final class MenuCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configure(item: MenuCollectionItem) {
+        iconImageView.image = item.icon.image
+        titleLabel.text = item.title
+    }
 }
 
 extension MenuCollectionViewCell: ViewConfiguration {

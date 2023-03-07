@@ -27,6 +27,9 @@
 		1FC91FB429B66FA400B68A5C /* BankInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FB329B66FA400B68A5C /* BankInteractorTests.swift */; };
 		1FC91FB629B679C700B68A5C /* BankPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FB529B679C700B68A5C /* BankPresenterTests.swift */; };
 		1FC91FBB29B67D7300B68A5C /* AccountListViewCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FBA29B67D7300B68A5C /* AccountListViewCellPresenterTests.swift */; };
+		1FC91FBD29B69D3200B68A5C /* MenuCollectionViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FBC29B69D3200B68A5C /* MenuCollectionViewInteractor.swift */; };
+		1FC91FBF29B69E4200B68A5C /* MenuCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FBE29B69E4200B68A5C /* MenuCollectionItem.swift */; };
+		1FC91FC529B6A3F800B68A5C /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC91FC429B6A3F800B68A5C /* Icon.swift */; };
 		2BA37FB12CDDA67B3A40845B /* Pods_EasyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A1E53DE583100338831A7 /* Pods_EasyBank.framework */; };
 		D43F01EBDF1FBC34538F22B4 /* Pods_EasyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF0936EC584FC24FF8DACF6 /* Pods_EasyBankTests.framework */; };
 		DE04E6ED2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04E6EC2721A25300A8A7F0 /* ReauthenticateViewControllerMirror.swift */; };
@@ -153,7 +156,6 @@
 		DEB6D21B273AB1A900284415 /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB6D21A273AB1A900284415 /* BankViewController.swift */; };
 		DEB6D21D273ABF3C00284415 /* BankMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB6D21C273ABF3C00284415 /* BankMenu.swift */; };
 		DEC1162E270B5CB100E74380 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1162D270B5CB100E74380 /* User.swift */; };
-		DEC72693273E9E93006C14F1 /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC72692273E9E93006C14F1 /* BankViewModel.swift */; };
 		DEC7CBC92734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7CBC82734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift */; };
 		DEC7CBCB2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7CBCA2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift */; };
 		DEC7CBCD2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7CBCC2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift */; };
@@ -215,6 +217,9 @@
 		1FC91FB329B66FA400B68A5C /* BankInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInteractorTests.swift; sourceTree = "<group>"; };
 		1FC91FB529B679C700B68A5C /* BankPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankPresenterTests.swift; sourceTree = "<group>"; };
 		1FC91FBA29B67D7300B68A5C /* AccountListViewCellPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListViewCellPresenterTests.swift; sourceTree = "<group>"; };
+		1FC91FBC29B69D3200B68A5C /* MenuCollectionViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewInteractor.swift; sourceTree = "<group>"; };
+		1FC91FBE29B69E4200B68A5C /* MenuCollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionItem.swift; sourceTree = "<group>"; };
+		1FC91FC429B6A3F800B68A5C /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		3CEB129FB73C0EF616438F9D /* Pods-EasyBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBankTests.release.xcconfig"; path = "Target Support Files/Pods-EasyBankTests/Pods-EasyBankTests.release.xcconfig"; sourceTree = "<group>"; };
 		87F1038D9DB1EE76AEC9202F /* Pods-EasyBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank.release.xcconfig"; path = "Target Support Files/Pods-EasyBank/Pods-EasyBank.release.xcconfig"; sourceTree = "<group>"; };
 		8D1045E22EEDC5CFC560DBA3 /* Pods-EasyBank-EasyBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBank-EasyBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-EasyBank-EasyBankUITests/Pods-EasyBank-EasyBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -350,7 +355,6 @@
 		DEB6D21A273AB1A900284415 /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		DEB6D21C273ABF3C00284415 /* BankMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankMenu.swift; sourceTree = "<group>"; };
 		DEC1162D270B5CB100E74380 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DEC72692273E9E93006C14F1 /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
 		DEC7CBC82734124F00D0E24C /* CompleteTransactionViewControllerMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewControllerMirror.swift; sourceTree = "<group>"; };
 		DEC7CBCA2734131E00D0E24C /* CompleteTransactionViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewModelSpy.swift; sourceTree = "<group>"; };
 		DEC7CBCC2734141E00D0E24C /* CompleteTransactionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTransactionViewControllerTests.swift; sourceTree = "<group>"; };
@@ -423,7 +427,9 @@
 		1F9C2B4529B3C8DC0054DFA5 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				1F9C2B4629B3C8F60054DFA5 /* MenuCollection */,
+				1FC91FC229B6A3C900B68A5C /* Tokens */,
+				1FC91FC129B6A3A600B68A5C /* Resources */,
+				1FC91FC029B6A39B00B68A5C /* Components */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -433,6 +439,8 @@
 			children = (
 				1F9C2CEB29B3DEF90054DFA5 /* MenuCollectionCell */,
 				1F9C2CE929B3DC2B0054DFA5 /* MenuCollectionView.swift */,
+				1FC91FBC29B69D3200B68A5C /* MenuCollectionViewInteractor.swift */,
+				1FC91FBE29B69E4200B68A5C /* MenuCollectionItem.swift */,
 			);
 			path = MenuCollection;
 			sourceTree = "<group>";
@@ -513,6 +521,38 @@
 				1FC91FBA29B67D7300B68A5C /* AccountListViewCellPresenterTests.swift */,
 			);
 			path = AccountListViewCell;
+			sourceTree = "<group>";
+		};
+		1FC91FC029B6A39B00B68A5C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1F9C2B4629B3C8F60054DFA5 /* MenuCollection */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1FC91FC129B6A3A600B68A5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE46214426D6D2FB001E6685 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1FC91FC229B6A3C900B68A5C /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				1FC91FC329B6A3E500B68A5C /* Generated */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		1FC91FC329B6A3E500B68A5C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				1FC91FC429B6A3F800B68A5C /* Icon.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		3078D4D234647692C2A31BFF /* Pods */ = {
@@ -729,7 +769,6 @@
 				DE46216D26D6D869001E6685 /* Scenes */,
 				DE46213B26D6D2F5001E6685 /* AppDelegate.swift */,
 				DE46213D26D6D2F5001E6685 /* SceneDelegate.swift */,
-				DE46214426D6D2FB001E6685 /* Assets.xcassets */,
 				DE46214626D6D2FB001E6685 /* LaunchScreen.storyboard */,
 				DE46214926D6D2FB001E6685 /* Info.plist */,
 				1F1841AF29B122B400BCC5DC /* GoogleService-Info.plist */,
@@ -935,7 +974,6 @@
 			children = (
 				1F18435029B13C5100BCC5DC /* Components */,
 				DEB6D21A273AB1A900284415 /* BankViewController.swift */,
-				DEC72692273E9E93006C14F1 /* BankViewModel.swift */,
 				1F18435229B13E1C00BCC5DC /* BankCoordinator.swift */,
 				1F18435329B13E1C00BCC5DC /* BankFactory.swift */,
 				1F18435429B13E1C00BCC5DC /* BankPresenter.swift */,
@@ -1490,7 +1528,6 @@
 				DEC1162E270B5CB100E74380 /* User.swift in Sources */,
 				DE46218426D6DB93001E6685 /* StartViewModel.swift in Sources */,
 				1F18435929B13E1C00BCC5DC /* BankPresenter.swift in Sources */,
-				DEC72693273E9E93006C14F1 /* BankViewModel.swift in Sources */,
 				DE3774A826F23B82005719E3 /* HomeMenuViewController.swift in Sources */,
 				1F9C2CE829B3CD6E0054DFA5 /* RoomHeaderView.swift in Sources */,
 				DE64A4E426FB756E004E95F7 /* AccountViewController.swift in Sources */,
@@ -1498,6 +1535,7 @@
 				1FC91FB129B662DF00B68A5C /* UIView+Extension.swift in Sources */,
 				DE44BB4C26E27A550083B354 /* HomeCoordinator.swift in Sources */,
 				DE52A77F26E90CC300EC3521 /* TransferMenu.swift in Sources */,
+				1FC91FBD29B69D3200B68A5C /* MenuCollectionViewInteractor.swift in Sources */,
 				DEEBC0D226FA1C7400A21AC4 /* PasswordCoordinator.swift in Sources */,
 				DEE3858126E651E5008D9409 /* CurrencyTextField.swift in Sources */,
 				DE75DD8F26D9698B00240B70 /* HomeViewController.swift in Sources */,
@@ -1513,6 +1551,7 @@
 				DE46217526D6D996001E6685 /* RoomViewModel.swift in Sources */,
 				DE46218C26D6E22F001E6685 /* NewRoomViewController.swift in Sources */,
 				DEE3857E26E64702008D9409 /* ReceiveViewController.swift in Sources */,
+				1FC91FBF29B69E4200B68A5C /* MenuCollectionItem.swift in Sources */,
 				1F9C2CF129B3E5DE0054DFA5 /* CollectionViewDataSource.swift in Sources */,
 				DEA3B38226F8CB89003E09FC /* PasswordEnum.swift in Sources */,
 				DE70738626F0DC3C00E34C44 /* CompleteTransactionViewModel.swift in Sources */,
@@ -1540,6 +1579,7 @@
 				DEB6D21B273AB1A900284415 /* BankViewController.swift in Sources */,
 				DE3774AB26F23E22005719E3 /* HomeMenuViewModel.swift in Sources */,
 				DEEBC0D426FA2A6E00A21AC4 /* RecoverPasswordViewModel.swift in Sources */,
+				1FC91FC529B6A3F800B68A5C /* Icon.swift in Sources */,
 				1F18435729B13E1C00BCC5DC /* BankCoordinator.swift in Sources */,
 				DE46217F26D6DAD7001E6685 /* RoomViewController.swift in Sources */,
 				DEFFA3332702138300A70B2E /* ReauthenticateViewController.swift in Sources */,
