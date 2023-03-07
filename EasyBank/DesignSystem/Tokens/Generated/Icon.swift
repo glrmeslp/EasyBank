@@ -1,6 +1,6 @@
 import UIKit
 
-enum Icon: String {
+enum Icon: String, Equatable {
     case charge = "charge"
     case room = "room"
     case pay = "pay"

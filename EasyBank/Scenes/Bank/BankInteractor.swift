@@ -75,6 +75,6 @@ private extension BankInteractor {
     }
     
     func deleteRoom() {
-        
+        print("Did tap delete room")
     }
 }

@@ -1,6 +1,5 @@
 
 protocol MenuCollectionViewInteracting: AnyObject {
-    var view: MenuCollectionViewDisplaying? { get set }
     func configure(items: [MenuCollectionItem])
     func didSelectItem(index: Int)
 }
